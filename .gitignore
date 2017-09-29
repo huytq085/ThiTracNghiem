@@ -1,0 +1,28 @@
+# Main
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# SQL Server files
+**/App_Data/*.mdf
+**/App_Data/*.ldf
+**/App_Data/*.sdf
+
+#Log files
+*.log
+*.tmp
+*.tmp_proj
+*.vspscc
+*.vssscc
+.builds

@@ -31,31 +31,33 @@
             this.components = new System.ComponentModel.Container();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -90,11 +92,33 @@
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // barSubItem1
+            // barSubItem2
             // 
-            this.barSubItem1.Caption = "barSubItem1";
-            this.barSubItem1.Id = 0;
-            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem2.Caption = "File";
+            this.barSubItem2.Id = 1;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "Exit";
+            this.barStaticItem1.Id = 4;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Help";
+            this.barSubItem3.Id = 2;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "About us";
+            this.barStaticItem2.Id = 5;
+            this.barStaticItem2.Name = "barStaticItem2";
             // 
             // barDockControlTop
             // 
@@ -132,39 +156,17 @@
             this.barDockControlRight.Size = new System.Drawing.Size(0, 240);
             this.barDockControlRight.UseWaitCursor = true;
             // 
-            // barSubItem2
+            // barSubItem1
             // 
-            this.barSubItem2.Caption = "File";
-            this.barSubItem2.Id = 1;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
-            // barSubItem3
-            // 
-            this.barSubItem3.Caption = "Help";
-            this.barSubItem3.Id = 2;
-            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2)});
-            this.barSubItem3.Name = "barSubItem3";
+            this.barSubItem1.Caption = "barSubItem1";
+            this.barSubItem1.Id = 0;
+            this.barSubItem1.Name = "barSubItem1";
             // 
             // barSubItem4
             // 
             this.barSubItem4.Caption = "Exit";
             this.barSubItem4.Id = 3;
             this.barSubItem4.Name = "barSubItem4";
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "Exit";
-            this.barStaticItem1.Id = 4;
-            this.barStaticItem1.Name = "barStaticItem1";
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.Caption = "About us";
-            this.barStaticItem2.Id = 5;
-            this.barStaticItem2.Name = "barStaticItem2";
             // 
             // comboBoxEdit1
             // 
@@ -175,6 +177,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Size = new System.Drawing.Size(205, 20);
             this.comboBoxEdit1.TabIndex = 4;
+            this.comboBoxEdit1.UseWaitCursor = true;
             // 
             // textEdit1
             // 
@@ -184,6 +187,7 @@
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(205, 20);
             this.textEdit1.TabIndex = 5;
+            this.textEdit1.UseWaitCursor = true;
             // 
             // textEdit2
             // 
@@ -193,6 +197,7 @@
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(205, 20);
             this.textEdit2.TabIndex = 6;
+            this.textEdit2.UseWaitCursor = true;
             this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             // 
             // simpleButton1
@@ -202,6 +207,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(205, 23);
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Đăng nhập";
+            this.simpleButton1.UseWaitCursor = true;
             // 
             // panelControl1
             // 
@@ -217,34 +223,7 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(313, 221);
             this.panelControl1.TabIndex = 8;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16.25F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(77, 5);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(203, 27);
-            this.labelControl1.TabIndex = 8;
-            this.labelControl1.Text = "Thông tin đăng nhập";
-            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 60);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(24, 13);
-            this.labelControl2.TabIndex = 9;
-            this.labelControl2.Text = "Khoa";
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 101);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(46, 13);
-            this.labelControl3.TabIndex = 10;
-            this.labelControl3.Text = "Tài khoản";
+            this.panelControl1.UseWaitCursor = true;
             // 
             // labelControl4
             // 
@@ -253,19 +232,63 @@
             this.labelControl4.Size = new System.Drawing.Size(44, 13);
             this.labelControl4.TabIndex = 11;
             this.labelControl4.Text = "Mật khẩu";
+            this.labelControl4.UseWaitCursor = true;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(16, 101);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(46, 13);
+            this.labelControl3.TabIndex = 10;
+            this.labelControl3.Text = "Tài khoản";
+            this.labelControl3.UseWaitCursor = true;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(16, 60);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(24, 13);
+            this.labelControl2.TabIndex = 9;
+            this.labelControl2.Text = "Khoa";
+            this.labelControl2.UseWaitCursor = true;
+            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(77, 18);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(179, 23);
+            this.labelControl1.TabIndex = 8;
+            this.labelControl1.Text = "Thông tin đăng nhập";
+            this.labelControl1.UseWaitCursor = true;
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ThiTracNghiem.Properties.Resources.QuestionTypes_360x260;
+            this.pictureBox1.Location = new System.Drawing.Point(331, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(286, 221);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.UseWaitCursor = true;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 262);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "LoginForm";
-            this.Text = "Đăng nhập";
+            this.Text = "Đăng nhập - Phần mềm thi trắc nghiệm";
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -275,6 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +327,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

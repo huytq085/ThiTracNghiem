@@ -1,28 +1,65 @@
-# Main
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.suo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.
+
+obj/
+.DS_Store
+*.pdb
+*.pdb
+*.nlp
+
+# Visual Studio files
+*.csproj.user
+FakesAssemblies/
+*.plg
+*.opt
+*.vsix
+bin/
+
+# User-specific files
 *.suo
 *.user
-_ReSharper.*
-bin
-obj
-packages
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
 
 # Build results
 [Dd]ebug/
+[Dd]ebugPublic/
 [Rr]elease/
+[Rr]eleases/
 x64/
+x86/
 build/
+bld/
 [Bb]in/
 [Oo]bj/
-
-# SQL Server files
-**/App_Data/*.mdf
-**/App_Data/*.ldf
-**/App_Data/*.sdf
-
-#Log files
-*.log
-*.tmp
-*.tmp_proj
-*.vspscc
-*.vssscc
-.builds

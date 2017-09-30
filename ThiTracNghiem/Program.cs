@@ -20,7 +20,7 @@ namespace ThiTracNghiem
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Form1());
+            Application.Run(new Form.LoginForm());
             Console.WriteLine("Test2");
         }
     }

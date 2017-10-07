@@ -11,15 +11,17 @@ using DevExpress.XtraBars;
 
 namespace ThiTracNghiem.Form
 {
-    public partial class LoginForm : DevExpress.XtraEditors.XtraForm
+    public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {
-        public LoginForm()
+        public FrmLogin()
         {
             InitializeComponent();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tRACNGHIEMDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
 
         }
 
@@ -40,6 +42,18 @@ namespace ThiTracNghiem.Form
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbCoSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.servername = cbbCoSo.SelectedValue.ToString();
+            Console.WriteLine(Program.servername);
 
         }
     }

@@ -82,7 +82,7 @@ namespace ThiTracNghiem
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Form.LoginForm());
+            Application.Run(new Form.FrmMain());
             Console.WriteLine("Test2");
         }
     }

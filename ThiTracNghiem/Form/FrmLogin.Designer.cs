@@ -1,6 +1,6 @@
 ﻿namespace ThiTracNghiem.Form
 {
-    partial class LoginForm
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            System.Windows.Forms.Label tENCSLabel;
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -41,23 +41,28 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
+            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource();
+            this.v_DS_PHANMANHTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager();
+            this.cbbCoSo = new System.Windows.Forms.ComboBox();
+            tENCSLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -168,21 +173,10 @@
             this.barSubItem4.Id = 3;
             this.barSubItem4.Name = "barSubItem4";
             // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(77, 57);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(205, 20);
-            this.comboBoxEdit1.TabIndex = 4;
-            this.comboBoxEdit1.UseWaitCursor = true;
-            // 
             // textEdit1
             // 
             this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(77, 98);
+            this.textEdit1.Location = new System.Drawing.Point(77, 102);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(205, 20);
@@ -211,17 +205,17 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.cbbCoSo);
+            this.panelControl1.Controls.Add(tENCSLabel);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Controls.Add(this.comboBoxEdit1);
             this.panelControl1.Controls.Add(this.textEdit2);
             this.panelControl1.Controls.Add(this.textEdit1);
             this.panelControl1.Location = new System.Drawing.Point(12, 28);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(313, 221);
+            this.panelControl1.Size = new System.Drawing.Size(313, 227);
             this.panelControl1.TabIndex = 8;
             this.panelControl1.UseWaitCursor = true;
             // 
@@ -236,22 +230,12 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 101);
+            this.labelControl3.Location = new System.Drawing.Point(16, 105);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(46, 13);
             this.labelControl3.TabIndex = 10;
             this.labelControl3.Text = "Tài khoản";
             this.labelControl3.UseWaitCursor = true;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 60);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(24, 13);
-            this.labelControl2.TabIndex = 9;
-            this.labelControl2.Text = "Khoa";
-            this.labelControl2.UseWaitCursor = true;
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // labelControl1
             // 
@@ -276,6 +260,47 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;
             // 
+            // tRACNGHIEMDataSet
+            // 
+            this.tRACNGHIEMDataSet.DataSetName = "TRACNGHIEMDataSet";
+            this.tRACNGHIEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // v_DS_PHANMANHBindingSource
+            // 
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.tRACNGHIEMDataSet;
+            // 
+            // v_DS_PHANMANHTableAdapter
+            // 
+            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.UpdateOrder = ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // tENCSLabel
+            // 
+            tENCSLabel.AutoSize = true;
+            tENCSLabel.Location = new System.Drawing.Point(14, 61);
+            tENCSLabel.Name = "tENCSLabel";
+            tENCSLabel.Size = new System.Drawing.Size(43, 13);
+            tENCSLabel.TabIndex = 11;
+            tENCSLabel.Text = "TENCS:";
+            // 
+            // cbbCoSo
+            // 
+            this.cbbCoSo.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.cbbCoSo.DisplayMember = "TENCS";
+            this.cbbCoSo.FormattingEnabled = true;
+            this.cbbCoSo.Location = new System.Drawing.Point(77, 58);
+            this.cbbCoSo.Name = "cbbCoSo";
+            this.cbbCoSo.Size = new System.Drawing.Size(205, 21);
+            this.cbbCoSo.TabIndex = 13;
+            this.cbbCoSo.ValueMember = "TENSERVER";
+            this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,13 +317,14 @@
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,13 +346,16 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingSource v_DS_PHANMANHBindingSource;
+        private TRACNGHIEMDataSet tRACNGHIEMDataSet;
+        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
+        private TRACNGHIEMDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ComboBox cbbCoSo;
     }
 }

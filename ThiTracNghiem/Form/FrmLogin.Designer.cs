@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label tENCSLabel;
+            this.tENCSLabel = new System.Windows.Forms.Label();
             this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
@@ -45,25 +45,34 @@
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbbCoSo = new System.Windows.Forms.ComboBox();
+            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource();
+            this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
-            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource();
             this.v_DS_PHANMANHTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager();
-            this.cbbCoSo = new System.Windows.Forms.ComboBox();
-            tENCSLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tENCSLabel
+            // 
+            this.tENCSLabel.AutoSize = true;
+            this.tENCSLabel.Location = new System.Drawing.Point(14, 61);
+            this.tENCSLabel.Name = "tENCSLabel";
+            this.tENCSLabel.Size = new System.Drawing.Size(43, 13);
+            this.tENCSLabel.TabIndex = 11;
+            this.tENCSLabel.Text = "TENCS:";
+            this.tENCSLabel.UseWaitCursor = true;
             // 
             // barManager1
             // 
@@ -206,7 +215,7 @@
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.cbbCoSo);
-            this.panelControl1.Controls.Add(tENCSLabel);
+            this.panelControl1.Controls.Add(this.tENCSLabel);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -218,6 +227,30 @@
             this.panelControl1.Size = new System.Drawing.Size(313, 227);
             this.panelControl1.TabIndex = 8;
             this.panelControl1.UseWaitCursor = true;
+            // 
+            // cbbCoSo
+            // 
+            this.cbbCoSo.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.cbbCoSo.DisplayMember = "TENCS";
+            this.cbbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCoSo.FormattingEnabled = true;
+            this.cbbCoSo.Location = new System.Drawing.Point(77, 58);
+            this.cbbCoSo.Name = "cbbCoSo";
+            this.cbbCoSo.Size = new System.Drawing.Size(205, 21);
+            this.cbbCoSo.TabIndex = 13;
+            this.cbbCoSo.UseWaitCursor = true;
+            this.cbbCoSo.ValueMember = "TENSERVER";
+            this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
+            // 
+            // v_DS_PHANMANHBindingSource
+            // 
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.tRACNGHIEMDataSet;
+            // 
+            // tRACNGHIEMDataSet
+            // 
+            this.tRACNGHIEMDataSet.DataSetName = "TRACNGHIEMDataSet";
+            this.tRACNGHIEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelControl4
             // 
@@ -260,16 +293,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;
             // 
-            // tRACNGHIEMDataSet
-            // 
-            this.tRACNGHIEMDataSet.DataSetName = "TRACNGHIEMDataSet";
-            this.tRACNGHIEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // v_DS_PHANMANHBindingSource
-            // 
-            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.v_DS_PHANMANHBindingSource.DataSource = this.tRACNGHIEMDataSet;
-            // 
             // v_DS_PHANMANHTableAdapter
             // 
             this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
@@ -280,28 +303,7 @@
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // tENCSLabel
-            // 
-            tENCSLabel.AutoSize = true;
-            tENCSLabel.Location = new System.Drawing.Point(14, 61);
-            tENCSLabel.Name = "tENCSLabel";
-            tENCSLabel.Size = new System.Drawing.Size(43, 13);
-            tENCSLabel.TabIndex = 11;
-            tENCSLabel.Text = "TENCS:";
-            // 
-            // cbbCoSo
-            // 
-            this.cbbCoSo.DataSource = this.v_DS_PHANMANHBindingSource;
-            this.cbbCoSo.DisplayMember = "TENCS";
-            this.cbbCoSo.FormattingEnabled = true;
-            this.cbbCoSo.Location = new System.Drawing.Point(77, 58);
-            this.cbbCoSo.Name = "cbbCoSo";
-            this.cbbCoSo.Size = new System.Drawing.Size(205, 21);
-            this.cbbCoSo.TabIndex = 13;
-            this.cbbCoSo.ValueMember = "TENSERVER";
-            this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
-            // 
-            // LoginForm
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -312,7 +314,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "LoginForm";
+            this.Name = "FrmLogin";
             this.Text = "Đăng nhập - Phần mềm thi trắc nghiệm";
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);
@@ -322,9 +324,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +359,6 @@
         private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
         private TRACNGHIEMDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox cbbCoSo;
+        private System.Windows.Forms.Label tENCSLabel;
     }
 }

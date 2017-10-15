@@ -71,7 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TRACNGHIEMDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\FrmDangNhap.resx">
+    <EmbeddedResource Include="Form\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmMain.resx">

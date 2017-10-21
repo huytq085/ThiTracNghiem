@@ -4,6 +4,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using System.Data;
 using System.Data.SqlClient;
+using ThiTracNghiem.Form;
 
 namespace ThiTracNghiem
 {
@@ -15,16 +16,23 @@ namespace ThiTracNghiem
 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-
-        public static String servername = "";
+        public static string username = ConnectionSettings.Default.login;
+        public static string password = ConnectionSettings.Default.pwd;
+        public static String servername = ConnectionSettings.Default.DefaultDatasource;
         public static String servername1 = "";
         public static String servername2 = "";
-        public static String username = "";
-        public static String password = "";
         public static String mlogin = "";
 
-        public static String database = "";
+        public static String database = ConnectionSettings.Default.DefaultCatalog;
         public static String remotelogin = "";
+
+        public static string hoTen = "";
+        public static string nhom = "";
+        public static string id = "";
+        public static string donVi = "";
+        public static string tenDonVi = "";
+        public static string chiNhanh = "";
+        public static string maChiNhanh = "";
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
 
@@ -64,6 +72,33 @@ namespace ThiTracNghiem
                 MessageBox.Show(ex.Message);
                 return null;
             }
+        }
+        public static SqlDataReader ExecSqlDataReader(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
+                    CommandType cmdType = CommandType.StoredProcedure)
+        {
+            try
+            {
+                SqlDataReader reader;
+                if (Program.conn == null || Program.conn.State == ConnectionState.Closed)
+                    KetNoi();
+                using (SqlCommand sqlCmd = new SqlCommand(_cmd, Program.conn) { CommandType = CommandType.Text })
+                {
+                    for (int i = 0; i < NoParam; i++)
+                    {
+                        sqlCmd.Parameters.AddWithValue(name[i], value[i]);
+                    }
+                    sqlCmd.CommandType = cmdType;
+                    reader = sqlCmd.ExecuteReader();
+                }
+                return reader;
+            }
+            catch (SqlException)
+            {
+                //MessageBox.Show(e.Message);
+                Program.conn.Close();
+                return null;
+            }
+
         }
         public static DataTable ExecSqlDataTable(String cmd, string connstr)
         {

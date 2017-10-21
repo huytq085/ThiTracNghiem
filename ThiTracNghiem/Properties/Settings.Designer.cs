@@ -32,5 +32,16 @@ namespace ThiTracNghiem.Properties {
                 return ((string)(this["TRACNGHIEMConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CAR7DK5\\SRV_1;Initial Catalog=TRACNGHIEM;Integrated Security=" +
+            "True")]
+        public string TRACNGHIEMConnectionString1 {
+            get {
+                return ((string)(this["TRACNGHIEMConnectionString1"]));
+            }
+        }
     }
 }

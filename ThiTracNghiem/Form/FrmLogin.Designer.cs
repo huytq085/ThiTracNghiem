@@ -41,8 +41,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtUsername = new DevExpress.XtraEditors.TextEdit();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
@@ -55,8 +55,8 @@
             this.v_DS_PHANMANHTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
@@ -141,7 +141,6 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(617, 22);
-            this.barDockControlTop.UseWaitCursor = true;
             // 
             // barDockControlBottom
             // 
@@ -150,7 +149,6 @@
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 262);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(617, 0);
-            this.barDockControlBottom.UseWaitCursor = true;
             // 
             // barDockControlLeft
             // 
@@ -159,7 +157,6 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 240);
-            this.barDockControlLeft.UseWaitCursor = true;
             // 
             // barDockControlRight
             // 
@@ -168,7 +165,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(617, 22);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 240);
-            this.barDockControlRight.UseWaitCursor = true;
             // 
             // barSubItem1
             // 
@@ -182,26 +178,27 @@
             this.barSubItem4.Id = 3;
             this.barSubItem4.Name = "barSubItem4";
             // 
-            // textEdit1
+            // txtUsername
             // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(77, 102);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(205, 20);
-            this.textEdit1.TabIndex = 5;
-            this.textEdit1.UseWaitCursor = true;
+            this.txtUsername.EditValue = "";
+            this.txtUsername.Location = new System.Drawing.Point(77, 102);
+            this.txtUsername.MenuManager = this.barManager1;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(205, 20);
+            this.txtUsername.TabIndex = 5;
             // 
-            // textEdit2
+            // txtPassword
             // 
-            this.textEdit2.EditValue = "";
-            this.textEdit2.Location = new System.Drawing.Point(77, 144);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(205, 20);
-            this.textEdit2.TabIndex = 6;
-            this.textEdit2.UseWaitCursor = true;
-            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtPassword.EditValue = "";
+            this.txtPassword.Location = new System.Drawing.Point(77, 144);
+            this.txtPassword.MenuManager = this.barManager1;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.PasswordChar = '*';
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(205, 20);
+            this.txtPassword.TabIndex = 6;
+            this.txtPassword.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             // 
             // simpleButton1
             // 
@@ -211,6 +208,7 @@
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Đăng nhập";
             this.simpleButton1.UseWaitCursor = true;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // panelControl1
             // 
@@ -220,13 +218,12 @@
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Controls.Add(this.textEdit2);
-            this.panelControl1.Controls.Add(this.textEdit1);
+            this.panelControl1.Controls.Add(this.txtPassword);
+            this.panelControl1.Controls.Add(this.txtUsername);
             this.panelControl1.Location = new System.Drawing.Point(12, 28);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(313, 227);
             this.panelControl1.TabIndex = 8;
-            this.panelControl1.UseWaitCursor = true;
             // 
             // cbbCoSo
             // 
@@ -316,11 +313,10 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FrmLogin";
             this.Text = "Đăng nhập - Phần mềm thi trắc nghiệm";
-            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -348,8 +344,8 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtPassword;
+        private DevExpress.XtraEditors.TextEdit txtUsername;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;

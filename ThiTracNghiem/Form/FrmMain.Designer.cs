@@ -100,6 +100,11 @@
             this.imageList1.Images.SetKeyName(3, "search-circle-blue-32.png");
             this.imageList1.Images.SetKeyName(4, "prepare.png");
             this.imageList1.Images.SetKeyName(5, "start.png");
+            this.imageList1.Images.SetKeyName(6, "logout.png");
+            this.imageList1.Images.SetKeyName(7, "icon_class.png");
+            this.imageList1.Images.SetKeyName(8, "icon_dept.png");
+            this.imageList1.Images.SetKeyName(9, "icon_subject.png");
+            this.imageList1.Images.SetKeyName(10, "icon_teacher.png");
             // 
             // btnAdd
             // 
@@ -147,18 +152,22 @@
             // 
             this.barButtonItem2.Caption = "Sinh Viên";
             this.barButtonItem2.Id = 10;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
             // barButtonItem3
             // 
             this.barButtonItem3.Caption = "Giáo Viên";
             this.barButtonItem3.Id = 11;
+            this.barButtonItem3.ImageOptions.LargeImageIndex = 10;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
             // barButtonItem4
             // 
             this.barButtonItem4.Caption = "Khoa";
             this.barButtonItem4.Id = 12;
+            this.barButtonItem4.ImageOptions.LargeImageIndex = 8;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
@@ -166,24 +175,29 @@
             // 
             this.barButtonItem5.Caption = "Môn học";
             this.barButtonItem5.Id = 13;
+            this.barButtonItem5.ImageOptions.LargeImageIndex = 9;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "Lớp";
             this.barButtonItem6.Id = 14;
+            this.barButtonItem6.ImageOptions.LargeImageIndex = 7;
             this.barButtonItem6.Name = "barButtonItem6";
             // 
             // barButtonItem7
             // 
             this.barButtonItem7.Caption = "Đề thi";
             this.barButtonItem7.Id = 15;
+            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
             this.barButtonItem7.Name = "barButtonItem7";
             // 
             // barButtonItem8
             // 
             this.barButtonItem8.Caption = "Đăng Xuất";
             this.barButtonItem8.Id = 16;
+            this.barButtonItem8.ImageOptions.LargeImageIndex = 6;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
@@ -225,7 +239,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Tài khoản";
             // 
             // ribbonStatusBar
             // 

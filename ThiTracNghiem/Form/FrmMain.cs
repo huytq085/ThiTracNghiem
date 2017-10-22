@@ -25,7 +25,6 @@ namespace ThiTracNghiem.Form
                 txtFooterId.Caption = "Mã sinh viên: " + Program.id;
                 txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
                 txtFooterClass.Caption = "Lớp: " + Program.donVi;
-
             }
 
         }

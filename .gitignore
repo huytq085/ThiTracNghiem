@@ -4,6 +4,9 @@
 *.o
 *.obj
 *.suo
+app.config
+ConnectionSettings.Designer.cs
+ConnectionSettings.settings
 
 # Precompiled Headers
 *.gch

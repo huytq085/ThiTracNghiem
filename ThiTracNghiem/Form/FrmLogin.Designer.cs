@@ -46,7 +46,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
-            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource();
+            this.bdsPM = new System.Windows.Forms.BindingSource();
             this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -59,7 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -227,7 +227,7 @@
             // 
             // cbbCoSo
             // 
-            this.cbbCoSo.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.cbbCoSo.DataSource = this.bdsPM;
             this.cbbCoSo.DisplayMember = "TENCS";
             this.cbbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCoSo.FormattingEnabled = true;
@@ -239,10 +239,11 @@
             this.cbbCoSo.ValueMember = "TENSERVER";
             this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
             // 
-            // v_DS_PHANMANHBindingSource
+            // bdsPM
             // 
-            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.v_DS_PHANMANHBindingSource.DataSource = this.tRACNGHIEMDataSet;
+            this.bdsPM.DataMember = "V_DS_PHANMANH";
+            this.bdsPM.DataSource = this.tRACNGHIEMDataSet;
+            this.bdsPM.CurrentChanged += new System.EventHandler(this.v_DS_PHANMANHBindingSource_CurrentChanged);
             // 
             // tRACNGHIEMDataSet
             // 
@@ -320,7 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -350,7 +351,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.BindingSource v_DS_PHANMANHBindingSource;
+        private System.Windows.Forms.BindingSource bdsPM;
         private TRACNGHIEMDataSet tRACNGHIEMDataSet;
         private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
         private TRACNGHIEMDataSetTableAdapters.TableAdapterManager tableAdapterManager;

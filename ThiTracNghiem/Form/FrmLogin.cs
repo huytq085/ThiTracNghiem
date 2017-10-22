@@ -78,7 +78,6 @@ namespace ThiTracNghiem.Form
                 Program.tenDonVi = reader["tenlop"].ToString();
                 Program.conn.Close();
                 reader.Close();
-                this.Close();
             }
             else
             {
@@ -114,10 +113,11 @@ namespace ThiTracNghiem.Form
             }
             if (result)
             {
+                this.Hide();
                 FrmMain frmMain = new FrmMain();
+                frmMain.Closed += (s, args) => this.Close();
                 frmMain.Show();
             }
-            
         }
     }
 }

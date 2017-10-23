@@ -34,7 +34,7 @@ namespace ThiTracNghiem
         public static string chiNhanh = "";
         public static string maChiNhanh = "";
 
-        public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
+        public static BindingSource bds_dspm = new BindingSource();  // giữ TRACNGHIEMDataSet khi đăng nhập
 
         public static int KetNoi()
         {
@@ -49,10 +49,9 @@ namespace ThiTracNghiem
                 Program.conn.Open();
                 return 1;
             }
-
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn hãy xem lại tên đăng nhập và và mật khẩu.\n " + e.Message, "", MessageBoxButtons.OK);
+                Console.WriteLine(e);
                 return 0;
             }
         }
@@ -78,7 +77,7 @@ namespace ThiTracNghiem
         {
             try
             {
-                SqlDataReader reader;
+                SqlDataReader reader = null;
                 if (Program.conn == null || Program.conn.State == ConnectionState.Closed)
                     KetNoi();
                 using (SqlCommand sqlCmd = new SqlCommand(_cmd, Program.conn) { CommandType = CommandType.Text })
@@ -88,7 +87,13 @@ namespace ThiTracNghiem
                         sqlCmd.Parameters.AddWithValue(name[i], value[i]);
                     }
                     sqlCmd.CommandType = cmdType;
-                    reader = sqlCmd.ExecuteReader();
+                    try
+                    {
+                        reader = sqlCmd.ExecuteReader();
+                    } catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                 }
                 return reader;
             }

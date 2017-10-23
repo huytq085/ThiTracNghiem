@@ -20,9 +20,9 @@ namespace ThiTracNghiem {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("TRACNGHIEMDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("TRACNGHIEMDataSetSV1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class TRACNGHIEMDataSet1 : global::System.Data.DataSet {
+    public partial class TRACNGHIEMDataSetSV1 : global::System.Data.DataSet {
         
         private BANGDIEMDataTable tableBANGDIEM;
         
@@ -46,31 +46,31 @@ namespace ThiTracNghiem {
         
         private SP_DangNhapSVDataTable tableSP_DangNhapSV;
         
-        private global::System.Data.DataRelation relationFK_BANGDIEM_MONHOC;
-        
         private global::System.Data.DataRelation relationFK_BANGDIEM_SINHVIEN1;
+        
+        private global::System.Data.DataRelation relationFK_BANGDIEM_MONHOC;
         
         private global::System.Data.DataRelation relationFK_BODE_GIAOVIEN;
         
         private global::System.Data.DataRelation relationFK_BODE_MONHOC;
         
-        private global::System.Data.DataRelation relationFK_GIAOVIEN_DANGKY_GIAOVIEN1;
-        
         private global::System.Data.DataRelation relationFK_GIAOVIEN_DANGKY_LOP;
         
+        private global::System.Data.DataRelation relationFK_GIAOVIEN_DANGKY_GIAOVIEN1;
+        
         private global::System.Data.DataRelation relationFK_GIAOVIEN_DANGKY_MONHOC1;
+        
+        private global::System.Data.DataRelation relationFK_SINHVIEN_LOP;
         
         private global::System.Data.DataRelation relationFK_KHOA_COSO;
         
         private global::System.Data.DataRelation relationFK_LOP_KHOA;
         
-        private global::System.Data.DataRelation relationFK_SINHVIEN_LOP;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public TRACNGHIEMDataSet1() {
+        public TRACNGHIEMDataSetSV1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -81,7 +81,7 @@ namespace ThiTracNghiem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected TRACNGHIEMDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected TRACNGHIEMDataSetSV1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -297,7 +297,7 @@ namespace ThiTracNghiem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            TRACNGHIEMDataSet1 cln = ((TRACNGHIEMDataSet1)(base.Clone()));
+            TRACNGHIEMDataSetSV1 cln = ((TRACNGHIEMDataSetSV1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -454,24 +454,24 @@ namespace ThiTracNghiem {
                     this.tableSP_DangNhapSV.InitVars();
                 }
             }
-            this.relationFK_BANGDIEM_MONHOC = this.Relations["FK_BANGDIEM_MONHOC"];
             this.relationFK_BANGDIEM_SINHVIEN1 = this.Relations["FK_BANGDIEM_SINHVIEN1"];
+            this.relationFK_BANGDIEM_MONHOC = this.Relations["FK_BANGDIEM_MONHOC"];
             this.relationFK_BODE_GIAOVIEN = this.Relations["FK_BODE_GIAOVIEN"];
             this.relationFK_BODE_MONHOC = this.Relations["FK_BODE_MONHOC"];
-            this.relationFK_GIAOVIEN_DANGKY_GIAOVIEN1 = this.Relations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"];
             this.relationFK_GIAOVIEN_DANGKY_LOP = this.Relations["FK_GIAOVIEN_DANGKY_LOP"];
+            this.relationFK_GIAOVIEN_DANGKY_GIAOVIEN1 = this.Relations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"];
             this.relationFK_GIAOVIEN_DANGKY_MONHOC1 = this.Relations["FK_GIAOVIEN_DANGKY_MONHOC1"];
+            this.relationFK_SINHVIEN_LOP = this.Relations["FK_SINHVIEN_LOP"];
             this.relationFK_KHOA_COSO = this.Relations["FK_KHOA_COSO"];
             this.relationFK_LOP_KHOA = this.Relations["FK_LOP_KHOA"];
-            this.relationFK_SINHVIEN_LOP = this.Relations["FK_SINHVIEN_LOP"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "TRACNGHIEMDataSet1";
+            this.DataSetName = "TRACNGHIEMDataSetSV1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/TRACNGHIEMDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/TRACNGHIEMDataSetSV1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableBANGDIEM = new BANGDIEMDataTable();
@@ -496,14 +496,71 @@ namespace ThiTracNghiem {
             base.Tables.Add(this.tableSP_DangNhap);
             this.tableSP_DangNhapSV = new SP_DangNhapSVDataTable();
             base.Tables.Add(this.tableSP_DangNhapSV);
-            this.relationFK_BANGDIEM_MONHOC = new global::System.Data.DataRelation("FK_BANGDIEM_MONHOC", new global::System.Data.DataColumn[] {
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_BANGDIEM_SINHVIEN1", new global::System.Data.DataColumn[] {
+                        this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBANGDIEM.MASVColumn});
+            this.tableBANGDIEM.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_BANGDIEM_MONHOC", new global::System.Data.DataColumn[] {
                         this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBANGDIEM.MAMHColumn}, false);
-            this.Relations.Add(this.relationFK_BANGDIEM_MONHOC);
+                        this.tableBANGDIEM.MAMHColumn});
+            this.tableBANGDIEM.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_BODE_GIAOVIEN", new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBODE.MAGVColumn});
+            this.tableBODE.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_BODE_MONHOC", new global::System.Data.DataColumn[] {
+                        this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBODE.MAMHColumn});
+            this.tableBODE.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_GIAOVIEN_DANGKY_LOP", new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN_DANGKY.MALOPColumn});
+            this.tableGIAOVIEN_DANGKY.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_GIAOVIEN_DANGKY_GIAOVIEN1", new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN_DANGKY.MAGVColumn});
+            this.tableGIAOVIEN_DANGKY.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_GIAOVIEN_DANGKY_MONHOC1", new global::System.Data.DataColumn[] {
+                        this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN_DANGKY.MAMHColumn});
+            this.tableGIAOVIEN_DANGKY.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_SINHVIEN_LOP", new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSINHVIEN.MALOPColumn});
+            this.tableSINHVIEN.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_BANGDIEM_SINHVIEN1 = new global::System.Data.DataRelation("FK_BANGDIEM_SINHVIEN1", new global::System.Data.DataColumn[] {
                         this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
                         this.tableBANGDIEM.MASVColumn}, false);
             this.Relations.Add(this.relationFK_BANGDIEM_SINHVIEN1);
+            this.relationFK_BANGDIEM_MONHOC = new global::System.Data.DataRelation("FK_BANGDIEM_MONHOC", new global::System.Data.DataColumn[] {
+                        this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBANGDIEM.MAMHColumn}, false);
+            this.Relations.Add(this.relationFK_BANGDIEM_MONHOC);
             this.relationFK_BODE_GIAOVIEN = new global::System.Data.DataRelation("FK_BODE_GIAOVIEN", new global::System.Data.DataColumn[] {
                         this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
                         this.tableBODE.MAGVColumn}, false);
@@ -512,18 +569,22 @@ namespace ThiTracNghiem {
                         this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
                         this.tableBODE.MAMHColumn}, false);
             this.Relations.Add(this.relationFK_BODE_MONHOC);
-            this.relationFK_GIAOVIEN_DANGKY_GIAOVIEN1 = new global::System.Data.DataRelation("FK_GIAOVIEN_DANGKY_GIAOVIEN1", new global::System.Data.DataColumn[] {
-                        this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
-                        this.tableGIAOVIEN_DANGKY.MAGVColumn}, false);
-            this.Relations.Add(this.relationFK_GIAOVIEN_DANGKY_GIAOVIEN1);
             this.relationFK_GIAOVIEN_DANGKY_LOP = new global::System.Data.DataRelation("FK_GIAOVIEN_DANGKY_LOP", new global::System.Data.DataColumn[] {
                         this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
                         this.tableGIAOVIEN_DANGKY.MALOPColumn}, false);
             this.Relations.Add(this.relationFK_GIAOVIEN_DANGKY_LOP);
+            this.relationFK_GIAOVIEN_DANGKY_GIAOVIEN1 = new global::System.Data.DataRelation("FK_GIAOVIEN_DANGKY_GIAOVIEN1", new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN_DANGKY.MAGVColumn}, false);
+            this.Relations.Add(this.relationFK_GIAOVIEN_DANGKY_GIAOVIEN1);
             this.relationFK_GIAOVIEN_DANGKY_MONHOC1 = new global::System.Data.DataRelation("FK_GIAOVIEN_DANGKY_MONHOC1", new global::System.Data.DataColumn[] {
                         this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
                         this.tableGIAOVIEN_DANGKY.MAMHColumn}, false);
             this.Relations.Add(this.relationFK_GIAOVIEN_DANGKY_MONHOC1);
+            this.relationFK_SINHVIEN_LOP = new global::System.Data.DataRelation("FK_SINHVIEN_LOP", new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSINHVIEN.MALOPColumn}, false);
+            this.Relations.Add(this.relationFK_SINHVIEN_LOP);
             this.relationFK_KHOA_COSO = new global::System.Data.DataRelation("FK_KHOA_COSO", new global::System.Data.DataColumn[] {
                         this.tableCOSO.MACSColumn}, new global::System.Data.DataColumn[] {
                         this.tableKHOA.MACSColumn}, false);
@@ -532,10 +593,6 @@ namespace ThiTracNghiem {
                         this.tableKHOA.MAKHColumn}, new global::System.Data.DataColumn[] {
                         this.tableLOP.MAKHColumn}, false);
             this.Relations.Add(this.relationFK_LOP_KHOA);
-            this.relationFK_SINHVIEN_LOP = new global::System.Data.DataRelation("FK_SINHVIEN_LOP", new global::System.Data.DataColumn[] {
-                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSINHVIEN.MALOPColumn}, false);
-            this.Relations.Add(this.relationFK_SINHVIEN_LOP);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -615,7 +672,7 @@ namespace ThiTracNghiem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+            TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -990,7 +1047,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1404,7 +1461,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1709,7 +1766,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2043,7 +2100,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2432,7 +2489,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2504,8 +2561,6 @@ namespace ThiTracNghiem {
             
             private global::System.Data.DataColumn columnMACS;
             
-            private global::System.Data.DataColumn columnrowguid;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public KHOADataTable() {
@@ -2565,14 +2620,6 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn rowguidColumn {
-                get {
-                    return this.columnrowguid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2608,13 +2655,12 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KHOARow AddKHOARow(string MAKH, string TENKH, COSORow parentCOSORowByFK_KHOA_COSO, System.Guid rowguid) {
+            public KHOARow AddKHOARow(string MAKH, string TENKH, COSORow parentCOSORowByFK_KHOA_COSO) {
                 KHOARow rowKHOARow = ((KHOARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MAKH,
                         TENKH,
-                        null,
-                        rowguid};
+                        null};
                 if ((parentCOSORowByFK_KHOA_COSO != null)) {
                     columnValuesArray[2] = parentCOSORowByFK_KHOA_COSO[0];
                 }
@@ -2650,7 +2696,6 @@ namespace ThiTracNghiem {
                 this.columnMAKH = base.Columns["MAKH"];
                 this.columnTENKH = base.Columns["TENKH"];
                 this.columnMACS = base.Columns["MACS"];
-                this.columnrowguid = base.Columns["rowguid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2662,8 +2707,6 @@ namespace ThiTracNghiem {
                 base.Columns.Add(this.columnTENKH);
                 this.columnMACS = new global::System.Data.DataColumn("MACS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMACS);
-                this.columnrowguid = new global::System.Data.DataColumn("rowguid", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrowguid);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMAKH}, true));
                 this.columnMAKH.AllowDBNull = false;
@@ -2673,7 +2716,6 @@ namespace ThiTracNghiem {
                 this.columnTENKH.MaxLength = 50;
                 this.columnMACS.AllowDBNull = false;
                 this.columnMACS.MaxLength = 3;
-                this.columnrowguid.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2741,7 +2783,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3049,7 +3091,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3338,7 +3380,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3689,7 +3731,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4012,7 +4054,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4303,7 +4345,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TRACNGHIEMDataSet1 ds = new TRACNGHIEMDataSet1();
+                TRACNGHIEMDataSetSV1 ds = new TRACNGHIEMDataSetSV1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4470,23 +4512,23 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MONHOCRow MONHOCRow {
-                get {
-                    return ((MONHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_BANGDIEM_MONHOC"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_BANGDIEM_MONHOC"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SINHVIENRow SINHVIENRow {
                 get {
                     return ((SINHVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_BANGDIEM_SINHVIEN1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_BANGDIEM_SINHVIEN1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MONHOCRow MONHOCRow {
+                get {
+                    return ((MONHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_BANGDIEM_MONHOC"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_BANGDIEM_MONHOC"]);
                 }
             }
             
@@ -5075,23 +5117,23 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BODERow[] GetBODERows() {
-                if ((this.Table.ChildRelations["FK_BODE_GIAOVIEN"] == null)) {
-                    return new BODERow[0];
-                }
-                else {
-                    return ((BODERow[])(base.GetChildRows(this.Table.ChildRelations["FK_BODE_GIAOVIEN"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GIAOVIEN_DANGKYRow[] GetGIAOVIEN_DANGKYRows() {
                 if ((this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"] == null)) {
                     return new GIAOVIEN_DANGKYRow[0];
                 }
                 else {
                     return ((GIAOVIEN_DANGKYRow[])(base.GetChildRows(this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BODERow[] GetBODERows() {
+                if ((this.Table.ChildRelations["FK_BODE_GIAOVIEN"] == null)) {
+                    return new BODERow[0];
+                }
+                else {
+                    return ((BODERow[])(base.GetChildRows(this.Table.ChildRelations["FK_BODE_GIAOVIEN"])));
                 }
             }
         }
@@ -5236,23 +5278,23 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GIAOVIENRow GIAOVIENRow {
-                get {
-                    return ((GIAOVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LOPRow LOPRow {
                 get {
                     return ((LOPRow)(this.GetParentRow(this.Table.ParentRelations["FK_GIAOVIEN_DANGKY_LOP"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_GIAOVIEN_DANGKY_LOP"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GIAOVIENRow GIAOVIENRow {
+                get {
+                    return ((GIAOVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_GIAOVIEN_DANGKY_GIAOVIEN1"]);
                 }
             }
             
@@ -5377,17 +5419,6 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid rowguid {
-                get {
-                    return ((global::System.Guid)(this[this.tableKHOA.rowguidColumn]));
-                }
-                set {
-                    this[this.tableKHOA.rowguidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public COSORow COSORow {
                 get {
                     return ((COSORow)(this.GetParentRow(this.Table.ParentRelations["FK_KHOA_COSO"])));
@@ -5497,23 +5528,23 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GIAOVIEN_DANGKYRow[] GetGIAOVIEN_DANGKYRows() {
-                if ((this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_LOP"] == null)) {
-                    return new GIAOVIEN_DANGKYRow[0];
-                }
-                else {
-                    return ((GIAOVIEN_DANGKYRow[])(base.GetChildRows(this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_LOP"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SINHVIENRow[] GetSINHVIENRows() {
                 if ((this.Table.ChildRelations["FK_SINHVIEN_LOP"] == null)) {
                     return new SINHVIENRow[0];
                 }
                 else {
                     return ((SINHVIENRow[])(base.GetChildRows(this.Table.ChildRelations["FK_SINHVIEN_LOP"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GIAOVIEN_DANGKYRow[] GetGIAOVIEN_DANGKYRows() {
+                if ((this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_LOP"] == null)) {
+                    return new GIAOVIEN_DANGKYRow[0];
+                }
+                else {
+                    return ((GIAOVIEN_DANGKYRow[])(base.GetChildRows(this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_LOP"])));
                 }
             }
         }
@@ -5584,12 +5615,12 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BANGDIEMRow[] GetBANGDIEMRows() {
-                if ((this.Table.ChildRelations["FK_BANGDIEM_MONHOC"] == null)) {
-                    return new BANGDIEMRow[0];
+            public GIAOVIEN_DANGKYRow[] GetGIAOVIEN_DANGKYRows() {
+                if ((this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_MONHOC1"] == null)) {
+                    return new GIAOVIEN_DANGKYRow[0];
                 }
                 else {
-                    return ((BANGDIEMRow[])(base.GetChildRows(this.Table.ChildRelations["FK_BANGDIEM_MONHOC"])));
+                    return ((GIAOVIEN_DANGKYRow[])(base.GetChildRows(this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_MONHOC1"])));
                 }
             }
             
@@ -5606,12 +5637,12 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GIAOVIEN_DANGKYRow[] GetGIAOVIEN_DANGKYRows() {
-                if ((this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_MONHOC1"] == null)) {
-                    return new GIAOVIEN_DANGKYRow[0];
+            public BANGDIEMRow[] GetBANGDIEMRows() {
+                if ((this.Table.ChildRelations["FK_BANGDIEM_MONHOC"] == null)) {
+                    return new BANGDIEMRow[0];
                 }
                 else {
-                    return ((GIAOVIEN_DANGKYRow[])(base.GetChildRows(this.Table.ChildRelations["FK_GIAOVIEN_DANGKY_MONHOC1"])));
+                    return ((BANGDIEMRow[])(base.GetChildRows(this.Table.ChildRelations["FK_BANGDIEM_MONHOC"])));
                 }
             }
         }
@@ -6359,7 +6390,7 @@ namespace ThiTracNghiem {
         }
     }
 }
-namespace ThiTracNghiem.TRACNGHIEMDataSet1TableAdapters {
+namespace ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters {
     
     
     /// <summary>
@@ -6558,7 +6589,7 @@ SELECT MASV, MAMH, LAN, NGAYTHI, DIEM, BAITHI, rowguid FROM BANGDIEM WHERE (LAN 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.BANGDIEMDataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.BANGDIEMDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6571,9 +6602,9 @@ SELECT MASV, MAMH, LAN, NGAYTHI, DIEM, BAITHI, rowguid FROM BANGDIEM WHERE (LAN 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.BANGDIEMDataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.BANGDIEMDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.BANGDIEMDataTable dataTable = new TRACNGHIEMDataSet1.BANGDIEMDataTable();
+            TRACNGHIEMDataSetSV1.BANGDIEMDataTable dataTable = new TRACNGHIEMDataSetSV1.BANGDIEMDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6581,14 +6612,14 @@ SELECT MASV, MAMH, LAN, NGAYTHI, DIEM, BAITHI, rowguid FROM BANGDIEM WHERE (LAN 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.BANGDIEMDataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.BANGDIEMDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "BANGDIEM");
         }
         
@@ -7016,7 +7047,7 @@ SELECT CAUHOI, MAMH, TRINHDO, NOIDUNG, A, B, C, D, DAP_AN, MAGV, rowguid FROM BO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.BODEDataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.BODEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7029,9 +7060,9 @@ SELECT CAUHOI, MAMH, TRINHDO, NOIDUNG, A, B, C, D, DAP_AN, MAGV, rowguid FROM BO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.BODEDataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.BODEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.BODEDataTable dataTable = new TRACNGHIEMDataSet1.BODEDataTable();
+            TRACNGHIEMDataSetSV1.BODEDataTable dataTable = new TRACNGHIEMDataSetSV1.BODEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7039,14 +7070,14 @@ SELECT CAUHOI, MAMH, TRINHDO, NOIDUNG, A, B, C, D, DAP_AN, MAGV, rowguid FROM BO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.BODEDataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.BODEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "BODE");
         }
         
@@ -7534,7 +7565,7 @@ SELECT MACS, TENCS, DIACHI, rowguid FROM COSO WHERE (MACS = @MACS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.COSODataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.COSODataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7547,9 +7578,9 @@ SELECT MACS, TENCS, DIACHI, rowguid FROM COSO WHERE (MACS = @MACS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.COSODataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.COSODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.COSODataTable dataTable = new TRACNGHIEMDataSet1.COSODataTable();
+            TRACNGHIEMDataSetSV1.COSODataTable dataTable = new TRACNGHIEMDataSetSV1.COSODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7557,14 +7588,14 @@ SELECT MACS, TENCS, DIACHI, rowguid FROM COSO WHERE (MACS = @MACS)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.COSODataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.COSODataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "COSO");
         }
         
@@ -7933,7 +7964,7 @@ SELECT MAGV, HO, TEN, DIACHI, MAKH, rowguid FROM GIAOVIEN WHERE (MAGV = @MAGV)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.GIAOVIENDataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.GIAOVIENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7946,9 +7977,9 @@ SELECT MAGV, HO, TEN, DIACHI, MAKH, rowguid FROM GIAOVIEN WHERE (MAGV = @MAGV)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.GIAOVIENDataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.GIAOVIENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.GIAOVIENDataTable dataTable = new TRACNGHIEMDataSet1.GIAOVIENDataTable();
+            TRACNGHIEMDataSetSV1.GIAOVIENDataTable dataTable = new TRACNGHIEMDataSetSV1.GIAOVIENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7956,14 +7987,14 @@ SELECT MAGV, HO, TEN, DIACHI, MAKH, rowguid FROM GIAOVIEN WHERE (MAGV = @MAGV)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.GIAOVIENDataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.GIAOVIENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "GIAOVIEN");
         }
         
@@ -8409,7 +8440,7 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN, rowguid FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.GIAOVIEN_DANGKYDataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.GIAOVIEN_DANGKYDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8422,9 +8453,9 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN, rowguid FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.GIAOVIEN_DANGKYDataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.GIAOVIEN_DANGKYDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.GIAOVIEN_DANGKYDataTable dataTable = new TRACNGHIEMDataSet1.GIAOVIEN_DANGKYDataTable();
+            TRACNGHIEMDataSetSV1.GIAOVIEN_DANGKYDataTable dataTable = new TRACNGHIEMDataSetSV1.GIAOVIEN_DANGKYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8432,14 +8463,14 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN, rowguid FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.GIAOVIEN_DANGKYDataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.GIAOVIEN_DANGKYDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "GIAOVIEN_DANGKY");
         }
         
@@ -8868,40 +8899,35 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN, rowguid FRO
             tableMapping.ColumnMappings.Add("MAKH", "MAKH");
             tableMapping.ColumnMappings.Add("TENKH", "TENKH");
             tableMapping.ColumnMappings.Add("MACS", "MACS");
-            tableMapping.ColumnMappings.Add("rowguid", "rowguid");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[KHOA] WHERE (([MAKH] = @Original_MAKH) AND ([TENKH] = @Origina" +
-                "l_TENKH) AND ([MACS] = @Original_MACS) AND ([rowguid] = @Original_rowguid))";
+                "l_TENKH) AND ([MACS] = @Original_MACS))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MAKH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAKH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TENKH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENKH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MACS", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MACS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[KHOA] ([MAKH], [TENKH], [MACS], [rowguid]) VALUES (@MAKH, @TEN" +
-                "KH, @MACS, @rowguid);\r\nSELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH =" +
-                " @MAKH)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[KHOA] ([MAKH], [TENKH], [MACS]) VALUES (@MAKH, @TENKH, @MACS);" +
+                "\r\nSELECT MAKH, TENKH, MACS FROM KHOA WHERE (MAKH = @MAKH)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAKH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TENKH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MACS", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MACS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[KHOA] SET [MAKH] = @MAKH, [TENKH] = @TENKH, [MACS] = @MACS, [rowguid] = @rowguid WHERE (([MAKH] = @Original_MAKH) AND ([TENKH] = @Original_TENKH) AND ([MACS] = @Original_MACS) AND ([rowguid] = @Original_rowguid));
-SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[KHOA] SET [MAKH] = @MAKH, [TENKH] = @TENKH, [MACS] = @MACS WHERE ((" +
+                "[MAKH] = @Original_MAKH) AND ([TENKH] = @Original_TENKH) AND ([MACS] = @Original" +
+                "_MACS));\r\nSELECT MAKH, TENKH, MACS FROM KHOA WHERE (MAKH = @MAKH)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAKH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TENKH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MACS", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MACS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MAKH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAKH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TENKH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENKH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MACS", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MACS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8917,7 +8943,7 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MAKH, TENKH, MACS, rowguid FROM dbo.KHOA";
+            this._commandCollection[0].CommandText = "SELECT MAKH, TENKH, MACS FROM dbo.KHOA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8925,7 +8951,7 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.KHOADataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.KHOADataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8938,9 +8964,9 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.KHOADataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.KHOADataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.KHOADataTable dataTable = new TRACNGHIEMDataSet1.KHOADataTable();
+            TRACNGHIEMDataSetSV1.KHOADataTable dataTable = new TRACNGHIEMDataSetSV1.KHOADataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8948,14 +8974,14 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.KHOADataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.KHOADataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "KHOA");
         }
         
@@ -8978,7 +9004,7 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_MAKH, string Original_TENKH, string Original_MACS, System.Guid Original_rowguid) {
+        public virtual int Delete(string Original_MAKH, string Original_TENKH, string Original_MACS) {
             if ((Original_MAKH == null)) {
                 throw new global::System.ArgumentNullException("Original_MAKH");
             }
@@ -8997,7 +9023,6 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_MACS));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.Guid)(Original_rowguid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9018,7 +9043,7 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MAKH, string TENKH, string MACS, System.Guid rowguid) {
+        public virtual int Insert(string MAKH, string TENKH, string MACS) {
             if ((MAKH == null)) {
                 throw new global::System.ArgumentNullException("MAKH");
             }
@@ -9037,7 +9062,6 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(MACS));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.Guid)(rowguid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9058,7 +9082,7 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MAKH, string TENKH, string MACS, System.Guid rowguid, string Original_MAKH, string Original_TENKH, string Original_MACS, System.Guid Original_rowguid) {
+        public virtual int Update(string MAKH, string TENKH, string MACS, string Original_MAKH, string Original_TENKH, string Original_MACS) {
             if ((MAKH == null)) {
                 throw new global::System.ArgumentNullException("MAKH");
             }
@@ -9077,26 +9101,24 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(MACS));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.Guid)(rowguid));
             if ((Original_MAKH == null)) {
                 throw new global::System.ArgumentNullException("Original_MAKH");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_MAKH));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_MAKH));
             }
             if ((Original_TENKH == null)) {
                 throw new global::System.ArgumentNullException("Original_TENKH");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_TENKH));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_TENKH));
             }
             if ((Original_MACS == null)) {
                 throw new global::System.ArgumentNullException("Original_MACS");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_MACS));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_MACS));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.Guid)(Original_rowguid));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9117,8 +9139,8 @@ SELECT MAKH, TENKH, MACS, rowguid FROM KHOA WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TENKH, string MACS, System.Guid rowguid, string Original_MAKH, string Original_TENKH, string Original_MACS, System.Guid Original_rowguid) {
-            return this.Update(Original_MAKH, TENKH, MACS, rowguid, Original_MAKH, Original_TENKH, Original_MACS, Original_rowguid);
+        public virtual int Update(string TENKH, string MACS, string Original_MAKH, string Original_TENKH, string Original_MACS) {
+            return this.Update(Original_MAKH, TENKH, MACS, Original_MAKH, Original_TENKH, Original_MACS);
         }
     }
     
@@ -9306,7 +9328,7 @@ SELECT MALOP, TENLOP, MAKH, rowguid FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.LOPDataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.LOPDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9319,9 +9341,9 @@ SELECT MALOP, TENLOP, MAKH, rowguid FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.LOPDataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.LOPDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.LOPDataTable dataTable = new TRACNGHIEMDataSet1.LOPDataTable();
+            TRACNGHIEMDataSetSV1.LOPDataTable dataTable = new TRACNGHIEMDataSetSV1.LOPDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9329,14 +9351,14 @@ SELECT MALOP, TENLOP, MAKH, rowguid FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.LOPDataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.LOPDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "LOP");
         }
         
@@ -9685,7 +9707,7 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.MONHOCDataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.MONHOCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9698,9 +9720,9 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.MONHOCDataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.MONHOCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.MONHOCDataTable dataTable = new TRACNGHIEMDataSet1.MONHOCDataTable();
+            TRACNGHIEMDataSetSV1.MONHOCDataTable dataTable = new TRACNGHIEMDataSetSV1.MONHOCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9708,14 +9730,14 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.MONHOCDataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.MONHOCDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "MONHOC");
         }
         
@@ -10068,7 +10090,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.SINHVIENDataTable dataTable) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.SINHVIENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10081,9 +10103,9 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.SINHVIENDataTable GetData() {
+        public virtual TRACNGHIEMDataSetSV1.SINHVIENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TRACNGHIEMDataSet1.SINHVIENDataTable dataTable = new TRACNGHIEMDataSet1.SINHVIENDataTable();
+            TRACNGHIEMDataSetSV1.SINHVIENDataTable dataTable = new TRACNGHIEMDataSetSV1.SINHVIENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10091,14 +10113,14 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1.SINHVIENDataTable dataTable) {
+        public virtual int Update(TRACNGHIEMDataSetSV1.SINHVIENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int Update(TRACNGHIEMDataSetSV1 dataSet) {
             return this.Adapter.Update(dataSet, "SINHVIEN");
         }
         
@@ -10509,7 +10531,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.SP_DangNhapDataTable dataTable, string login) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.SP_DangNhapDataTable dataTable, string login) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((login == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -10528,7 +10550,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.SP_DangNhapDataTable GetData(string login) {
+        public virtual TRACNGHIEMDataSetSV1.SP_DangNhapDataTable GetData(string login) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((login == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -10536,7 +10558,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(login));
             }
-            TRACNGHIEMDataSet1.SP_DangNhapDataTable dataTable = new TRACNGHIEMDataSet1.SP_DangNhapDataTable();
+            TRACNGHIEMDataSetSV1.SP_DangNhapDataTable dataTable = new TRACNGHIEMDataSetSV1.SP_DangNhapDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10692,7 +10714,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TRACNGHIEMDataSet1.SP_DangNhapSVDataTable dataTable, string masv) {
+        public virtual int Fill(TRACNGHIEMDataSetSV1.SP_DangNhapSVDataTable dataTable, string masv) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((masv == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -10711,7 +10733,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TRACNGHIEMDataSet1.SP_DangNhapSVDataTable GetData(string masv) {
+        public virtual TRACNGHIEMDataSetSV1.SP_DangNhapSVDataTable GetData(string masv) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((masv == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -10719,7 +10741,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(masv));
             }
-            TRACNGHIEMDataSet1.SP_DangNhapSVDataTable dataTable = new TRACNGHIEMDataSet1.SP_DangNhapSVDataTable();
+            TRACNGHIEMDataSetSV1.SP_DangNhapSVDataTable dataTable = new TRACNGHIEMDataSetSV1.SP_DangNhapSVDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11000,7 +11022,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(TRACNGHIEMDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(TRACNGHIEMDataSetSV1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cOSOTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.COSO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -11091,7 +11113,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(TRACNGHIEMDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(TRACNGHIEMDataSetSV1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cOSOTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.COSO.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -11173,7 +11195,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(TRACNGHIEMDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(TRACNGHIEMDataSetSV1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._gIAOVIEN_DANGKYTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.GIAOVIEN_DANGKY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -11279,7 +11301,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, rowguid FROM SINHVIEN WHERE (MASV
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(TRACNGHIEMDataSet1 dataSet) {
+        public virtual int UpdateAll(TRACNGHIEMDataSetSV1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

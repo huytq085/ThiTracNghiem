@@ -100,7 +100,7 @@ namespace ThiTracNghiem.Form
             Program.servername = cbbCoSo.SelectedValue.ToString();
             Program.mlogin = txtUsername.Text;
             Program.password = txtPassword.Text;
-            
+            Program.bds_dspm = bdsPM;
             if (Program.password == "")
             {
                 if (!DangNhapSV(Program.mlogin))
@@ -118,6 +118,11 @@ namespace ThiTracNghiem.Form
                 frmMain.Closed += (s, args) => this.Close();
                 frmMain.Show();
             }
+        }
+
+        private void v_DS_PHANMANHBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -40,6 +40,9 @@
     <Reference Include="DevExpress.XtraBars.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v17.1" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\FrmKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmKhoa.Designer.cs">
+      <DependentUpon>FrmKhoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +73,11 @@
     <Compile Include="Form\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\test.cs">
+    <Compile Include="Form\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
+    <Compile Include="Form\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,16 +91,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TRACNGHIEMDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TRACNGHIEMDataSet1.Designer.cs">
+    <Compile Include="TRACNGHIEMDataSetSV1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TRACNGHIEMDataSet1.xsd</DependentUpon>
+      <DependentUpon>TRACNGHIEMDataSetSV1.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\FrmKhoa.resx">
+      <DependentUpon>FrmKhoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -129,16 +144,16 @@
     <None Include="TRACNGHIEMDataSet.xss">
       <DependentUpon>TRACNGHIEMDataSet.xsd</DependentUpon>
     </None>
-    <None Include="TRACNGHIEMDataSet1.xsc">
-      <DependentUpon>TRACNGHIEMDataSet1.xsd</DependentUpon>
+    <None Include="TRACNGHIEMDataSetSV1.xsc">
+      <DependentUpon>TRACNGHIEMDataSetSV1.xsd</DependentUpon>
     </None>
-    <None Include="TRACNGHIEMDataSet1.xsd">
+    <None Include="TRACNGHIEMDataSetSV1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TRACNGHIEMDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>TRACNGHIEMDataSetSV1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="TRACNGHIEMDataSet1.xss">
-      <DependentUpon>TRACNGHIEMDataSet1.xsd</DependentUpon>
+    <None Include="TRACNGHIEMDataSetSV1.xss">
+      <DependentUpon>TRACNGHIEMDataSetSV1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -31,10 +31,8 @@ namespace ThiTracNghiem.Form
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Hide();
             FrmKhoa frmKhoa = new FrmKhoa();
-            frmKhoa.Closed += (s, args) => this.Show();
-            frmKhoa.Show();
+            frmKhoa.ShowDialog();
         }
 
         private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)

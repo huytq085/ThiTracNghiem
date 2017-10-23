@@ -46,15 +46,15 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.txtFooterId = new DevExpress.XtraBars.BarHeaderItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.txtFooterFullName = new DevExpress.XtraBars.BarHeaderItem();
+            this.txtFooterClass = new DevExpress.XtraBars.BarHeaderItem();
             this.Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.txtFooterFullName = new DevExpress.XtraBars.BarHeaderItem();
-            this.txtFooterClass = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,6 +207,24 @@
             this.txtFooterId.Id = 17;
             this.txtFooterId.Name = "txtFooterId";
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 18;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // txtFooterFullName
+            // 
+            this.txtFooterFullName.Caption = "Full Name";
+            this.txtFooterFullName.Id = 19;
+            this.txtFooterFullName.Name = "txtFooterFullName";
+            // 
+            // txtFooterClass
+            // 
+            this.txtFooterClass.Caption = "Class";
+            this.txtFooterClass.Id = 20;
+            this.txtFooterClass.Name = "txtFooterClass";
+            // 
             // Home
             // 
             this.Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -256,24 +274,6 @@
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "ribbonPage3";
             // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "barStaticItem1";
-            this.barStaticItem1.Id = 18;
-            this.barStaticItem1.Name = "barStaticItem1";
-            // 
-            // txtFooterFullName
-            // 
-            this.txtFooterFullName.Caption = "Full Name";
-            this.txtFooterFullName.Id = 19;
-            this.txtFooterFullName.Name = "txtFooterFullName";
-            // 
-            // txtFooterClass
-            // 
-            this.txtFooterClass.Caption = "Class";
-            this.txtFooterClass.Id = 20;
-            this.txtFooterClass.Name = "txtFooterClass";
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,6 +285,7 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Main";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);

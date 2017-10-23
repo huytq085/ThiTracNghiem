@@ -53,9 +53,16 @@ namespace ThiTracNghiem.Form
 
         private void cbbCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.servername = cbbCoSo.SelectedValue.ToString();
-            Console.WriteLine(Program.servername);
-
+            try
+            {
+                if (cbbCoSo.SelectedValue.ToString() != null)
+                {
+                    Program.servername = cbbCoSo.SelectedValue.ToString();
+                }
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private bool DangNhapSV(string username)
@@ -123,6 +130,20 @@ namespace ThiTracNghiem.Form
         private void v_DS_PHANMANHBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine(e.KeyCode);
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.simpleButton1_Click(sender, e);
+            }
         }
     }
 }

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tENCSLabel = new System.Windows.Forms.Label();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -46,7 +47,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
-            this.bdsPM = new System.Windows.Forms.BindingSource();
+            this.bdsPM = new System.Windows.Forms.BindingSource(this.components);
             this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -69,9 +70,9 @@
             this.tENCSLabel.AutoSize = true;
             this.tENCSLabel.Location = new System.Drawing.Point(14, 61);
             this.tENCSLabel.Name = "tENCSLabel";
-            this.tENCSLabel.Size = new System.Drawing.Size(43, 13);
+            this.tENCSLabel.Size = new System.Drawing.Size(34, 13);
             this.tENCSLabel.TabIndex = 11;
-            this.tENCSLabel.Text = "TENCS:";
+            this.tENCSLabel.Text = "Cơ sở";
             this.tENCSLabel.UseWaitCursor = true;
             // 
             // barManager1
@@ -186,6 +187,8 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(205, 20);
             this.txtUsername.TabIndex = 5;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // txtPassword
             // 
@@ -199,6 +202,7 @@
             this.txtPassword.Size = new System.Drawing.Size(205, 20);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // simpleButton1
             // 
@@ -207,7 +211,6 @@
             this.simpleButton1.Size = new System.Drawing.Size(205, 23);
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Đăng nhập";
-            this.simpleButton1.UseWaitCursor = true;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // panelControl1
@@ -235,7 +238,6 @@
             this.cbbCoSo.Name = "cbbCoSo";
             this.cbbCoSo.Size = new System.Drawing.Size(205, 21);
             this.cbbCoSo.TabIndex = 13;
-            this.cbbCoSo.UseWaitCursor = true;
             this.cbbCoSo.ValueMember = "TENSERVER";
             this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
             // 

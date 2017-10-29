@@ -64,6 +64,7 @@ namespace ThiTracNghiem
             try
             {
                 myreader = sqlcmd.ExecuteReader(); return myreader;
+
             }
             catch (SqlException ex)
             {
@@ -71,39 +72,6 @@ namespace ThiTracNghiem
                 MessageBox.Show(ex.Message);
                 return null;
             }
-        }
-        public static SqlDataReader ExecSqlDataReader(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
-                    CommandType cmdType = CommandType.StoredProcedure)
-        {
-            try
-            {
-                SqlDataReader reader = null;
-                if (Program.conn == null || Program.conn.State == ConnectionState.Closed)
-                    KetNoi();
-                using (SqlCommand sqlCmd = new SqlCommand(_cmd, Program.conn) { CommandType = CommandType.Text })
-                {
-                    for (int i = 0; i < NoParam; i++)
-                    {
-                        sqlCmd.Parameters.AddWithValue(name[i], value[i]);
-                    }
-                    sqlCmd.CommandType = cmdType;
-                    try
-                    {
-                        reader = sqlCmd.ExecuteReader();
-                    } catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                    }
-                }
-                return reader;
-            }
-            catch (SqlException)
-            {
-                //MessageBox.Show(e.Message);
-                Program.conn.Close();
-                return null;
-            }
-
         }
         public static DataTable ExecSqlDataTable(String cmd, string connstr)
         {
@@ -113,6 +81,27 @@ namespace ThiTracNghiem
             da.Fill(dt);
             conn.Close();
             return dt;
+        }
+
+        public static int ExecSqlNonQuery(String strlenh)
+        {
+            SqlCommand Sqlcmd = new SqlCommand(strlenh, conn);
+            Sqlcmd.CommandType = CommandType.Text;
+            Sqlcmd.CommandTimeout = 600;// 10 phut 
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            try
+            {
+                Sqlcmd.ExecuteNonQuery(); conn.Close();
+                return 0;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("Error converting data type varchar to int"))
+                    MessageBox.Show("Bạn format Cell lại cột \"Ngày Thi\" qua kiểu Number hoặc mở File Excel.");
+                else MessageBox.Show(ex.Message);
+                conn.Close();
+                return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
+            }
         }
         [STAThread]
         static void Main()

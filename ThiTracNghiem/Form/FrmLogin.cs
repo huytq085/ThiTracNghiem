@@ -65,24 +65,26 @@ namespace ThiTracNghiem.Form
             }
         }
 
-        private bool DangNhapSV(string username)
+        private bool Login(string username)
         {
-            Program.username = ConnectionSettings.Default.sinhvien;
-            Program.password = ConnectionSettings.Default.svpwd;
-            
-            string[] name = { "@masv" };
-            object[] param = { username };
-            SqlDataReader reader = Program.ExecSqlDataReader("SP_DangNhapSV", name, param, 1);
+            if (Program.password == "")
+            {
+                Program.username = ConnectionSettings.Default.sinhvien;
+                Program.password = ConnectionSettings.Default.svpwd;
+            }
+            if (Program.KetNoi() == 0) return false;
+            String strLenh = "EXEC SP_DangNhap '" + Program.mlogin + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
             if (reader == null)
                 return false;
             reader.Read();
             if (reader.HasRows)
             {
-                Program.hoTen = reader["Ho ten"].ToString();
-                Program.nhom = "Sinh viên";
+                Program.donVi = reader["donvi"].ToString();
+                Program.tenDonVi = reader["tendonvi"].ToString();
+                Program.hoTen = reader["hoten"].ToString();
+                Program.nhom = reader["nhom"].ToString();
                 Program.id = username;
-                Program.donVi = reader["malop"].ToString();
-                Program.tenDonVi = reader["tenlop"].ToString();
                 Program.conn.Close();
                 reader.Close();
             }
@@ -108,15 +110,13 @@ namespace ThiTracNghiem.Form
             Program.mlogin = txtUsername.Text;
             Program.password = txtPassword.Text;
             Program.bds_dspm = bdsPM;
-            if (Program.password == "")
+            
+            if (!Login(Program.mlogin))
+                MessageBox.Show("Sai thông tin tài khoản hoặc mật khẩu");
+            else
             {
-                if (!DangNhapSV(Program.mlogin))
-                    MessageBox.Show("Sai mã sinh viên");
-                else
-                {
-                    result = true;
-                    Console.WriteLine("Login successful");
-                }
+                result = true;
+                Console.WriteLine("Login successful");
             }
             if (result)
             {
@@ -138,6 +138,15 @@ namespace ThiTracNghiem.Form
         }
 
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine(e.KeyCode);
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.simpleButton1_Click(sender, e);
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             Console.WriteLine(e.KeyCode);
             if (e.KeyCode == Keys.Enter)

@@ -22,9 +22,22 @@ namespace ThiTracNghiem.Form
         {
             if (Program.username != null && Program.nhom != null && Program.id != null)
             {
-                txtFooterId.Caption = "Mã sinh viên: " + Program.id;
-                txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
-                txtFooterClass.Caption = "Lớp: " + Program.donVi;
+                if (Program.nhom.Equals("SINHVIEN"))
+                {
+                    txtFooterId.Caption = "Mã sinh viên: " + Program.id;
+                    txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
+                    txtFooterClass.Caption = "Lớp: " + Program.donVi;
+                } else if (Program.nhom.Equals("GIAOVIEN"))
+                {
+                    txtFooterId.Caption = "Mã giáo viên: " + Program.id;
+                    txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
+                    txtFooterClass.Caption = "Khoa: " + Program.donVi;
+                } else if (Program.nhom.Equals("COSO"))
+                {
+                    txtFooterId.Caption = "Mã cơ sở: " + Program.donVi;
+                    txtFooterFullName.Dispose();
+                    txtFooterClass.Caption = "Tên cơ sở: " + Program.tenDonVi;
+                }
             }
 
         }

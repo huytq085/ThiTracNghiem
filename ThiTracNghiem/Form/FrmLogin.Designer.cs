@@ -202,6 +202,7 @@
             this.txtPassword.Size = new System.Drawing.Size(205, 20);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // simpleButton1

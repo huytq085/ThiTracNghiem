@@ -26,6 +26,8 @@ namespace ThiTracNghiem.Form
 
         private void Test_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tRACNGHIEMDataSetSV1.GIAOVIEN' table. You can move, or remove it, as needed.
+            this.gIAOVIENTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.GIAOVIEN);
 
             // TODO: This line of code loads data into the 'tRACNGHIEMDataSetSV1.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Connection.ConnectionString = "Data Source=DESKTOP-CAR7DK5\\SRV_2;Initial Catalog=TRACNGHIEM;User ID=001;password=tqh";

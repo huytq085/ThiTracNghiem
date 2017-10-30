@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\FrmKhoa.cs">
+    <Compile Include="Form\FrmDept.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmKhoa.Designer.cs">
-      <DependentUpon>FrmKhoa.cs</DependentUpon>
+    <Compile Include="Form\FrmDept.Designer.cs">
+      <DependentUpon>FrmDept.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -96,8 +96,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TRACNGHIEMDataSetSV1.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\FrmKhoa.resx">
-      <DependentUpon>FrmKhoa.cs</DependentUpon>
+    <EmbeddedResource Include="Form\FrmDept.resx">
+      <DependentUpon>FrmDept.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

@@ -24,11 +24,17 @@ namespace ThiTracNghiem.Form
             {
                 if (Program.nhom.Equals("SINHVIEN"))
                 {
+                    rbControl.Dispose();
                     txtFooterId.Caption = "Mã sinh viên: " + Program.id;
                     txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
                     txtFooterClass.Caption = "Lớp: " + Program.donVi;
                 } else if (Program.nhom.Equals("GIAOVIEN"))
                 {
+                    btnDepartment.Dispose();
+                    btnClass.Dispose();
+                    btnSubject.Dispose();
+                    btnStudent.Dispose();
+                    btnTeacher.Dispose();
                     txtFooterId.Caption = "Mã giáo viên: " + Program.id;
                     txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
                     txtFooterClass.Caption = "Khoa: " + Program.donVi;
@@ -44,7 +50,7 @@ namespace ThiTracNghiem.Form
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmKhoa frmKhoa = new FrmKhoa();
+            FrmDept frmKhoa = new FrmDept();
             frmKhoa.ShowDialog();
         }
 
@@ -57,6 +63,16 @@ namespace ThiTracNghiem.Form
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.Closed += (s, args) => this.Close();
             frmLogin.Show();
+        }
+
+        private void btnPrepare_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

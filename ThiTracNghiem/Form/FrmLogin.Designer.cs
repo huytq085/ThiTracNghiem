@@ -141,7 +141,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(617, 22);
+            this.barDockControlTop.Size = new System.Drawing.Size(617, 24);
             // 
             // barDockControlBottom
             // 
@@ -155,17 +155,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 240);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 238);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(617, 22);
+            this.barDockControlRight.Location = new System.Drawing.Point(617, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 240);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 238);
             // 
             // barSubItem1
             // 
@@ -280,7 +280,6 @@
             this.labelControl1.Size = new System.Drawing.Size(179, 23);
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Thông tin đăng nhập";
-            this.labelControl1.UseWaitCursor = true;
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // pictureBox1
@@ -292,7 +291,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
             // 
             // v_DS_PHANMANHTableAdapter
             // 

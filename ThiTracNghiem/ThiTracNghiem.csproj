@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
     <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.Images.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.Utils.v17.1" />
     <Reference Include="DevExpress.XtraBars.v17.1" />
@@ -55,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\FrmClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmClass.Designer.cs">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FrmDept.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +79,12 @@
     </Compile>
     <Compile Include="Form\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSubject.Designer.cs">
+      <DependentUpon>FrmSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Test.cs">
       <SubType>Form</SubType>
@@ -96,6 +109,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TRACNGHIEMDataSetSV1.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\FrmClass.resx">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmDept.resx">
       <DependentUpon>FrmDept.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSubject.resx">
+      <DependentUpon>FrmSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDept));
             System.Windows.Forms.Label mAKHLabel;
             System.Windows.Forms.Label tENKHLabel;
             System.Windows.Forms.Label mACSLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDept));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -47,18 +47,18 @@
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.TableAdapterManager();
             this.kHOAGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENKHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.mACSTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tENKHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.LOPTableAdapter();
-            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
             mAKHLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
             mACSLabel = new System.Windows.Forms.Label();
@@ -69,11 +69,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mACSTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mAKHLabel
+            // 
+            mAKHLabel.AutoSize = true;
+            mAKHLabel.Location = new System.Drawing.Point(49, 24);
+            mAKHLabel.Name = "mAKHLabel";
+            mAKHLabel.Size = new System.Drawing.Size(58, 19);
+            mAKHLabel.TabIndex = 0;
+            mAKHLabel.Text = "MAKH:";
+            // 
+            // tENKHLabel
+            // 
+            tENKHLabel.AutoSize = true;
+            tENKHLabel.Location = new System.Drawing.Point(42, 76);
+            tENKHLabel.Name = "tENKHLabel";
+            tENKHLabel.Size = new System.Drawing.Size(65, 19);
+            tENKHLabel.TabIndex = 2;
+            tENKHLabel.Text = "TENKH:";
+            // 
+            // mACSLabel
+            // 
+            mACSLabel.AutoSize = true;
+            mACSLabel.Location = new System.Drawing.Point(50, 123);
+            mACSLabel.Name = "mACSLabel";
+            mACSLabel.Size = new System.Drawing.Size(57, 19);
+            mACSLabel.TabIndex = 4;
+            mACSLabel.Text = "MACS:";
             // 
             // barManager1
             // 
@@ -125,31 +152,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(811, 47);
+            this.barDockControlTop.Size = new System.Drawing.Size(811, 44);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 551);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 556);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(811, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(811, 18);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 44);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 504);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 512);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(811, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(811, 44);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 504);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 512);
             // 
             // tRACNGHIEMDataSetSV1
             // 
@@ -201,12 +228,33 @@
             this.gridView1.GridControl = this.kHOAGridControl;
             this.gridView1.Name = "gridView1";
             // 
+            // colMAKH
+            // 
+            this.colMAKH.FieldName = "MAKH";
+            this.colMAKH.Name = "colMAKH";
+            this.colMAKH.Visible = true;
+            this.colMAKH.VisibleIndex = 0;
+            // 
+            // colTENKH
+            // 
+            this.colTENKH.FieldName = "TENKH";
+            this.colTENKH.Name = "colTENKH";
+            this.colTENKH.Visible = true;
+            this.colTENKH.VisibleIndex = 1;
+            // 
+            // colMACS
+            // 
+            this.colMACS.FieldName = "MACS";
+            this.colMACS.Name = "colMACS";
+            this.colMACS.Visible = true;
+            this.colMACS.VisibleIndex = 2;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 47);
+            this.panel1.Location = new System.Drawing.Point(0, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 40);
             this.panel1.TabIndex = 10;
@@ -237,55 +285,10 @@
             this.panel2.Controls.Add(mAKHLabel);
             this.panel2.Controls.Add(this.mAKHTextEdit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 255);
+            this.panel2.Location = new System.Drawing.Point(0, 260);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(811, 296);
             this.panel2.TabIndex = 11;
-            // 
-            // mAKHLabel
-            // 
-            mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(49, 24);
-            mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(58, 19);
-            mAKHLabel.TabIndex = 0;
-            mAKHLabel.Text = "MAKH:";
-            // 
-            // mAKHTextEdit
-            // 
-            this.mAKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKH", true));
-            this.mAKHTextEdit.Location = new System.Drawing.Point(150, 26);
-            this.mAKHTextEdit.MenuManager = this.barManager1;
-            this.mAKHTextEdit.Name = "mAKHTextEdit";
-            this.mAKHTextEdit.Size = new System.Drawing.Size(242, 20);
-            this.mAKHTextEdit.TabIndex = 1;
-            // 
-            // tENKHLabel
-            // 
-            tENKHLabel.AutoSize = true;
-            tENKHLabel.Location = new System.Drawing.Point(42, 76);
-            tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(65, 19);
-            tENKHLabel.TabIndex = 2;
-            tENKHLabel.Text = "TENKH:";
-            // 
-            // tENKHTextEdit
-            // 
-            this.tENKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "TENKH", true));
-            this.tENKHTextEdit.Location = new System.Drawing.Point(150, 73);
-            this.tENKHTextEdit.MenuManager = this.barManager1;
-            this.tENKHTextEdit.Name = "tENKHTextEdit";
-            this.tENKHTextEdit.Size = new System.Drawing.Size(242, 20);
-            this.tENKHTextEdit.TabIndex = 3;
-            // 
-            // mACSLabel
-            // 
-            mACSLabel.AutoSize = true;
-            mACSLabel.Location = new System.Drawing.Point(50, 123);
-            mACSLabel.Name = "mACSLabel";
-            mACSLabel.Size = new System.Drawing.Size(57, 19);
-            mACSLabel.TabIndex = 4;
-            mACSLabel.Text = "MACS:";
             // 
             // mACSTextEdit
             // 
@@ -296,6 +299,24 @@
             this.mACSTextEdit.Size = new System.Drawing.Size(242, 20);
             this.mACSTextEdit.TabIndex = 5;
             // 
+            // tENKHTextEdit
+            // 
+            this.tENKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "TENKH", true));
+            this.tENKHTextEdit.Location = new System.Drawing.Point(150, 73);
+            this.tENKHTextEdit.MenuManager = this.barManager1;
+            this.tENKHTextEdit.Name = "tENKHTextEdit";
+            this.tENKHTextEdit.Size = new System.Drawing.Size(242, 20);
+            this.tENKHTextEdit.TabIndex = 3;
+            // 
+            // mAKHTextEdit
+            // 
+            this.mAKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKH", true));
+            this.mAKHTextEdit.Location = new System.Drawing.Point(150, 26);
+            this.mAKHTextEdit.MenuManager = this.barManager1;
+            this.mAKHTextEdit.Name = "mAKHTextEdit";
+            this.mAKHTextEdit.Size = new System.Drawing.Size(242, 20);
+            this.mAKHTextEdit.TabIndex = 1;
+            // 
             // lOPBindingSource
             // 
             this.lOPBindingSource.DataMember = "FK_LOP_KHOA";
@@ -305,28 +326,7 @@
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
             // 
-            // colMAKH
-            // 
-            this.colMAKH.FieldName = "MAKH";
-            this.colMAKH.Name = "colMAKH";
-            this.colMAKH.Visible = true;
-            this.colMAKH.VisibleIndex = 0;
-            // 
-            // colTENKH
-            // 
-            this.colTENKH.FieldName = "TENKH";
-            this.colTENKH.Name = "colTENKH";
-            this.colTENKH.Visible = true;
-            this.colTENKH.VisibleIndex = 1;
-            // 
-            // colMACS
-            // 
-            this.colMACS.FieldName = "MACS";
-            this.colMACS.Name = "colMACS";
-            this.colMACS.Visible = true;
-            this.colMACS.VisibleIndex = 2;
-            // 
-            // FrmKhoa
+            // FrmDept
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -341,7 +341,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmKhoa";
+            this.Name = "FrmDept";
             this.Text = "FrmKhoa";
             this.Load += new System.EventHandler(this.FrmKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -353,9 +353,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mACSTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

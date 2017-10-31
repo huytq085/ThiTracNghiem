@@ -28,12 +28,15 @@ namespace ThiTracNghiem.Form
 
         private void FrmKhoa_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'tRACNGHIEMDataSetSV1.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.LOP);
+            if (!Program.nhom.Equals("TRUONG"))
+            {
+                pnBranches.Dispose();
+            }
             if (Program.connstr != null)
             {
                 this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             }
+
             // TODO: This line of code loads data into the 'tRACNGHIEMDataSetSV1.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Fill(this.tRACNGHIEMDataSetSV1.KHOA);
 

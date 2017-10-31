@@ -24,7 +24,10 @@ namespace ThiTracNghiem.Form
             {
                 if (Program.nhom.Equals("SINHVIEN"))
                 {
+                    btnPrepare.Dispose();
+                    btnAddPacket.Dispose();
                     rbControl.Dispose();
+                    btnPrepare.Dispose();
                     txtFooterId.Caption = "Mã sinh viên: " + Program.id;
                     txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
                     txtFooterClass.Caption = "Lớp: " + Program.donVi;
@@ -50,7 +53,9 @@ namespace ThiTracNghiem.Form
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.Hide();
             FrmDept frmKhoa = new FrmDept();
+            frmKhoa.Closed += (s, args) => this.Show();
             frmKhoa.ShowDialog();
         }
 

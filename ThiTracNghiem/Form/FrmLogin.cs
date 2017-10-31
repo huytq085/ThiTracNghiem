@@ -67,8 +67,10 @@ namespace ThiTracNghiem.Form
 
         private bool Login(string username)
         {
+            Boolean sinhvien = false;
             if (Program.password == "")
             {
+                sinhvien = true;
                 Program.username = ConnectionSettings.Default.sinhvien;
                 Program.password = ConnectionSettings.Default.svpwd;
             }
@@ -87,6 +89,10 @@ namespace ThiTracNghiem.Form
                 Program.id = username;
                 Program.conn.Close();
                 reader.Close();
+                if (!Program.nhom.Equals("SINHVIEN") && sinhvien)
+                {
+                    return false;
+                }
             }
             else
             {

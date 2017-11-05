@@ -49,6 +49,7 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.txtFooterFullName = new DevExpress.XtraBars.BarHeaderItem();
             this.txtFooterClass = new DevExpress.XtraBars.BarHeaderItem();
+            this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
             this.Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbFunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbControl = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -56,7 +57,6 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,8 +155,8 @@
             // 
             this.btnAddPacket.Caption = "Thêm bộ đề";
             this.btnAddPacket.Id = 9;
-            this.btnAddPacket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnAddPacket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnAddPacket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPacket.ImageOptions.Image")));
+            this.btnAddPacket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddPacket.ImageOptions.LargeImage")));
             this.btnAddPacket.ImageOptions.LargeImageIndex = 0;
             this.btnAddPacket.Name = "btnAddPacket";
             // 
@@ -164,8 +164,8 @@
             // 
             this.btnStudent.Caption = "Sinh Viên";
             this.btnStudent.Id = 10;
-            this.btnStudent.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnStudent.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnStudent.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStudent.ImageOptions.Image")));
+            this.btnStudent.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnStudent.ImageOptions.LargeImage")));
             this.btnStudent.Name = "btnStudent";
             // 
             // btnTeacher
@@ -201,8 +201,8 @@
             // 
             this.btnQuestions.Caption = "Đề thi";
             this.btnQuestions.Id = 15;
-            this.btnQuestions.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.btnQuestions.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.btnQuestions.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuestions.ImageOptions.Image")));
+            this.btnQuestions.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuestions.ImageOptions.LargeImage")));
             this.btnQuestions.Name = "btnQuestions";
             // 
             // btnLogout
@@ -236,6 +236,15 @@
             this.txtFooterClass.Caption = "Class";
             this.txtFooterClass.Id = 20;
             this.txtFooterClass.Name = "txtFooterClass";
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.AllowAllUp = true;
+            this.btnInfo.Caption = "Thông tin";
+            this.btnInfo.Id = 21;
+            this.btnInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.Image")));
+            this.btnInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.LargeImage")));
+            this.btnInfo.Name = "btnInfo";
             // 
             // Home
             // 
@@ -291,15 +300,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.AllowAllUp = true;
-            this.btnInfo.Caption = "Thông tin";
-            this.btnInfo.Id = 21;
-            this.btnInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.Image")));
-            this.btnInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.LargeImage")));
-            this.btnInfo.Name = "btnInfo";
             // 
             // FrmMain
             // 

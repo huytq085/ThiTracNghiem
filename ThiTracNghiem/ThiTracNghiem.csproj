@@ -56,6 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_SERVER1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_SERVER1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form\FrmClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +73,18 @@
     <Compile Include="Form\FrmDept.Designer.cs">
       <DependentUpon>FrmDept.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\FrmQuestions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmQuestions.Designer.cs">
+      <DependentUpon>FrmQuestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmTeacher.Designer.cs">
+      <DependentUpon>FrmTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +96,12 @@
     </Compile>
     <Compile Include="Form\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FrmSubject.cs">
       <SubType>Form</SubType>
@@ -135,6 +158,17 @@
     </Compile>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_SERVER1.xsc">
+      <DependentUpon>DS_SERVER1.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SERVER1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_SERVER1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_SERVER1.xss">
+      <DependentUpon>DS_SERVER1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

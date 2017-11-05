@@ -71,8 +71,9 @@ namespace ThiTracNghiem.Form
             if (Program.password == "")
             {
                 sinhvien = true;
-                Program.username = ConnectionSettings.Default.sinhvien;
-                Program.password = ConnectionSettings.Default.svpwd;
+                Program.username = Program.mlogin;
+                Program.mlogin = "001";
+                Program.password = Program.pwdSV;
             }
             if (Program.KetNoi() == 0) return false;
             String strLenh = "EXEC SP_DangNhap '" + Program.mlogin + "'";

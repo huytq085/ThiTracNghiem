@@ -26,7 +26,17 @@ namespace ThiTracNghiem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CAR7DK5;Initial Catalog=TRACNGHIEM;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FJ2LJ0Q\\SERVER1;Initial Catalog=TRACNGHIEM;User ID=thien")]
+        public string TRACNGHIEMConnectionString2 {
+            get {
+                return ((string)(this["TRACNGHIEMConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FJ2LJ0Q;Initial Catalog=TRACNGHIEM;Integrated Security=True")]
         public string TRACNGHIEMConnectionString {
             get {
                 return ((string)(this["TRACNGHIEMConnectionString"]));
@@ -36,8 +46,8 @@ namespace ThiTracNghiem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CAR7DK5\\SRV_1;Initial Catalog=TRACNGHIEM;Integrated Security=" +
-            "True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FJ2LJ0Q\\SERVER1;Initial Catalog=TRACNGHIEM;Integrated Securit" +
+            "y=True")]
         public string TRACNGHIEMConnectionString1 {
             get {
                 return ((string)(this["TRACNGHIEMConnectionString1"]));
@@ -47,10 +57,10 @@ namespace ThiTracNghiem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FJ2LJ0Q\\SERVER1;Initial Catalog=TRACNGHIEM;User ID=thien")]
-        public string TRACNGHIEMConnectionString2 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FJ2LJ0Q\\SERVER1;Initial Catalog=TRACNGHIEM;User ID=th101")]
+        public string TRACNGHIEMConnectionString3 {
             get {
-                return ((string)(this["TRACNGHIEMConnectionString2"]));
+                return ((string)(this["TRACNGHIEMConnectionString3"]));
             }
         }
     }

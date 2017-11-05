@@ -16,16 +16,17 @@ namespace ThiTracNghiem
 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static string username = ConnectionSettings.Default.login;
-        public static string password = ConnectionSettings.Default.pwd;
-        public static String servername = ConnectionSettings.Default.DefaultDatasource;
+        public static string username = "";
+        public static string password = "";
+        public static String servername = "";
         public static String servername1 = "";
         public static String servername2 = "";
         public static String mlogin = "";
 
-        public static String database = ConnectionSettings.Default.DefaultCatalog;
-        public static String remotelogin = "";
-
+        public static String database = "TRACNGHIEM";
+        public static String remotelogin = "SUPPORT_CONNECT";
+        public static string remotepassword = "123";
+        public static string pwdSV = "123";
         public static string hoTen = "";
         public static string nhom = "";
         public static string id = "";
@@ -112,7 +113,6 @@ namespace ThiTracNghiem
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             Application.Run(new Form.FrmLogin());
-            Console.WriteLine("Test2");
         }
     }
 }

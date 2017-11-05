@@ -44,7 +44,7 @@
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
             this.bdsPM = new System.Windows.Forms.BindingSource(this.components);
@@ -205,14 +205,14 @@
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
-            // simpleButton1
+            // btnLogin
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(77, 184);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(205, 23);
-            this.simpleButton1.TabIndex = 7;
-            this.simpleButton1.Text = "Đăng nhập";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnLogin.Location = new System.Drawing.Point(77, 184);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(205, 23);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // panelControl1
             // 
@@ -221,7 +221,7 @@
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Controls.Add(this.btnLogin);
             this.panelControl1.Controls.Add(this.txtPassword);
             this.panelControl1.Controls.Add(this.txtUsername);
             this.panelControl1.Location = new System.Drawing.Point(12, 28);
@@ -345,7 +345,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem4;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnLogin;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private DevExpress.XtraEditors.TextEdit txtUsername;
         private DevExpress.XtraEditors.LabelControl labelControl1;

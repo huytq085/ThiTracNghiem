@@ -139,6 +139,9 @@
     <EmbeddedResource Include="Form\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmStudent.resx">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmSubject.resx">
       <DependentUpon>FrmSubject.cs</DependentUpon>
     </EmbeddedResource>

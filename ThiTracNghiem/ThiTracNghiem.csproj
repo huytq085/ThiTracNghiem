@@ -56,6 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DSSERVER1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSERVER1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form\FrmClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +140,17 @@
     </Compile>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DSSERVER1.xsc">
+      <DependentUpon>DSSERVER1.xsd</DependentUpon>
+    </None>
+    <None Include="DSSERVER1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSERVER1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSSERVER1.xss">
+      <DependentUpon>DSSERVER1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

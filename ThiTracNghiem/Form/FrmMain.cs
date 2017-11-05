@@ -17,7 +17,13 @@ namespace ThiTracNghiem.Form
         {
             InitializeComponent();
         }
-
+        private System.Windows.Forms.Form CheckExists(Type ftype)
+        {
+            foreach (System.Windows.Forms.Form f in this.MdiChildren)
+                if (f.GetType() == ftype)
+                    return f;
+            return null;
+        }
         private void FrmMain_Load(object sender, EventArgs e)
         {
             if (Program.username != null && Program.nhom != null && Program.id != null)
@@ -78,6 +84,19 @@ namespace ThiTracNghiem.Form
         private void ribbon_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnStudent_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            System.Windows.Forms.Form frm = this.CheckExists(typeof(FrmStudent));
+            if (frm != null) frm.Activate();
+            else
+            {
+                this.IsMdiContainer = true;
+                FrmStudent f = new FrmStudent();
+                f.MdiParent = this;
+                f.Show();
+            }
         }
     }
 }

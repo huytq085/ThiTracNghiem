@@ -34,6 +34,7 @@ namespace ThiTracNghiem
         public static string tenDonVi = "";
         public static string chiNhanh = "";
         public static string maChiNhanh = "";
+        public static int mChiNhanh = 0;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ TRACNGHIEMDataSet khi đăng nhập
 
@@ -113,6 +114,7 @@ namespace ThiTracNghiem
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             Application.Run(new Form.FrmLogin());
+            //Application.Run(new Form.FrmStudent());
         }
     }
 }

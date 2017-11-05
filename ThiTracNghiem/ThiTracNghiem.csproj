@@ -61,58 +61,58 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_SERVER1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmClass.cs">
+    <Compile Include="Forms\FrmClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmClass.Designer.cs">
+    <Compile Include="Forms\FrmClass.Designer.cs">
       <DependentUpon>FrmClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmDept.cs">
+    <Compile Include="Forms\FrmDept.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmDept.Designer.cs">
+    <Compile Include="Forms\FrmDept.Designer.cs">
       <DependentUpon>FrmDept.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmQuestions.cs">
+    <Compile Include="Forms\FrmQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmQuestions.Designer.cs">
+    <Compile Include="Forms\FrmQuestions.Designer.cs">
       <DependentUpon>FrmQuestions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmTeacher.cs">
+    <Compile Include="Forms\FrmTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmTeacher.Designer.cs">
+    <Compile Include="Forms\FrmTeacher.Designer.cs">
       <DependentUpon>FrmTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmLogin.cs">
+    <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmLogin.Designer.cs">
+    <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmMain.cs">
+    <Compile Include="Forms\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmMain.Designer.cs">
+    <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmStudent.cs">
+    <Compile Include="Forms\FrmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmStudent.Designer.cs">
+    <Compile Include="Forms\FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmSubject.cs">
+    <Compile Include="Forms\FrmSubject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FrmSubject.Designer.cs">
+    <Compile Include="Forms\FrmSubject.Designer.cs">
       <DependentUpon>FrmSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Test.cs">
+    <Compile Include="Forms\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Test.Designer.cs">
+    <Compile Include="Forms\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -127,25 +127,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TRACNGHIEMDataSetSV1.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\FrmClass.resx">
+    <EmbeddedResource Include="Forms\FrmClass.resx">
       <DependentUpon>FrmClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmDept.resx">
+    <EmbeddedResource Include="Forms\FrmDept.resx">
       <DependentUpon>FrmDept.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmLogin.resx">
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmMain.resx">
+    <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmStudent.resx">
+    <EmbeddedResource Include="Forms\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmSubject.resx">
+    <EmbeddedResource Include="Forms\FrmSubject.resx">
       <DependentUpon>FrmSubject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Test.resx">
+    <EmbeddedResource Include="Forms\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

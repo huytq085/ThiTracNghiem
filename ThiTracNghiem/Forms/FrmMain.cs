@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 
-namespace ThiTracNghiem.Form
+namespace ThiTracNghiem.Forms
 {
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
@@ -17,9 +17,9 @@ namespace ThiTracNghiem.Form
         {
             InitializeComponent();
         }
-        private System.Windows.Forms.Form CheckExists(Type ftype)
+        private Form CheckExists(Type ftype)
         {
-            foreach (System.Windows.Forms.Form f in this.MdiChildren)
+            foreach (Form f in this.MdiChildren)
                 if (f.GetType() == ftype)
                     return f;
             return null;
@@ -88,7 +88,7 @@ namespace ThiTracNghiem.Form
 
         private void btnStudent_ItemClick(object sender, ItemClickEventArgs e)
         {
-            System.Windows.Forms.Form frm = this.CheckExists(typeof(FrmStudent));
+            Form frm = this.CheckExists(typeof(FrmStudent));
             if (frm != null) frm.Activate();
             else
             {

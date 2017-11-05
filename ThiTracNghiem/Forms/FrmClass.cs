@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace ThiTracNghiem.Form
+namespace ThiTracNghiem.Forms
 {
     public partial class FrmClass : DevExpress.XtraEditors.XtraForm
     {

@@ -4,7 +4,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using System.Data;
 using System.Data.SqlClient;
-using ThiTracNghiem.Form;
+using ThiTracNghiem.Forms;
 
 namespace ThiTracNghiem
 {
@@ -113,7 +113,7 @@ namespace ThiTracNghiem
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Form.FrmLogin());
+            Application.Run(new Forms.FrmLogin());
             //Application.Run(new Form.FrmStudent());
         }
     }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using System.Data.SqlClient;
 
-namespace ThiTracNghiem.Form
+namespace ThiTracNghiem.Forms
 {
     public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {

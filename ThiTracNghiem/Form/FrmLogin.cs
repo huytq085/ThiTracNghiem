@@ -88,12 +88,31 @@ namespace ThiTracNghiem.Form
                 Program.hoTen = reader["hoten"].ToString();
                 Program.nhom = reader["nhom"].ToString();
                 Program.id = username;
-                Program.conn.Close();
                 reader.Close();
                 if (!Program.nhom.Equals("SINHVIEN") && sinhvien)
                 {
                     return false;
+                } else if (sinhvien)
+                {
+                    strLenh = "EXEC SP_TimSV '" + username + "'";
+                    reader = Program.ExecSqlDataReader(strLenh);
+                    if (reader != null)
+                    {
+                        reader.Read();
+                        if (reader.HasRows)
+                        {
+                            Program.donVi = reader["donvi"].ToString();
+                            Program.tenDonVi = reader["tendonvi"].ToString();
+                            Program.hoTen = reader["hoten"].ToString();
+                            Program.id = username;
+                        } else
+                        {
+                            return false;
+                        }
+                    }
                 }
+                Program.conn.Close();
+                reader.Close();
             }
             else
             {
@@ -104,7 +123,7 @@ namespace ThiTracNghiem.Form
             return true;
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             bool result = false;
             if (txtUsername.Text.Trim() == "")
@@ -149,7 +168,7 @@ namespace ThiTracNghiem.Form
             Console.WriteLine(e.KeyCode);
             if (e.KeyCode == Keys.Enter)
             {
-                this.simpleButton1_Click(sender, e);
+                this.btnLogin_Click(sender, e);
             }
         }
 
@@ -158,7 +177,7 @@ namespace ThiTracNghiem.Form
             Console.WriteLine(e.KeyCode);
             if (e.KeyCode == Keys.Enter)
             {
-                this.simpleButton1_Click(sender, e);
+                this.btnLogin_Click(sender, e);
             }
         }
     }

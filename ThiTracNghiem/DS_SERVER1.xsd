@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DSSERVER1" targetNamespace="http://tempuri.org/DSSERVER1.xsd" xmlns:mstns="http://tempuri.org/DSSERVER1.xsd" xmlns="http://tempuri.org/DSSERVER1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DS_SERVER1" targetNamespace="http://tempuri.org/DS_SERVER1.xsd" xmlns:mstns="http://tempuri.org/DS_SERVER1.xsd" xmlns="http://tempuri.org/DS_SERVER1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -640,7 +640,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DSSERVER1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DSSERVER1" msprop:Generator_UserDSName="DSSERVER1">
+  <xs:element name="DS_SERVER1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DS_SERVER1" msprop:Generator_UserDSName="DS_SERVER1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="BANGDIEM" msprop:Generator_TableClassName="BANGDIEMDataTable" msprop:Generator_TableVarName="tableBANGDIEM" msprop:Generator_RowChangedName="BANGDIEMRowChanged" msprop:Generator_TablePropName="BANGDIEM" msprop:Generator_RowDeletingName="BANGDIEMRowDeleting" msprop:Generator_RowChangingName="BANGDIEMRowChanging" msprop:Generator_RowEvHandlerName="BANGDIEMRowChangeEventHandler" msprop:Generator_RowDeletedName="BANGDIEMRowDeleted" msprop:Generator_RowClassName="BANGDIEMRow" msprop:Generator_UserTableName="BANGDIEM" msprop:Generator_RowEvArgName="BANGDIEMRowChangeEvent">

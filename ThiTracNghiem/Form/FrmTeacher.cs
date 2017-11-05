@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace ThiTracNghiem.Form
 {
-    public partial class FrmGiaoVien : DevExpress.XtraEditors.XtraForm
+    public partial class FrmTeacher : DevExpress.XtraEditors.XtraForm
     {
-        public FrmGiaoVien()
+        public FrmTeacher()
         {
             InitializeComponent();
         }

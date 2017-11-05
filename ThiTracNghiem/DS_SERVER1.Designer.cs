@@ -20,9 +20,9 @@ namespace ThiTracNghiem {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DSSERVER1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_SERVER1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DSSERVER1 : global::System.Data.DataSet {
+    public partial class DS_SERVER1 : global::System.Data.DataSet {
         
         private BANGDIEMDataTable tableBANGDIEM;
         
@@ -68,7 +68,7 @@ namespace ThiTracNghiem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DSSERVER1() {
+        public DS_SERVER1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -79,7 +79,7 @@ namespace ThiTracNghiem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DSSERVER1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_SERVER1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -282,7 +282,7 @@ namespace ThiTracNghiem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DSSERVER1 cln = ((DSSERVER1)(base.Clone()));
+            DS_SERVER1 cln = ((DS_SERVER1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -445,9 +445,9 @@ namespace ThiTracNghiem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DSSERVER1";
+            this.DataSetName = "DS_SERVER1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DSSERVER1.xsd";
+            this.Namespace = "http://tempuri.org/DS_SERVER1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableBANGDIEM = new BANGDIEMDataTable();
@@ -654,7 +654,7 @@ namespace ThiTracNghiem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DSSERVER1 ds = new DSSERVER1();
+            DS_SERVER1 ds = new DS_SERVER1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1011,7 +1011,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1410,7 +1410,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1700,7 +1700,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2019,7 +2019,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2393,7 +2393,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2687,7 +2687,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2980,7 +2980,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3254,7 +3254,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3590,7 +3590,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3897,7 +3897,7 @@ namespace ThiTracNghiem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSSERVER1 ds = new DSSERVER1();
+                DS_SERVER1 ds = new DS_SERVER1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5744,7 +5744,7 @@ namespace ThiTracNghiem {
         }
     }
 }
-namespace ThiTracNghiem.DSSERVER1TableAdapters {
+namespace ThiTracNghiem.DS_SERVER1TableAdapters {
     
     
     /// <summary>
@@ -5940,7 +5940,7 @@ SELECT MASV, MAMH, LAN, NGAYTHI, DIEM, BAITHI FROM BANGDIEM WHERE (LAN = @LAN) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.BANGDIEMDataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.BANGDIEMDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5953,9 +5953,9 @@ SELECT MASV, MAMH, LAN, NGAYTHI, DIEM, BAITHI FROM BANGDIEM WHERE (LAN = @LAN) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.BANGDIEMDataTable GetData() {
+        public virtual DS_SERVER1.BANGDIEMDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.BANGDIEMDataTable dataTable = new DSSERVER1.BANGDIEMDataTable();
+            DS_SERVER1.BANGDIEMDataTable dataTable = new DS_SERVER1.BANGDIEMDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5963,14 +5963,14 @@ SELECT MASV, MAMH, LAN, NGAYTHI, DIEM, BAITHI FROM BANGDIEM WHERE (LAN = @LAN) A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.BANGDIEMDataTable dataTable) {
+        public virtual int Update(DS_SERVER1.BANGDIEMDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "BANGDIEM");
         }
         
@@ -6388,7 +6388,7 @@ SELECT CAUHOI, MAMH, TRINHDO, NOIDUNG, A, B, C, D, DAP_AN, MAGV FROM BODE WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.BODEDataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.BODEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6401,9 +6401,9 @@ SELECT CAUHOI, MAMH, TRINHDO, NOIDUNG, A, B, C, D, DAP_AN, MAGV FROM BODE WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.BODEDataTable GetData() {
+        public virtual DS_SERVER1.BODEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.BODEDataTable dataTable = new DSSERVER1.BODEDataTable();
+            DS_SERVER1.BODEDataTable dataTable = new DS_SERVER1.BODEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6411,14 +6411,14 @@ SELECT CAUHOI, MAMH, TRINHDO, NOIDUNG, A, B, C, D, DAP_AN, MAGV FROM BODE WHERE 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.BODEDataTable dataTable) {
+        public virtual int Update(DS_SERVER1.BODEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "BODE");
         }
         
@@ -6863,7 +6863,7 @@ SELECT MACS, TENCS, DIACHI FROM COSO WHERE (MACS = @MACS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.COSODataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.COSODataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6876,9 +6876,9 @@ SELECT MACS, TENCS, DIACHI FROM COSO WHERE (MACS = @MACS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.COSODataTable GetData() {
+        public virtual DS_SERVER1.COSODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.COSODataTable dataTable = new DSSERVER1.COSODataTable();
+            DS_SERVER1.COSODataTable dataTable = new DS_SERVER1.COSODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6886,14 +6886,14 @@ SELECT MACS, TENCS, DIACHI FROM COSO WHERE (MACS = @MACS)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.COSODataTable dataTable) {
+        public virtual int Update(DS_SERVER1.COSODataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "COSO");
         }
         
@@ -7253,7 +7253,7 @@ SELECT MAGV, HO, TEN, DIACHI, MAKH FROM GIAOVIEN WHERE (MAGV = @MAGV)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.GIAOVIENDataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.GIAOVIENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7266,9 +7266,9 @@ SELECT MAGV, HO, TEN, DIACHI, MAKH FROM GIAOVIEN WHERE (MAGV = @MAGV)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.GIAOVIENDataTable GetData() {
+        public virtual DS_SERVER1.GIAOVIENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.GIAOVIENDataTable dataTable = new DSSERVER1.GIAOVIENDataTable();
+            DS_SERVER1.GIAOVIENDataTable dataTable = new DS_SERVER1.GIAOVIENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7276,14 +7276,14 @@ SELECT MAGV, HO, TEN, DIACHI, MAKH FROM GIAOVIEN WHERE (MAGV = @MAGV)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.GIAOVIENDataTable dataTable) {
+        public virtual int Update(DS_SERVER1.GIAOVIENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "GIAOVIEN");
         }
         
@@ -7720,7 +7720,7 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN FROM GIAOVIE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.GIAOVIEN_DANGKYDataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.GIAOVIEN_DANGKYDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7733,9 +7733,9 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN FROM GIAOVIE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.GIAOVIEN_DANGKYDataTable GetData() {
+        public virtual DS_SERVER1.GIAOVIEN_DANGKYDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.GIAOVIEN_DANGKYDataTable dataTable = new DSSERVER1.GIAOVIEN_DANGKYDataTable();
+            DS_SERVER1.GIAOVIEN_DANGKYDataTable dataTable = new DS_SERVER1.GIAOVIEN_DANGKYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7743,14 +7743,14 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN FROM GIAOVIE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.GIAOVIEN_DANGKYDataTable dataTable) {
+        public virtual int Update(DS_SERVER1.GIAOVIEN_DANGKYDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "GIAOVIEN_DANGKY");
         }
         
@@ -8225,7 +8225,7 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN FROM GIAOVIE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.KHOADataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.KHOADataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8238,9 +8238,9 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN FROM GIAOVIE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.KHOADataTable GetData() {
+        public virtual DS_SERVER1.KHOADataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.KHOADataTable dataTable = new DSSERVER1.KHOADataTable();
+            DS_SERVER1.KHOADataTable dataTable = new DS_SERVER1.KHOADataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8248,14 +8248,14 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN FROM GIAOVIE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.KHOADataTable dataTable) {
+        public virtual int Update(DS_SERVER1.KHOADataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "KHOA");
         }
         
@@ -8596,7 +8596,7 @@ SELECT MALOP, TENLOP, MAKH FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.LOPDataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.LOPDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8609,9 +8609,9 @@ SELECT MALOP, TENLOP, MAKH FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.LOPDataTable GetData() {
+        public virtual DS_SERVER1.LOPDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.LOPDataTable dataTable = new DSSERVER1.LOPDataTable();
+            DS_SERVER1.LOPDataTable dataTable = new DS_SERVER1.LOPDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8619,14 +8619,14 @@ SELECT MALOP, TENLOP, MAKH FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.LOPDataTable dataTable) {
+        public virtual int Update(DS_SERVER1.LOPDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "LOP");
         }
         
@@ -8966,7 +8966,7 @@ SELECT MALOP, TENLOP, MAKH FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.MONHOCDataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.MONHOCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8979,9 +8979,9 @@ SELECT MALOP, TENLOP, MAKH FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.MONHOCDataTable GetData() {
+        public virtual DS_SERVER1.MONHOCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.MONHOCDataTable dataTable = new DSSERVER1.MONHOCDataTable();
+            DS_SERVER1.MONHOCDataTable dataTable = new DS_SERVER1.MONHOCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8989,14 +8989,14 @@ SELECT MALOP, TENLOP, MAKH FROM LOP WHERE (MALOP = @MALOP)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.MONHOCDataTable dataTable) {
+        public virtual int Update(DS_SERVER1.MONHOCDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "MONHOC");
         }
         
@@ -9339,7 +9339,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.SINHVIENDataTable dataTable) {
+        public virtual int Fill(DS_SERVER1.SINHVIENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9352,9 +9352,9 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.SINHVIENDataTable GetData() {
+        public virtual DS_SERVER1.SINHVIENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSSERVER1.SINHVIENDataTable dataTable = new DSSERVER1.SINHVIENDataTable();
+            DS_SERVER1.SINHVIENDataTable dataTable = new DS_SERVER1.SINHVIENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9362,14 +9362,14 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1.SINHVIENDataTable dataTable) {
+        public virtual int Update(DS_SERVER1.SINHVIENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSSERVER1 dataSet) {
+        public virtual int Update(DS_SERVER1 dataSet) {
             return this.Adapter.Update(dataSet, "SINHVIEN");
         }
         
@@ -9775,7 +9775,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSSERVER1.SP_DangNhapDataTable dataTable, string login) {
+        public virtual int Fill(DS_SERVER1.SP_DangNhapDataTable dataTable, string login) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((login == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -9794,7 +9794,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSSERVER1.SP_DangNhapDataTable GetData(string login) {
+        public virtual DS_SERVER1.SP_DangNhapDataTable GetData(string login) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((login == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -9802,7 +9802,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(login));
             }
-            DSSERVER1.SP_DangNhapDataTable dataTable = new DSSERVER1.SP_DangNhapDataTable();
+            DS_SERVER1.SP_DangNhapDataTable dataTable = new DS_SERVER1.SP_DangNhapDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10083,7 +10083,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DSSERVER1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_SERVER1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cOSOTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.COSO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -10174,7 +10174,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DSSERVER1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_SERVER1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cOSOTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.COSO.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -10256,7 +10256,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DSSERVER1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_SERVER1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._gIAOVIEN_DANGKYTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.GIAOVIEN_DANGKY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -10362,7 +10362,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DSSERVER1 dataSet) {
+        public virtual int UpdateAll(DS_SERVER1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

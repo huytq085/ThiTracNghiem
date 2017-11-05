@@ -1,6 +1,6 @@
 ﻿namespace ThiTracNghiem.Form
 {
-    partial class FrmGiaoVien
+    partial class FrmTeacher
     {
         /// <summary>
         /// Required designer variable.

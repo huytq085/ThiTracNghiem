@@ -1,6 +1,6 @@
 ﻿namespace ThiTracNghiem.Form
 {
-    partial class FrmDeThi
+    partial class FrmQuestions
     {
         /// <summary>
         /// Required designer variable.

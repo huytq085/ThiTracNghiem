@@ -40,7 +40,7 @@
             this.btnAddPacket = new DevExpress.XtraBars.BarButtonItem();
             this.btnStudent = new DevExpress.XtraBars.BarButtonItem();
             this.btnTeacher = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDepartment = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDept = new DevExpress.XtraBars.BarButtonItem();
             this.btnSubject = new DevExpress.XtraBars.BarButtonItem();
             this.btnClass = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuestions = new DevExpress.XtraBars.BarButtonItem();
@@ -54,7 +54,7 @@
             this.rbFunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbControl = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbAccount = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.rbFooter = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -74,7 +74,7 @@
             this.btnAddPacket,
             this.btnStudent,
             this.btnTeacher,
-            this.btnDepartment,
+            this.btnDept,
             this.btnSubject,
             this.btnClass,
             this.btnQuestions,
@@ -91,7 +91,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Home});
             this.ribbon.Size = new System.Drawing.Size(1008, 146);
-            this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.ribbon.StatusBar = this.rbFooter;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // imageList1
@@ -175,14 +175,15 @@
             this.btnTeacher.Id = 11;
             this.btnTeacher.ImageOptions.LargeImageIndex = 12;
             this.btnTeacher.Name = "btnTeacher";
+            this.btnTeacher.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTeacher_ItemClick);
             // 
-            // btnDepartment
+            // btnDept
             // 
-            this.btnDepartment.Caption = "Khoa";
-            this.btnDepartment.Id = 12;
-            this.btnDepartment.ImageOptions.LargeImageIndex = 8;
-            this.btnDepartment.Name = "btnDepartment";
-            this.btnDepartment.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            this.btnDept.Caption = "Khoa";
+            this.btnDept.Id = 12;
+            this.btnDept.ImageOptions.LargeImageIndex = 8;
+            this.btnDept.Name = "btnDept";
+            this.btnDept.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDept_ItemClick);
             // 
             // btnSubject
             // 
@@ -190,6 +191,7 @@
             this.btnSubject.Id = 13;
             this.btnSubject.ImageOptions.LargeImageIndex = 9;
             this.btnSubject.Name = "btnSubject";
+            this.btnSubject.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSubject_ItemClick);
             // 
             // btnClass
             // 
@@ -197,6 +199,7 @@
             this.btnClass.Id = 14;
             this.btnClass.ImageOptions.LargeImageIndex = 11;
             this.btnClass.Name = "btnClass";
+            this.btnClass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClass_ItemClick);
             // 
             // btnQuestions
             // 
@@ -205,6 +208,7 @@
             this.btnQuestions.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuestions.ImageOptions.Image")));
             this.btnQuestions.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuestions.ImageOptions.LargeImage")));
             this.btnQuestions.Name = "btnQuestions";
+            this.btnQuestions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuestions_ItemClick);
             // 
             // btnLogout
             // 
@@ -212,7 +216,7 @@
             this.btnLogout.Id = 16;
             this.btnLogout.ImageOptions.LargeImageIndex = 13;
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
             // 
             // txtFooterId
             // 
@@ -272,7 +276,7 @@
             this.rbControl.ItemLinks.Add(this.btnStudent, true);
             this.rbControl.ItemLinks.Add(this.btnClass, true);
             this.rbControl.ItemLinks.Add(this.btnTeacher, true);
-            this.rbControl.ItemLinks.Add(this.btnDepartment, true);
+            this.rbControl.ItemLinks.Add(this.btnDept, true);
             this.rbControl.Name = "rbControl";
             this.rbControl.Text = "Quản lý";
             // 
@@ -283,15 +287,15 @@
             this.rbAccount.Name = "rbAccount";
             this.rbAccount.Text = "Tài khoản";
             // 
-            // ribbonStatusBar
+            // rbFooter
             // 
-            this.ribbonStatusBar.ItemLinks.Add(this.txtFooterId);
-            this.ribbonStatusBar.ItemLinks.Add(this.txtFooterFullName);
-            this.ribbonStatusBar.ItemLinks.Add(this.txtFooterClass);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 428);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1008, 21);
+            this.rbFooter.ItemLinks.Add(this.txtFooterId);
+            this.rbFooter.ItemLinks.Add(this.txtFooterFullName);
+            this.rbFooter.ItemLinks.Add(this.txtFooterClass);
+            this.rbFooter.Location = new System.Drawing.Point(0, 428);
+            this.rbFooter.Name = "rbFooter";
+            this.rbFooter.Ribbon = this.ribbon;
+            this.rbFooter.Size = new System.Drawing.Size(1008, 21);
             // 
             // ribbonPage3
             // 
@@ -307,11 +311,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 449);
-            this.Controls.Add(this.ribbonStatusBar);
+            this.Controls.Add(this.rbFooter);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "FrmMain";
             this.Ribbon = this.ribbon;
-            this.StatusBar = this.ribbonStatusBar;
+            this.StatusBar = this.rbFooter;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
@@ -326,7 +331,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonPage Home;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbFunction;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar rbFooter;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private System.Windows.Forms.ImageList imageList1;
         private DevExpress.XtraBars.BarButtonItem btnAdd;
@@ -337,7 +342,7 @@
         private DevExpress.XtraBars.BarButtonItem btnAddPacket;
         private DevExpress.XtraBars.BarButtonItem btnStudent;
         private DevExpress.XtraBars.BarButtonItem btnTeacher;
-        private DevExpress.XtraBars.BarButtonItem btnDepartment;
+        private DevExpress.XtraBars.BarButtonItem btnDept;
         private DevExpress.XtraBars.BarButtonItem btnSubject;
         private DevExpress.XtraBars.BarButtonItem btnClass;
         private DevExpress.XtraBars.BarButtonItem btnQuestions;

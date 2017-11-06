@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAKHLabel;
             System.Windows.Forms.Label tENKHLabel;
             System.Windows.Forms.Label mACSLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDept));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -41,7 +42,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.tRACNGHIEMDataSetSV1 = new ThiTracNghiem.TRACNGHIEMDataSetSV1();
-            this.kHOABindingSource = new System.Windows.Forms.BindingSource();
+            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOATableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.KHOATableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.TableAdapterManager();
             this.kHOAGridControl = new DevExpress.XtraGrid.GridControl();
@@ -52,7 +53,7 @@
             this.pnBranches = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource();
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.LOPTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();

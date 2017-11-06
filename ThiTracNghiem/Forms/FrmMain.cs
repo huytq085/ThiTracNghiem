@@ -17,15 +17,23 @@ namespace ThiTracNghiem.Forms
         {
             InitializeComponent();
         }
-        private Form CheckExists(Type ftype)
+        private void ShowMdiChildren(Type fType)
         {
             foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
+            {
+                if (f.GetType() == fType)
+                {
+                    f.Activate();
+                    return ;
+                }
+            }
+            Form form = (Form)Activator.CreateInstance(fType);
+            form.MdiParent = this;
+            form.Show();
         }
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            ShowMdiChildren(typeof(Test));
             if (Program.username != null && Program.nhom != null && Program.id != null)
             {
                 if (Program.nhom.Equals("SINHVIEN"))
@@ -39,7 +47,7 @@ namespace ThiTracNghiem.Forms
                     txtFooterClass.Caption = "Lớp: " + Program.donVi;
                 } else if (Program.nhom.Equals("GIAOVIEN"))
                 {
-                    btnDepartment.Dispose();
+                    btnDept.Dispose();
                     btnClass.Dispose();
                     btnSubject.Dispose();
                     btnStudent.Dispose();
@@ -52,20 +60,15 @@ namespace ThiTracNghiem.Forms
                     txtFooterId.Caption = "Mã cơ sở: " + Program.donVi;
                     txtFooterFullName.Dispose();
                     txtFooterClass.Caption = "Tên cơ sở: " + Program.tenDonVi;
+                } else
+                {
+                    rbFooter.Dispose();
                 }
             }
 
         }
 
-        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Hide();
-            FrmDept frmKhoa = new FrmDept();
-            frmKhoa.Closed += (s, args) => this.Show();
-            frmKhoa.ShowDialog();
-        }
-
-        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnLogout_ItemClick(object sender, ItemClickEventArgs e)
         {
             Program.bds_dspm = null;
             Program.servername = "";
@@ -88,15 +91,33 @@ namespace ThiTracNghiem.Forms
 
         private void btnStudent_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(FrmStudent));
-            if (frm != null) frm.Activate();
-            else
-            {
-                this.IsMdiContainer = true;
-                FrmStudent f = new FrmStudent();
-                f.MdiParent = this;
-                f.Show();
-            }
+            ShowMdiChildren(typeof(FrmStudent));
+        }
+
+        private void btnSubject_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            ShowMdiChildren(typeof(FrmSubject));
+        }
+
+        private void btnClass_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmClass));
+        }
+
+        private void btnTeacher_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmTeacher));
+        }
+
+        private void btnQuestions_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmQuestions));
+        }
+
+        private void btnDept_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmDept));
         }
     }
 }

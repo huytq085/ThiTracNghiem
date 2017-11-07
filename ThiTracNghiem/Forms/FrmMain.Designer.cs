@@ -292,10 +292,10 @@
             this.rbFooter.ItemLinks.Add(this.txtFooterId);
             this.rbFooter.ItemLinks.Add(this.txtFooterFullName);
             this.rbFooter.ItemLinks.Add(this.txtFooterClass);
-            this.rbFooter.Location = new System.Drawing.Point(0, 428);
+            this.rbFooter.Location = new System.Drawing.Point(0, 423);
             this.rbFooter.Name = "rbFooter";
             this.rbFooter.Ribbon = this.ribbon;
-            this.rbFooter.Size = new System.Drawing.Size(1008, 21);
+            this.rbFooter.Size = new System.Drawing.Size(1008, 26);
             // 
             // ribbonPage3
             // 

@@ -180,5 +180,10 @@ namespace ThiTracNghiem.Forms
                 this.btnLogin_Click(sender, e);
             }
         }
+
+        private void mbarExit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

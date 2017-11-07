@@ -61,6 +61,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_SERVER1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DlgConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DlgConfirm.Designer.cs">
+      <DependentUpon>DlgConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TRACNGHIEMDataSetSV1.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\DlgConfirm.resx">
+      <DependentUpon>DlgConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmClass.resx">
       <DependentUpon>FrmClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,11 +148,17 @@
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmQuestions.resx">
+      <DependentUpon>FrmQuestions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSubject.resx">
       <DependentUpon>FrmSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTeacher.resx">
+      <DependentUpon>FrmTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>

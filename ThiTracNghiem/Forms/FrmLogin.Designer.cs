@@ -33,7 +33,7 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.mbarExit = new DevExpress.XtraBars.BarStaticItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -89,7 +89,7 @@
             this.barSubItem2,
             this.barSubItem3,
             this.barSubItem4,
-            this.barStaticItem1,
+            this.mbarExit,
             this.barStaticItem2});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 6;
@@ -113,14 +113,15 @@
             this.barSubItem2.Caption = "File";
             this.barSubItem2.Id = 1;
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mbarExit)});
             this.barSubItem2.Name = "barSubItem2";
             // 
-            // barStaticItem1
+            // mbarExit
             // 
-            this.barStaticItem1.Caption = "Exit";
-            this.barStaticItem1.Id = 4;
-            this.barStaticItem1.Name = "barStaticItem1";
+            this.mbarExit.Caption = "Exit";
+            this.mbarExit.Id = 4;
+            this.mbarExit.Name = "mbarExit";
+            this.mbarExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mbarExit_ItemClick);
             // 
             // barSubItem3
             // 
@@ -341,7 +342,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem mbarExit;
         private DevExpress.XtraBars.BarSubItem barSubItem3;
         private DevExpress.XtraBars.BarSubItem barSubItem4;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;

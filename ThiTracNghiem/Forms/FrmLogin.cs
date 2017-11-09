@@ -136,13 +136,15 @@ namespace ThiTracNghiem.Forms
             Program.mlogin = txtUsername.Text;
             Program.password = txtPassword.Text;
             Program.bds_dspm = bdsPM;
-            
+            Program.mCoSo = cbbCoSo.SelectedIndex;
             if (!Login(Program.mlogin))
                 MessageBox.Show("Sai thông tin tài khoản hoặc mật khẩu");
             else
             {
                 result = true;
                 Console.WriteLine("Login successful");
+                Program.mloginDB = Program.mlogin;
+                Program.mpasswordDB = Program.password;
             }
             if (result)
             {

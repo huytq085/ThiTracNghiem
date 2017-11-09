@@ -34,8 +34,9 @@ namespace ThiTracNghiem
         public static string tenDonVi = "";
         public static string chiNhanh = "";
         public static string maChiNhanh = "";
-        public static int mChiNhanh = 0;
-
+        public static int mCoSo = 0;
+        public static string mloginDB = "";
+        public static string mpasswordDB = "";
         public static BindingSource bds_dspm = new BindingSource();  // giữ TRACNGHIEMDataSet khi đăng nhập
 
         public static int KetNoi()

@@ -79,17 +79,11 @@
     <Compile Include="Forms\FrmDept.Designer.cs">
       <DependentUpon>FrmDept.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmQuestions.cs">
+    <Compile Include="Forms\FrmQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmQuestions.Designer.cs">
-      <DependentUpon>FrmQuestions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmTeacher.Designer.cs">
-      <DependentUpon>FrmTeacher.cs</DependentUpon>
+    <Compile Include="Forms\FrmQuestion.Designer.cs">
+      <DependentUpon>FrmQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -114,6 +108,12 @@
     </Compile>
     <Compile Include="Forms\FrmSubject.Designer.cs">
       <DependentUpon>FrmSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTeacher.Designer.cs">
+      <DependentUpon>FrmTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Test.cs">
       <SubType>Form</SubType>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmQuestions.resx">
-      <DependentUpon>FrmQuestions.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmQuestion.resx">
+      <DependentUpon>FrmQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>

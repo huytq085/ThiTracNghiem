@@ -217,7 +217,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(1137, 42);
+            this.barDockControl1.Size = new System.Drawing.Size(1137, 40);
             this.barDockControl1.Click += new System.EventHandler(this.barDockControl1_Click);
             // 
             // barDockControl2

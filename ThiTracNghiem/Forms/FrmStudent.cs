@@ -13,6 +13,7 @@ namespace ThiTracNghiem.Forms
 {
     public partial class FrmStudent : DevExpress.XtraEditors.XtraForm
     {
+        int viTri = 0;
         public FrmStudent()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace ThiTracNghiem.Forms
         private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.sINHVIENBindingSource.EndEdit();
+            this.bdsSV.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dS_SERVER1);
 
         }
@@ -42,20 +43,28 @@ namespace ThiTracNghiem.Forms
             this.sINHVIENTableAdapter.Fill(this.dS_SERVER1.SINHVIEN);
             this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.bANGDIEMTableAdapter.Fill(this.dS_SERVER1.BANGDIEM);
+
+            gridView1.OptionsBehavior.Editable = false;
+
             cmbCoSo.DataSource = Program.bds_dspm;
             cmbCoSo.DisplayMember = "TENCS";
             cmbCoSo.ValueMember = "TENSERVER";
             cmbCoSo.SelectedIndex = Program.mCoSo;
             if (Program.nhom == "TRUONG")
+            {
                 cmbCoSo.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =  btnGhi.Enabled = btnUndo.Enabled = false;
+                btnReload.Enabled = btnPrint.Enabled = true;
+            }
             else
                 cmbCoSo.Enabled = false;
+            groupBox1.Enabled = false;
         }
 
         private void cmbCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbCoSo.SelectedValue.ToString() == "System.Data.DataRowView")
-                return;
+                return;     
             Program.servername = cmbCoSo.SelectedValue.ToString();
             if (cmbCoSo.SelectedIndex != Program.mCoSo)
             {
@@ -77,6 +86,104 @@ namespace ThiTracNghiem.Forms
                 this.sINHVIENTableAdapter.Fill(this.dS_SERVER1.SINHVIEN);
                 this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.bANGDIEMTableAdapter.Fill(this.dS_SERVER1.BANGDIEM);
+            }
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           // gridView1.OptionsBehavior.Editable = true;
+            viTri = bdsSV.Position;
+            groupBox1.Enabled = true;
+            bdsSV.AddNew();
+            dtpNGAYSINH.EditValue = "";
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
+            btnGhi.Enabled = btnUndo.Enabled = true;
+            gcSV.Enabled = false;
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            viTri = bdsSV.Position;
+            groupBox1.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
+            btnGhi.Enabled = btnUndo.Enabled = true;
+            gcSV.Enabled = true;
+        }
+      
+        private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            bdsSV.CancelEdit();
+            if (btnThem.Enabled == false) bdsSV.Position = viTri;
+            gcSV.Enabled = true;
+            groupBox1.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
+            btnGhi.Enabled = btnUndo.Enabled = false;
+        }
+
+        private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtMASV.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã sinh viên không được phép rỗng", "", MessageBoxButtons.OK);
+                txtMASV.Focus();
+                return;
+            }
+            if (txtHO.Text.Trim() == "")
+            {
+                MessageBox.Show("Họ không được phép rỗng", "", MessageBoxButtons.OK);
+                txtHO.Focus();
+                return;
+            }
+            if (txtTEN.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên không được phép rỗng", "", MessageBoxButtons.OK);
+                txtTEN.Focus();
+                return;
+            }
+            if (txtDIACHI.Text.Trim() == "")
+            {
+                MessageBox.Show("Địa chỉ không được phép rỗng", "", MessageBoxButtons.OK);
+                txtDIACHI.Focus();
+                return;
+            }
+            if (dtpNGAYSINH.Text.Trim() == "")
+            {
+                MessageBox.Show("Ngày sinh không được phép rỗng", "", MessageBoxButtons.OK);
+                dtpNGAYSINH.Focus();
+                return;
+            }
+            
+            //((DataRowView)bdsSV[0])["MALOP"] = cmbMALOP.SelectedText.ToString().Trim();
+            try
+            {
+                bdsSV.EndEdit();
+                bdsSV.ResetCurrentItem();
+                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.sINHVIENTableAdapter.Update(this.dS_SERVER1.SINHVIEN);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi nhân viên.\n" + ex.Message, "", MessageBoxButtons.OK);
+                return;
+            }
+            gcSV.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
+            btnGhi.Enabled = btnUndo.Enabled = false;
+
+            groupBox1.Enabled = false;
+        }
+
+        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                this.sINHVIENTableAdapter.Fill(this.dS_SERVER1.SINHVIEN);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Reload :" + ex.Message, "", MessageBoxButtons.OK);
+                return;
             }
         }
     }

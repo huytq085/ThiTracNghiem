@@ -112,12 +112,17 @@ namespace ThiTracNghiem.Forms
 
         private void btnQuestions_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMdiChildren(typeof(FrmQuestions));
+            ShowMdiChildren(typeof(FrmQuestion));
         }
 
         private void btnDept_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMdiChildren(typeof(FrmDept));
+        }
+
+        private void btnAddPacket_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

@@ -34,8 +34,12 @@ namespace ThiTracNghiem.Forms
 
         private void FrmStudent_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS_SERVER1.V_DS_LOP' table. You can move, or remove it, as needed.
+            
+            // TODO: This line of code loads data into the 'dS_SERVER1.LOP' table. You can move, or remove it, as needed.
+
             // TODO: This line of code loads data into the 'dS_SERVER1.BANGDIEM' table. You can move, or remove it, as needed.
-           
+
 
             // TODO: This line of code loads data into the 'dS_SERVER1.SINHVIEN' table. You can move, or remove it, as needed.
             dS_SERVER1.EnforceConstraints = false;
@@ -43,7 +47,8 @@ namespace ThiTracNghiem.Forms
             this.sINHVIENTableAdapter.Fill(this.dS_SERVER1.SINHVIEN);
             this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.bANGDIEMTableAdapter.Fill(this.dS_SERVER1.BANGDIEM);
-
+            this.v_DS_LOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_LOPTableAdapter.Fill(this.dS_SERVER1.V_DS_LOP);
             gridView1.OptionsBehavior.Editable = false;
 
             cmbCoSo.DataSource = Program.bds_dspm;
@@ -63,9 +68,17 @@ namespace ThiTracNghiem.Forms
 
         private void cmbCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCoSo.SelectedValue.ToString() == "System.Data.DataRowView")
-                return;     
-            Program.servername = cmbCoSo.SelectedValue.ToString();
+            try
+            {
+                if (cmbCoSo.SelectedValue.ToString() == "System.Data.DataRowView")
+                    return;
+                Program.servername = cmbCoSo.SelectedValue.ToString();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+            
             if (cmbCoSo.SelectedIndex != Program.mCoSo)
             {
                 Program.mlogin = Program.remotelogin;
@@ -95,6 +108,10 @@ namespace ThiTracNghiem.Forms
             viTri = bdsSV.Position;
             groupBox1.Enabled = true;
             bdsSV.AddNew();
+            cmbMALOP.DataSource = v_bdsMALOP;
+            //cmbMALOP.DisplayMember = "MALOP";
+            //cmbMALOP.ValueMember = "MALOP";
+            cmbMALOP.SelectedIndex = 0;
             dtpNGAYSINH.EditValue = "";
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
@@ -105,6 +122,10 @@ namespace ThiTracNghiem.Forms
         {
             viTri = bdsSV.Position;
             groupBox1.Enabled = true;
+            cmbMALOP.DataSource = v_bdsMALOP;
+            //cmbMALOP.DisplayMember = "MALOP";
+            //cmbMALOP.ValueMember = "MALOP";
+            
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
             gcSV.Enabled = true;
@@ -186,5 +207,7 @@ namespace ThiTracNghiem.Forms
                 return;
             }
         }
+
+        
     }
 }

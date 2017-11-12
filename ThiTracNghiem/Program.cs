@@ -38,7 +38,7 @@ namespace ThiTracNghiem
         public static string mloginDB = "";
         public static string mpasswordDB = "";
         public static BindingSource bds_dspm = new BindingSource();  // giữ TRACNGHIEMDataSet khi đăng nhập
-
+        public static BindingSource bds_lop = new BindingSource();  // giữ BDSLOP khi load form lớp
         public static int KetNoi()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)

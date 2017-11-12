@@ -30,13 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuestion));
+            System.Windows.Forms.Label cAUHOILabel;
+            System.Windows.Forms.Label mAMHLabel;
+            System.Windows.Forms.Label tRINHDOLabel;
+            System.Windows.Forms.Label nOIDUNGLabel;
+            System.Windows.Forms.Label aLabel;
+            System.Windows.Forms.Label bLabel;
+            System.Windows.Forms.Label cLabel;
+            System.Windows.Forms.Label dLabel;
+            System.Windows.Forms.Label dAP_ANLabel;
+            System.Windows.Forms.Label mAGVLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
@@ -44,7 +49,64 @@
             this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
+            this.bODEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bODETableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BODETableAdapter();
+            this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
+            this.gcBODE = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCAUHOI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTRINHDO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNOIDUNG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDAP_AN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cAUHOISpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.mAMHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tRINHDOTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.nOIDUNGTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.aTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.bTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.cTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dAP_ANTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mAGVTextEdit = new DevExpress.XtraEditors.TextEdit();
+            cAUHOILabel = new System.Windows.Forms.Label();
+            mAMHLabel = new System.Windows.Forms.Label();
+            tRINHDOLabel = new System.Windows.Forms.Label();
+            nOIDUNGLabel = new System.Windows.Forms.Label();
+            aLabel = new System.Windows.Forms.Label();
+            bLabel = new System.Windows.Forms.Label();
+            cLabel = new System.Windows.Forms.Label();
+            dLabel = new System.Windows.Forms.Label();
+            dAP_ANLabel = new System.Windows.Forms.Label();
+            mAGVLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bODEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcBODE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cAUHOISpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRINHDOTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nOIDUNGTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dAP_ANTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAGVTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -69,46 +131,11 @@
             this.barManager1.MaxItemId = 7;
             this.barManager1.StatusBar = this.bar3;
             // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1089, 42);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 529);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1089, 18);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 487);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1089, 42);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 487);
-            // 
             // bar2
             // 
             this.bar2.BarName = "Main menu";
             this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -121,17 +148,6 @@
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
             // 
             // btnThem
             // 
@@ -182,22 +198,433 @@
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.Name = "btnPrint";
             // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1350, 40);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 706);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1350, 23);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 666);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1350, 40);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 666);
+            // 
+            // dS_SERVER1
+            // 
+            this.dS_SERVER1.DataSetName = "DS_SERVER1";
+            this.dS_SERVER1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bODEBindingSource
+            // 
+            this.bODEBindingSource.DataMember = "BODE";
+            this.bODEBindingSource.DataSource = this.dS_SERVER1;
+            // 
+            // bODETableAdapter
+            // 
+            this.bODETableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BANGDIEMTableAdapter = null;
+            this.tableAdapterManager.BODETableAdapter = this.bODETableAdapter;
+            this.tableAdapterManager.COSOTableAdapter = null;
+            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = null;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // gcBODE
+            // 
+            this.gcBODE.DataSource = this.bODEBindingSource;
+            this.gcBODE.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcBODE.Location = new System.Drawing.Point(0, 40);
+            this.gcBODE.MainView = this.gridView1;
+            this.gcBODE.MenuManager = this.barManager1;
+            this.gcBODE.Name = "gcBODE";
+            this.gcBODE.Size = new System.Drawing.Size(1350, 294);
+            this.gcBODE.TabIndex = 5;
+            this.gcBODE.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCAUHOI,
+            this.colMAMH,
+            this.colTRINHDO,
+            this.colNOIDUNG,
+            this.colA,
+            this.colB,
+            this.colC,
+            this.colD,
+            this.colDAP_AN,
+            this.colMAGV});
+            this.gridView1.GridControl = this.gcBODE;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colCAUHOI
+            // 
+            this.colCAUHOI.FieldName = "CAUHOI";
+            this.colCAUHOI.Name = "colCAUHOI";
+            this.colCAUHOI.Visible = true;
+            this.colCAUHOI.VisibleIndex = 0;
+            // 
+            // colMAMH
+            // 
+            this.colMAMH.FieldName = "MAMH";
+            this.colMAMH.Name = "colMAMH";
+            this.colMAMH.Visible = true;
+            this.colMAMH.VisibleIndex = 1;
+            // 
+            // colTRINHDO
+            // 
+            this.colTRINHDO.FieldName = "TRINHDO";
+            this.colTRINHDO.Name = "colTRINHDO";
+            this.colTRINHDO.Visible = true;
+            this.colTRINHDO.VisibleIndex = 2;
+            // 
+            // colNOIDUNG
+            // 
+            this.colNOIDUNG.FieldName = "NOIDUNG";
+            this.colNOIDUNG.Name = "colNOIDUNG";
+            this.colNOIDUNG.Visible = true;
+            this.colNOIDUNG.VisibleIndex = 3;
+            // 
+            // colA
+            // 
+            this.colA.FieldName = "A";
+            this.colA.Name = "colA";
+            this.colA.Visible = true;
+            this.colA.VisibleIndex = 4;
+            // 
+            // colB
+            // 
+            this.colB.FieldName = "B";
+            this.colB.Name = "colB";
+            this.colB.Visible = true;
+            this.colB.VisibleIndex = 5;
+            // 
+            // colC
+            // 
+            this.colC.FieldName = "C";
+            this.colC.Name = "colC";
+            this.colC.Visible = true;
+            this.colC.VisibleIndex = 6;
+            // 
+            // colD
+            // 
+            this.colD.FieldName = "D";
+            this.colD.Name = "colD";
+            this.colD.Visible = true;
+            this.colD.VisibleIndex = 7;
+            // 
+            // colDAP_AN
+            // 
+            this.colDAP_AN.FieldName = "DAP_AN";
+            this.colDAP_AN.Name = "colDAP_AN";
+            this.colDAP_AN.Visible = true;
+            this.colDAP_AN.VisibleIndex = 8;
+            // 
+            // colMAGV
+            // 
+            this.colMAGV.FieldName = "MAGV";
+            this.colMAGV.Name = "colMAGV";
+            this.colMAGV.Visible = true;
+            this.colMAGV.VisibleIndex = 9;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(mAGVLabel);
+            this.groupBox1.Controls.Add(this.mAGVTextEdit);
+            this.groupBox1.Controls.Add(dAP_ANLabel);
+            this.groupBox1.Controls.Add(this.dAP_ANTextEdit);
+            this.groupBox1.Controls.Add(dLabel);
+            this.groupBox1.Controls.Add(this.dTextEdit);
+            this.groupBox1.Controls.Add(cLabel);
+            this.groupBox1.Controls.Add(this.cTextEdit);
+            this.groupBox1.Controls.Add(bLabel);
+            this.groupBox1.Controls.Add(this.bTextEdit);
+            this.groupBox1.Controls.Add(aLabel);
+            this.groupBox1.Controls.Add(this.aTextEdit);
+            this.groupBox1.Controls.Add(nOIDUNGLabel);
+            this.groupBox1.Controls.Add(this.nOIDUNGTextEdit);
+            this.groupBox1.Controls.Add(tRINHDOLabel);
+            this.groupBox1.Controls.Add(this.tRINHDOTextEdit);
+            this.groupBox1.Controls.Add(mAMHLabel);
+            this.groupBox1.Controls.Add(this.mAMHTextEdit);
+            this.groupBox1.Controls.Add(cAUHOILabel);
+            this.groupBox1.Controls.Add(this.cAUHOISpinEdit);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 334);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1350, 372);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cAUHOILabel
+            // 
+            cAUHOILabel.AutoSize = true;
+            cAUHOILabel.Location = new System.Drawing.Point(290, 84);
+            cAUHOILabel.Name = "cAUHOILabel";
+            cAUHOILabel.Size = new System.Drawing.Size(70, 17);
+            cAUHOILabel.TabIndex = 0;
+            cAUHOILabel.Text = "CAUHOI:";
+            // 
+            // cAUHOISpinEdit
+            // 
+            this.cAUHOISpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "CAUHOI", true));
+            this.cAUHOISpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cAUHOISpinEdit.Location = new System.Drawing.Point(394, 81);
+            this.cAUHOISpinEdit.MenuManager = this.barManager1;
+            this.cAUHOISpinEdit.Name = "cAUHOISpinEdit";
+            this.cAUHOISpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cAUHOISpinEdit.Size = new System.Drawing.Size(130, 20);
+            this.cAUHOISpinEdit.TabIndex = 1;
+            // 
+            // mAMHLabel
+            // 
+            mAMHLabel.AutoSize = true;
+            mAMHLabel.Location = new System.Drawing.Point(583, 46);
+            mAMHLabel.Name = "mAMHLabel";
+            mAMHLabel.Size = new System.Drawing.Size(59, 17);
+            mAMHLabel.TabIndex = 2;
+            mAMHLabel.Text = "MAMH:";
+            // 
+            // mAMHTextEdit
+            // 
+            this.mAMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "MAMH", true));
+            this.mAMHTextEdit.Location = new System.Drawing.Point(671, 43);
+            this.mAMHTextEdit.MenuManager = this.barManager1;
+            this.mAMHTextEdit.Name = "mAMHTextEdit";
+            this.mAMHTextEdit.Size = new System.Drawing.Size(130, 20);
+            this.mAMHTextEdit.TabIndex = 3;
+            // 
+            // tRINHDOLabel
+            // 
+            tRINHDOLabel.AutoSize = true;
+            tRINHDOLabel.Location = new System.Drawing.Point(833, 46);
+            tRINHDOLabel.Name = "tRINHDOLabel";
+            tRINHDOLabel.Size = new System.Drawing.Size(79, 17);
+            tRINHDOLabel.TabIndex = 4;
+            tRINHDOLabel.Text = "TRINHDO:";
+            // 
+            // tRINHDOTextEdit
+            // 
+            this.tRINHDOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "TRINHDO", true));
+            this.tRINHDOTextEdit.Location = new System.Drawing.Point(941, 43);
+            this.tRINHDOTextEdit.MenuManager = this.barManager1;
+            this.tRINHDOTextEdit.Name = "tRINHDOTextEdit";
+            this.tRINHDOTextEdit.Size = new System.Drawing.Size(130, 20);
+            this.tRINHDOTextEdit.TabIndex = 5;
+            // 
+            // nOIDUNGLabel
+            // 
+            nOIDUNGLabel.AutoSize = true;
+            nOIDUNGLabel.Location = new System.Drawing.Point(279, 122);
+            nOIDUNGLabel.Name = "nOIDUNGLabel";
+            nOIDUNGLabel.Size = new System.Drawing.Size(81, 17);
+            nOIDUNGLabel.TabIndex = 6;
+            nOIDUNGLabel.Text = "NOIDUNG:";
+            // 
+            // nOIDUNGTextEdit
+            // 
+            this.nOIDUNGTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "NOIDUNG", true));
+            this.nOIDUNGTextEdit.Location = new System.Drawing.Point(394, 119);
+            this.nOIDUNGTextEdit.MenuManager = this.barManager1;
+            this.nOIDUNGTextEdit.Name = "nOIDUNGTextEdit";
+            this.nOIDUNGTextEdit.Size = new System.Drawing.Size(677, 20);
+            this.nOIDUNGTextEdit.TabIndex = 7;
+            // 
+            // aLabel
+            // 
+            aLabel.AutoSize = true;
+            aLabel.Location = new System.Drawing.Point(338, 160);
+            aLabel.Name = "aLabel";
+            aLabel.Size = new System.Drawing.Size(22, 17);
+            aLabel.TabIndex = 8;
+            aLabel.Text = "A:";
+            // 
+            // aTextEdit
+            // 
+            this.aTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "A", true));
+            this.aTextEdit.Location = new System.Drawing.Point(394, 157);
+            this.aTextEdit.MenuManager = this.barManager1;
+            this.aTextEdit.Name = "aTextEdit";
+            this.aTextEdit.Size = new System.Drawing.Size(677, 20);
+            this.aTextEdit.TabIndex = 9;
+            // 
+            // bLabel
+            // 
+            bLabel.AutoSize = true;
+            bLabel.Location = new System.Drawing.Point(339, 198);
+            bLabel.Name = "bLabel";
+            bLabel.Size = new System.Drawing.Size(21, 17);
+            bLabel.TabIndex = 10;
+            bLabel.Text = "B:";
+            // 
+            // bTextEdit
+            // 
+            this.bTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "B", true));
+            this.bTextEdit.Location = new System.Drawing.Point(394, 195);
+            this.bTextEdit.MenuManager = this.barManager1;
+            this.bTextEdit.Name = "bTextEdit";
+            this.bTextEdit.Size = new System.Drawing.Size(677, 20);
+            this.bTextEdit.TabIndex = 11;
+            // 
+            // cLabel
+            // 
+            cLabel.AutoSize = true;
+            cLabel.Location = new System.Drawing.Point(339, 236);
+            cLabel.Name = "cLabel";
+            cLabel.Size = new System.Drawing.Size(21, 17);
+            cLabel.TabIndex = 12;
+            cLabel.Text = "C:";
+            // 
+            // cTextEdit
+            // 
+            this.cTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "C", true));
+            this.cTextEdit.Location = new System.Drawing.Point(394, 233);
+            this.cTextEdit.MenuManager = this.barManager1;
+            this.cTextEdit.Name = "cTextEdit";
+            this.cTextEdit.Size = new System.Drawing.Size(677, 20);
+            this.cTextEdit.TabIndex = 13;
+            // 
+            // dLabel
+            // 
+            dLabel.AutoSize = true;
+            dLabel.Location = new System.Drawing.Point(338, 274);
+            dLabel.Name = "dLabel";
+            dLabel.Size = new System.Drawing.Size(22, 17);
+            dLabel.TabIndex = 14;
+            dLabel.Text = "D:";
+            // 
+            // dTextEdit
+            // 
+            this.dTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "D", true));
+            this.dTextEdit.Location = new System.Drawing.Point(394, 271);
+            this.dTextEdit.MenuManager = this.barManager1;
+            this.dTextEdit.Name = "dTextEdit";
+            this.dTextEdit.Size = new System.Drawing.Size(677, 20);
+            this.dTextEdit.TabIndex = 15;
+            // 
+            // dAP_ANLabel
+            // 
+            dAP_ANLabel.AutoSize = true;
+            dAP_ANLabel.Location = new System.Drawing.Point(294, 312);
+            dAP_ANLabel.Name = "dAP_ANLabel";
+            dAP_ANLabel.Size = new System.Drawing.Size(66, 17);
+            dAP_ANLabel.TabIndex = 16;
+            dAP_ANLabel.Text = "DAP AN:";
+            // 
+            // dAP_ANTextEdit
+            // 
+            this.dAP_ANTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "DAP_AN", true));
+            this.dAP_ANTextEdit.Location = new System.Drawing.Point(394, 309);
+            this.dAP_ANTextEdit.MenuManager = this.barManager1;
+            this.dAP_ANTextEdit.Name = "dAP_ANTextEdit";
+            this.dAP_ANTextEdit.Size = new System.Drawing.Size(130, 20);
+            this.dAP_ANTextEdit.TabIndex = 17;
+            // 
+            // mAGVLabel
+            // 
+            mAGVLabel.AutoSize = true;
+            mAGVLabel.Location = new System.Drawing.Point(305, 46);
+            mAGVLabel.Name = "mAGVLabel";
+            mAGVLabel.Size = new System.Drawing.Size(55, 17);
+            mAGVLabel.TabIndex = 18;
+            mAGVLabel.Text = "MAGV:";
+            // 
+            // mAGVTextEdit
+            // 
+            this.mAGVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bODEBindingSource, "MAGV", true));
+            this.mAGVTextEdit.Location = new System.Drawing.Point(394, 43);
+            this.mAGVTextEdit.MenuManager = this.barManager1;
+            this.mAGVTextEdit.Name = "mAGVTextEdit";
+            this.mAGVTextEdit.Size = new System.Drawing.Size(130, 20);
+            this.mAGVTextEdit.TabIndex = 19;
+            // 
             // FrmQuestion
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 547);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gcBODE);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmQuestion";
             this.Text = "FrmQuestion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmQuestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bODEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcBODE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cAUHOISpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRINHDOTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nOIDUNGTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dAP_ANTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAGVTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +646,32 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private System.Windows.Forms.BindingSource bODEBindingSource;
+        private DS_SERVER1 dS_SERVER1;
+        private DS_SERVER1TableAdapters.BODETableAdapter bODETableAdapter;
+        private DS_SERVER1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.TextEdit mAGVTextEdit;
+        private DevExpress.XtraEditors.TextEdit dAP_ANTextEdit;
+        private DevExpress.XtraEditors.TextEdit dTextEdit;
+        private DevExpress.XtraEditors.TextEdit cTextEdit;
+        private DevExpress.XtraEditors.TextEdit bTextEdit;
+        private DevExpress.XtraEditors.TextEdit aTextEdit;
+        private DevExpress.XtraEditors.TextEdit nOIDUNGTextEdit;
+        private DevExpress.XtraEditors.TextEdit tRINHDOTextEdit;
+        private DevExpress.XtraEditors.TextEdit mAMHTextEdit;
+        private DevExpress.XtraEditors.SpinEdit cAUHOISpinEdit;
+        private DevExpress.XtraGrid.GridControl gcBODE;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAUHOI;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTRINHDO;
+        private DevExpress.XtraGrid.Columns.GridColumn colNOIDUNG;
+        private DevExpress.XtraGrid.Columns.GridColumn colA;
+        private DevExpress.XtraGrid.Columns.GridColumn colB;
+        private DevExpress.XtraGrid.Columns.GridColumn colC;
+        private DevExpress.XtraGrid.Columns.GridColumn colD;
+        private DevExpress.XtraGrid.Columns.GridColumn colDAP_AN;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
     }
 }

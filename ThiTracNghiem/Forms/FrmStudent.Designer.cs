@@ -66,7 +66,6 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mALOPTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.txtDIACHI = new DevExpress.XtraEditors.TextEdit();
             this.dtpNGAYSINH = new DevExpress.XtraEditors.DateEdit();
             this.txtTEN = new DevExpress.XtraEditors.TextEdit();
@@ -74,6 +73,9 @@
             this.txtMASV = new DevExpress.XtraEditors.TextEdit();
             this.bdsBD = new System.Windows.Forms.BindingSource(this.components);
             this.bANGDIEMTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BANGDIEMTableAdapter();
+            this.cmbMALOP = new System.Windows.Forms.ComboBox();
+            this.v_bdsMALOP = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_LOPTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_LOPTableAdapter();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -87,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNGAYSINH.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNGAYSINH.Properties)).BeginInit();
@@ -95,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMASV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_bdsMALOP)).BeginInit();
             this.SuspendLayout();
             // 
             // mASVLabel
@@ -264,40 +266,40 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1350, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1367, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 711);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1350, 18);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1367, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 669);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 686);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1350, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1367, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 669);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 686);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cmbCoSo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 42);
+            this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 65);
+            this.panel1.Size = new System.Drawing.Size(1367, 65);
             this.panel1.TabIndex = 4;
             // 
             // cmbCoSo
@@ -353,11 +355,11 @@
             this.gcSV.DataSource = this.bdsSV;
             this.gcSV.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcSV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcSV.Location = new System.Drawing.Point(0, 107);
+            this.gcSV.Location = new System.Drawing.Point(0, 105);
             this.gcSV.MainView = this.gridView1;
             this.gcSV.MenuManager = this.barManager1;
             this.gcSV.Name = "gcSV";
-            this.gcSV.Size = new System.Drawing.Size(1350, 259);
+            this.gcSV.Size = new System.Drawing.Size(1367, 259);
             this.gcSV.TabIndex = 6;
             this.gcSV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -419,8 +421,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbMALOP);
             this.groupBox1.Controls.Add(mALOPLabel1);
-            this.groupBox1.Controls.Add(this.mALOPTextEdit);
             this.groupBox1.Controls.Add(dIACHILabel);
             this.groupBox1.Controls.Add(this.txtDIACHI);
             this.groupBox1.Controls.Add(nGAYSINHLabel);
@@ -432,20 +434,11 @@
             this.groupBox1.Controls.Add(mASVLabel);
             this.groupBox1.Controls.Add(this.txtMASV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 366);
+            this.groupBox1.Location = new System.Drawing.Point(0, 364);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1350, 345);
+            this.groupBox1.Size = new System.Drawing.Size(1367, 362);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            // 
-            // mALOPTextEdit
-            // 
-            this.mALOPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "MALOP", true));
-            this.mALOPTextEdit.Location = new System.Drawing.Point(793, 95);
-            this.mALOPTextEdit.MenuManager = this.barManager1;
-            this.mALOPTextEdit.Name = "mALOPTextEdit";
-            this.mALOPTextEdit.Size = new System.Drawing.Size(174, 20);
-            this.mALOPTextEdit.TabIndex = 12;
             // 
             // txtDIACHI
             // 
@@ -506,12 +499,35 @@
             // 
             this.bANGDIEMTableAdapter.ClearBeforeFill = true;
             // 
+            // cmbMALOP
+            // 
+            this.cmbMALOP.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsSV, "MALOP", true));
+            this.cmbMALOP.DataSource = this.bdsSV;
+            this.cmbMALOP.DisplayMember = "MALOP";
+            this.cmbMALOP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMALOP.FormattingEnabled = true;
+            this.cmbMALOP.Location = new System.Drawing.Point(793, 90);
+            this.cmbMALOP.Name = "cmbMALOP";
+            this.cmbMALOP.Size = new System.Drawing.Size(174, 25);
+            this.cmbMALOP.TabIndex = 12;
+            this.cmbMALOP.ValueMember = "MALOP";
+            // 
+            // v_bdsMALOP
+            // 
+            this.v_bdsMALOP.DataMember = "V_DS_LOP";
+            this.v_bdsMALOP.DataSource = this.dS_SERVER1;
+            // 
+            // v_DS_LOPTableAdapter
+            // 
+            this.v_DS_LOPTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmStudent
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1367, 749);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcSV);
             this.Controls.Add(this.panel1);
@@ -534,7 +550,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNGAYSINH.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNGAYSINH.Properties)).EndInit();
@@ -542,6 +557,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMASV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_bdsMALOP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,6 +615,8 @@
         private DevExpress.XtraEditors.TextEdit txtMASV;
         private System.Windows.Forms.BindingSource bdsBD;
         private DS_SERVER1TableAdapters.BANGDIEMTableAdapter bANGDIEMTableAdapter;
-        private DevExpress.XtraEditors.TextEdit mALOPTextEdit;
+        private System.Windows.Forms.ComboBox cmbMALOP;
+        private System.Windows.Forms.BindingSource v_bdsMALOP;
+        private DS_SERVER1TableAdapters.V_DS_LOPTableAdapter v_DS_LOPTableAdapter;
     }
 }

@@ -28,6 +28,24 @@ namespace ThiTracNghiem.Forms
 
         }
 
+        private void updateDataSource()
+        {
+            try
+            {
+                mONHOCBindingSource.EndEdit();
+                mONHOCBindingSource.ResetCurrentItem();
+                this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
+                reload();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi lưu môn học.\n" + ex.Message, "", MessageBoxButtons.OK);
+                reload();
+                return;
+            }
+        }
+
         private void FrmSubject_Load(object sender, EventArgs e)
         {
             if (!Program.nhom.Equals("TRUONG"))
@@ -72,20 +90,7 @@ namespace ThiTracNghiem.Forms
             dlgConfirm.ShowDialog();
             if (dlgConfirm.DialogResult == DialogResult.OK)
             {
-                try
-                {
-                    mONHOCBindingSource.EndEdit();
-                    mONHOCBindingSource.ResetCurrentItem();
-                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
-                    btnCancel_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi lưu môn học.\n" + ex.Message, "", MessageBoxButtons.OK);
-                    btnCancel_Click(sender, e);
-                    return;
-                }
+                updateDataSource();
 
             }
         }
@@ -96,7 +101,7 @@ namespace ThiTracNghiem.Forms
             btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnUndo.Enabled = true;
         }
-        private void disableEditor()
+        private void reload()
         {
             this.mONHOCTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.MONHOC);
             pnEditor.Enabled = false;
@@ -109,8 +114,6 @@ namespace ThiTracNghiem.Forms
         {
             mONHOCBindingSource.AddNew();
             enableEditor();
-
-
         }
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -125,20 +128,8 @@ namespace ThiTracNghiem.Forms
             dlgConfirm.ShowDialog();
             if (dlgConfirm.DialogResult == DialogResult.OK)
             {
-                try
-                {
-                    mONHOCBindingSource.RemoveAt(position);
-                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
-                    btnCancel_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi lưu môn học.\n" + ex.Message, "", MessageBoxButtons.OK);
-                    btnCancel_Click(sender, e);
-                    return;
-                }
-
+                mONHOCBindingSource.RemoveAt(position);
+                updateDataSource();
             }
         }
 
@@ -161,37 +152,26 @@ namespace ThiTracNghiem.Forms
             dlgConfirm.ShowDialog();
             if (dlgConfirm.DialogResult == DialogResult.OK)
             {
-                try
-                {
-                    mONHOCBindingSource.EndEdit();
-                    mONHOCBindingSource.ResetCurrentItem();
-                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
-                    btnCancel_Click(sender, e);
-                } catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi lưu môn học.\n" + ex.Message, "", MessageBoxButtons.OK);
-                    btnCancel_Click(sender, e);
-                    return;
-                }
-                
+                updateDataSource();
             }
             
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.disableEditor();
+            this.reload();
         }
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             mONHOCBindingSource.CancelEdit();
+            txtMaMH.Text = txtMaMH.Text.Trim();
+            txtTenMH.Text = txtTenMH.Text.Trim();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.disableEditor();
+            this.reload();
         }
     }
 }

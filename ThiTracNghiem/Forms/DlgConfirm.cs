@@ -17,6 +17,11 @@ namespace ThiTracNghiem.Forms
         {
             InitializeComponent();
         }
+        public DlgConfirm(String msg)
+        {
+            InitializeComponent();
+            lbMsg.Text = msg;
+        }
         public DlgConfirm(String msg, String txtOk, String txtCancel)
         {
             InitializeComponent();

@@ -632,6 +632,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
               <Mapping SourceColumn="tendonvi" DataSetColumn="tendonvi" />
               <Mapping SourceColumn="hoten" DataSetColumn="hoten" />
               <Mapping SourceColumn="nhom" DataSetColumn="nhom" />
+              <Mapping SourceColumn="mauser" DataSetColumn="mauser" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1009,6 +1010,13 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mauser" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmauser" msprop:Generator_ColumnPropNameInRow="mauser" msprop:Generator_ColumnPropNameInTable="mauserColumn" msprop:Generator_UserColumnName="mauser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

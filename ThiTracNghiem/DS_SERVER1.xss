@@ -15,7 +15,7 @@
     <Shape ID="DesignTable:LOP" ZOrder="15" X="70" Y="70" Height="134" Width="168" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:MONHOC" ZOrder="14" X="639" Y="312" Height="115" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:SINHVIEN" ZOrder="13" X="308" Y="649" Height="191" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:SP_DangNhap" ZOrder="12" X="1158" Y="70" Height="153" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:SP_DangNhap" ZOrder="12" X="1158" Y="70" Height="172" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:V_DS_LOP" ZOrder="1" X="1454" Y="70" Height="96" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
   </Shapes>
   <Connectors>

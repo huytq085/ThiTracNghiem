@@ -32,12 +32,55 @@ namespace ThiTracNghiem.Forms
             this.dS_SERVER1.EnforceConstraints = false;
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.bODETableAdapter.Fill(this.dS_SERVER1.BODE);
-
+            gridView1.OptionsBehavior.Editable = false;
+            groupBox1.Enabled = false;
+            List<String> cachXem = new List<String> { "TẤT CẢ ĐỀ THI","CÁ NHÂN" };
+            cmbCachXem.DataSource = cachXem;
+            if (cmbCachXem.SelectedValue.ToString() == "CÁ NHÂN") {
+                bODEBindingSource.Filter = "MAGV = 'TH123'";
+                btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnUndo.Enabled = btnXoa.Enabled = true;
+                btnPrint.Enabled = btnReload.Enabled = true;                
+            }
+            else
+            {
+                bODEBindingSource.Filter="";
+                btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnUndo.Enabled = btnXoa.Enabled = false;
+                btnPrint.Enabled = btnReload.Enabled = true;
+            }
+            if (Program.nhom == "GIAOVIEN")
+            {
+                panel1.Enabled = true;
+            }
+            else
+            {
+                panel1.Enabled = false;
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCachXem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCachXem.SelectedValue.ToString() == "CÁ NHÂN")
+            {
+                btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnUndo.Enabled = btnXoa.Enabled = true;
+                btnPrint.Enabled = btnReload.Enabled = true;
+                bODEBindingSource.Filter = "MAGV = 'TH123'";                
+            }
+            else
+            {
+                btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnUndo.Enabled = btnXoa.Enabled = false;
+                btnPrint.Enabled = btnReload.Enabled = true;
+                bODEBindingSource.Filter = "";
+            }
         }
     }
 }

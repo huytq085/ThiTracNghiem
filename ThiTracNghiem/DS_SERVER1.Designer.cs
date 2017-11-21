@@ -3699,6 +3699,8 @@ namespace ThiTracNghiem {
             
             private global::System.Data.DataColumn columnnhom;
             
+            private global::System.Data.DataColumn columnmauser;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SP_DangNhapDataTable() {
@@ -3766,6 +3768,14 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn mauserColumn {
+                get {
+                    return this.columnmauser;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3801,13 +3811,14 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SP_DangNhapRow AddSP_DangNhapRow(string donvi, string tendonvi, string hoten, string nhom) {
+            public SP_DangNhapRow AddSP_DangNhapRow(string donvi, string tendonvi, string hoten, string nhom, string mauser) {
                 SP_DangNhapRow rowSP_DangNhapRow = ((SP_DangNhapRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         donvi,
                         tendonvi,
                         hoten,
-                        nhom};
+                        nhom,
+                        mauser};
                 rowSP_DangNhapRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_DangNhapRow);
                 return rowSP_DangNhapRow;
@@ -3841,6 +3852,7 @@ namespace ThiTracNghiem {
                 this.columntendonvi = base.Columns["tendonvi"];
                 this.columnhoten = base.Columns["hoten"];
                 this.columnnhom = base.Columns["nhom"];
+                this.columnmauser = base.Columns["mauser"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3854,6 +3866,8 @@ namespace ThiTracNghiem {
                 base.Columns.Add(this.columnhoten);
                 this.columnnhom = new global::System.Data.DataColumn("nhom", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnhom);
+                this.columnmauser = new global::System.Data.DataColumn("mauser", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmauser);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columndonvi}, true));
                 this.columndonvi.AllowDBNull = false;
@@ -3865,6 +3879,8 @@ namespace ThiTracNghiem {
                 this.columnhoten.MaxLength = 51;
                 this.columnnhom.ReadOnly = true;
                 this.columnnhom.MaxLength = 20;
+                this.columnmauser.ReadOnly = true;
+                this.columnmauser.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5674,6 +5690,22 @@ namespace ThiTracNghiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string mauser {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_DangNhap.mauserColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mauser\' in table \'SP_DangNhap\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_DangNhap.mauserColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IshotenNull() {
                 return this.IsNull(this.tableSP_DangNhap.hotenColumn);
             }
@@ -5694,6 +5726,18 @@ namespace ThiTracNghiem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnhomNull() {
                 this[this.tableSP_DangNhap.nhomColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmauserNull() {
+                return this.IsNull(this.tableSP_DangNhap.mauserColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmauserNull() {
+                this[this.tableSP_DangNhap.mauserColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10103,6 +10147,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
             tableMapping.ColumnMappings.Add("tendonvi", "tendonvi");
             tableMapping.ColumnMappings.Add("hoten", "hoten");
             tableMapping.ColumnMappings.Add("nhom", "nhom");
+            tableMapping.ColumnMappings.Add("mauser", "mauser");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

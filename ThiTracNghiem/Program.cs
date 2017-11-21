@@ -29,6 +29,7 @@ namespace ThiTracNghiem
         public static string pwdSV = "123";
         public static string hoTen = "";
         public static string nhom = "";
+        public static string mauser = "";   //Mã giáo viên hoặc mã sinh viên
         public static string id = "";
         public static string donVi = "";
         public static string tenDonVi = "";

@@ -13,7 +13,6 @@ namespace ThiTracNghiem.Forms
 {
     public partial class FrmSubject : DevExpress.XtraEditors.XtraForm
     {
-        string maMH = "";
         int position = 0; //This value will be changed by mONHOCGridControl_Click()
         public FrmSubject()
         {
@@ -48,17 +47,13 @@ namespace ThiTracNghiem.Forms
 
         private void FrmSubject_Load(object sender, EventArgs e)
         {
-            if (!Program.nhom.Equals("TRUONG"))
-            {
-                pnBranches.Dispose();
-            }
+            this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
+            
             if (Program.connstr != null)
             {
                 this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             }
-            // TODO: This line of code loads data into the 'tRACNGHIEMDataSetSV1.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.MONHOC);
-
         }
 
         private void mONHOCGridControl_Click(object sender, EventArgs e)
@@ -172,6 +167,18 @@ namespace ThiTracNghiem.Forms
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.reload();
+        }
+
+        private void cbbBranches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

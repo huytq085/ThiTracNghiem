@@ -32,9 +32,8 @@
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label tENMHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubject));
-            this.pnBranches = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbbBranch = new System.Windows.Forms.ComboBox();
+            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.pnTable = new System.Windows.Forms.Panel();
             this.mONHOCGridControl = new DevExpress.XtraGrid.GridControl();
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,9 +64,12 @@
             this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
             this.mONHOCTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.MONHOCTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.TableAdapterManager();
+            this.v_DS_PHANMANHTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.tableAdapterManager1 = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
-            this.pnBranches.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
             this.pnTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
@@ -98,39 +100,21 @@
             tENMHLabel.TabIndex = 2;
             tENMHLabel.Text = "TENMH:";
             // 
-            // pnBranches
+            // v_DS_PHANMANHBindingSource
             // 
-            this.pnBranches.Controls.Add(this.label1);
-            this.pnBranches.Controls.Add(this.cbbBranch);
-            this.pnBranches.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnBranches.Location = new System.Drawing.Point(0, 40);
-            this.pnBranches.Name = "pnBranches";
-            this.pnBranches.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnBranches.Size = new System.Drawing.Size(1238, 80);
-            this.pnBranches.TabIndex = 4;
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.tRACNGHIEMDataSet;
             // 
-            // label1
+            // tRACNGHIEMDataSet
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cơ sở";
-            // 
-            // cbbBranch
-            // 
-            this.cbbBranch.FormattingEnabled = true;
-            this.cbbBranch.Location = new System.Drawing.Point(313, 23);
-            this.cbbBranch.Name = "cbbBranch";
-            this.cbbBranch.Size = new System.Drawing.Size(315, 27);
-            this.cbbBranch.TabIndex = 0;
+            this.tRACNGHIEMDataSet.DataSetName = "TRACNGHIEMDataSet";
+            this.tRACNGHIEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnTable
             // 
             this.pnTable.Controls.Add(this.mONHOCGridControl);
             this.pnTable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTable.Location = new System.Drawing.Point(0, 120);
+            this.pnTable.Location = new System.Drawing.Point(0, 42);
             this.pnTable.Name = "pnTable";
             this.pnTable.Size = new System.Drawing.Size(1238, 263);
             this.pnTable.TabIndex = 5;
@@ -305,31 +289,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1238, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1238, 42);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 568);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 573);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1238, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1238, 18);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 528);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 531);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1238, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1238, 42);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 528);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 531);
             // 
             // imageCollection1
             // 
@@ -346,7 +330,7 @@
             this.pnEditor.Controls.Add(this.txtMaMH);
             this.pnEditor.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnEditor.Enabled = false;
-            this.pnEditor.Location = new System.Drawing.Point(0, 383);
+            this.pnEditor.Location = new System.Drawing.Point(0, 305);
             this.pnEditor.Name = "pnEditor";
             this.pnEditor.Size = new System.Drawing.Size(1238, 182);
             this.pnEditor.TabIndex = 10;
@@ -426,6 +410,16 @@
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // v_DS_PHANMANHTableAdapter
+            // 
+            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // FrmSubject
             // 
             this.Appearance.Options.UseFont = true;
@@ -434,7 +428,6 @@
             this.ClientSize = new System.Drawing.Size(1238, 591);
             this.Controls.Add(this.pnEditor);
             this.Controls.Add(this.pnTable);
-            this.Controls.Add(this.pnBranches);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -446,8 +439,8 @@
             this.Text = "FrmSubject";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSubject_Load);
-            this.pnBranches.ResumeLayout(false);
-            this.pnBranches.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
             this.pnTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
@@ -466,9 +459,6 @@
 
         #endregion
         private System.Windows.Forms.Panel pnTable;
-        private System.Windows.Forms.Panel pnBranches;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbbBranch;
         private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
@@ -498,5 +488,9 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
+        private TRACNGHIEMDataSet tRACNGHIEMDataSet;
+        private System.Windows.Forms.BindingSource v_DS_PHANMANHBindingSource;
+        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
+        private TRACNGHIEMDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }

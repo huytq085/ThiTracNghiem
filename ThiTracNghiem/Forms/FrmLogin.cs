@@ -83,8 +83,8 @@ namespace ThiTracNghiem.Forms
             reader.Read();
             if (reader.HasRows)
             {
-                Program.donVi = reader["donvi"].ToString();
-                Program.tenDonVi = reader["tendonvi"].ToString();
+                Program.donVi = Program.HasColumn(reader, "donvi") ? reader["donvi"].ToString() : "";
+                Program.tenDonVi = Program.HasColumn(reader, "tendonvi") ? reader["tendonvi"].ToString() : "";
                 Program.hoTen = reader["hoten"].ToString();
                 Program.nhom = reader["nhom"].ToString();
                 Program.id = username;

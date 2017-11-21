@@ -40,6 +40,8 @@
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tRACNGHIEMDataSetSV1 = new ThiTracNghiem.TRACNGHIEMDataSetSV1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -101,7 +103,7 @@
             this.pnBranches.Controls.Add(this.label1);
             this.pnBranches.Controls.Add(this.cbbBranch);
             this.pnBranches.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnBranches.Location = new System.Drawing.Point(0, 42);
+            this.pnBranches.Location = new System.Drawing.Point(0, 40);
             this.pnBranches.Name = "pnBranches";
             this.pnBranches.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnBranches.Size = new System.Drawing.Size(1238, 80);
@@ -128,7 +130,7 @@
             // 
             this.pnTable.Controls.Add(this.mONHOCGridControl);
             this.pnTable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTable.Location = new System.Drawing.Point(0, 122);
+            this.pnTable.Location = new System.Drawing.Point(0, 120);
             this.pnTable.Name = "pnTable";
             this.pnTable.Size = new System.Drawing.Size(1238, 263);
             this.pnTable.TabIndex = 5;
@@ -145,6 +147,7 @@
             this.mONHOCGridControl.TabIndex = 0;
             this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.mONHOCGridControl.Click += new System.EventHandler(this.mONHOCGridControl_Click);
             // 
             // mONHOCBindingSource
             // 
@@ -158,9 +161,26 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAMH,
+            this.colTENMH});
             this.gridView1.GridControl = this.mONHOCGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            // 
+            // colMAMH
+            // 
+            this.colMAMH.FieldName = "MAMH";
+            this.colMAMH.Name = "colMAMH";
+            this.colMAMH.Visible = true;
+            this.colMAMH.VisibleIndex = 0;
+            // 
+            // colTENMH
+            // 
+            this.colTENMH.FieldName = "TENMH";
+            this.colTENMH.Name = "colTENMH";
+            this.colTENMH.Visible = true;
+            this.colTENMH.VisibleIndex = 1;
             // 
             // barManager1
             // 
@@ -194,12 +214,12 @@
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnEdit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSave, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSave, "", false, true, false, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDelete, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnUndo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPrint, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnExit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnExit, "", false, true, false, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -218,10 +238,12 @@
             this.btnEdit.Id = 1;
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnSave
             // 
             this.btnSave.Caption = "Ghi";
+            this.btnSave.Enabled = false;
             this.btnSave.Id = 2;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.Name = "btnSave";
@@ -233,6 +255,7 @@
             this.btnDelete.Id = 3;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // btnUndo
             // 
@@ -240,6 +263,7 @@
             this.btnUndo.Id = 4;
             this.btnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.ImageOptions.Image")));
             this.btnUndo.Name = "btnUndo";
+            this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
             // 
             // btnReload
             // 
@@ -247,6 +271,7 @@
             this.btnReload.Id = 5;
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnPrint
             // 
@@ -280,31 +305,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1238, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1238, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 573);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 568);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1238, 18);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1238, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 531);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 528);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1238, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1238, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 531);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 528);
             // 
             // imageCollection1
             // 
@@ -321,7 +346,7 @@
             this.pnEditor.Controls.Add(this.txtMaMH);
             this.pnEditor.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnEditor.Enabled = false;
-            this.pnEditor.Location = new System.Drawing.Point(0, 385);
+            this.pnEditor.Location = new System.Drawing.Point(0, 383);
             this.pnEditor.Name = "pnEditor";
             this.pnEditor.Size = new System.Drawing.Size(1238, 182);
             this.pnEditor.TabIndex = 10;
@@ -471,5 +496,7 @@
         private DevExpress.XtraEditors.TextEdit txtMaMH;
         private DevExpress.XtraEditors.SimpleButton btnSubmit;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
     }
 }

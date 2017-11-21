@@ -14,7 +14,7 @@ namespace ThiTracNghiem.Forms
     public partial class FrmSubject : DevExpress.XtraEditors.XtraForm
     {
         string maMH = "";
-        int vitri = 0;
+        int position = 0; //This value will be changed by mONHOCGridControl_Click()
         public FrmSubject()
         {
             InitializeComponent();
@@ -26,6 +26,24 @@ namespace ThiTracNghiem.Forms
             this.mONHOCBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.tRACNGHIEMDataSetSV1);
 
+        }
+
+        private void updateDataSource()
+        {
+            try
+            {
+                mONHOCBindingSource.EndEdit();
+                mONHOCBindingSource.ResetCurrentItem();
+                this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
+                reload();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi lưu môn học.\n" + ex.Message, "", MessageBoxButtons.OK);
+                reload();
+                return;
+            }
         }
 
         private void FrmSubject_Load(object sender, EventArgs e)
@@ -43,6 +61,11 @@ namespace ThiTracNghiem.Forms
 
         }
 
+        private void mONHOCGridControl_Click(object sender, EventArgs e)
+        {
+            this.position = mONHOCBindingSource.Position;
+        }
+
         private void mAMHTextEdit_EditValueChanged(object sender, EventArgs e)
         {
 
@@ -50,16 +73,64 @@ namespace ThiTracNghiem.Forms
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
-            
+            if (txtMaMH.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã môn học không được thiếu!", "", MessageBoxButtons.OK);
+                txtMaMH.Focus();
+                return;
+            }
+            if (txtTenMH.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên môn học không được thiếu!", "", MessageBoxButtons.OK);
+                txtTenMH.Focus();
+                return;
+            }
+            Form dlgConfirm = new DlgConfirm();
+            dlgConfirm.StartPosition = FormStartPosition.CenterParent;
+            dlgConfirm.ShowDialog();
+            if (dlgConfirm.DialogResult == DialogResult.OK)
+            {
+                updateDataSource();
+
+            }
+        }
+        private void enableEditor()
+        {
+            pnEditor.Enabled = true;
+            pnTable.Enabled = false;
+            btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
+            btnUndo.Enabled = true;
+        }
+        private void reload()
+        {
+            this.mONHOCTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.MONHOC);
+            pnEditor.Enabled = false;
+            pnTable.Enabled = true;
+            btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
+            btnUndo.Enabled = false;
         }
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            pnEditor.Enabled = true;
-            pnTable.Enabled = false;
-            vitri = mONHOCBindingSource.Position;
             mONHOCBindingSource.AddNew();
+            enableEditor();
+        }
+        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            txtMaMH.Text = txtMaMH.Text.Trim();
+            txtTenMH.Text = txtTenMH.Text.Trim();
+            enableEditor();
+        }
+        private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa môn học có mã " + ((DataRowView)mONHOCBindingSource[position])["MAMH"].ToString().Trim() + " không?", "Đồng ý", "Không");
+            dlgConfirm.StartPosition = FormStartPosition.CenterParent;
+            dlgConfirm.ShowDialog();
+            if (dlgConfirm.DialogResult == DialogResult.OK)
+            {
+                mONHOCBindingSource.RemoveAt(position);
+                updateDataSource();
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -81,27 +152,26 @@ namespace ThiTracNghiem.Forms
             dlgConfirm.ShowDialog();
             if (dlgConfirm.DialogResult == DialogResult.OK)
             {
-                try
-                {
-                    mONHOCBindingSource.EndEdit();
-                    mONHOCBindingSource.ResetCurrentItem();
-                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
-                } catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi lưu môn học.\n" + ex.Message, "", MessageBoxButtons.OK);
-                    this.mONHOCTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.MONHOC);
-                    return;
-                }
-                
+                updateDataSource();
             }
             
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            pnEditor.Enabled = false;
-            pnTable.Enabled = true;
+            this.reload();
+        }
+
+        private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            mONHOCBindingSource.CancelEdit();
+            txtMaMH.Text = txtMaMH.Text.Trim();
+            txtTenMH.Text = txtTenMH.Text.Trim();
+        }
+
+        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.reload();
         }
     }
 }

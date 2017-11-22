@@ -22,7 +22,7 @@ namespace ThiTracNghiem.Forms
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'tRACNGHIEMDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
+            this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
 
         }
 
@@ -136,7 +136,7 @@ namespace ThiTracNghiem.Forms
             Program.servername = cbbCoSo.SelectedValue.ToString();
             Program.mlogin = txtUsername.Text;
             Program.password = txtPassword.Text;
-            Program.bds_dspm = bdsPM;
+            Program.bds_dspm = branchesBindingSource;
             Program.mCoSo = cbbCoSo.SelectedIndex;
             if (!Login(Program.mlogin))
                 MessageBox.Show("Sai thông tin tài khoản hoặc mật khẩu");

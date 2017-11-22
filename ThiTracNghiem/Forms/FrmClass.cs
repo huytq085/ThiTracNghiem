@@ -31,16 +31,16 @@ namespace ThiTracNghiem.Forms
             }
             if (Program.connstr != null)
             {
-                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.classTableAdapter.Connection.ConnectionString = Program.connstr;
             }
-            dS_SERVER1.EnforceConstraints = false;
-            this.lOPTableAdapter.Fill(this.dS_SERVER1.LOP);
-            this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
+            dsSV1.EnforceConstraints = false;
+            this.classTableAdapter.Fill(this.dsSV1.LOP);
+            this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
         }
 
         private void reload()
         {
-            this.lOPTableAdapter.Fill(this.dS_SERVER1.LOP);
+            this.classTableAdapter.Fill(this.dsSV1.LOP);
             pnEditor.Enabled = false;
             pnTable.Enabled = true;
             btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
@@ -58,10 +58,10 @@ namespace ThiTracNghiem.Forms
         {
             try
             {
-                lOPBindingSource.EndEdit();
-                lOPBindingSource.ResetCurrentItem();
-                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.lOPTableAdapter.Update(this.dS_SERVER1);
+                classBindingSource.EndEdit();
+                classBindingSource.ResetCurrentItem();
+                this.classTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.classTableAdapter.Update(this.dsSV1);
                 reload();
             }
             catch (Exception ex)
@@ -82,15 +82,15 @@ namespace ThiTracNghiem.Forms
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            lOPBindingSource.AddNew();
+            classBindingSource.AddNew();
             enableEditor();
         }
 
         private void gIAOVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.lOPBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dS_SERVER1);
+            this.classBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsSV1);
 
         }
 
@@ -103,8 +103,8 @@ namespace ThiTracNghiem.Forms
                     Program.servername = cbbBranches.SelectedValue.ToString();
                     if (Program.KetNoi() != 0)
                     {
-                        this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.lOPTableAdapter.Fill(this.dS_SERVER1.LOP);
+                        this.classTableAdapter.Connection.ConnectionString = Program.connstr;
+                        this.classTableAdapter.Fill(this.dsSV1.LOP);
                     }
                     else
                     {
@@ -155,19 +155,19 @@ namespace ThiTracNghiem.Forms
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa môn học có mã " + ((DataRowView)lOPBindingSource[position])["MALOP"].ToString().Trim() + " không?", "Đồng ý", "Không");
+            Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa môn học có mã " + ((DataRowView)classBindingSource[position])["MALOP"].ToString().Trim() + " không?", "Đồng ý", "Không");
             dlgConfirm.StartPosition = FormStartPosition.CenterParent;
             dlgConfirm.ShowDialog();
             if (dlgConfirm.DialogResult == DialogResult.OK)
             {
-                lOPBindingSource.RemoveAt(position);
+                classBindingSource.RemoveAt(position);
                 updateDataSource();
             }
         }
 
         private void lOPGridControl_MouseClick(object sender, MouseEventArgs e)
         {
-            this.position = lOPBindingSource.Position;
+            this.position = classBindingSource.Position;
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -177,7 +177,7 @@ namespace ThiTracNghiem.Forms
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            lOPBindingSource.CancelEdit();
+            classBindingSource.CancelEdit();
             trimInput();
         }
     }

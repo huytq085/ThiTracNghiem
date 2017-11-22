@@ -36,14 +36,21 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barAction = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSave = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
+            this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.tRACNGHIEMDataSetSV1 = new ThiTracNghiem.TRACNGHIEMDataSetSV1();
-            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kHOATableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.KHOATableAdapter();
+            this.dsSV1 = new ThiTracNghiem.TRACNGHIEMDataSetSV1();
+            this.deptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deptTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.KHOATableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.TableAdapterManager();
             this.kHOAGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,38 +59,31 @@
             this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnBranches = new System.Windows.Forms.Panel();
             this.cbbBranches = new System.Windows.Forms.ComboBox();
-            this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
+            this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ds = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.pnTable = new System.Windows.Forms.Panel();
             this.pnEditor = new System.Windows.Forms.Panel();
             this.txtMaCS = new DevExpress.XtraEditors.TextEdit();
             this.txtTenKH = new DevExpress.XtraEditors.TextEdit();
             this.txtMaKH = new DevExpress.XtraEditors.TextEdit();
-            this.vDSPHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.v_DS_PHANMANHTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
-            this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSave = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
-            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
-            this.btnExit = new DevExpress.XtraBars.BarButtonItem();
+            this.branchesTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             mAKHLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
             mACSLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSetSV1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSV1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deptBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOAGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.pnBranches.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.pnTable.SuspendLayout();
             this.pnEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaCS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAKHLabel
@@ -156,9 +156,64 @@
             // 
             this.btnAdd.Caption = "Thêm";
             this.btnAdd.Id = 0;
-            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Caption = "Hiệu chỉnh";
+            this.btnEdit.Id = 2;
+            this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
+            this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Caption = "Ghi";
+            this.btnSave.Id = 3;
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Caption = "Xóa";
+            this.btnDelete.Id = 4;
+            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.Caption = "Phục hồi";
+            this.btnUndo.Id = 5;
+            this.btnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.ImageOptions.Image")));
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
+            // 
+            // btnReload
+            // 
+            this.btnReload.Caption = "Tải lại";
+            this.btnReload.Id = 6;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Caption = "In danh sách";
+            this.btnPrint.Id = 7;
+            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
+            this.btnPrint.Name = "btnPrint";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Caption = "Thoát";
+            this.btnExit.Id = 8;
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
+            this.btnExit.Name = "btnExit";
             // 
             // bar3
             // 
@@ -204,19 +259,19 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 512);
             // 
-            // tRACNGHIEMDataSetSV1
+            // dsSV1
             // 
-            this.tRACNGHIEMDataSetSV1.DataSetName = "TRACNGHIEMDataSetSV1";
-            this.tRACNGHIEMDataSetSV1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsSV1.DataSetName = "TRACNGHIEMDataSetSV1";
+            this.dsSV1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // kHOABindingSource
+            // deptBindingSource
             // 
-            this.kHOABindingSource.DataMember = "KHOA";
-            this.kHOABindingSource.DataSource = this.tRACNGHIEMDataSetSV1;
+            this.deptBindingSource.DataMember = "KHOA";
+            this.deptBindingSource.DataSource = this.dsSV1;
             // 
-            // kHOATableAdapter
+            // deptTableAdapter
             // 
-            this.kHOATableAdapter.ClearBeforeFill = true;
+            this.deptTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -226,7 +281,7 @@
             this.tableAdapterManager.COSOTableAdapter = null;
             this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
             this.tableAdapterManager.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager.KHOATableAdapter = this.kHOATableAdapter;
+            this.tableAdapterManager.KHOATableAdapter = this.deptTableAdapter;
             this.tableAdapterManager.LOPTableAdapter = null;
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
@@ -234,7 +289,7 @@
             // 
             // kHOAGridControl
             // 
-            this.kHOAGridControl.DataSource = this.kHOABindingSource;
+            this.kHOAGridControl.DataSource = this.deptBindingSource;
             this.kHOAGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.kHOAGridControl.Location = new System.Drawing.Point(24, 24);
             this.kHOAGridControl.MainView = this.gridView1;
@@ -289,7 +344,7 @@
             // 
             // cbbBranches
             // 
-            this.cbbBranches.DataSource = this.vDSPHANMANHBindingSource;
+            this.cbbBranches.DataSource = this.branchesBindingSource;
             this.cbbBranches.DisplayMember = "TENCS";
             this.cbbBranches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbBranches.FormattingEnabled = true;
@@ -300,10 +355,15 @@
             this.cbbBranches.ValueMember = "TENSERVER";
             this.cbbBranches.SelectedIndexChanged += new System.EventHandler(this.cbbBranches_SelectedIndexChanged);
             // 
-            // tRACNGHIEMDataSet
+            // branchesBindingSource
             // 
-            this.tRACNGHIEMDataSet.DataSetName = "TRACNGHIEMDataSet";
-            this.tRACNGHIEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.branchesBindingSource.DataMember = "V_DS_PHANMANH";
+            this.branchesBindingSource.DataSource = this.ds;
+            // 
+            // ds
+            // 
+            this.ds.DataSetName = "TRACNGHIEMDataSet";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -340,7 +400,7 @@
             // 
             // txtMaCS
             // 
-            this.txtMaCS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MACS", true));
+            this.txtMaCS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.deptBindingSource, "MACS", true));
             this.txtMaCS.Location = new System.Drawing.Point(173, 91);
             this.txtMaCS.MenuManager = this.barManager1;
             this.txtMaCS.Name = "txtMaCS";
@@ -349,7 +409,7 @@
             // 
             // txtTenKH
             // 
-            this.txtTenKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "TENKH", true));
+            this.txtTenKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.deptBindingSource, "TENKH", true));
             this.txtTenKH.Location = new System.Drawing.Point(173, 54);
             this.txtTenKH.MenuManager = this.barManager1;
             this.txtTenKH.Name = "txtTenKH";
@@ -358,76 +418,16 @@
             // 
             // txtMaKH
             // 
-            this.txtMaKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKH", true));
+            this.txtMaKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.deptBindingSource, "MAKH", true));
             this.txtMaKH.Location = new System.Drawing.Point(173, 18);
             this.txtMaKH.MenuManager = this.barManager1;
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(218, 20);
             this.txtMaKH.TabIndex = 1;
             // 
-            // vDSPHANMANHBindingSource
+            // branchesTableAdapter
             // 
-            this.vDSPHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.vDSPHANMANHBindingSource.DataSource = this.tRACNGHIEMDataSet;
-            // 
-            // v_DS_PHANMANHTableAdapter
-            // 
-            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Caption = "Hiệu chỉnh";
-            this.btnEdit.Id = 2;
-            this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Caption = "Ghi";
-            this.btnSave.Id = 3;
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnSave.Name = "btnSave";
-            this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Caption = "Xóa";
-            this.btnDelete.Id = 4;
-            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
-            // 
-            // btnUndo
-            // 
-            this.btnUndo.Caption = "Phục hồi";
-            this.btnUndo.Id = 5;
-            this.btnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
-            // 
-            // btnReload
-            // 
-            this.btnReload.Caption = "Tải lại";
-            this.btnReload.Id = 6;
-            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.btnReload.Name = "btnReload";
-            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Caption = "In danh sách";
-            this.btnPrint.Id = 7;
-            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.btnPrint.Name = "btnPrint";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Caption = "Thoát";
-            this.btnExit.Id = 8;
-            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.btnExit.Name = "btnExit";
+            this.branchesTableAdapter.ClearBeforeFill = true;
             // 
             // FrmDept
             // 
@@ -450,20 +450,20 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmDept_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSetSV1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSV1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deptBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOAGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.pnBranches.ResumeLayout(false);
             this.pnBranches.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.pnTable.ResumeLayout(false);
             this.pnEditor.ResumeLayout(false);
             this.pnEditor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaCS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,9 +479,9 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnAdd;
-        private System.Windows.Forms.BindingSource kHOABindingSource;
-        private TRACNGHIEMDataSetSV1 tRACNGHIEMDataSetSV1;
-        private TRACNGHIEMDataSetSV1TableAdapters.KHOATableAdapter kHOATableAdapter;
+        private System.Windows.Forms.BindingSource deptBindingSource;
+        private TRACNGHIEMDataSetSV1 dsSV1;
+        private TRACNGHIEMDataSetSV1TableAdapters.KHOATableAdapter deptTableAdapter;
         private TRACNGHIEMDataSetSV1TableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl kHOAGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -495,10 +495,10 @@
         private DevExpress.XtraEditors.TextEdit txtTenKH;
         private DevExpress.XtraEditors.TextEdit txtMaKH;
         private System.Windows.Forms.Panel pnTable;
-        private TRACNGHIEMDataSet tRACNGHIEMDataSet;
+        private TRACNGHIEMDataSet ds;
         private System.Windows.Forms.ComboBox cbbBranches;
-        private System.Windows.Forms.BindingSource vDSPHANMANHBindingSource;
-        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
+        private System.Windows.Forms.BindingSource branchesBindingSource;
+        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter branchesTableAdapter;
         private DevExpress.XtraBars.BarButtonItem btnEdit;
         private DevExpress.XtraBars.BarButtonItem btnSave;
         private DevExpress.XtraBars.BarButtonItem btnDelete;

@@ -52,17 +52,17 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
+            this.dsSV1 = new ThiTracNghiem.DS_SERVER1();
             this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
-            this.lOPTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.LOPTableAdapter();
+            this.classTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.LOPTableAdapter();
             this.pnBranches = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbBranches = new System.Windows.Forms.ComboBox();
-            this.vDSPHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
+            this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ds = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.pnTable = new System.Windows.Forms.Panel();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,19 +71,19 @@
             this.txtMaKH = new DevExpress.XtraEditors.TextEdit();
             this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
-            this.v_DS_PHANMANHTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.branchesTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSV1)).BeginInit();
             this.pnBranches.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.pnTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.pnEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).BeginInit();
@@ -294,10 +294,10 @@
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 679);
             // 
-            // dS_SERVER1
+            // dsSV1
             // 
-            this.dS_SERVER1.DataSetName = "DS_SERVER1";
-            this.dS_SERVER1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsSV1.DataSetName = "DS_SERVER1";
+            this.dsSV1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableAdapterManager
             // 
@@ -308,14 +308,14 @@
             this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
             this.tableAdapterManager.GIAOVIENTableAdapter = null;
             this.tableAdapterManager.KHOATableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = this.lOPTableAdapter;
+            this.tableAdapterManager.LOPTableAdapter = this.classTableAdapter;
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // lOPTableAdapter
+            // classTableAdapter
             // 
-            this.lOPTableAdapter.ClearBeforeFill = true;
+            this.classTableAdapter.ClearBeforeFill = true;
             // 
             // pnBranches
             // 
@@ -338,7 +338,7 @@
             // 
             // cbbBranches
             // 
-            this.cbbBranches.DataSource = this.vDSPHANMANHBindingSource;
+            this.cbbBranches.DataSource = this.branchesBindingSource;
             this.cbbBranches.DisplayMember = "TENCS";
             this.cbbBranches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbBranches.FormattingEnabled = true;
@@ -349,15 +349,15 @@
             this.cbbBranches.ValueMember = "TENSERVER";
             this.cbbBranches.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // vDSPHANMANHBindingSource
+            // branchesBindingSource
             // 
-            this.vDSPHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.vDSPHANMANHBindingSource.DataSource = this.tRACNGHIEMDataSet;
+            this.branchesBindingSource.DataMember = "V_DS_PHANMANH";
+            this.branchesBindingSource.DataSource = this.ds;
             // 
-            // tRACNGHIEMDataSet
+            // ds
             // 
-            this.tRACNGHIEMDataSet.DataSetName = "TRACNGHIEMDataSet";
-            this.tRACNGHIEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.ds.DataSetName = "TRACNGHIEMDataSet";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnTable
             // 
@@ -370,7 +370,7 @@
             // 
             // lOPGridControl
             // 
-            this.lOPGridControl.DataSource = this.lOPBindingSource;
+            this.lOPGridControl.DataSource = this.classBindingSource;
             this.lOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.lOPGridControl.Location = new System.Drawing.Point(35, 0);
             this.lOPGridControl.MainView = this.gridView1;
@@ -382,10 +382,10 @@
             this.gridView1});
             this.lOPGridControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lOPGridControl_MouseClick);
             // 
-            // lOPBindingSource
+            // classBindingSource
             // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.dS_SERVER1;
+            this.classBindingSource.DataMember = "LOP";
+            this.classBindingSource.DataSource = this.dsSV1;
             // 
             // gridView1
             // 
@@ -435,7 +435,7 @@
             // 
             // txtMaKH
             // 
-            this.txtMaKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "MAKH", true));
+            this.txtMaKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.classBindingSource, "MAKH", true));
             this.txtMaKH.Location = new System.Drawing.Point(207, 128);
             this.txtMaKH.MenuManager = this.barManager1;
             this.txtMaKH.Name = "txtMaKH";
@@ -444,7 +444,7 @@
             // 
             // txtTenLop
             // 
-            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "TENLOP", true));
+            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.classBindingSource, "TENLOP", true));
             this.txtTenLop.Location = new System.Drawing.Point(207, 86);
             this.txtTenLop.MenuManager = this.barManager1;
             this.txtTenLop.Name = "txtTenLop";
@@ -453,16 +453,16 @@
             // 
             // txtMaLop
             // 
-            this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPBindingSource, "MALOP", true));
+            this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.classBindingSource, "MALOP", true));
             this.txtMaLop.Location = new System.Drawing.Point(207, 45);
             this.txtMaLop.MenuManager = this.barManager1;
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Size = new System.Drawing.Size(268, 20);
             this.txtMaLop.TabIndex = 1;
             // 
-            // v_DS_PHANMANHTableAdapter
+            // branchesTableAdapter
             // 
-            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
+            this.branchesTableAdapter.ClearBeforeFill = true;
             // 
             // FrmClass
             // 
@@ -490,14 +490,14 @@
             this.Load += new System.EventHandler(this.FrmClass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSV1)).EndInit();
             this.pnBranches.ResumeLayout(false);
             this.pnBranches.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.pnTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.pnEditor.ResumeLayout(false);
             this.pnEditor.PerformLayout();
@@ -530,18 +530,18 @@
         private DevExpress.XtraBars.BarButtonItem btnReload;
         private DevExpress.XtraBars.BarButtonItem btnPrint;
         private DevExpress.XtraBars.BarButtonItem btnExit;
-        private DS_SERVER1 dS_SERVER1;
+        private DS_SERVER1 dsSV1;
         private DS_SERVER1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel pnEditor;
         private System.Windows.Forms.Panel pnTable;
         private System.Windows.Forms.Panel pnBranches;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbBranches;
-        private TRACNGHIEMDataSet tRACNGHIEMDataSet;
-        private System.Windows.Forms.BindingSource vDSPHANMANHBindingSource;
-        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
-        private DS_SERVER1TableAdapters.LOPTableAdapter lOPTableAdapter;
-        private System.Windows.Forms.BindingSource lOPBindingSource;
+        private TRACNGHIEMDataSet ds;
+        private System.Windows.Forms.BindingSource branchesBindingSource;
+        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter branchesTableAdapter;
+        private DS_SERVER1TableAdapters.LOPTableAdapter classTableAdapter;
+        private System.Windows.Forms.BindingSource classBindingSource;
         private DevExpress.XtraGrid.GridControl lOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.TextEdit txtMaKH;

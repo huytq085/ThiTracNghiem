@@ -47,21 +47,21 @@
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
-            this.bdsPM = new System.Windows.Forms.BindingSource(this.components);
-            this.tRACNGHIEMDataSet = new ThiTracNghiem.TRACNGHIEMDataSet();
+            this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ds = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.v_DS_PHANMANHTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.branchesTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsPM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,7 +233,7 @@
             // 
             // cbbCoSo
             // 
-            this.cbbCoSo.DataSource = this.bdsPM;
+            this.cbbCoSo.DataSource = this.branchesBindingSource;
             this.cbbCoSo.DisplayMember = "TENCS";
             this.cbbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCoSo.FormattingEnabled = true;
@@ -244,16 +244,16 @@
             this.cbbCoSo.ValueMember = "TENSERVER";
             this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
             // 
-            // bdsPM
+            // branchesBindingSource
             // 
-            this.bdsPM.DataMember = "V_DS_PHANMANH";
-            this.bdsPM.DataSource = this.tRACNGHIEMDataSet;
-            this.bdsPM.CurrentChanged += new System.EventHandler(this.v_DS_PHANMANHBindingSource_CurrentChanged);
+            this.branchesBindingSource.DataMember = "V_DS_PHANMANH";
+            this.branchesBindingSource.DataSource = this.ds;
+            this.branchesBindingSource.CurrentChanged += new System.EventHandler(this.v_DS_PHANMANHBindingSource_CurrentChanged);
             // 
-            // tRACNGHIEMDataSet
+            // ds
             // 
-            this.tRACNGHIEMDataSet.DataSetName = "TRACNGHIEMDataSet";
-            this.tRACNGHIEMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.ds.DataSetName = "TRACNGHIEMDataSet";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelControl4
             // 
@@ -294,9 +294,9 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // v_DS_PHANMANHTableAdapter
+            // branchesTableAdapter
             // 
-            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
+            this.branchesTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -324,8 +324,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsPM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRACNGHIEMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -354,9 +354,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.BindingSource bdsPM;
-        private TRACNGHIEMDataSet tRACNGHIEMDataSet;
-        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
+        private System.Windows.Forms.BindingSource branchesBindingSource;
+        private TRACNGHIEMDataSet ds;
+        private TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter branchesTableAdapter;
         private TRACNGHIEMDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox cbbCoSo;
         private System.Windows.Forms.Label tENCSLabel;

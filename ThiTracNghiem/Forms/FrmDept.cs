@@ -22,15 +22,15 @@ namespace ThiTracNghiem.Forms
         private void kHOABindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.kHOABindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.tRACNGHIEMDataSetSV1);
+            this.deptBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsSV1);
 
         }
 
         private void FrmDept_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'tRACNGHIEMDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
+            this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
             if (!Program.nhom.Equals("TRUONG"))
             {
                 pnBranches.Dispose();
@@ -41,20 +41,20 @@ namespace ThiTracNghiem.Forms
             }
             if (Program.connstr != null)
             {
-                this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                this.deptTableAdapter.Connection.ConnectionString = Program.connstr;
             }
             if (Program.connstr != null)
             {
-                this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                this.deptTableAdapter.Connection.ConnectionString = Program.connstr;
             }
-            tRACNGHIEMDataSetSV1.EnforceConstraints = false;
-            this.kHOATableAdapter.Fill(this.tRACNGHIEMDataSetSV1.KHOA);
+            dsSV1.EnforceConstraints = false;
+            this.deptTableAdapter.Fill(this.dsSV1.KHOA);
 
         }
 
         private void reload()
         {
-            this.kHOATableAdapter.Fill(this.tRACNGHIEMDataSetSV1.KHOA);
+            this.deptTableAdapter.Fill(this.dsSV1.KHOA);
             pnEditor.Enabled = false;
             pnTable.Enabled = true;
             btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
@@ -72,10 +72,10 @@ namespace ThiTracNghiem.Forms
         {
             try
             {
-                kHOABindingSource.EndEdit();
-                kHOABindingSource.ResetCurrentItem();
-                this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
-                this.kHOATableAdapter.Update(this.tRACNGHIEMDataSetSV1);
+                deptBindingSource.EndEdit();
+                deptBindingSource.ResetCurrentItem();
+                this.deptTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.deptTableAdapter.Update(this.dsSV1);
                 reload();
             }
             catch (Exception ex)
@@ -103,8 +103,8 @@ namespace ThiTracNghiem.Forms
                     Program.servername = cbbBranches.SelectedValue.ToString();
                     if (Program.KetNoi() != 0)
                     {
-                        this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.kHOATableAdapter.Fill(this.tRACNGHIEMDataSetSV1.KHOA);
+                        this.deptTableAdapter.Connection.ConnectionString = Program.connstr;
+                        this.deptTableAdapter.Fill(this.dsSV1.KHOA);
                     }
                     else
                     {
@@ -120,12 +120,12 @@ namespace ThiTracNghiem.Forms
 
         private void kHOAGridControl_MouseClick(object sender, MouseEventArgs e)
         {
-            this.position = kHOABindingSource.Position;
+            this.position = deptBindingSource.Position;
         }
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            kHOABindingSource.AddNew();
+            deptBindingSource.AddNew();
             enableEditor();
         }
 
@@ -166,19 +166,19 @@ namespace ThiTracNghiem.Forms
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa khoa có mã " + ((DataRowView)kHOABindingSource[position])["MAKH"].ToString().Trim() + " không?", "Đồng ý", "Không");
+            Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa khoa có mã " + ((DataRowView)deptBindingSource[position])["MAKH"].ToString().Trim() + " không?", "Đồng ý", "Không");
             dlgConfirm.StartPosition = FormStartPosition.CenterParent;
             dlgConfirm.ShowDialog();
             if (dlgConfirm.DialogResult == DialogResult.OK)
             {
-                kHOABindingSource.RemoveAt(position);
+                deptBindingSource.RemoveAt(position);
                 updateDataSource();
             }
         }
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            kHOABindingSource.CancelEdit();
+            deptBindingSource.CancelEdit();
             trimInput();
         }
 

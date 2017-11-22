@@ -22,8 +22,8 @@ namespace ThiTracNghiem.Forms
         private void mONHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.mONHOCBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.tRACNGHIEMDataSetSV1);
+            this.subjectBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dsSV1);
 
         }
 
@@ -31,10 +31,10 @@ namespace ThiTracNghiem.Forms
         {
             try
             {
-                mONHOCBindingSource.EndEdit();
-                mONHOCBindingSource.ResetCurrentItem();
-                this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.mONHOCTableAdapter.Update(this.tRACNGHIEMDataSetSV1);
+                subjectBindingSource.EndEdit();
+                subjectBindingSource.ResetCurrentItem();
+                this.subjectTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.subjectTableAdapter.Update(this.dsSV1);
                 reload();
             }
             catch (Exception ex)
@@ -47,21 +47,22 @@ namespace ThiTracNghiem.Forms
 
         private void FrmSubject_Load(object sender, EventArgs e)
         {
-            this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
+            this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
             if (Program.nhom.Equals("TRUONG"))
             {
                 barAction.Dispose();
+                pnEditor.Dispose();
             }
             if (Program.connstr != null)
             {
-                this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.subjectTableAdapter.Connection.ConnectionString = Program.connstr;
             }
-            this.mONHOCTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.MONHOC);
+            this.subjectTableAdapter.Fill(this.dsSV1.MONHOC);
         }
 
         private void mONHOCGridControl_Click(object sender, EventArgs e)
         {
-            this.position = mONHOCBindingSource.Position;
+            this.position = subjectBindingSource.Position;
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -96,7 +97,7 @@ namespace ThiTracNghiem.Forms
         }
         private void reload()
         {
-            this.mONHOCTableAdapter.Fill(this.tRACNGHIEMDataSetSV1.MONHOC);
+            this.subjectTableAdapter.Fill(this.dsSV1.MONHOC);
             pnEditor.Enabled = false;
             pnTable.Enabled = true;
             btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
@@ -111,7 +112,7 @@ namespace ThiTracNghiem.Forms
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            mONHOCBindingSource.AddNew();
+            subjectBindingSource.AddNew();
             enableEditor();
         }
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -121,12 +122,12 @@ namespace ThiTracNghiem.Forms
         }
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa môn học có mã " + ((DataRowView)mONHOCBindingSource[position])["MAMH"].ToString().Trim() + " không?", "Đồng ý", "Không");
+            Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa môn học có mã " + ((DataRowView)subjectBindingSource[position])["MAMH"].ToString().Trim() + " không?", "Đồng ý", "Không");
             dlgConfirm.StartPosition = FormStartPosition.CenterParent;
             dlgConfirm.ShowDialog();
             if (dlgConfirm.DialogResult == DialogResult.OK)
             {
-                mONHOCBindingSource.RemoveAt(position);
+                subjectBindingSource.RemoveAt(position);
                 updateDataSource();
             }
         }
@@ -161,7 +162,7 @@ namespace ThiTracNghiem.Forms
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            mONHOCBindingSource.CancelEdit();
+            subjectBindingSource.CancelEdit();
             trimInput();
         }
 

@@ -33,11 +33,8 @@ namespace ThiTracNghiem.Forms
             {
                 this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             }
-            // TODO: This line of code loads data into the 'dS_SERVER1.LOP' table. You can move, or remove it, as needed.
             dS_SERVER1.EnforceConstraints = false;
             this.lOPTableAdapter.Fill(this.dS_SERVER1.LOP);
-
-            // TODO: This line of code loads data into the 'tRACNGHIEMDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
         }
 
@@ -48,6 +45,13 @@ namespace ThiTracNghiem.Forms
             pnTable.Enabled = true;
             btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
             btnUndo.Enabled = false;
+        }
+
+        private void trimInput()
+        {
+            txtMaLop.Text = txtMaLop.Text.Trim();
+            txtMaKH.Text = txtMaKH.Text.Trim();
+            txtTenLop.Text = txtTenLop.Text.Trim();
         }
 
         private void updateDataSource()
@@ -81,50 +85,6 @@ namespace ThiTracNghiem.Forms
             lOPBindingSource.AddNew();
             enableEditor();
         }
-
-        private void barDockControlTop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControlBottom_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControlLeft_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControlRight_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControl2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControl3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControl4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-       
 
         private void gIAOVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -160,9 +120,7 @@ namespace ThiTracNghiem.Forms
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            txtMaLop.Text = txtMaLop.Text.Trim();
-            txtMaKH.Text = txtMaKH.Text.Trim();
-            txtTenLop.Text = txtTenLop.Text.Trim();
+            trimInput();
             enableEditor();
         }
 
@@ -195,16 +153,6 @@ namespace ThiTracNghiem.Forms
             }
         }
 
-        private void txtTenLop_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tENLOPLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form dlgConfirm = new DlgConfirm("Bạn có chắc muốn xóa môn học có mã " + ((DataRowView)lOPBindingSource[position])["MALOP"].ToString().Trim() + " không?", "Đồng ý", "Không");
@@ -230,9 +178,7 @@ namespace ThiTracNghiem.Forms
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             lOPBindingSource.CancelEdit();
-            txtMaLop.Text = txtMaLop.Text.Trim();
-            txtMaKH.Text = txtMaKH.Text.Trim();
-            txtTenLop.Text = txtTenLop.Text.Trim();
+            trimInput();
         }
     }
 }

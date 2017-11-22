@@ -64,6 +64,9 @@
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnEditor = new System.Windows.Forms.Panel();
             this.txtMaKH = new DevExpress.XtraEditors.TextEdit();
             this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
@@ -105,7 +108,6 @@
             tENLOPLabel.Size = new System.Drawing.Size(72, 19);
             tENLOPLabel.TabIndex = 2;
             tENLOPLabel.Text = "TENLOP:";
-            tENLOPLabel.Click += new System.EventHandler(this.tENLOPLabel_Click);
             // 
             // mAKHLabel
             // 
@@ -132,7 +134,6 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 42);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(1137, 0);
-            this.barDockControlTop.Click += new System.EventHandler(this.barDockControlTop_Click);
             // 
             // barDockControlBottom
             // 
@@ -141,7 +142,6 @@
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 721);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1137, 0);
-            this.barDockControlBottom.Click += new System.EventHandler(this.barDockControlBottom_Click);
             // 
             // barDockControlLeft
             // 
@@ -150,7 +150,6 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 679);
-            this.barDockControlLeft.Click += new System.EventHandler(this.barDockControlLeft_Click);
             // 
             // barDockControlRight
             // 
@@ -159,7 +158,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1137, 42);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 679);
-            this.barDockControlRight.Click += new System.EventHandler(this.barDockControlRight_Click);
             // 
             // barManager2
             // 
@@ -229,7 +227,7 @@
             // 
             this.btnDelete.Caption = "Xóa";
             this.btnDelete.Id = 3;
-            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
@@ -237,7 +235,7 @@
             // 
             this.btnUndo.Caption = "Phục hồi";
             this.btnUndo.Id = 4;
-            this.btnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.ImageOptions.Image")));
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
             // 
@@ -245,7 +243,7 @@
             // 
             this.btnReload.Caption = "Tải lại";
             this.btnReload.Id = 5;
-            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.Name = "btnReload";
             this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
@@ -253,15 +251,15 @@
             // 
             this.btnPrint.Caption = "In danh sách";
             this.btnPrint.Id = 6;
-            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.btnPrint.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
+            this.btnPrint.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.LargeImage")));
             this.btnPrint.Name = "btnPrint";
             // 
             // btnExit
             // 
             this.btnExit.Caption = "Thoát";
             this.btnExit.Id = 7;
-            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Name = "btnExit";
             // 
             // barDockControl1
@@ -271,7 +269,6 @@
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
             this.barDockControl1.Size = new System.Drawing.Size(1137, 42);
-            this.barDockControl1.Click += new System.EventHandler(this.barDockControl1_Click);
             // 
             // barDockControl2
             // 
@@ -280,7 +277,6 @@
             this.barDockControl2.Location = new System.Drawing.Point(0, 721);
             this.barDockControl2.Manager = this.barManager2;
             this.barDockControl2.Size = new System.Drawing.Size(1137, 0);
-            this.barDockControl2.Click += new System.EventHandler(this.barDockControl2_Click);
             // 
             // barDockControl3
             // 
@@ -289,7 +285,6 @@
             this.barDockControl3.Location = new System.Drawing.Point(0, 42);
             this.barDockControl3.Manager = this.barManager2;
             this.barDockControl3.Size = new System.Drawing.Size(0, 679);
-            this.barDockControl3.Click += new System.EventHandler(this.barDockControl3_Click);
             // 
             // barDockControl4
             // 
@@ -298,7 +293,6 @@
             this.barDockControl4.Location = new System.Drawing.Point(1137, 42);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 679);
-            this.barDockControl4.Click += new System.EventHandler(this.barDockControl4_Click);
             // 
             // dS_SERVER1
             // 
@@ -377,7 +371,7 @@
             // lOPGridControl
             // 
             this.lOPGridControl.DataSource = this.lOPBindingSource;
-            this.lOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.lOPGridControl.Location = new System.Drawing.Point(35, 0);
             this.lOPGridControl.MainView = this.gridView1;
             this.lOPGridControl.MenuManager = this.barManager1;
@@ -395,8 +389,34 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMALOP,
+            this.colTENLOP,
+            this.colMAKH});
             this.gridView1.GridControl = this.lOPGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 0;
+            // 
+            // colTENLOP
+            // 
+            this.colTENLOP.FieldName = "TENLOP";
+            this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.Visible = true;
+            this.colTENLOP.VisibleIndex = 1;
+            // 
+            // colMAKH
+            // 
+            this.colMAKH.FieldName = "MAKH";
+            this.colMAKH.Name = "colMAKH";
+            this.colMAKH.Visible = true;
+            this.colMAKH.VisibleIndex = 2;
             // 
             // pnEditor
             // 
@@ -430,7 +450,6 @@
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Size = new System.Drawing.Size(268, 20);
             this.txtTenLop.TabIndex = 3;
-            this.txtTenLop.EditValueChanged += new System.EventHandler(this.txtTenLop_EditValueChanged);
             // 
             // txtMaLop
             // 
@@ -528,5 +547,8 @@
         private DevExpress.XtraEditors.TextEdit txtMaKH;
         private DevExpress.XtraEditors.TextEdit txtTenLop;
         private DevExpress.XtraEditors.TextEdit txtMaLop;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
     }
 }

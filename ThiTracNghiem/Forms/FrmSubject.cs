@@ -48,7 +48,10 @@ namespace ThiTracNghiem.Forms
         private void FrmSubject_Load(object sender, EventArgs e)
         {
             this.v_DS_PHANMANHTableAdapter.Fill(this.tRACNGHIEMDataSet.V_DS_PHANMANH);
-            
+            if (Program.nhom.Equals("TRUONG"))
+            {
+                barAction.Dispose();
+            }
             if (Program.connstr != null)
             {
                 this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -59,11 +62,6 @@ namespace ThiTracNghiem.Forms
         private void mONHOCGridControl_Click(object sender, EventArgs e)
         {
             this.position = mONHOCBindingSource.Position;
-        }
-
-        private void mAMHTextEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -105,6 +103,12 @@ namespace ThiTracNghiem.Forms
             btnUndo.Enabled = false;
         }
 
+        private void trimInput()
+        {
+            txtMaMH.Text = txtMaMH.Text.Trim();
+            txtTenMH.Text = txtTenMH.Text.Trim();
+        }
+
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             mONHOCBindingSource.AddNew();
@@ -112,8 +116,7 @@ namespace ThiTracNghiem.Forms
         }
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            txtMaMH.Text = txtMaMH.Text.Trim();
-            txtTenMH.Text = txtTenMH.Text.Trim();
+            trimInput();
             enableEditor();
         }
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -149,7 +152,6 @@ namespace ThiTracNghiem.Forms
             {
                 updateDataSource();
             }
-            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -160,8 +162,7 @@ namespace ThiTracNghiem.Forms
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             mONHOCBindingSource.CancelEdit();
-            txtMaMH.Text = txtMaMH.Text.Trim();
-            txtTenMH.Text = txtTenMH.Text.Trim();
+            trimInput();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -169,16 +170,5 @@ namespace ThiTracNghiem.Forms
             this.reload();
         }
 
-        private void cbbBranches_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
     }
 }

@@ -87,7 +87,7 @@ namespace ThiTracNghiem.Forms
                 Program.tenDonVi = Program.HasColumn(reader, "tendonvi") ? reader["tendonvi"].ToString() : "";
                 Program.hoTen = reader["hoten"].ToString();
                 Program.nhom = reader["nhom"].ToString();
-                Program.mauser = reader["mauser"].ToString();
+                Program.maUser = Program.HasColumn(reader, "maUser") ? reader["maUser"].ToString():"";
                 Program.id = username;
                 reader.Close();
                 if (!Program.nhom.Equals("SINHVIEN") && sinhvien)

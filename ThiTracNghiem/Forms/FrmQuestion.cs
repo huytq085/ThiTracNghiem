@@ -40,7 +40,7 @@ namespace ThiTracNghiem.Forms
             List<String> cachXem = new List<String> { "TẤT CẢ ĐỀ THI","CÁ NHÂN" };
             cmbCachXem.DataSource = cachXem;
             if (cmbCachXem.SelectedValue.ToString() == "CÁ NHÂN") {
-                bdsBODE.Filter = "MAGV = '"+Program.mauser+"'";
+                bdsBODE.Filter = "MAGV = '"+Program.maUser+"'";
                 btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnUndo.Enabled = btnXoa.Enabled = true;
                 btnPrint.Enabled = btnReload.Enabled = true;                
             }
@@ -78,7 +78,7 @@ namespace ThiTracNghiem.Forms
             {
                 btnThem.Enabled = btnSua.Enabled = btnGhi.Enabled = btnUndo.Enabled = btnXoa.Enabled = true;
                 btnPrint.Enabled = btnReload.Enabled = true;
-                bdsBODE.Filter = "MAGV = '" + Program.mauser + "'";
+                bdsBODE.Filter = "MAGV = '" + Program.maUser + "'";
                 if (bdsBODE.Position == -1)
                     btnSua.Enabled =btnXoa.Enabled =false;
             }
@@ -96,7 +96,7 @@ namespace ThiTracNghiem.Forms
             viTri = bdsBODE.Position;
             groupBox1.Enabled = true;
             bdsBODE.AddNew();
-            txtMAGV.EditValue = Program.mauser;
+            txtMAGV.EditValue = Program.maUser;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
             gcBODE.Enabled = false;
@@ -120,7 +120,7 @@ namespace ThiTracNghiem.Forms
         {
             viTri = bdsBODE.Position;
             groupBox1.Enabled = true;
-            txtMAGV.EditValue = Program.mauser;
+            txtMAGV.EditValue = Program.maUser;
 
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;

@@ -109,8 +109,6 @@ namespace ThiTracNghiem.Forms
             groupBox1.Enabled = true;
             bdsSV.AddNew();
             cmbMALOP.DataSource = v_bdsMALOP;
-            //cmbMALOP.DisplayMember = "MALOP";
-            //cmbMALOP.ValueMember = "MALOP";
             cmbMALOP.SelectedIndex = 0;
             dtpNGAYSINH.EditValue = "";
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
@@ -122,13 +120,13 @@ namespace ThiTracNghiem.Forms
         {
             viTri = bdsSV.Position;
             groupBox1.Enabled = true;
+            String maLop = cmbMALOP.SelectedValue.ToString();
             cmbMALOP.DataSource = v_bdsMALOP;
-            //cmbMALOP.DisplayMember = "MALOP";
-            //cmbMALOP.ValueMember = "MALOP";
+            cmbMALOP.SelectedValue = maLop;
             
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
-            gcSV.Enabled = true;
+            gcSV.Enabled = false;
         }
       
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -208,6 +206,36 @@ namespace ThiTracNghiem.Forms
             }
         }
 
-        
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            String masv = "";
+            if (bdsBD.Count > 0)
+            {
+                MessageBox.Show("Không thể xóa sinh viên này đã có bảng điểm", "",
+                       MessageBoxButtons.OK);
+                return;
+            }
+            if (MessageBox.Show("Bạn có thật sự muốn xóa sinh viên này ?? ", "Xác nhận",
+                       MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    masv = ((DataRowView)bdsSV[bdsSV.Position])["MASV"].ToString(); // giữ lại để khi xóa bij lỗi thì ta sẽ quay về lại
+                    bdsSV.RemoveCurrent();
+                    this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.sINHVIENTableAdapter.Update(this.dS_SERVER1.SINHVIEN);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa sinh viên. Bạn hãy xóa lại\n" + ex.Message, "",
+                        MessageBoxButtons.OK);
+                    this.sINHVIENTableAdapter.Fill(this.dS_SERVER1.SINHVIEN);
+                    bdsSV.Position = bdsSV.Find("MASV", masv);
+                    return;
+                }
+            }
+
+            if (bdsSV.Count == 0) btnXoa.Enabled = false;
+        }
     }
 }

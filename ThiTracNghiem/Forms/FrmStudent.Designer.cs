@@ -224,6 +224,7 @@
             this.btnXoa.Id = 3;
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnUndo
             // 
@@ -266,38 +267,38 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1354, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1354, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 715);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 710);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1354, 18);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1354, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 673);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 670);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1354, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1354, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 673);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 670);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cmbCoSo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 42);
+            this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1354, 65);
             this.panel1.TabIndex = 4;
@@ -355,7 +356,7 @@
             this.gcSV.DataSource = this.bdsSV;
             this.gcSV.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcSV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcSV.Location = new System.Drawing.Point(0, 107);
+            this.gcSV.Location = new System.Drawing.Point(0, 105);
             this.gcSV.MainView = this.gridView1;
             this.gcSV.MenuManager = this.barManager1;
             this.gcSV.Name = "gcSV";
@@ -434,9 +435,9 @@
             this.groupBox1.Controls.Add(mASVLabel);
             this.groupBox1.Controls.Add(this.txtMASV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 366);
+            this.groupBox1.Location = new System.Drawing.Point(0, 364);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1354, 349);
+            this.groupBox1.Size = new System.Drawing.Size(1354, 346);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 

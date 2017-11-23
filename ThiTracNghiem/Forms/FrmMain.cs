@@ -38,10 +38,10 @@ namespace ThiTracNghiem.Forms
             {
                 if (Program.nhom.Equals("SINHVIEN"))
                 {
-                    btnPrepare.Dispose();
+                    btnSetup.Dispose();
                     btnAddPacket.Dispose();
                     rbControl.Dispose();
-                    btnPrepare.Dispose();
+                    btnSetup.Dispose();
                     txtFooterId.Caption = "Mã sinh viên: " + Program.id;
                     txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
                     txtFooterClass.Caption = "Lớp: " + Program.donVi;
@@ -79,9 +79,9 @@ namespace ThiTracNghiem.Forms
             frmLogin.Show();
         }
 
-        private void btnPrepare_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnSetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            ShowMdiChildren(typeof(FrmSetup));
         }
 
         private void ribbon_Click(object sender, EventArgs e)

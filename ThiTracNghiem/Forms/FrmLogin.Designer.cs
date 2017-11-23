@@ -190,7 +190,6 @@
             this.txtUsername.Size = new System.Drawing.Size(205, 20);
             this.txtUsername.TabIndex = 5;
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
-            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // txtPassword
             // 
@@ -203,9 +202,7 @@
             this.txtPassword.Properties.UseSystemPasswordChar = true;
             this.txtPassword.Size = new System.Drawing.Size(205, 20);
             this.txtPassword.TabIndex = 6;
-            this.txtPassword.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
-            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // btnLogin
             // 
@@ -248,7 +245,6 @@
             // 
             this.branchesBindingSource.DataMember = "V_DS_PHANMANH";
             this.branchesBindingSource.DataSource = this.ds;
-            this.branchesBindingSource.CurrentChanged += new System.EventHandler(this.v_DS_PHANMANHBindingSource_CurrentChanged);
             // 
             // ds
             // 
@@ -282,7 +278,6 @@
             this.labelControl1.Size = new System.Drawing.Size(179, 23);
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Thông tin đăng nhập";
-            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // pictureBox1
             // 

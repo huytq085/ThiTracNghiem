@@ -26,31 +26,6 @@ namespace ThiTracNghiem.Forms
 
         }
 
-        private void labelControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEdit2_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbbCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -154,16 +129,6 @@ namespace ThiTracNghiem.Forms
                 frmMain.Closed += (s, args) => this.Close();
                 frmMain.Show();
             }
-        }
-
-        private void v_DS_PHANMANHBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
         }
 
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)

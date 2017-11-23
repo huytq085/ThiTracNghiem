@@ -35,7 +35,7 @@
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.btnPrepare = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSetup = new DevExpress.XtraBars.BarButtonItem();
             this.btnStart = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddPacket = new DevExpress.XtraBars.BarButtonItem();
             this.btnStudent = new DevExpress.XtraBars.BarButtonItem();
@@ -69,7 +69,7 @@
             this.btnAdd,
             this.btnEdit,
             this.btnDelete,
-            this.btnPrepare,
+            this.btnSetup,
             this.btnStart,
             this.btnAddPacket,
             this.btnStudent,
@@ -134,13 +134,13 @@
             this.btnDelete.ImageOptions.LargeImageIndex = 1;
             this.btnDelete.Name = "btnDelete";
             // 
-            // btnPrepare
+            // btnSetup
             // 
-            this.btnPrepare.Caption = "Chuẩn bị thi";
-            this.btnPrepare.Id = 7;
-            this.btnPrepare.ImageOptions.LargeImageIndex = 4;
-            this.btnPrepare.Name = "btnPrepare";
-            this.btnPrepare.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrepare_ItemClick);
+            this.btnSetup.Caption = "Chuẩn bị thi";
+            this.btnSetup.Id = 7;
+            this.btnSetup.ImageOptions.LargeImageIndex = 4;
+            this.btnSetup.Name = "btnSetup";
+            this.btnSetup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSetup_ItemClick);
             // 
             // btnStart
             // 
@@ -263,7 +263,7 @@
             // 
             // rbFunction
             // 
-            this.rbFunction.ItemLinks.Add(this.btnPrepare, true);
+            this.rbFunction.ItemLinks.Add(this.btnSetup, true);
             this.rbFunction.ItemLinks.Add(this.btnAddPacket, true);
             this.rbFunction.ItemLinks.Add(this.btnStart, true);
             this.rbFunction.Name = "rbFunction";
@@ -338,7 +338,7 @@
         private DevExpress.XtraBars.BarButtonItem btnAdd;
         private DevExpress.XtraBars.BarButtonItem btnEdit;
         private DevExpress.XtraBars.BarButtonItem btnDelete;
-        private DevExpress.XtraBars.BarButtonItem btnPrepare;
+        private DevExpress.XtraBars.BarButtonItem btnSetup;
         private DevExpress.XtraBars.BarButtonItem btnStart;
         private DevExpress.XtraBars.BarButtonItem btnAddPacket;
         private DevExpress.XtraBars.BarButtonItem btnStudent;

@@ -182,7 +182,7 @@ namespace ThiTracNghiem.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi ghi nhân viên.\n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi sinh viên.\n" + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
             gcSV.Enabled = true;
@@ -211,7 +211,7 @@ namespace ThiTracNghiem.Forms
             String masv = "";
             if (bdsBD.Count > 0)
             {
-                MessageBox.Show("Không thể xóa sinh viên này đã có bảng điểm", "",
+                MessageBox.Show("Không thể xóa sinh viên này vì có bảng điểm", "",
                        MessageBoxButtons.OK);
                 return;
             }

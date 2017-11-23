@@ -55,7 +55,7 @@
             this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
             this.bODETableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BODETableAdapter();
             this.gIAOVIEN_DANGKYTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.GIAOVIEN_DANGKYTableAdapter();
-            this.gIAOVIENGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gcGV = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,13 +63,13 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMAKH = new DevExpress.XtraEditors.TextEdit();
             this.txtDIACHI = new DevExpress.XtraEditors.TextEdit();
             this.txtTEN = new DevExpress.XtraEditors.TextEdit();
             this.txtHO = new DevExpress.XtraEditors.TextEdit();
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
+            this.txtMAKH = new DevExpress.XtraEditors.TextEdit();
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -78,16 +78,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mAGVLabel
@@ -186,6 +186,7 @@
             this.btnThem.Id = 0;
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnSua
             // 
@@ -193,6 +194,7 @@
             this.btnSua.Id = 1;
             this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnGhi
             // 
@@ -200,6 +202,7 @@
             this.btnGhi.Id = 2;
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
@@ -207,6 +210,7 @@
             this.btnXoa.Id = 3;
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnUndo
             // 
@@ -214,6 +218,7 @@
             this.btnUndo.Id = 4;
             this.btnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.ImageOptions.Image")));
             this.btnUndo.Name = "btnUndo";
+            this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
             // 
             // btnReload
             // 
@@ -221,6 +226,7 @@
             this.btnReload.Id = 5;
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnPrint
             // 
@@ -313,18 +319,19 @@
             // 
             this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
             // 
-            // gIAOVIENGridControl
+            // gcGV
             // 
-            this.gIAOVIENGridControl.DataSource = this.bdsGV;
-            this.gIAOVIENGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gIAOVIENGridControl.Location = new System.Drawing.Point(0, 40);
-            this.gIAOVIENGridControl.MainView = this.gridView1;
-            this.gIAOVIENGridControl.Margin = new System.Windows.Forms.Padding(4);
-            this.gIAOVIENGridControl.MenuManager = this.barManager1;
-            this.gIAOVIENGridControl.Name = "gIAOVIENGridControl";
-            this.gIAOVIENGridControl.Size = new System.Drawing.Size(1370, 354);
-            this.gIAOVIENGridControl.TabIndex = 5;
-            this.gIAOVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcGV.DataSource = this.bdsGV;
+            this.gcGV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcGV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gcGV.Location = new System.Drawing.Point(0, 40);
+            this.gcGV.MainView = this.gridView1;
+            this.gcGV.Margin = new System.Windows.Forms.Padding(4);
+            this.gcGV.MenuManager = this.barManager1;
+            this.gcGV.Name = "gcGV";
+            this.gcGV.Size = new System.Drawing.Size(1370, 354);
+            this.gcGV.TabIndex = 5;
+            this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -335,7 +342,7 @@
             this.colTEN,
             this.colDIACHI,
             this.colMAKH});
-            this.gridView1.GridControl = this.gIAOVIENGridControl;
+            this.gridView1.GridControl = this.gcGV;
             this.gridView1.Name = "gridView1";
             // 
             // colMAGV
@@ -375,8 +382,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(mAKHLabel);
             this.groupBox1.Controls.Add(this.txtMAKH);
+            this.groupBox1.Controls.Add(mAKHLabel);
             this.groupBox1.Controls.Add(dIACHILabel);
             this.groupBox1.Controls.Add(this.txtDIACHI);
             this.groupBox1.Controls.Add(tENLabel);
@@ -393,16 +400,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1370, 332);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            // 
-            // txtMAKH
-            // 
-            this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
-            this.txtMAKH.Location = new System.Drawing.Point(400, 96);
-            this.txtMAKH.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMAKH.MenuManager = this.barManager1;
-            this.txtMAKH.Name = "txtMAKH";
-            this.txtMAKH.Size = new System.Drawing.Size(263, 20);
-            this.txtMAKH.TabIndex = 9;
             // 
             // txtDIACHI
             // 
@@ -454,6 +451,15 @@
             this.bdsBODE.DataMember = "FK_BODE_GIAOVIEN";
             this.bdsBODE.DataSource = this.bdsGV;
             // 
+            // txtMAKH
+            // 
+            this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
+            this.txtMAKH.Location = new System.Drawing.Point(400, 96);
+            this.txtMAKH.MenuManager = this.barManager1;
+            this.txtMAKH.Name = "txtMAKH";
+            this.txtMAKH.Size = new System.Drawing.Size(263, 20);
+            this.txtMAKH.TabIndex = 10;
+            // 
             // FrmTeacher
             // 
             this.Appearance.Options.UseFont = true;
@@ -461,7 +467,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.gIAOVIENGridControl);
+            this.Controls.Add(this.gcGV);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -475,17 +481,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,7 +518,7 @@
         private DS_SERVER1TableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
         private DS_SERVER1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraGrid.GridControl gIAOVIENGridControl;
+        private DevExpress.XtraGrid.GridControl gcGV;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private DevExpress.XtraGrid.Columns.GridColumn colHO;
@@ -523,10 +529,10 @@
         private System.Windows.Forms.BindingSource bdsGVDK;
         private DS_SERVER1TableAdapters.BODETableAdapter bODETableAdapter;
         private System.Windows.Forms.BindingSource bdsBODE;
-        private DevExpress.XtraEditors.TextEdit txtMAKH;
         private DevExpress.XtraEditors.TextEdit txtDIACHI;
         private DevExpress.XtraEditors.TextEdit txtTEN;
         private DevExpress.XtraEditors.TextEdit txtHO;
         private DevExpress.XtraEditors.TextEdit txtMAGV;
+        private DevExpress.XtraEditors.TextEdit txtMAKH;
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTeacher));
             System.Windows.Forms.Label mAGVLabel;
             System.Windows.Forms.Label hOLabel;
             System.Windows.Forms.Label tENLabel;
             System.Windows.Forms.Label dIACHILabel;
             System.Windows.Forms.Label mAKHLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTeacher));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -50,7 +50,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
-            this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
             this.gIAOVIENTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.GIAOVIENTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
             this.bODETableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BODETableAdapter();
@@ -63,13 +63,13 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gIAOVIEN_DANGKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bODEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
-            this.txtHO = new DevExpress.XtraEditors.TextEdit();
-            this.txtTEN = new DevExpress.XtraEditors.TextEdit();
-            this.txtDIACHI = new DevExpress.XtraEditors.TextEdit();
             this.txtMAKH = new DevExpress.XtraEditors.TextEdit();
+            this.txtDIACHI = new DevExpress.XtraEditors.TextEdit();
+            this.txtTEN = new DevExpress.XtraEditors.TextEdit();
+            this.txtHO = new DevExpress.XtraEditors.TextEdit();
+            this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
+            this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -77,18 +77,68 @@
             mAKHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bODEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mAGVLabel
+            // 
+            mAGVLabel.AutoSize = true;
+            mAGVLabel.Location = new System.Drawing.Point(718, 99);
+            mAGVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mAGVLabel.Name = "mAGVLabel";
+            mAGVLabel.Size = new System.Drawing.Size(55, 17);
+            mAGVLabel.TabIndex = 0;
+            mAGVLabel.Text = "MAGV:";
+            // 
+            // hOLabel
+            // 
+            hOLabel.AutoSize = true;
+            hOLabel.Location = new System.Drawing.Point(303, 159);
+            hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            hOLabel.Name = "hOLabel";
+            hOLabel.Size = new System.Drawing.Size(33, 17);
+            hOLabel.TabIndex = 2;
+            hOLabel.Text = "HO:";
+            // 
+            // tENLabel
+            // 
+            tENLabel.AutoSize = true;
+            tENLabel.Location = new System.Drawing.Point(733, 159);
+            tENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            tENLabel.Name = "tENLabel";
+            tENLabel.Size = new System.Drawing.Size(40, 17);
+            tENLabel.TabIndex = 4;
+            tENLabel.Text = "TEN:";
+            // 
+            // dIACHILabel
+            // 
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(279, 219);
+            dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(64, 17);
+            dIACHILabel.TabIndex = 6;
+            dIACHILabel.Text = "DIACHI:";
+            // 
+            // mAKHLabel
+            // 
+            mAKHLabel.AutoSize = true;
+            mAKHLabel.Location = new System.Drawing.Point(286, 99);
+            mAKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mAKHLabel.Name = "mAKHLabel";
+            mAKHLabel.Size = new System.Drawing.Size(57, 17);
+            mAKHLabel.TabIndex = 8;
+            mAKHLabel.Text = "MAKH:";
             // 
             // barManager1
             // 
@@ -197,45 +247,45 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1370, 42);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1370, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 731);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 18);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 689);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 686);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1370, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1370, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 689);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 686);
             // 
             // dS_SERVER1
             // 
             this.dS_SERVER1.DataSetName = "DS_SERVER1";
             this.dS_SERVER1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gIAOVIENBindingSource
+            // bdsGV
             // 
-            this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
-            this.gIAOVIENBindingSource.DataSource = this.dS_SERVER1;
+            this.bdsGV.DataMember = "GIAOVIEN";
+            this.bdsGV.DataSource = this.dS_SERVER1;
             // 
             // gIAOVIENTableAdapter
             // 
@@ -265,12 +315,11 @@
             // 
             // gIAOVIENGridControl
             // 
-            this.gIAOVIENGridControl.DataSource = this.gIAOVIENBindingSource;
+            this.gIAOVIENGridControl.DataSource = this.bdsGV;
             this.gIAOVIENGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gIAOVIENGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gIAOVIENGridControl.Location = new System.Drawing.Point(0, 42);
+            this.gIAOVIENGridControl.Location = new System.Drawing.Point(0, 40);
             this.gIAOVIENGridControl.MainView = this.gridView1;
-            this.gIAOVIENGridControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gIAOVIENGridControl.Margin = new System.Windows.Forms.Padding(4);
             this.gIAOVIENGridControl.MenuManager = this.barManager1;
             this.gIAOVIENGridControl.Name = "gIAOVIENGridControl";
             this.gIAOVIENGridControl.Size = new System.Drawing.Size(1370, 354);
@@ -337,123 +386,73 @@
             this.groupBox1.Controls.Add(mAGVLabel);
             this.groupBox1.Controls.Add(this.txtMAGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 396);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(0, 394);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1370, 335);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1370, 332);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // gIAOVIEN_DANGKYBindingSource
+            // txtMAKH
             // 
-            this.gIAOVIEN_DANGKYBindingSource.DataMember = "FK_GIAOVIEN_DANGKY_GIAOVIEN1";
-            this.gIAOVIEN_DANGKYBindingSource.DataSource = this.gIAOVIENBindingSource;
-            // 
-            // bODEBindingSource
-            // 
-            this.bODEBindingSource.DataMember = "FK_BODE_GIAOVIEN";
-            this.bODEBindingSource.DataSource = this.gIAOVIENBindingSource;
-            // 
-            // mAGVLabel
-            // 
-            mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(718, 99);
-            mAGVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            mAGVLabel.Name = "mAGVLabel";
-            mAGVLabel.Size = new System.Drawing.Size(55, 17);
-            mAGVLabel.TabIndex = 0;
-            mAGVLabel.Text = "MAGV:";
-            // 
-            // txtMAGV
-            // 
-            this.txtMAGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gIAOVIENBindingSource, "MAGV", true));
-            this.txtMAGV.Location = new System.Drawing.Point(828, 96);
-            this.txtMAGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMAGV.MenuManager = this.barManager1;
-            this.txtMAGV.Name = "txtMAGV";
-            this.txtMAGV.Size = new System.Drawing.Size(263, 20);
-            this.txtMAGV.TabIndex = 1;
-            // 
-            // hOLabel
-            // 
-            hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(303, 159);
-            hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(33, 17);
-            hOLabel.TabIndex = 2;
-            hOLabel.Text = "HO:";
-            // 
-            // txtHO
-            // 
-            this.txtHO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gIAOVIENBindingSource, "HO", true));
-            this.txtHO.Location = new System.Drawing.Point(400, 156);
-            this.txtHO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtHO.MenuManager = this.barManager1;
-            this.txtHO.Name = "txtHO";
-            this.txtHO.Size = new System.Drawing.Size(263, 20);
-            this.txtHO.TabIndex = 3;
-            // 
-            // tENLabel
-            // 
-            tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(733, 159);
-            tENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(40, 17);
-            tENLabel.TabIndex = 4;
-            tENLabel.Text = "TEN:";
-            // 
-            // txtTEN
-            // 
-            this.txtTEN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gIAOVIENBindingSource, "TEN", true));
-            this.txtTEN.Location = new System.Drawing.Point(828, 156);
-            this.txtTEN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTEN.MenuManager = this.barManager1;
-            this.txtTEN.Name = "txtTEN";
-            this.txtTEN.Size = new System.Drawing.Size(263, 20);
-            this.txtTEN.TabIndex = 5;
-            // 
-            // dIACHILabel
-            // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(279, 219);
-            dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(64, 17);
-            dIACHILabel.TabIndex = 6;
-            dIACHILabel.Text = "DIACHI:";
+            this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
+            this.txtMAKH.Location = new System.Drawing.Point(400, 96);
+            this.txtMAKH.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMAKH.MenuManager = this.barManager1;
+            this.txtMAKH.Name = "txtMAKH";
+            this.txtMAKH.Size = new System.Drawing.Size(263, 20);
+            this.txtMAKH.TabIndex = 9;
             // 
             // txtDIACHI
             // 
-            this.txtDIACHI.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gIAOVIENBindingSource, "DIACHI", true));
+            this.txtDIACHI.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "DIACHI", true));
             this.txtDIACHI.Location = new System.Drawing.Point(400, 216);
-            this.txtDIACHI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDIACHI.Margin = new System.Windows.Forms.Padding(4);
             this.txtDIACHI.MenuManager = this.barManager1;
             this.txtDIACHI.Name = "txtDIACHI";
             this.txtDIACHI.Size = new System.Drawing.Size(691, 20);
             this.txtDIACHI.TabIndex = 7;
             // 
-            // mAKHLabel
+            // txtTEN
             // 
-            mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(286, 99);
-            mAKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(57, 17);
-            mAKHLabel.TabIndex = 8;
-            mAKHLabel.Text = "MAKH:";
+            this.txtTEN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "TEN", true));
+            this.txtTEN.Location = new System.Drawing.Point(828, 156);
+            this.txtTEN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTEN.MenuManager = this.barManager1;
+            this.txtTEN.Name = "txtTEN";
+            this.txtTEN.Size = new System.Drawing.Size(263, 20);
+            this.txtTEN.TabIndex = 5;
             // 
-            // txtMAKH
+            // txtHO
             // 
-            this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gIAOVIENBindingSource, "MAKH", true));
-            this.txtMAKH.Location = new System.Drawing.Point(400, 96);
-            this.txtMAKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMAKH.MenuManager = this.barManager1;
-            this.txtMAKH.Name = "txtMAKH";
-            this.txtMAKH.Size = new System.Drawing.Size(263, 20);
-            this.txtMAKH.TabIndex = 9;
+            this.txtHO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "HO", true));
+            this.txtHO.Location = new System.Drawing.Point(400, 156);
+            this.txtHO.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHO.MenuManager = this.barManager1;
+            this.txtHO.Name = "txtHO";
+            this.txtHO.Size = new System.Drawing.Size(263, 20);
+            this.txtHO.TabIndex = 3;
+            // 
+            // txtMAGV
+            // 
+            this.txtMAGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAGV", true));
+            this.txtMAGV.Location = new System.Drawing.Point(828, 96);
+            this.txtMAGV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMAGV.MenuManager = this.barManager1;
+            this.txtMAGV.Name = "txtMAGV";
+            this.txtMAGV.Size = new System.Drawing.Size(263, 20);
+            this.txtMAGV.TabIndex = 1;
+            // 
+            // bdsGVDK
+            // 
+            this.bdsGVDK.DataMember = "FK_GIAOVIEN_DANGKY_GIAOVIEN1";
+            this.bdsGVDK.DataSource = this.bdsGV;
+            // 
+            // bdsBODE
+            // 
+            this.bdsBODE.DataMember = "FK_BODE_GIAOVIEN";
+            this.bdsBODE.DataSource = this.bdsGV;
             // 
             // FrmTeacher
             // 
@@ -468,25 +467,25 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmTeacher";
             this.Text = "FrmTeacher";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTeacher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bODEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,7 +507,7 @@
         private DevExpress.XtraBars.BarButtonItem btnUndo;
         private DevExpress.XtraBars.BarButtonItem btnReload;
         private DevExpress.XtraBars.BarButtonItem btnPrint;
-        private System.Windows.Forms.BindingSource gIAOVIENBindingSource;
+        private System.Windows.Forms.BindingSource bdsGV;
         private DS_SERVER1 dS_SERVER1;
         private DS_SERVER1TableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
         private DS_SERVER1TableAdapters.TableAdapterManager tableAdapterManager;
@@ -521,9 +520,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
         private DS_SERVER1TableAdapters.GIAOVIEN_DANGKYTableAdapter gIAOVIEN_DANGKYTableAdapter;
-        private System.Windows.Forms.BindingSource gIAOVIEN_DANGKYBindingSource;
+        private System.Windows.Forms.BindingSource bdsGVDK;
         private DS_SERVER1TableAdapters.BODETableAdapter bODETableAdapter;
-        private System.Windows.Forms.BindingSource bODEBindingSource;
+        private System.Windows.Forms.BindingSource bdsBODE;
         private DevExpress.XtraEditors.TextEdit txtMAKH;
         private DevExpress.XtraEditors.TextEdit txtDIACHI;
         private DevExpress.XtraEditors.TextEdit txtTEN;

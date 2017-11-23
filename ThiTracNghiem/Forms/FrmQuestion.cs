@@ -29,14 +29,24 @@ namespace ThiTracNghiem.Forms
 
         private void FrmQuestion_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS_SERVER1.MONHOC' table. You can move, or remove it, as needed.
+           
             // TODO: This line of code loads data into the 'dS_SERVER1.BODE' table. You can move, or remove it, as needed.
             this.dS_SERVER1.EnforceConstraints = false;
+
+            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.mONHOCTableAdapter.Fill(this.dS_SERVER1.MONHOC);
+
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.bODETableAdapter.Fill(this.dS_SERVER1.BODE);
+
+           // stt = bdsBODE.Count;
+           // soCauHoi = int.Parse((((DataRowView)bdsBODE[0])["CAUHOI"].ToString()))+1;
+
             gridView1.OptionsBehavior.Editable = false;
             groupBox1.Enabled = false;
             txtMAGV.Enabled = false;
-
+            numCauHoi.Enabled = false;
             List<String> cachXem = new List<String> { "TẤT CẢ ĐỀ THI","CÁ NHÂN" };
             cmbCachXem.DataSource = cachXem;
             if (cmbCachXem.SelectedValue.ToString() == "CÁ NHÂN") {
@@ -96,10 +106,16 @@ namespace ThiTracNghiem.Forms
             viTri = bdsBODE.Position;
             groupBox1.Enabled = true;
             bdsBODE.AddNew();
-            txtMAGV.EditValue = Program.maUser;
+            int countTable = dS_SERVER1.BODE.Count;
+            int soCauHoi = Convert.ToInt32(dS_SERVER1.BODE.Rows[countTable-1]["CAUHOI"]);
+             numCauHoi.Value =soCauHoi+1 ;
+            //numCauHoi.Value = dS_SERVER1.BODE[countTable - 1].CAUHOI;
+            txtMAGV.Text = Program.maUser;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
             gcBODE.Enabled = false;
+            cmbMAMH.DataSource = bdsMONHOC;
+            cmbMAMH.SelectedIndex = 0;
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -121,10 +137,13 @@ namespace ThiTracNghiem.Forms
             viTri = bdsBODE.Position;
             groupBox1.Enabled = true;
             txtMAGV.EditValue = Program.maUser;
-
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
-            gcBODE.Enabled = true;
+            gcBODE.Enabled = false;
+            numCauHoi.Enabled = false;
+            String maMH = cmbMAMH.SelectedValue.ToString();
+            cmbMAMH.DataSource = bdsMONHOC;
+            cmbMAMH.SelectedValue = maMH;
         }
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -139,18 +158,7 @@ namespace ThiTracNghiem.Forms
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtMAMH.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã môn học không được phép rỗng", "", MessageBoxButtons.OK);
-                txtMAMH.Focus();
-                return;
-            }
-            if (txtTRINHDO.Text.Trim() == "")
-            {
-                MessageBox.Show("Trình độ không được phép rỗng", "", MessageBoxButtons.OK);
-                txtTRINHDO.Focus();
-                return;
-            }
+            
             if (txtNOIDUNG.Text.Trim() == "")
             {
                 MessageBox.Show("Nội dung không được phép rỗng", "", MessageBoxButtons.OK);
@@ -163,11 +171,16 @@ namespace ThiTracNghiem.Forms
                 txtA.Focus();
                 return;
             }
-
-            if (txtDAPAN.Text.Trim() == "")
+            if (txtTRINHDO.Text.Trim() == ""|| !(txtTRINHDO.Text.Trim()!="A"|| txtTRINHDO.Text.Trim() != "B"|| txtTRINHDO.Text.Trim() != "C"))
             {
-                MessageBox.Show("Đáp án không được phép rỗng", "", MessageBoxButtons.OK);
-                txtNOIDUNG.Focus();
+                MessageBox.Show("Nội dung không được phép rỗng và phải là A, B hoặc C", "", MessageBoxButtons.OK);
+                txtTRINHDO.Focus();
+                return;
+            }
+            if (txtDAPAN.Text.Trim() == "" || !(txtDAPAN.Text.Trim() != "A" || txtDAPAN.Text.Trim() != "B" || txtDAPAN.Text.Trim() != "C" || txtDAPAN.Text.Trim() != "D"))
+            {
+                MessageBox.Show("Đáp án không được phép rỗng và phải là 1 trong 4 đáp án A,B,C,D", "", MessageBoxButtons.OK);
+                txtDAPAN.Focus();
                 return;
             }
             //((DataRowView)bdsSV[0])["MALOP"] = cmbMALOP.SelectedText.ToString().Trim();
@@ -188,6 +201,37 @@ namespace ThiTracNghiem.Forms
             btnGhi.Enabled = btnUndo.Enabled = false;
 
             groupBox1.Enabled = false;
+        }
+
+        private void gcBODE_Click(object sender, EventArgs e)
+        {           
+            
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Int32 CauHoi = 0;
+            if (MessageBox.Show("Bạn có thật sự muốn xóa câu hỏi này ?? ", "Xác nhận",
+                       MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    CauHoi = int.Parse(((DataRowView)bdsBODE[bdsBODE.Position])["CAUHOI"].ToString()); // giữ lại để khi xóa bị lỗi thì ta sẽ quay về lại
+                    bdsBODE.RemoveCurrent();
+                    this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.bODETableAdapter.Update(this.dS_SERVER1.BODE);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa nhân viên. Bạn hãy xóa lại\n" + ex.Message, "",
+                        MessageBoxButtons.OK);
+                    this.bODETableAdapter.Fill(this.dS_SERVER1.BODE);
+                    bdsBODE.Position = bdsBODE.Find("CAUHOI", CauHoi);
+                    return;
+                }
+            }
+
+            if (bdsBODE.Count == 0) btnXoa.Enabled = false;
         }
     }
 }

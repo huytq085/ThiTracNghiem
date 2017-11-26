@@ -70,6 +70,7 @@
             this.colDAP_AN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDAPAN = new DevExpress.XtraEditors.TextEdit();
             this.txtTRINHDO = new DevExpress.XtraEditors.TextEdit();
             this.cmbMAMH = new System.Windows.Forms.ComboBox();
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
@@ -85,7 +86,6 @@
             this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
             this.mONHOCTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.MONHOCTableAdapter();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.txtDAPAN = new DevExpress.XtraEditors.TextEdit();
             cAUHOILabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             tRINHDOLabel = new System.Windows.Forms.Label();
@@ -102,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcBODE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDAPAN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTRINHDO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtD.Properties)).BeginInit();
@@ -113,7 +114,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDAPAN.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cAUHOILabel
@@ -306,7 +306,7 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1370, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1370, 42);
             // 
             // barDockControlBottom
             // 
@@ -321,19 +321,19 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 706);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 704);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1370, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1370, 42);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 706);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 704);
             // 
             // dS_SERVER1
             // 
@@ -368,7 +368,7 @@
             this.gcBODE.DataSource = this.bdsBODE;
             this.gcBODE.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcBODE.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcBODE.Location = new System.Drawing.Point(0, 101);
+            this.gcBODE.Location = new System.Drawing.Point(0, 103);
             this.gcBODE.MainView = this.gridView1;
             this.gcBODE.MenuManager = this.barManager1;
             this.gcBODE.Name = "gcBODE";
@@ -487,12 +487,21 @@
             this.groupBox1.Controls.Add(cAUHOILabel);
             this.groupBox1.Controls.Add(this.numCauHoi);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 327);
+            this.groupBox1.Location = new System.Drawing.Point(0, 329);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1370, 419);
+            this.groupBox1.Size = new System.Drawing.Size(1370, 417);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtDAPAN
+            // 
+            this.txtDAPAN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "DAP_AN", true));
+            this.txtDAPAN.Location = new System.Drawing.Point(394, 309);
+            this.txtDAPAN.MenuManager = this.barManager1;
+            this.txtDAPAN.Name = "txtDAPAN";
+            this.txtDAPAN.Size = new System.Drawing.Size(130, 20);
+            this.txtDAPAN.TabIndex = 24;
             // 
             // txtTRINHDO
             // 
@@ -592,7 +601,7 @@
             this.panel1.Controls.Add(this.cmbCachXem);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 40);
+            this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 61);
             this.panel1.TabIndex = 11;
@@ -626,15 +635,6 @@
             // 
             this.mONHOCTableAdapter.ClearBeforeFill = true;
             // 
-            // txtDAPAN
-            // 
-            this.txtDAPAN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "DAP_AN", true));
-            this.txtDAPAN.Location = new System.Drawing.Point(394, 309);
-            this.txtDAPAN.MenuManager = this.barManager1;
-            this.txtDAPAN.Name = "txtDAPAN";
-            this.txtDAPAN.Size = new System.Drawing.Size(130, 20);
-            this.txtDAPAN.TabIndex = 24;
-            // 
             // FrmQuestion
             // 
             this.Appearance.Options.UseFont = true;
@@ -662,6 +662,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDAPAN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTRINHDO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtD.Properties)).EndInit();
@@ -674,7 +675,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDAPAN.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

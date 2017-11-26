@@ -50,6 +50,7 @@
             this.txtFooterFullName = new DevExpress.XtraBars.BarHeaderItem();
             this.txtFooterClass = new DevExpress.XtraBars.BarHeaderItem();
             this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.txtFooterTenLop = new DevExpress.XtraBars.BarHeaderItem();
             this.Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbFunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbControl = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,10 +84,11 @@
             this.barStaticItem1,
             this.txtFooterFullName,
             this.txtFooterClass,
-            this.btnInfo});
+            this.btnInfo,
+            this.txtFooterTenLop});
             this.ribbon.LargeImages = this.imageList1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 22;
+            this.ribbon.MaxItemId = 23;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Home});
@@ -252,6 +254,12 @@
             this.btnInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.LargeImage")));
             this.btnInfo.Name = "btnInfo";
             // 
+            // txtFooterTenLop
+            // 
+            this.txtFooterTenLop.Caption = "Tên Lớp";
+            this.txtFooterTenLop.Id = 22;
+            this.txtFooterTenLop.Name = "txtFooterTenLop";
+            // 
             // Home
             // 
             this.Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -293,6 +301,7 @@
             this.rbFooter.ItemLinks.Add(this.txtFooterId);
             this.rbFooter.ItemLinks.Add(this.txtFooterFullName);
             this.rbFooter.ItemLinks.Add(this.txtFooterClass);
+            this.rbFooter.ItemLinks.Add(this.txtFooterTenLop);
             this.rbFooter.Location = new System.Drawing.Point(0, 428);
             this.rbFooter.Name = "rbFooter";
             this.rbFooter.Ribbon = this.ribbon;
@@ -356,5 +365,6 @@
         private DevExpress.XtraBars.BarHeaderItem txtFooterClass;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem btnInfo;
+        private DevExpress.XtraBars.BarHeaderItem txtFooterTenLop;
     }
 }

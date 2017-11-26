@@ -41,10 +41,12 @@ namespace ThiTracNghiem.Forms
                     btnSetup.Dispose();
                     btnAddPacket.Dispose();
                     rbControl.Dispose();
-                    btnSetup.Dispose();
-                    txtFooterId.Caption = "Mã sinh viên: " + Program.id;
-                    txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
-                    txtFooterClass.Caption = "Lớp: " + Program.donVi;
+                    
+                    
+                    txtFooterId.Caption = "MÃ SINH VIÊN: " + Program.id;
+                    txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen;
+                    txtFooterClass.Caption = "MÃ LỚP: " + Program.donVi;
+                    txtFooterTenLop.Caption = "TÊN LỚP: " + Program.tenDonVi;
                 } else if (Program.nhom.Equals("GIAOVIEN"))
                 {
                     btnDept.Dispose();
@@ -52,14 +54,16 @@ namespace ThiTracNghiem.Forms
                     btnSubject.Dispose();
                     btnStudent.Dispose();
                     btnTeacher.Dispose();
-                    txtFooterId.Caption = "Mã giáo viên: " + Program.id;
-                    txtFooterFullName.Caption = "Họ tên: " + Program.hoTen;
-                    txtFooterClass.Caption = "Khoa: " + Program.donVi;
+                    txtFooterTenLop.Dispose();
+                    txtFooterId.Caption = "MÃ GIÁO VIÊN: " + Program.id;
+                    txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen;
+                    txtFooterClass.Caption = "KHOA: " + Program.donVi;
                 } else if (Program.nhom.Equals("COSO"))
                 {
                     txtFooterId.Caption = "Mã cơ sở: " + Program.donVi;
                     txtFooterFullName.Dispose();
                     txtFooterClass.Caption = "Tên cơ sở: " + Program.tenDonVi;
+                    txtFooterTenLop.Dispose();
                 } else
                 {
                     rbFooter.Dispose();

@@ -36,7 +36,7 @@
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
             this.btnSetup = new DevExpress.XtraBars.BarButtonItem();
-            this.btnStart = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThi = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddPacket = new DevExpress.XtraBars.BarButtonItem();
             this.btnStudent = new DevExpress.XtraBars.BarButtonItem();
             this.btnTeacher = new DevExpress.XtraBars.BarButtonItem();
@@ -71,7 +71,7 @@
             this.btnEdit,
             this.btnDelete,
             this.btnSetup,
-            this.btnStart,
+            this.btnThi,
             this.btnAddPacket,
             this.btnStudent,
             this.btnTeacher,
@@ -144,14 +144,15 @@
             this.btnSetup.Name = "btnSetup";
             this.btnSetup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSetup_ItemClick);
             // 
-            // btnStart
+            // btnThi
             // 
-            this.btnStart.Caption = "Thi";
-            this.btnStart.Id = 8;
-            this.btnStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.ImageOptions.Image")));
-            this.btnStart.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnStart.ImageOptions.LargeImage")));
-            this.btnStart.ImageOptions.LargeImageIndex = 5;
-            this.btnStart.Name = "btnStart";
+            this.btnThi.Caption = "Thi";
+            this.btnThi.Id = 8;
+            this.btnThi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.ImageOptions.Image")));
+            this.btnThi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnStart.ImageOptions.LargeImage")));
+            this.btnThi.ImageOptions.LargeImageIndex = 5;
+            this.btnThi.Name = "btnThi";
+            this.btnThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStart_ItemClick);
             // 
             // btnAddPacket
             // 
@@ -273,7 +274,7 @@
             // 
             this.rbFunction.ItemLinks.Add(this.btnSetup, true);
             this.rbFunction.ItemLinks.Add(this.btnAddPacket, true);
-            this.rbFunction.ItemLinks.Add(this.btnStart, true);
+            this.rbFunction.ItemLinks.Add(this.btnThi, true);
             this.rbFunction.Name = "rbFunction";
             this.rbFunction.Text = "Chức năng";
             // 
@@ -348,7 +349,7 @@
         private DevExpress.XtraBars.BarButtonItem btnEdit;
         private DevExpress.XtraBars.BarButtonItem btnDelete;
         private DevExpress.XtraBars.BarButtonItem btnSetup;
-        private DevExpress.XtraBars.BarButtonItem btnStart;
+        private DevExpress.XtraBars.BarButtonItem btnThi;
         private DevExpress.XtraBars.BarButtonItem btnAddPacket;
         private DevExpress.XtraBars.BarButtonItem btnStudent;
         private DevExpress.XtraBars.BarButtonItem btnTeacher;

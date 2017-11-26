@@ -128,5 +128,10 @@ namespace ThiTracNghiem.Forms
         {
 
         }
+
+        private void btnStart_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmThi));
+        }
     }
 }

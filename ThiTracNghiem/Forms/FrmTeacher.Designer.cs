@@ -63,13 +63,13 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMAKH = new DevExpress.XtraEditors.TextEdit();
             this.txtDIACHI = new DevExpress.XtraEditors.TextEdit();
             this.txtTEN = new DevExpress.XtraEditors.TextEdit();
             this.txtHO = new DevExpress.XtraEditors.TextEdit();
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
-            this.txtMAKH = new DevExpress.XtraEditors.TextEdit();
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -81,13 +81,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mAGVLabel
@@ -254,34 +254,34 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1370, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1370, 42);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 731);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 18);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 686);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 689);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1370, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1370, 42);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 686);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 689);
             // 
             // dS_SERVER1
             // 
@@ -324,7 +324,7 @@
             this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcGV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcGV.Location = new System.Drawing.Point(0, 40);
+            this.gcGV.Location = new System.Drawing.Point(0, 42);
             this.gcGV.MainView = this.gridView1;
             this.gcGV.Margin = new System.Windows.Forms.Padding(4);
             this.gcGV.MenuManager = this.barManager1;
@@ -393,13 +393,22 @@
             this.groupBox1.Controls.Add(mAGVLabel);
             this.groupBox1.Controls.Add(this.txtMAGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 394);
+            this.groupBox1.Location = new System.Drawing.Point(0, 396);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1370, 332);
+            this.groupBox1.Size = new System.Drawing.Size(1370, 335);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // txtMAKH
+            // 
+            this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
+            this.txtMAKH.Location = new System.Drawing.Point(400, 96);
+            this.txtMAKH.MenuManager = this.barManager1;
+            this.txtMAKH.Name = "txtMAKH";
+            this.txtMAKH.Size = new System.Drawing.Size(263, 20);
+            this.txtMAKH.TabIndex = 10;
             // 
             // txtDIACHI
             // 
@@ -451,15 +460,6 @@
             this.bdsBODE.DataMember = "FK_BODE_GIAOVIEN";
             this.bdsBODE.DataSource = this.bdsGV;
             // 
-            // txtMAKH
-            // 
-            this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
-            this.txtMAKH.Location = new System.Drawing.Point(400, 96);
-            this.txtMAKH.MenuManager = this.barManager1;
-            this.txtMAKH.Name = "txtMAKH";
-            this.txtMAKH.Size = new System.Drawing.Size(263, 20);
-            this.txtMAKH.TabIndex = 10;
-            // 
             // FrmTeacher
             // 
             this.Appearance.Options.UseFont = true;
@@ -485,13 +485,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

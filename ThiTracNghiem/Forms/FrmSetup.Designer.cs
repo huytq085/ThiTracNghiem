@@ -30,7 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dpStartDate = new DevExpress.XtraEditors.DateEdit();
+            this.nmrTHOIGIAN = new System.Windows.Forms.NumericUpDown();
+            this.nmrSOCAUTHI = new System.Windows.Forms.NumericUpDown();
+            this.nmrLAN = new System.Windows.Forms.NumericUpDown();
+            this.dpNGAYTHI = new DevExpress.XtraEditors.DateEdit();
             this.btnReset = new System.Windows.Forms.Label();
             this.btnSubmit = new DevExpress.XtraEditors.SimpleButton();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,34 +43,31 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbLevel = new System.Windows.Forms.ComboBox();
-            this.cbbSubjectName = new System.Windows.Forms.ComboBox();
+            this.cbbTRINHDO = new System.Windows.Forms.ComboBox();
+            this.cbbMAMH = new System.Windows.Forms.ComboBox();
             this.vDSMONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
-            this.cbbClassName = new System.Windows.Forms.ComboBox();
+            this.cbbMALOP = new System.Windows.Forms.ComboBox();
             this.vDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DS_LOPTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_LOPTableAdapter();
             this.v_DS_MONHOCTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_MONHOCTableAdapter();
-            this.nmrTimes = new System.Windows.Forms.NumericUpDown();
-            this.nmrNumOfQuestions = new System.Windows.Forms.NumericUpDown();
-            this.nmrNumOfMinutes = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrTHOIGIAN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSOCAUTHI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrLAN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpNGAYTHI.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpNGAYTHI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSMONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSLOPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrTimes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrNumOfQuestions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrNumOfMinutes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.nmrNumOfMinutes);
-            this.panel1.Controls.Add(this.nmrNumOfQuestions);
-            this.panel1.Controls.Add(this.nmrTimes);
-            this.panel1.Controls.Add(this.dpStartDate);
+            this.panel1.Controls.Add(this.nmrTHOIGIAN);
+            this.panel1.Controls.Add(this.nmrSOCAUTHI);
+            this.panel1.Controls.Add(this.nmrLAN);
+            this.panel1.Controls.Add(this.dpNGAYTHI);
             this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.btnSubmit);
             this.panel1.Controls.Add(this.label7);
@@ -77,26 +77,88 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cbbLevel);
-            this.panel1.Controls.Add(this.cbbSubjectName);
-            this.panel1.Controls.Add(this.cbbClassName);
+            this.panel1.Controls.Add(this.cbbTRINHDO);
+            this.panel1.Controls.Add(this.cbbMAMH);
+            this.panel1.Controls.Add(this.cbbMALOP);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 389);
             this.panel1.TabIndex = 0;
             // 
-            // dpStartDate
+            // nmrTHOIGIAN
             // 
-            this.dpStartDate.EditValue = new System.DateTime(2017, 11, 24, 0, 9, 51, 234);
-            this.dpStartDate.Location = new System.Drawing.Point(286, 234);
-            this.dpStartDate.Name = "dpStartDate";
-            this.dpStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.nmrTHOIGIAN.Location = new System.Drawing.Point(286, 260);
+            this.nmrTHOIGIAN.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.nmrTHOIGIAN.Minimum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nmrTHOIGIAN.Name = "nmrTHOIGIAN";
+            this.nmrTHOIGIAN.Size = new System.Drawing.Size(256, 21);
+            this.nmrTHOIGIAN.TabIndex = 19;
+            this.nmrTHOIGIAN.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // nmrSOCAUTHI
+            // 
+            this.nmrSOCAUTHI.Location = new System.Drawing.Point(286, 205);
+            this.nmrSOCAUTHI.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nmrSOCAUTHI.Name = "nmrSOCAUTHI";
+            this.nmrSOCAUTHI.Size = new System.Drawing.Size(256, 21);
+            this.nmrSOCAUTHI.TabIndex = 18;
+            this.nmrSOCAUTHI.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // nmrLAN
+            // 
+            this.nmrLAN.Location = new System.Drawing.Point(286, 178);
+            this.nmrLAN.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.nmrLAN.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmrLAN.Name = "nmrLAN";
+            this.nmrLAN.Size = new System.Drawing.Size(256, 21);
+            this.nmrLAN.TabIndex = 17;
+            this.nmrLAN.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dpNGAYTHI
+            // 
+            this.dpNGAYTHI.EditValue = new System.DateTime(2017, 11, 28, 23, 38, 57, 0);
+            this.dpNGAYTHI.Location = new System.Drawing.Point(286, 234);
+            this.dpNGAYTHI.Name = "dpNGAYTHI";
+            this.dpNGAYTHI.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dpNGAYTHI.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpStartDate.Size = new System.Drawing.Size(256, 20);
-            this.dpStartDate.TabIndex = 16;
+            this.dpNGAYTHI.Properties.MinValue = new System.DateTime(2017, 11, 28, 23, 38, 57, 0);
+            this.dpNGAYTHI.Size = new System.Drawing.Size(256, 20);
+            this.dpNGAYTHI.TabIndex = 16;
             // 
             // btnReset
             // 
@@ -186,30 +248,30 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Tên lớp";
             // 
-            // cbbLevel
+            // cbbTRINHDO
             // 
-            this.cbbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbLevel.FormattingEnabled = true;
-            this.cbbLevel.Items.AddRange(new object[] {
+            this.cbbTRINHDO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTRINHDO.FormattingEnabled = true;
+            this.cbbTRINHDO.Items.AddRange(new object[] {
             "A",
             "B",
             "C"});
-            this.cbbLevel.Location = new System.Drawing.Point(286, 151);
-            this.cbbLevel.Name = "cbbLevel";
-            this.cbbLevel.Size = new System.Drawing.Size(256, 21);
-            this.cbbLevel.TabIndex = 2;
+            this.cbbTRINHDO.Location = new System.Drawing.Point(286, 151);
+            this.cbbTRINHDO.Name = "cbbTRINHDO";
+            this.cbbTRINHDO.Size = new System.Drawing.Size(256, 21);
+            this.cbbTRINHDO.TabIndex = 2;
             // 
-            // cbbSubjectName
+            // cbbMAMH
             // 
-            this.cbbSubjectName.DataSource = this.vDSMONHOCBindingSource;
-            this.cbbSubjectName.DisplayMember = "TENMH";
-            this.cbbSubjectName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbSubjectName.FormattingEnabled = true;
-            this.cbbSubjectName.Location = new System.Drawing.Point(286, 124);
-            this.cbbSubjectName.Name = "cbbSubjectName";
-            this.cbbSubjectName.Size = new System.Drawing.Size(256, 21);
-            this.cbbSubjectName.TabIndex = 1;
-            this.cbbSubjectName.ValueMember = "MAMH";
+            this.cbbMAMH.DataSource = this.vDSMONHOCBindingSource;
+            this.cbbMAMH.DisplayMember = "TENMH";
+            this.cbbMAMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMAMH.FormattingEnabled = true;
+            this.cbbMAMH.Location = new System.Drawing.Point(286, 124);
+            this.cbbMAMH.Name = "cbbMAMH";
+            this.cbbMAMH.Size = new System.Drawing.Size(256, 21);
+            this.cbbMAMH.TabIndex = 1;
+            this.cbbMAMH.ValueMember = "MAMH";
             // 
             // vDSMONHOCBindingSource
             // 
@@ -221,17 +283,17 @@
             this.dS_SERVER1.DataSetName = "DS_SERVER1";
             this.dS_SERVER1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cbbClassName
+            // cbbMALOP
             // 
-            this.cbbClassName.DataSource = this.vDSLOPBindingSource;
-            this.cbbClassName.DisplayMember = "TENLOP";
-            this.cbbClassName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbClassName.FormattingEnabled = true;
-            this.cbbClassName.Location = new System.Drawing.Point(286, 97);
-            this.cbbClassName.Name = "cbbClassName";
-            this.cbbClassName.Size = new System.Drawing.Size(256, 21);
-            this.cbbClassName.TabIndex = 0;
-            this.cbbClassName.ValueMember = "MALOP";
+            this.cbbMALOP.DataSource = this.vDSLOPBindingSource;
+            this.cbbMALOP.DisplayMember = "TENLOP";
+            this.cbbMALOP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMALOP.FormattingEnabled = true;
+            this.cbbMALOP.Location = new System.Drawing.Point(286, 97);
+            this.cbbMALOP.Name = "cbbMALOP";
+            this.cbbMALOP.Size = new System.Drawing.Size(256, 21);
+            this.cbbMALOP.TabIndex = 0;
+            this.cbbMALOP.ValueMember = "MALOP";
             // 
             // vDSLOPBindingSource
             // 
@@ -246,27 +308,6 @@
             // 
             this.v_DS_MONHOCTableAdapter.ClearBeforeFill = true;
             // 
-            // nmrTimes
-            // 
-            this.nmrTimes.Location = new System.Drawing.Point(286, 178);
-            this.nmrTimes.Name = "nmrTimes";
-            this.nmrTimes.Size = new System.Drawing.Size(256, 21);
-            this.nmrTimes.TabIndex = 17;
-            // 
-            // nmrNumOfQuestions
-            // 
-            this.nmrNumOfQuestions.Location = new System.Drawing.Point(286, 205);
-            this.nmrNumOfQuestions.Name = "nmrNumOfQuestions";
-            this.nmrNumOfQuestions.Size = new System.Drawing.Size(256, 21);
-            this.nmrNumOfQuestions.TabIndex = 18;
-            // 
-            // nmrNumOfMinutes
-            // 
-            this.nmrNumOfMinutes.Location = new System.Drawing.Point(286, 260);
-            this.nmrNumOfMinutes.Name = "nmrNumOfMinutes";
-            this.nmrNumOfMinutes.Size = new System.Drawing.Size(256, 21);
-            this.nmrNumOfMinutes.TabIndex = 19;
-            // 
             // FrmSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,14 +319,14 @@
             this.Load += new System.EventHandler(this.FrmSetup_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrTHOIGIAN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSOCAUTHI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrLAN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpNGAYTHI.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpNGAYTHI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSMONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSLOPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrTimes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrNumOfQuestions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrNumOfMinutes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -300,9 +341,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbbLevel;
-        private System.Windows.Forms.ComboBox cbbSubjectName;
-        private System.Windows.Forms.ComboBox cbbClassName;
+        private System.Windows.Forms.ComboBox cbbTRINHDO;
+        private System.Windows.Forms.ComboBox cbbMAMH;
+        private System.Windows.Forms.ComboBox cbbMALOP;
         private DS_SERVER1 dS_SERVER1;
         private System.Windows.Forms.BindingSource vDSLOPBindingSource;
         private DS_SERVER1TableAdapters.V_DS_LOPTableAdapter v_DS_LOPTableAdapter;
@@ -310,9 +351,9 @@
         private DS_SERVER1TableAdapters.V_DS_MONHOCTableAdapter v_DS_MONHOCTableAdapter;
         private DevExpress.XtraEditors.SimpleButton btnSubmit;
         private System.Windows.Forms.Label btnReset;
-        private DevExpress.XtraEditors.DateEdit dpStartDate;
-        private System.Windows.Forms.NumericUpDown nmrNumOfMinutes;
-        private System.Windows.Forms.NumericUpDown nmrNumOfQuestions;
-        private System.Windows.Forms.NumericUpDown nmrTimes;
+        private DevExpress.XtraEditors.DateEdit dpNGAYTHI;
+        private System.Windows.Forms.NumericUpDown nmrTHOIGIAN;
+        private System.Windows.Forms.NumericUpDown nmrSOCAUTHI;
+        private System.Windows.Forms.NumericUpDown nmrLAN;
     }
 }

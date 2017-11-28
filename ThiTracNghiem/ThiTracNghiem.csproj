@@ -46,6 +46,7 @@
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBApp.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBApp.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DS_SERVER1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="Forms\DlgConfirm.Designer.cs">
       <DependentUpon>DlgConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DlgOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DlgOk.Designer.cs">
+      <DependentUpon>DlgOk.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmClass.cs">
       <SubType>Form</SubType>
@@ -148,6 +160,9 @@
     <EmbeddedResource Include="Forms\DlgConfirm.resx">
       <DependentUpon>DlgConfirm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DlgOk.resx">
+      <DependentUpon>DlgOk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmClass.resx">
       <DependentUpon>FrmClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +209,14 @@
     </Compile>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DBApp.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBApp.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBApp.dbml.layout">
+      <DependentUpon>DBApp.dbml</DependentUpon>
     </None>
     <None Include="DS_SERVER1.xsc">
       <DependentUpon>DS_SERVER1.xsd</DependentUpon>
@@ -244,6 +267,10 @@
   <ItemGroup>
     <None Include="img\QuestionTypes-360x260.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

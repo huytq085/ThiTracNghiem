@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace ThiTracNghiem.Forms
 {
@@ -46,16 +37,16 @@ namespace ThiTracNghiem.Forms
             {
                 DBAppDataContext db = new DBAppDataContext();
                 db.Connection.ConnectionString = Program.connstr;
-                GIAOVIEN_DANGKY setup = new GIAOVIEN_DANGKY();
-                setup.MAGV = Program.id.ToUpper();
-                setup.MALOP = MALOP;
-                setup.MAMH = MAMH;
-                setup.TRINHDO = TRINHDO;
-                setup.NGAYTHI = NGAYTHI;
-                setup.THOIGIAN = THOIGIAN;
-                setup.SOCAUTHI = SOCAUTHI;
-                setup.LAN = LAN;
-                db.GIAOVIEN_DANGKies.InsertOnSubmit(setup);
+                GIAOVIEN_DANGKY gvDangKy = new GIAOVIEN_DANGKY();
+                gvDangKy.MAGV = Program.id.ToUpper();
+                gvDangKy.MALOP = MALOP;
+                gvDangKy.MAMH = MAMH;
+                gvDangKy.TRINHDO = TRINHDO;
+                gvDangKy.NGAYTHI = NGAYTHI;
+                gvDangKy.THOIGIAN = THOIGIAN;
+                gvDangKy.SOCAUTHI = SOCAUTHI;
+                gvDangKy.LAN = LAN;
+                db.GIAOVIEN_DANGKies.InsertOnSubmit(gvDangKy);
                 db.SubmitChanges();
                 
                 DlgOk.getInstance("Đăng ký thành công", "Xác nhận").ShowDialog();

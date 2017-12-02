@@ -214,6 +214,7 @@
             this.btnNOPBAI.TabIndex = 5;
             this.btnNOPBAI.Text = "NỘP BÀI";
             this.btnNOPBAI.UseVisualStyleBackColor = true;
+            this.btnNOPBAI.Click += new System.EventHandler(this.btnNOPBAI_Click);
             // 
             // lbSOCAUTHI
             // 

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using System.Linq;
+
 namespace ThiTracNghiem.Forms
 {
     public partial class FrmThi : DevExpress.XtraEditors.XtraForm
@@ -21,6 +23,13 @@ namespace ThiTracNghiem.Forms
         String MAMH = "";
         String trinhDo = "";
         int soCau = 0;
+        RadioButton[] rdA;
+        RadioButton[] rdB;
+        RadioButton[] rdC;
+        RadioButton[] rdD;
+        String[] DA;
+        int[] cauSo;
+        String[] CHON;
         public FrmThi()
         {
             
@@ -83,7 +92,8 @@ namespace ThiTracNghiem.Forms
             String[] B = new String[soCau];
             String[] C = new String[soCau];
             String[] D = new String[soCau];
-            String[] DA = new String[soCau];
+            cauSo = new int[soCau];
+            DA = new String[soCau];
             int j = 0;
             String strLenh = "EXEC SP_LOCDE '" + MAMH.Trim() + "','" + trinhDo.Trim() + "'," + soCau;
             SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
@@ -98,6 +108,7 @@ namespace ThiTracNghiem.Forms
                 C[j] = reader["C"].ToString();
                 D[j] = reader["D"].ToString();
                 A[j] = reader["A"].ToString();
+                cauSo[j] = int.Parse(reader["CAUHOI"].ToString());
                 DA[j] =reader["DAP_AN"].ToString();
                 j++;
                 rd=reader.Read();
@@ -114,11 +125,11 @@ namespace ThiTracNghiem.Forms
             timer1.Interval = 1000;
             int socau = int.Parse(((DataRowView)bdsGVDK[0])["SOCAUTHI"].ToString().Trim());
             Label[] lbCAUHOI = new Label[socau];
-            RadioButton[] rdA = new RadioButton[socau];
-            RadioButton[] rdB = new RadioButton[socau];
-            RadioButton[] rdC = new RadioButton[socau];
-            RadioButton[] rdD = new RadioButton[socau];
-            Label[] lbDAPAN = new Label[socau];
+            rdA = new RadioButton[socau];
+            rdB = new RadioButton[socau];
+            rdC = new RadioButton[socau];
+            rdD = new RadioButton[socau];
+            
             Panel[] pn = new Panel[socau];
             
             for (int i = 0; i < socau; i++)
@@ -353,8 +364,35 @@ namespace ThiTracNghiem.Forms
             {
                 timer1.Stop();
                 lbTHOIGIAN.Text = fixTime(minute, sec);
+                btnNOPBAI.Click += new EventHandler(btnNOPBAI_Click);
             }
             
+        }
+
+        private void btnNOPBAI_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            panel3.Enabled = false;
+            float tyleDiem =(float) 10 / soCau;
+            int soCauDung = 0;
+            CHON = new String[soCau];
+            for (int i = 0; i < soCau; i++)
+            {
+
+                if (rdA[i].Checked)
+                    CHON[i] = "A";
+                else if (rdB[i].Checked)
+                    CHON[i] = "B";
+                else if (rdC[i].Checked)
+                    CHON[i] = "C";
+                else if (rdD[i].Checked)
+                    CHON[i] = "D";
+                else
+                    CHON[i] = "";
+
+                if (CHON[i]==DA[i])
+                    soCauDung++;
+            }
         }
     }
 }

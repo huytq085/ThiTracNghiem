@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCHONLAI = new System.Windows.Forms.Button();
             this.btnBATDAUTHI = new System.Windows.Forms.Button();
             this.cmbLANTHI = new System.Windows.Forms.ComboBox();
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
@@ -41,17 +42,18 @@
             this.lbDESNGAYTHI = new System.Windows.Forms.Label();
             this.lbDESMONHOC = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTHOIGIAN = new System.Windows.Forms.Label();
+            this.btnNOPBAI = new System.Windows.Forms.Button();
             this.lbSOCAUTHI = new System.Windows.Forms.Label();
             this.lbTRINHDO = new System.Windows.Forms.Label();
             this.lbDESTHOIGIAN = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbDESSOCAUTHI = new System.Windows.Forms.Label();
+            this.lbDESTRINHDO = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gIAOVIEN_DANGKYTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.GIAOVIEN_DANGKYTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
             this.v_TENMHTHITableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_TENMHTHITableAdapter();
-            this.btnCHONLAI = new System.Windows.Forms.Button();
-            this.btnNOPBAI = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).BeginInit();
@@ -76,6 +78,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 80);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCHONLAI
+            // 
+            this.btnCHONLAI.Location = new System.Drawing.Point(989, 16);
+            this.btnCHONLAI.Name = "btnCHONLAI";
+            this.btnCHONLAI.Size = new System.Drawing.Size(179, 46);
+            this.btnCHONLAI.TabIndex = 7;
+            this.btnCHONLAI.Text = "CHỌN LẠI";
+            this.btnCHONLAI.UseVisualStyleBackColor = true;
+            this.btnCHONLAI.Click += new System.EventHandler(this.btnCHONLAI_Click);
             // 
             // btnBATDAUTHI
             // 
@@ -171,17 +183,37 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lbTHOIGIAN);
             this.panel2.Controls.Add(this.btnNOPBAI);
             this.panel2.Controls.Add(this.lbSOCAUTHI);
             this.panel2.Controls.Add(this.lbTRINHDO);
             this.panel2.Controls.Add(this.lbDESTHOIGIAN);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lbDESSOCAUTHI);
+            this.panel2.Controls.Add(this.lbDESTRINHDO);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(1069, 80);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 376);
             this.panel2.TabIndex = 1;
+            // 
+            // lbTHOIGIAN
+            // 
+            this.lbTHOIGIAN.AutoSize = true;
+            this.lbTHOIGIAN.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTHOIGIAN.Location = new System.Drawing.Point(68, 189);
+            this.lbTHOIGIAN.Name = "lbTHOIGIAN";
+            this.lbTHOIGIAN.Size = new System.Drawing.Size(163, 31);
+            this.lbTHOIGIAN.TabIndex = 6;
+            this.lbTHOIGIAN.Text = "lbTHOIGIAN";
+            // 
+            // btnNOPBAI
+            // 
+            this.btnNOPBAI.Location = new System.Drawing.Point(60, 316);
+            this.btnNOPBAI.Name = "btnNOPBAI";
+            this.btnNOPBAI.Size = new System.Drawing.Size(179, 46);
+            this.btnNOPBAI.TabIndex = 5;
+            this.btnNOPBAI.Text = "NỘP BÀI";
+            this.btnNOPBAI.UseVisualStyleBackColor = true;
             // 
             // lbSOCAUTHI
             // 
@@ -211,23 +243,23 @@
             this.lbDESTHOIGIAN.TabIndex = 2;
             this.lbDESTHOIGIAN.Text = "THỜI GIAN";
             // 
-            // label5
+            // lbDESSOCAUTHI
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 17);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "SỐ CÂU THI";
+            this.lbDESSOCAUTHI.AutoSize = true;
+            this.lbDESSOCAUTHI.Location = new System.Drawing.Point(33, 74);
+            this.lbDESSOCAUTHI.Name = "lbDESSOCAUTHI";
+            this.lbDESSOCAUTHI.Size = new System.Drawing.Size(92, 17);
+            this.lbDESSOCAUTHI.TabIndex = 1;
+            this.lbDESSOCAUTHI.Text = "SỐ CÂU THI";
             // 
-            // label4
+            // lbDESTRINHDO
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "TRÌNH ĐỘ";
+            this.lbDESTRINHDO.AutoSize = true;
+            this.lbDESTRINHDO.Location = new System.Drawing.Point(45, 29);
+            this.lbDESTRINHDO.Name = "lbDESTRINHDO";
+            this.lbDESTRINHDO.Size = new System.Drawing.Size(80, 17);
+            this.lbDESTRINHDO.TabIndex = 0;
+            this.lbDESTRINHDO.Text = "TRÌNH ĐỘ";
             // 
             // panel3
             // 
@@ -259,24 +291,10 @@
             // 
             this.v_TENMHTHITableAdapter.ClearBeforeFill = true;
             // 
-            // btnCHONLAI
+            // timer1
             // 
-            this.btnCHONLAI.Location = new System.Drawing.Point(989, 16);
-            this.btnCHONLAI.Name = "btnCHONLAI";
-            this.btnCHONLAI.Size = new System.Drawing.Size(179, 46);
-            this.btnCHONLAI.TabIndex = 7;
-            this.btnCHONLAI.Text = "CHỌN LẠI";
-            this.btnCHONLAI.UseVisualStyleBackColor = true;
-            this.btnCHONLAI.Click += new System.EventHandler(this.btnCHONLAI_Click);
-            // 
-            // btnNOPBAI
-            // 
-            this.btnNOPBAI.Location = new System.Drawing.Point(60, 316);
-            this.btnNOPBAI.Name = "btnNOPBAI";
-            this.btnNOPBAI.Size = new System.Drawing.Size(179, 46);
-            this.btnNOPBAI.TabIndex = 5;
-            this.btnNOPBAI.Text = "NỘP BÀI";
-            this.btnNOPBAI.UseVisualStyleBackColor = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmThi
             // 
@@ -316,8 +334,8 @@
         private System.Windows.Forms.Label lbDESMONHOC;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbDESSOCAUTHI;
+        private System.Windows.Forms.Label lbDESTRINHDO;
         private System.Windows.Forms.Label lbDESTHOIGIAN;
         private DS_SERVER1 dS_SERVER1;
         private System.Windows.Forms.BindingSource bdsGVDK;
@@ -329,5 +347,7 @@
         public System.Windows.Forms.Label lbTRINHDO;
         private System.Windows.Forms.Button btnCHONLAI;
         private System.Windows.Forms.Button btnNOPBAI;
+        private System.Windows.Forms.Label lbTHOIGIAN;
+        private System.Windows.Forms.Timer timer1;
     }
 }

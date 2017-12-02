@@ -18,6 +18,9 @@ namespace ThiTracNghiem.Forms
         int thuTu = 0;
         int minute = 0;
         int sec = 0;
+        String MAMH = "";
+        String trinhDo = "";
+        int soCau = 0;
         public FrmThi()
         {
             
@@ -71,6 +74,37 @@ namespace ThiTracNghiem.Forms
 
         private void btnBATDAUTHI_Click(object sender, EventArgs e)
         {
+            
+            trinhDo = lbTRINHDO.Text;
+            soCau = int.Parse(lbSOCAUTHI.Text);
+
+            String[] cauhoi = new String[soCau];
+            String[] A = new String[soCau];
+            String[] B = new String[soCau];
+            String[] C = new String[soCau];
+            String[] D = new String[soCau];
+            String[] DA = new String[soCau];
+            int j = 0;
+            String strLenh = "EXEC SP_LOCDE '" + MAMH.Trim() + "','" + trinhDo.Trim() + "'," + soCau;
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+            Boolean rd = reader.Read();
+            while (rd)
+            {
+                
+                cauhoi[j] =reader["NOIDUNG"].ToString();
+                
+                A[j] = reader["A"].ToString();
+                B[j] = reader["B"].ToString();
+                C[j] = reader["C"].ToString();
+                D[j] = reader["D"].ToString();
+                A[j] = reader["A"].ToString();
+                DA[j] =reader["DAP_AN"].ToString();
+                j++;
+                rd=reader.Read();
+            }
+
+            Program.conn.Close();
+            reader.Close();
             btnCHONLAI.Enabled = false;
             btnBATDAUTHI.Enabled = false;
             btnNOPBAI.Enabled = true;
@@ -79,16 +113,58 @@ namespace ThiTracNghiem.Forms
             timer1.Start();
             timer1.Interval = 1000;
             int socau = int.Parse(((DataRowView)bdsGVDK[0])["SOCAUTHI"].ToString().Trim());
-            Label[] lb = new Label[socau];
-            int a = 100;
-            for(int i = 0; i < socau; i++)
+            Label[] lbCAUHOI = new Label[socau];
+            RadioButton[] rdA = new RadioButton[socau];
+            RadioButton[] rdB = new RadioButton[socau];
+            RadioButton[] rdC = new RadioButton[socau];
+            RadioButton[] rdD = new RadioButton[socau];
+            Label[] lbDAPAN = new Label[socau];
+            Panel[] pn = new Panel[socau];
+            
+            for (int i = 0; i < socau; i++)
             {
-                lb[i] = new Label();
-                lb[i].Name = "lb" + i.ToString();
-                lb[i].Text = i.ToString();
-                a += 100;
-                lb[i].Location = new Point(10,i*20);
-                panel3.Controls.Add(lb[i]);
+                pn[i] = new Panel();
+                lbCAUHOI[i] = new Label();
+                rdA[i] = new RadioButton();
+                rdB[i] = new RadioButton();
+                rdC[i] = new RadioButton();
+                rdD[i] = new RadioButton();
+
+                
+                lbCAUHOI[i].Name = "lb" + i.ToString();
+                rdA[i].Name = "lb" + i;
+                rdB[i].Name = "lb" + i;
+                rdC[i].Name = "lb" + i;
+                rdD[i].Name = "lb" + i;
+
+                lbCAUHOI[i].Text = "Câu "+(i+1).ToString()+" : " + cauhoi[i].ToString();
+                rdA[i].Text = "A. " + A[i].ToString();
+                rdB[i].Text = "B. " + B[i].ToString();
+                rdC[i].Text = "C. " + C[i].ToString();
+                rdD[i].Text = "D. " + D[i].ToString();
+
+                lbCAUHOI[i].AutoSize = true;
+                rdA[i].AutoSize = true;
+                rdB[i].AutoSize = true;
+                rdC[i].AutoSize = true;
+                rdD[i].AutoSize = true;
+                pn[i].AutoSize = true;
+
+                lbCAUHOI[i].Location = new Point(20,30);
+                rdA[i].Location = new Point(70, 60);
+                rdB[i].Location = new Point(70, 90);
+                rdC[i].Location = new Point(70, 120);
+                rdD[i].Location = new Point(70, 150);
+
+                pn[i].Location = new Point(0, i * 180);
+                
+                pn[i].Controls.Add(lbCAUHOI[i]);
+                pn[i].Controls.Add(rdA[i]);
+                pn[i].Controls.Add(rdB[i]);
+                pn[i].Controls.Add(rdC[i]);
+                pn[i].Controls.Add(rdD[i]);
+
+                panel3.Controls.Add(pn[i]);
             }
         }
 
@@ -171,7 +247,7 @@ namespace ThiTracNghiem.Forms
                 }
                 kiemTraThuTu(thuTu, ref bdsFilter);
 
-                String MAMH = "";
+                
                 MAMH = timMAMH(cmbTENMONHOC.SelectedValue.ToString());
 
                 bdsFilter += "MAMH = '" + MAMH + "'";
@@ -194,7 +270,7 @@ namespace ThiTracNghiem.Forms
                     lbSOCAUTHI.Text = ((DataRowView)bdsGVDK[0])["SOCAUTHI"].ToString();
                     lbTRINHDO.Text = ((DataRowView)bdsGVDK[0])["TRINHDO"].ToString();
                     lbTHOIGIAN.Text = ((DataRowView)bdsGVDK[cmbLANTHI.SelectedIndex])["THOIGIAN"].ToString() + " : 00";
-
+                    
                 }
                 kiemTraThuTu(thuTu, ref bdsFilter);
                 bdsFilter += "NGAYTHI = '" + cmbNGAYTHI.SelectedValue.ToString() + "'";

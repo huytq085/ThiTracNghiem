@@ -44,6 +44,7 @@
             this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTAOLOGIN = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -70,14 +71,17 @@
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
+            this.gbTAOLOGIN = new System.Windows.Forms.GroupBox();
+            this.lbMAGV = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCANCLEL = new System.Windows.Forms.Button();
+            this.btnDANGKY = new System.Windows.Forms.Button();
+            this.cmbROLE = new System.Windows.Forms.ComboBox();
+            this.txtPASSWORD = new System.Windows.Forms.TextBox();
+            this.txtLOGIN = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -96,13 +100,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.gbTAOLOGIN.SuspendLayout();
             this.SuspendLayout();
             // 
             // mAGVLabel
             // 
             mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(507, 99);
+            mAGVLabel.Location = new System.Drawing.Point(495, 99);
             mAGVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAGVLabel.Name = "mAGVLabel";
             mAGVLabel.Size = new System.Drawing.Size(55, 17);
@@ -112,7 +116,7 @@
             // hOLabel
             // 
             hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(92, 159);
+            hOLabel.Location = new System.Drawing.Point(80, 159);
             hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             hOLabel.Name = "hOLabel";
             hOLabel.Size = new System.Drawing.Size(33, 17);
@@ -122,7 +126,7 @@
             // tENLabel
             // 
             tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(522, 159);
+            tENLabel.Location = new System.Drawing.Point(510, 159);
             tENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tENLabel.Name = "tENLabel";
             tENLabel.Size = new System.Drawing.Size(40, 17);
@@ -132,7 +136,7 @@
             // dIACHILabel
             // 
             dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(68, 219);
+            dIACHILabel.Location = new System.Drawing.Point(56, 219);
             dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dIACHILabel.Name = "dIACHILabel";
             dIACHILabel.Size = new System.Drawing.Size(64, 17);
@@ -142,7 +146,7 @@
             // mAKHLabel
             // 
             mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(75, 99);
+            mAKHLabel.Location = new System.Drawing.Point(63, 99);
             mAKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAKHLabel.Name = "mAKHLabel";
             mAKHLabel.Size = new System.Drawing.Size(57, 17);
@@ -166,9 +170,10 @@
             this.btnXoa,
             this.btnUndo,
             this.btnReload,
-            this.btnPrint});
+            this.btnPrint,
+            this.btnTAOLOGIN});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 8;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -184,7 +189,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnUndo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPrint, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPrint, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTAOLOGIN, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -243,6 +249,14 @@
             this.btnPrint.Id = 6;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.Name = "btnPrint";
+            // 
+            // btnTAOLOGIN
+            // 
+            this.btnTAOLOGIN.Caption = "TẠO LOGIN";
+            this.btnTAOLOGIN.Id = 7;
+            this.btnTAOLOGIN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTAOLOGIN.ImageOptions.Image")));
+            this.btnTAOLOGIN.Name = "btnTAOLOGIN";
+            this.btnTAOLOGIN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTAOLOGIN_ItemClick);
             // 
             // bar3
             // 
@@ -391,7 +405,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtMAKH);
             this.groupBox1.Controls.Add(mAKHLabel);
             this.groupBox1.Controls.Add(dIACHILabel);
@@ -414,7 +427,7 @@
             // txtMAKH
             // 
             this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
-            this.txtMAKH.Location = new System.Drawing.Point(189, 96);
+            this.txtMAKH.Location = new System.Drawing.Point(177, 96);
             this.txtMAKH.MenuManager = this.barManager1;
             this.txtMAKH.Name = "txtMAKH";
             this.txtMAKH.Size = new System.Drawing.Size(263, 20);
@@ -423,7 +436,7 @@
             // txtDIACHI
             // 
             this.txtDIACHI.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "DIACHI", true));
-            this.txtDIACHI.Location = new System.Drawing.Point(189, 216);
+            this.txtDIACHI.Location = new System.Drawing.Point(177, 216);
             this.txtDIACHI.Margin = new System.Windows.Forms.Padding(4);
             this.txtDIACHI.MenuManager = this.barManager1;
             this.txtDIACHI.Name = "txtDIACHI";
@@ -433,7 +446,7 @@
             // txtTEN
             // 
             this.txtTEN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "TEN", true));
-            this.txtTEN.Location = new System.Drawing.Point(617, 156);
+            this.txtTEN.Location = new System.Drawing.Point(605, 156);
             this.txtTEN.Margin = new System.Windows.Forms.Padding(4);
             this.txtTEN.MenuManager = this.barManager1;
             this.txtTEN.Name = "txtTEN";
@@ -443,7 +456,7 @@
             // txtHO
             // 
             this.txtHO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "HO", true));
-            this.txtHO.Location = new System.Drawing.Point(189, 156);
+            this.txtHO.Location = new System.Drawing.Point(177, 156);
             this.txtHO.Margin = new System.Windows.Forms.Padding(4);
             this.txtHO.MenuManager = this.barManager1;
             this.txtHO.Name = "txtHO";
@@ -453,7 +466,7 @@
             // txtMAGV
             // 
             this.txtMAGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAGV", true));
-            this.txtMAGV.Location = new System.Drawing.Point(617, 96);
+            this.txtMAGV.Location = new System.Drawing.Point(605, 96);
             this.txtMAGV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMAGV.MenuManager = this.barManager1;
             this.txtMAGV.Name = "txtMAGV";
@@ -470,87 +483,120 @@
             this.bdsBODE.DataMember = "FK_BODE_GIAOVIEN";
             this.bdsBODE.DataSource = this.bdsGV;
             // 
+            // gbTAOLOGIN
+            // 
+            this.gbTAOLOGIN.Controls.Add(this.lbMAGV);
+            this.gbTAOLOGIN.Controls.Add(this.label1);
+            this.gbTAOLOGIN.Controls.Add(this.btnCANCLEL);
+            this.gbTAOLOGIN.Controls.Add(this.btnDANGKY);
+            this.gbTAOLOGIN.Controls.Add(this.cmbROLE);
+            this.gbTAOLOGIN.Controls.Add(this.txtPASSWORD);
+            this.gbTAOLOGIN.Controls.Add(this.txtLOGIN);
+            this.gbTAOLOGIN.Controls.Add(this.label4);
+            this.gbTAOLOGIN.Controls.Add(this.label3);
+            this.gbTAOLOGIN.Controls.Add(this.label2);
+            this.gbTAOLOGIN.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gbTAOLOGIN.Location = new System.Drawing.Point(924, 329);
+            this.gbTAOLOGIN.Name = "gbTAOLOGIN";
+            this.gbTAOLOGIN.Size = new System.Drawing.Size(446, 397);
+            this.gbTAOLOGIN.TabIndex = 11;
+            this.gbTAOLOGIN.TabStop = false;
+            // 
+            // lbMAGV
+            // 
+            this.lbMAGV.AutoSize = true;
+            this.lbMAGV.Location = new System.Drawing.Point(194, 44);
+            this.lbMAGV.Name = "lbMAGV";
+            this.lbMAGV.Size = new System.Drawing.Size(42, 17);
+            this.lbMAGV.TabIndex = 10;
+            this.lbMAGV.Text = "label5";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 54);
+            this.label1.Location = new System.Drawing.Point(13, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 17);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "USERNAME";
+            this.label1.Size = new System.Drawing.Size(57, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "MÃ GV";
             // 
-            // textBox1
+            // btnCANCLEL
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 25);
-            this.textBox1.TabIndex = 12;
+            this.btnCANCLEL.Location = new System.Drawing.Point(328, 264);
+            this.btnCANCLEL.Name = "btnCANCLEL";
+            this.btnCANCLEL.Size = new System.Drawing.Size(118, 42);
+            this.btnCANCLEL.TabIndex = 8;
+            this.btnCANCLEL.Text = "CANCEL";
+            this.btnCANCLEL.UseVisualStyleBackColor = true;
+            this.btnCANCLEL.Click += new System.EventHandler(this.btnCANCLEL_Click);
             // 
-            // label2
+            // btnDANGKY
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "PASSWORD";
+            this.btnDANGKY.Location = new System.Drawing.Point(194, 264);
+            this.btnDANGKY.Name = "btnDANGKY";
+            this.btnDANGKY.Size = new System.Drawing.Size(118, 42);
+            this.btnDANGKY.TabIndex = 7;
+            this.btnDANGKY.Text = "ĐĂNG KÝ";
+            this.btnDANGKY.UseVisualStyleBackColor = true;
+            this.btnDANGKY.Click += new System.EventHandler(this.btnDANGKY_Click);
             // 
-            // textBox2
+            // cmbROLE
             // 
-            this.textBox2.Location = new System.Drawing.Point(216, 106);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(187, 25);
-            this.textBox2.TabIndex = 14;
+            this.cmbROLE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbROLE.FormattingEnabled = true;
+            this.cmbROLE.Location = new System.Drawing.Point(194, 211);
+            this.cmbROLE.Name = "cmbROLE";
+            this.cmbROLE.Size = new System.Drawing.Size(252, 25);
+            this.cmbROLE.TabIndex = 6;
             // 
-            // button1
+            // txtPASSWORD
             // 
-            this.button1.Location = new System.Drawing.Point(238, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 35);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "ĐĂNG KÝ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtPASSWORD.Location = new System.Drawing.Point(194, 151);
+            this.txtPASSWORD.Name = "txtPASSWORD";
+            this.txtPASSWORD.Size = new System.Drawing.Size(252, 25);
+            this.txtPASSWORD.TabIndex = 5;
+            // 
+            // txtLOGIN
+            // 
+            this.txtLOGIN.Location = new System.Drawing.Point(194, 91);
+            this.txtLOGIN.Name = "txtLOGIN";
+            this.txtLOGIN.Size = new System.Drawing.Size(252, 25);
+            this.txtLOGIN.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 219);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "ROLE";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 174);
+            this.label3.Location = new System.Drawing.Point(13, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "ROLE";
+            this.label3.Size = new System.Drawing.Size(89, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "PASSWORD";
             // 
-            // comboBox1
+            // label2
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(216, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 25);
-            this.comboBox1.TabIndex = 17;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(942, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(407, 267);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "TẠO LOGIN";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "LOGIN";
             // 
             // FrmTeacher
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.gbTAOLOGIN);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcGV);
             this.Controls.Add(this.barDockControlLeft);
@@ -577,8 +623,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbTAOLOGIN.ResumeLayout(false);
+            this.gbTAOLOGIN.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,13 +667,17 @@
         private DevExpress.XtraEditors.TextEdit txtHO;
         private DevExpress.XtraEditors.TextEdit txtMAGV;
         private DevExpress.XtraEditors.TextEdit txtMAKH;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private DevExpress.XtraBars.BarButtonItem btnTAOLOGIN;
+        private System.Windows.Forms.GroupBox gbTAOLOGIN;
+        private System.Windows.Forms.Button btnDANGKY;
+        private System.Windows.Forms.ComboBox cmbROLE;
+        private System.Windows.Forms.TextBox txtPASSWORD;
+        private System.Windows.Forms.TextBox txtLOGIN;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnCANCLEL;
+        private System.Windows.Forms.Label lbMAGV;
         private System.Windows.Forms.Label label1;
     }
 }

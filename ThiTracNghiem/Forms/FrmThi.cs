@@ -80,6 +80,8 @@ namespace ThiTracNghiem.Forms
             int xPanel2 = panel2.Width-btnNOPBAI.Width;
             int yPanel2 = panel2.Height;
             btnNOPBAI.Location = new Point(xPanel2/2,yPanel2);
+
+            
         }
 
         private void btnBATDAUTHI_Click(object sender, EventArgs e)
@@ -285,7 +287,9 @@ namespace ThiTracNghiem.Forms
                     
                 }
                 kiemTraThuTu(thuTu, ref bdsFilter);
-                bdsFilter += "NGAYTHI = '" + cmbNGAYTHI.SelectedValue.ToString() + "'";
+                //bdsFilter += "NGAYTHI = '" + cmbNGAYTHI.SelectedValue.ToString() +  "'";
+                bdsFilter += "NGAYTHI = '" + ((DataRowView)bdsGVDK[cmbNGAYTHI.SelectedIndex])["NGAYTHI"].ToString().Trim() + "'";
+                //((DataRowView)bdsGVDK[cmbNGAYTHI.SelectedIndex])["NGAYTHI"].ToString();
                 bdsGVDK.Filter = bdsFilter;
                 cmbLANTHI.SelectedIndex = -1;
             }

@@ -49,7 +49,7 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.txtFooterFullName = new DevExpress.XtraBars.BarHeaderItem();
             this.txtFooterClass = new DevExpress.XtraBars.BarHeaderItem();
-            this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReport = new DevExpress.XtraBars.BarButtonItem();
             this.txtFooterTenLop = new DevExpress.XtraBars.BarHeaderItem();
             this.Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbFunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -84,7 +84,7 @@
             this.barStaticItem1,
             this.txtFooterFullName,
             this.txtFooterClass,
-            this.btnInfo,
+            this.btnReport,
             this.txtFooterTenLop});
             this.ribbon.LargeImages = this.imageList1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
@@ -246,14 +246,15 @@
             this.txtFooterClass.Id = 20;
             this.txtFooterClass.Name = "txtFooterClass";
             // 
-            // btnInfo
+            // btnReport
             // 
-            this.btnInfo.AllowAllUp = true;
-            this.btnInfo.Caption = "Thông tin";
-            this.btnInfo.Id = 21;
-            this.btnInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.Image")));
-            this.btnInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.LargeImage")));
-            this.btnInfo.Name = "btnInfo";
+            this.btnReport.AllowAllUp = true;
+            this.btnReport.Caption = "Thông tin";
+            this.btnReport.Id = 21;
+            this.btnReport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.Image")));
+            this.btnReport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.LargeImage")));
+            this.btnReport.Name = "btnReport";
+            this.btnReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReport_ItemClick);
             // 
             // txtFooterTenLop
             // 
@@ -292,7 +293,7 @@
             // 
             // rbAccount
             // 
-            this.rbAccount.ItemLinks.Add(this.btnInfo, true);
+            this.rbAccount.ItemLinks.Add(this.btnReport, true);
             this.rbAccount.ItemLinks.Add(this.btnLogout, true);
             this.rbAccount.Name = "rbAccount";
             this.rbAccount.Text = "Tài khoản";
@@ -365,7 +366,7 @@
         private DevExpress.XtraBars.BarHeaderItem txtFooterFullName;
         private DevExpress.XtraBars.BarHeaderItem txtFooterClass;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraBars.BarButtonItem btnInfo;
+        private DevExpress.XtraBars.BarButtonItem btnReport;
         private DevExpress.XtraBars.BarHeaderItem txtFooterTenLop;
     }
 }

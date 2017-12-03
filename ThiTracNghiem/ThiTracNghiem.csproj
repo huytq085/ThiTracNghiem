@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v17.1" />
     <Reference Include="DevExpress.Data.v17.1" />
     <Reference Include="DevExpress.Images.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -50,6 +54,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +67,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBApp.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBApp.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DS_SERVER1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,6 +82,12 @@
     </Compile>
     <Compile Include="Forms\DlgConfirm.Designer.cs">
       <DependentUpon>DlgConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DlgOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DlgOk.Designer.cs">
+      <DependentUpon>DlgOk.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmClass.cs">
       <SubType>Form</SubType>
@@ -100,6 +118,12 @@
     </Compile>
     <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSubjectScoreRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSubjectScoreRpt.Designer.cs">
+      <DependentUpon>FrmSubjectScoreRpt.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmSetup.cs">
       <SubType>Form</SubType>
@@ -139,6 +163,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptBangDiemMH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBangDiemMH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TRACNGHIEMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\DlgConfirm.resx">
       <DependentUpon>DlgConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DlgOk.resx">
+      <DependentUpon>DlgOk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmClass.resx">
       <DependentUpon>FrmClass.cs</DependentUpon>
@@ -166,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmQuestion.resx">
       <DependentUpon>FrmQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSubjectScoreRpt.resx">
+      <DependentUpon>FrmSubjectScoreRpt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSetup.resx">
       <DependentUpon>FrmSetup.cs</DependentUpon>
@@ -196,8 +232,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptBangDiemMH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangDiemMH.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DBApp.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBApp.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBApp.dbml.layout">
+      <DependentUpon>DBApp.dbml</DependentUpon>
     </None>
     <None Include="DS_SERVER1.xsc">
       <DependentUpon>DS_SERVER1.xsd</DependentUpon>
@@ -209,6 +257,7 @@
     </None>
     <None Include="DS_SERVER1.xss">
       <DependentUpon>DS_SERVER1.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -249,6 +298,11 @@
   <ItemGroup>
     <None Include="img\QuestionTypes-360x260.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

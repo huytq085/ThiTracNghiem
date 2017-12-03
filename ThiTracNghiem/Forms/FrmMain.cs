@@ -133,5 +133,10 @@ namespace ThiTracNghiem.Forms
         {
             ShowMdiChildren(typeof(FrmThi));
         }
+
+        private void btnReport_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmSubjectScoreRpt));
+        }
     }
 }

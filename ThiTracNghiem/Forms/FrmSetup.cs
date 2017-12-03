@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace ThiTracNghiem.Forms
 {
@@ -20,8 +11,9 @@ namespace ThiTracNghiem.Forms
 
         private void FrmSetup_Load(object sender, EventArgs e)
         {
-            cbbLevel.SelectedIndex = 0;
-            dpStartDate.EditValue = DateTime.Now;
+            cbbTRINHDO.SelectedIndex = 0;
+            dpNGAYTHI.EditValue = DateTime.Now;
+            dpNGAYTHI.Properties.MinValue = DateTime.Now;
             if (Program.connstr != null)
             {
                 this.v_DS_LOPTableAdapter.Connection.ConnectionString = this.v_DS_MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -34,13 +26,35 @@ namespace ThiTracNghiem.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            String className = cbbClassName.SelectedValue.ToString();
-            String subjectName = cbbSubjectName.SelectedValue.ToString();
-            String level = cbbLevel.Text;
-            int times = (int) nmrTimes.Value;
-            int numOfQuestions = (int) nmrNumOfQuestions.Value;
-            int numOfMinutes = (int) nmrNumOfMinutes.Value;
-            DateTime startDate = dpStartDate.DateTime;
+            String MALOP = cbbMALOP.SelectedValue.ToString();
+            String MAMH = cbbMAMH.SelectedValue.ToString();
+            Char TRINHDO = Char.Parse(cbbTRINHDO.Text);
+            DateTime NGAYTHI = dpNGAYTHI.DateTime;
+            short SOCAUTHI = (short) nmrSOCAUTHI.Value;
+            short THOIGIAN = (short) nmrTHOIGIAN.Value;
+            short LAN = (short)nmrLAN.Value;
+            try
+            {
+                DBAppDataContext db = new DBAppDataContext();
+                db.Connection.ConnectionString = Program.connstr;
+                GIAOVIEN_DANGKY gvDangKy = new GIAOVIEN_DANGKY();
+                gvDangKy.MAGV = Program.id.ToUpper();
+                gvDangKy.MALOP = MALOP;
+                gvDangKy.MAMH = MAMH;
+                gvDangKy.TRINHDO = TRINHDO;
+                gvDangKy.NGAYTHI = NGAYTHI;
+                gvDangKy.THOIGIAN = THOIGIAN;
+                gvDangKy.SOCAUTHI = SOCAUTHI;
+                gvDangKy.LAN = LAN;
+                db.GIAOVIEN_DANGKies.InsertOnSubmit(gvDangKy);
+                db.SubmitChanges();
+                
+                DlgOk.getInstance("Đăng ký thành công", "Xác nhận").ShowDialog();
+
+            } catch (Exception ex)
+            {
+                DlgOk.getInstance(ex.ToString()).ShowDialog();
+            }
 
         }
 

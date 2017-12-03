@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TRACNGHIEM" Class="DBAppDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-CAR7DK5\SRV_1;Initial Catalog=TRACNGHIEM;Persist Security Info=True;User ID=TH101" SettingsObjectName="ThiTracNghiem.Properties.Settings" SettingsPropertyName="TRACNGHIEMConnectionString5" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GIAOVIEN_DANGKY" Member="GIAOVIEN_DANGKies">
+    <Type Name="GIAOVIEN_DANGKY">
+      <Column Name="MAGV" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MAMH" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MALOP" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRINHDO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="NGAYTHI" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LAN" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOCAUTHI" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="THOIGIAN" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

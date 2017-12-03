@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -57,7 +56,7 @@
             this.rbAccount = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbFooter = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,6 +159,7 @@
             // btnAddPacket
             // 
             this.btnAddPacket.Caption = "Thêm bộ đề";
+            this.btnAddPacket.Enabled = false;
             this.btnAddPacket.Id = 9;
             this.btnAddPacket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPacket.ImageOptions.Image")));
             this.btnAddPacket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddPacket.ImageOptions.LargeImage")));

@@ -139,50 +139,56 @@ namespace ThiTracNghiem.Forms
             
             Panel[] pn = new Panel[socau];
             
-            for (int i = 0; i < socau; i++)
+            try
             {
-                pn[i] = new Panel();
-                lbCAUHOI[i] = new Label();
-                rdA[i] = new RadioButton();
-                rdB[i] = new RadioButton();
-                rdC[i] = new RadioButton();
-                rdD[i] = new RadioButton();
+                for (int i = 0; i < socau; i++)
+                {
+                    pn[i] = new Panel();
+                    lbCAUHOI[i] = new Label();
+                    rdA[i] = new RadioButton();
+                    rdB[i] = new RadioButton();
+                    rdC[i] = new RadioButton();
+                    rdD[i] = new RadioButton();
 
-                
-                lbCAUHOI[i].Name = "lb" + i.ToString();
-                rdA[i].Name = "lb" + i;
-                rdB[i].Name = "lb" + i;
-                rdC[i].Name = "lb" + i;
-                rdD[i].Name = "lb" + i;
 
-                lbCAUHOI[i].Text = "Câu "+(i+1).ToString()+" : " + cauhoi[i].ToString();
-                rdA[i].Text = "A. " + A[i].ToString();
-                rdB[i].Text = "B. " + B[i].ToString();
-                rdC[i].Text = "C. " + C[i].ToString();
-                rdD[i].Text = "D. " + D[i].ToString();
+                    lbCAUHOI[i].Name = "lb" + i.ToString();
+                    rdA[i].Name = "lb" + i;
+                    rdB[i].Name = "lb" + i;
+                    rdC[i].Name = "lb" + i;
+                    rdD[i].Name = "lb" + i;
 
-                lbCAUHOI[i].AutoSize = true;
-                rdA[i].AutoSize = true;
-                rdB[i].AutoSize = true;
-                rdC[i].AutoSize = true;
-                rdD[i].AutoSize = true;
-                pn[i].AutoSize = true;
+                    lbCAUHOI[i].Text = "Câu " + (i + 1).ToString() + " : " + cauhoi[i].ToString();
+                    rdA[i].Text = "A. " + A[i].ToString();
+                    rdB[i].Text = "B. " + B[i].ToString();
+                    rdC[i].Text = "C. " + C[i].ToString();
+                    rdD[i].Text = "D. " + D[i].ToString();
 
-                lbCAUHOI[i].Location = new Point(20,30);
-                rdA[i].Location = new Point(70, 60);
-                rdB[i].Location = new Point(70, 90);
-                rdC[i].Location = new Point(70, 120);
-                rdD[i].Location = new Point(70, 150);
+                    lbCAUHOI[i].AutoSize = true;
+                    rdA[i].AutoSize = true;
+                    rdB[i].AutoSize = true;
+                    rdC[i].AutoSize = true;
+                    rdD[i].AutoSize = true;
+                    pn[i].AutoSize = true;
 
-                pn[i].Location = new Point(0, i * 180);
-                
-                pn[i].Controls.Add(lbCAUHOI[i]);
-                pn[i].Controls.Add(rdA[i]);
-                pn[i].Controls.Add(rdB[i]);
-                pn[i].Controls.Add(rdC[i]);
-                pn[i].Controls.Add(rdD[i]);
+                    lbCAUHOI[i].Location = new Point(20, 30);
+                    rdA[i].Location = new Point(70, 60);
+                    rdB[i].Location = new Point(70, 90);
+                    rdC[i].Location = new Point(70, 120);
+                    rdD[i].Location = new Point(70, 150);
 
-                panel3.Controls.Add(pn[i]);
+                    pn[i].Location = new Point(0, i * 180);
+
+                    pn[i].Controls.Add(lbCAUHOI[i]);
+                    pn[i].Controls.Add(rdA[i]);
+                    pn[i].Controls.Add(rdB[i]);
+                    pn[i].Controls.Add(rdC[i]);
+                    pn[i].Controls.Add(rdD[i]);
+
+                    panel3.Controls.Add(pn[i]);
+                }
+            } catch (Exception ex)
+            {
+                DlgOk.getInstance(ex.ToString()).ShowDialog();
             }
         }
 

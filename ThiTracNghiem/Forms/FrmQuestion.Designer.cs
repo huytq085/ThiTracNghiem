@@ -306,16 +306,16 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1370, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1354, 42);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 746);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 733);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1354, 0);
             // 
             // barDockControlLeft
             // 
@@ -324,16 +324,16 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 704);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 691);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1370, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1354, 42);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 704);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 691);
             // 
             // dS_SERVER1
             // 
@@ -372,7 +372,7 @@
             this.gcBODE.MainView = this.gridView1;
             this.gcBODE.MenuManager = this.barManager1;
             this.gcBODE.Name = "gcBODE";
-            this.gcBODE.Size = new System.Drawing.Size(1370, 226);
+            this.gcBODE.Size = new System.Drawing.Size(1354, 226);
             this.gcBODE.TabIndex = 5;
             this.gcBODE.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -489,7 +489,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 329);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1370, 417);
+            this.groupBox1.Size = new System.Drawing.Size(1354, 404);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -603,7 +603,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 61);
+            this.panel1.Size = new System.Drawing.Size(1354, 61);
             this.panel1.TabIndex = 11;
             // 
             // cmbCachXem
@@ -641,7 +641,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1370, 746);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcBODE);
             this.Controls.Add(this.panel1);

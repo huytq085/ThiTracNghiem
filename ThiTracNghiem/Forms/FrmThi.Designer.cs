@@ -76,7 +76,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 80);
+            this.panel1.Size = new System.Drawing.Size(1354, 80);
             this.panel1.TabIndex = 0;
             // 
             // btnCHONLAI
@@ -191,7 +191,7 @@
             this.panel2.Controls.Add(this.lbDESSOCAUTHI);
             this.panel2.Controls.Add(this.lbDESTRINHDO);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1069, 80);
+            this.panel2.Location = new System.Drawing.Point(1053, 80);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 376);
             this.panel2.TabIndex = 1;
@@ -268,7 +268,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1069, 376);
+            this.panel3.Size = new System.Drawing.Size(1053, 376);
             this.panel3.TabIndex = 2;
             // 
             // gIAOVIEN_DANGKYTableAdapter
@@ -303,7 +303,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 456);
+            this.ClientSize = new System.Drawing.Size(1354, 456);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

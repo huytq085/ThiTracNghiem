@@ -29,5 +29,13 @@ namespace ThiTracNghiem.Forms
             btnOk.Text = txtOk;
             btnCancel.Text = txtCancel;
         }
+        public DlgConfirm(String msg, String txtOk, String txtCancel, String title)
+        {
+            InitializeComponent();
+            lbMsg.Text = msg;
+            btnOk.Text = txtOk;
+            btnCancel.Text = txtCancel;
+            this.Text = title;
+        }
     }
 }

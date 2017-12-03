@@ -60,6 +60,7 @@ namespace ThiTracNghiem.Forms
                         break;
                     case "COSO":
                     case "TRUONG":
+                        rbFunction.Dispose();
                         txtFooterId.Caption = "MÃ GIÁO VIÊN: " + Program.id.ToUpper();
                         txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen.ToUpper();
                         txtFooterClass.Caption = "NHÓM: " + Program.nhom.ToUpper();

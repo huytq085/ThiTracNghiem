@@ -165,6 +165,7 @@
             this.btnAddPacket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddPacket.ImageOptions.LargeImage")));
             this.btnAddPacket.ImageOptions.LargeImageIndex = 0;
             this.btnAddPacket.Name = "btnAddPacket";
+            this.btnAddPacket.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnAddPacket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddPacket_ItemClick);
             // 
             // btnStudent

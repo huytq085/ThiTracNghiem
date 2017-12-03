@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
-using System.Linq;
-
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 namespace ThiTracNghiem.Forms
 {
     public partial class FrmThi : DevExpress.XtraEditors.XtraForm
@@ -23,6 +23,7 @@ namespace ThiTracNghiem.Forms
         String MAMH = "";
         String trinhDo = "";
         int soCau = 0;
+        int lanThi = 0;
         RadioButton[] rdA;
         RadioButton[] rdB;
         RadioButton[] rdC;
@@ -86,7 +87,7 @@ namespace ThiTracNghiem.Forms
             
             trinhDo = lbTRINHDO.Text;
             soCau = int.Parse(lbSOCAUTHI.Text);
-
+            lanThi= int.Parse(cmbLANTHI.SelectedValue.ToString());
             String[] cauhoi = new String[soCau];
             String[] A = new String[soCau];
             String[] B = new String[soCau];
@@ -376,9 +377,10 @@ namespace ThiTracNghiem.Forms
             float tyleDiem =(float) 10 / soCau;
             int soCauDung = 0;
             CHON = new String[soCau];
+            dynamic[] jsonObject = new JObject[soCau];
             for (int i = 0; i < soCau; i++)
             {
-
+                jsonObject[i] = new JObject();
                 if (rdA[i].Checked)
                     CHON[i] = "A";
                 else if (rdB[i].Checked)
@@ -392,7 +394,17 @@ namespace ThiTracNghiem.Forms
 
                 if (CHON[i]==DA[i])
                     soCauDung++;
+
+                jsonObject[i].cauhoi = cauSo[i];
+                jsonObject[i].dapAn = DA[i];
+                jsonObject[i].chon = CHON[i];
+              
             }
+            //Console.WriteLine(JsonConvert.SerializeObject(jsonObject));
+            float diemThi = tyleDiem * soCauDung;
+            String strLenh = "EXEC SP_INSERTDIEM '" + Program.username.Trim() + "','" + MAMH.Trim() + "'," + lanThi + ",'" + cmbNGAYTHI.SelectedValue.ToString() + "'," + diemThi + ",'" + JsonConvert.SerializeObject(jsonObject) + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+            MessageBox.Show("" + soCauDung * tyleDiem, "ĐIỂM THI");
         }
     }
 }

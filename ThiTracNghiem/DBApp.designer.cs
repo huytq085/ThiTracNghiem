@@ -33,10 +33,13 @@ namespace ThiTracNghiem
     partial void InsertGIAOVIEN_DANGKY(GIAOVIEN_DANGKY instance);
     partial void UpdateGIAOVIEN_DANGKY(GIAOVIEN_DANGKY instance);
     partial void DeleteGIAOVIEN_DANGKY(GIAOVIEN_DANGKY instance);
+    partial void InsertBANGDIEM(BANGDIEM instance);
+    partial void UpdateBANGDIEM(BANGDIEM instance);
+    partial void DeleteBANGDIEM(BANGDIEM instance);
     #endregion
 		
 		public DBAppDataContext() : 
-				base(global::ThiTracNghiem.Properties.Settings.Default.TRACNGHIEMConnectionString3, mappingSource)
+				base(global::ThiTracNghiem.Properties.Settings.Default.TRACNGHIEMConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -70,6 +73,14 @@ namespace ThiTracNghiem
 			get
 			{
 				return this.GetTable<GIAOVIEN_DANGKY>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BANGDIEM> BANGDIEMs
+		{
+			get
+			{
+				return this.GetTable<BANGDIEM>();
 			}
 		}
 	}
@@ -279,6 +290,212 @@ namespace ThiTracNghiem
 					this._THOIGIAN = value;
 					this.SendPropertyChanged("THOIGIAN");
 					this.OnTHOIGIANChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BANGDIEM")]
+	public partial class BANGDIEM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MASV;
+		
+		private string _MAMH;
+		
+		private short _LAN;
+		
+		private System.Nullable<System.DateTime> _NGAYTHI;
+		
+		private System.Nullable<double> _DIEM;
+		
+		private string _BAITHI;
+		
+		private System.Guid _rowguid;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMASVChanging(string value);
+    partial void OnMASVChanged();
+    partial void OnMAMHChanging(string value);
+    partial void OnMAMHChanged();
+    partial void OnLANChanging(short value);
+    partial void OnLANChanged();
+    partial void OnNGAYTHIChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYTHIChanged();
+    partial void OnDIEMChanging(System.Nullable<double> value);
+    partial void OnDIEMChanged();
+    partial void OnBAITHIChanging(string value);
+    partial void OnBAITHIChanged();
+    partial void OnrowguidChanging(System.Guid value);
+    partial void OnrowguidChanged();
+    #endregion
+		
+		public BANGDIEM()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASV", DbType="Char(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MASV
+		{
+			get
+			{
+				return this._MASV;
+			}
+			set
+			{
+				if ((this._MASV != value))
+				{
+					this.OnMASVChanging(value);
+					this.SendPropertyChanging();
+					this._MASV = value;
+					this.SendPropertyChanged("MASV");
+					this.OnMASVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAMH", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MAMH
+		{
+			get
+			{
+				return this._MAMH;
+			}
+			set
+			{
+				if ((this._MAMH != value))
+				{
+					this.OnMAMHChanging(value);
+					this.SendPropertyChanging();
+					this._MAMH = value;
+					this.SendPropertyChanged("MAMH");
+					this.OnMAMHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LAN", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
+		public short LAN
+		{
+			get
+			{
+				return this._LAN;
+			}
+			set
+			{
+				if ((this._LAN != value))
+				{
+					this.OnLANChanging(value);
+					this.SendPropertyChanging();
+					this._LAN = value;
+					this.SendPropertyChanged("LAN");
+					this.OnLANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTHI", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYTHI
+		{
+			get
+			{
+				return this._NGAYTHI;
+			}
+			set
+			{
+				if ((this._NGAYTHI != value))
+				{
+					this.OnNGAYTHIChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYTHI = value;
+					this.SendPropertyChanged("NGAYTHI");
+					this.OnNGAYTHIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIEM", DbType="Float")]
+		public System.Nullable<double> DIEM
+		{
+			get
+			{
+				return this._DIEM;
+			}
+			set
+			{
+				if ((this._DIEM != value))
+				{
+					this.OnDIEMChanging(value);
+					this.SendPropertyChanging();
+					this._DIEM = value;
+					this.SendPropertyChanged("DIEM");
+					this.OnDIEMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BAITHI", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string BAITHI
+		{
+			get
+			{
+				return this._BAITHI;
+			}
+			set
+			{
+				if ((this._BAITHI != value))
+				{
+					this.OnBAITHIChanging(value);
+					this.SendPropertyChanging();
+					this._BAITHI = value;
+					this.SendPropertyChanged("BAITHI");
+					this.OnBAITHIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rowguid", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid rowguid
+		{
+			get
+			{
+				return this._rowguid;
+			}
+			set
+			{
+				if ((this._rowguid != value))
+				{
+					this.OnrowguidChanging(value);
+					this.SendPropertyChanging();
+					this._rowguid = value;
+					this.SendPropertyChanged("rowguid");
+					this.OnrowguidChanged();
 				}
 			}
 		}

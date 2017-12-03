@@ -70,6 +70,14 @@
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -88,12 +96,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mAGVLabel
             // 
             mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(718, 99);
+            mAGVLabel.Location = new System.Drawing.Point(507, 99);
             mAGVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAGVLabel.Name = "mAGVLabel";
             mAGVLabel.Size = new System.Drawing.Size(55, 17);
@@ -103,7 +112,7 @@
             // hOLabel
             // 
             hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(303, 159);
+            hOLabel.Location = new System.Drawing.Point(92, 159);
             hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             hOLabel.Name = "hOLabel";
             hOLabel.Size = new System.Drawing.Size(33, 17);
@@ -113,7 +122,7 @@
             // tENLabel
             // 
             tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(733, 159);
+            tENLabel.Location = new System.Drawing.Point(522, 159);
             tENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tENLabel.Name = "tENLabel";
             tENLabel.Size = new System.Drawing.Size(40, 17);
@@ -123,7 +132,7 @@
             // dIACHILabel
             // 
             dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(279, 219);
+            dIACHILabel.Location = new System.Drawing.Point(68, 219);
             dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dIACHILabel.Name = "dIACHILabel";
             dIACHILabel.Size = new System.Drawing.Size(64, 17);
@@ -133,7 +142,7 @@
             // mAKHLabel
             // 
             mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(286, 99);
+            mAKHLabel.Location = new System.Drawing.Point(75, 99);
             mAKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAKHLabel.Name = "mAKHLabel";
             mAKHLabel.Size = new System.Drawing.Size(57, 17);
@@ -254,34 +263,34 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1370, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1370, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 731);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 18);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 689);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 686);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1370, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(1370, 40);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 689);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 686);
             // 
             // dS_SERVER1
             // 
@@ -324,12 +333,12 @@
             this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcGV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcGV.Location = new System.Drawing.Point(0, 42);
+            this.gcGV.Location = new System.Drawing.Point(0, 40);
             this.gcGV.MainView = this.gridView1;
             this.gcGV.Margin = new System.Windows.Forms.Padding(4);
             this.gcGV.MenuManager = this.barManager1;
             this.gcGV.Name = "gcGV";
-            this.gcGV.Size = new System.Drawing.Size(1370, 354);
+            this.gcGV.Size = new System.Drawing.Size(1370, 289);
             this.gcGV.TabIndex = 5;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -382,6 +391,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtMAKH);
             this.groupBox1.Controls.Add(mAKHLabel);
             this.groupBox1.Controls.Add(dIACHILabel);
@@ -393,18 +403,18 @@
             this.groupBox1.Controls.Add(mAGVLabel);
             this.groupBox1.Controls.Add(this.txtMAGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 396);
+            this.groupBox1.Location = new System.Drawing.Point(0, 329);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1370, 335);
+            this.groupBox1.Size = new System.Drawing.Size(1370, 397);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
             // txtMAKH
             // 
             this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
-            this.txtMAKH.Location = new System.Drawing.Point(400, 96);
+            this.txtMAKH.Location = new System.Drawing.Point(189, 96);
             this.txtMAKH.MenuManager = this.barManager1;
             this.txtMAKH.Name = "txtMAKH";
             this.txtMAKH.Size = new System.Drawing.Size(263, 20);
@@ -413,7 +423,7 @@
             // txtDIACHI
             // 
             this.txtDIACHI.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "DIACHI", true));
-            this.txtDIACHI.Location = new System.Drawing.Point(400, 216);
+            this.txtDIACHI.Location = new System.Drawing.Point(189, 216);
             this.txtDIACHI.Margin = new System.Windows.Forms.Padding(4);
             this.txtDIACHI.MenuManager = this.barManager1;
             this.txtDIACHI.Name = "txtDIACHI";
@@ -423,7 +433,7 @@
             // txtTEN
             // 
             this.txtTEN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "TEN", true));
-            this.txtTEN.Location = new System.Drawing.Point(828, 156);
+            this.txtTEN.Location = new System.Drawing.Point(617, 156);
             this.txtTEN.Margin = new System.Windows.Forms.Padding(4);
             this.txtTEN.MenuManager = this.barManager1;
             this.txtTEN.Name = "txtTEN";
@@ -433,7 +443,7 @@
             // txtHO
             // 
             this.txtHO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "HO", true));
-            this.txtHO.Location = new System.Drawing.Point(400, 156);
+            this.txtHO.Location = new System.Drawing.Point(189, 156);
             this.txtHO.Margin = new System.Windows.Forms.Padding(4);
             this.txtHO.MenuManager = this.barManager1;
             this.txtHO.Name = "txtHO";
@@ -443,7 +453,7 @@
             // txtMAGV
             // 
             this.txtMAGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAGV", true));
-            this.txtMAGV.Location = new System.Drawing.Point(828, 96);
+            this.txtMAGV.Location = new System.Drawing.Point(617, 96);
             this.txtMAGV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMAGV.MenuManager = this.barManager1;
             this.txtMAGV.Name = "txtMAGV";
@@ -459,6 +469,81 @@
             // 
             this.bdsBODE.DataMember = "FK_BODE_GIAOVIEN";
             this.bdsBODE.DataSource = this.bdsGV;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "USERNAME";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(216, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(187, 25);
+            this.textBox1.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "PASSWORD";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(216, 106);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(187, 25);
+            this.textBox2.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(238, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 35);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "ĐĂNG KÝ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(78, 174);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "ROLE";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(216, 166);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 25);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(942, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(407, 267);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "TẠO LOGIN";
             // 
             // FrmTeacher
             // 
@@ -492,6 +577,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,5 +621,13 @@
         private DevExpress.XtraEditors.TextEdit txtHO;
         private DevExpress.XtraEditors.TextEdit txtMAGV;
         private DevExpress.XtraEditors.TextEdit txtMAKH;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

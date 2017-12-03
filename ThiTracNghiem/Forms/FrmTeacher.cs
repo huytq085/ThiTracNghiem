@@ -16,7 +16,7 @@ namespace ThiTracNghiem.Forms
     public partial class FrmTeacher : DevExpress.XtraEditors.XtraForm
     {
         int viTri = 0;
-               
+        List<String> srcROLE;
         public FrmTeacher()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace ThiTracNghiem.Forms
                 Program.conn.Close();
                 reader.Close();
                 bdsGV.Filter = dkien;
-                
+                gbTAOLOGIN.Enabled = false;
             }
             // TODO: This line of code loads data into the 'dS_SERVER1.BODE' table. You can move, or remove it, as needed.
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
@@ -65,10 +65,26 @@ namespace ThiTracNghiem.Forms
             gridView1.OptionsBehavior.Editable = false;
             if (Program.nhom == "TRUONG")
             {
+                srcROLE = new List<String> { "TRUONG" };
+                cmbROLE.DataSource = srcROLE;
                 
+                //cmbROLE.SelectedIndex = 0;
+                cmbROLE.Enabled = false;
+                btnTAOLOGIN.Enabled = true;
                 btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = btnGhi.Enabled = btnUndo.Enabled = false;
             }
+            else
+            {
+                srcROLE = new List<String> { "COSO","GIAOVIEN" };
+
+                cmbROLE.DataSource = srcROLE;
+                
+                btnTAOLOGIN.Enabled = true;
+
+            }
             groupBox1.Enabled = false;
+            gbTAOLOGIN.Enabled = false;
+            lbMAGV.Text = "";
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -199,6 +215,7 @@ namespace ThiTracNghiem.Forms
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             try
             {
                 this.gIAOVIENTableAdapter.Fill(this.dS_SERVER1.GIAOVIEN);
@@ -227,6 +244,51 @@ namespace ThiTracNghiem.Forms
                 MessageBox.Show("Lỗi Reload :" + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
+        }
+
+        private void btnTAOLOGIN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+            lbMAGV.Text = ""+((DataRowView)bdsGV[bdsGV.Position])["MAGV"].ToString();   
+            gcGV.Enabled = false;
+            btnTAOLOGIN.Enabled = false;
+            gbTAOLOGIN.Enabled = true;
+            
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPrint.Enabled = btnGhi.Enabled = btnUndo.Enabled = false;
+            btnReload.Enabled = false;
+        }
+
+        private void btnCANCLEL_Click(object sender, EventArgs e)
+        {
+
+            gbTAOLOGIN.Enabled = false;
+            gcGV.Enabled = true;
+            lbMAGV.Text = "";
+            if (Program.nhom == "TRUONG")
+            {
+                
+                btnTAOLOGIN.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =  btnPrint.Enabled = btnGhi.Enabled = btnUndo.Enabled = false;
+                btnReload.Enabled = true;
+            }
+            else
+            {
+                btnTAOLOGIN.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPrint.Enabled = btnGhi.Enabled = btnUndo.Enabled = true;
+                btnReload.Enabled = true;
+            }
+        }
+
+        private void btnDANGKY_Click(object sender, EventArgs e)
+        {
+            String LGNAME = txtLOGIN.Text.ToString().Trim();
+            String PASS = txtPASSWORD.Text.ToString().Trim();
+            String USERNAME = lbMAGV.Text.ToString();
+            String ROLE = cmbROLE.SelectedValue.ToString().Trim();
+            String strLenh = "EXEC SP_TAOLOGIN '" + LGNAME + "','" + PASS + "','" + USERNAME + "','" + ROLE + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+
+            btnCANCLEL.Click += new EventHandler(btnCANCLEL_Click);
         }
     }
 }

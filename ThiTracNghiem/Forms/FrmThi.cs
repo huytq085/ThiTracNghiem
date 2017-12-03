@@ -408,6 +408,7 @@ namespace ThiTracNghiem.Forms
             float diemThi = tyleDiem * soCauDung;
             String strLenh = "EXEC SP_INSERTDIEM '" + Program.username.Trim() + "','" + MAMH.Trim() + "'," + lanThi + ",'" + cmbNGAYTHI.SelectedValue.ToString() + "'," + diemThi + ",'" + JsonConvert.SerializeObject(jsonObject) + "'";
             SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+            Console.WriteLine(JsonConvert.SerializeObject(jsonObject));
             MessageBox.Show("" + soCauDung * tyleDiem, "ĐIỂM THI");
         }
     }

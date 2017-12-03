@@ -42,7 +42,7 @@ namespace ThiTracNghiem.Forms
                 gvDangKy.MALOP = MALOP;
                 gvDangKy.MAMH = MAMH;
                 gvDangKy.TRINHDO = TRINHDO;
-                gvDangKy.NGAYTHI = NGAYTHI;
+                gvDangKy.NGAYTHI = NGAYTHI.AddTicks(-(NGAYTHI.Ticks % TimeSpan.TicksPerSecond)); ;
                 gvDangKy.THOIGIAN = THOIGIAN;
                 gvDangKy.SOCAUTHI = SOCAUTHI;
                 gvDangKy.LAN = LAN;

@@ -41,19 +41,20 @@ namespace ThiTracNghiem.Forms
                 String dkien = "";
                 String strLenh = "Select * from V_MAKH ";
                 SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
-                Boolean rd = reader.Read();
-                while (rd)
-                {                    
-                    dkien += "MAKH = '" + reader["MAKH"] + "'";
-                    rd = reader.Read();
-                    if (rd != false)
-                        dkien += " OR ";
+                if (reader != null && reader.HasRows)
+                {
+                    Boolean rd = reader.Read();
+                    while (rd)
+                    {
+                        dkien += "MAKH = '" + reader["MAKH"] + "'";
+                        rd = reader.Read();
+                        if (rd != false)
+                            dkien += " OR ";
+                    }
+                    Program.conn.Close();
+                    reader.Close();
+                    bdsGV.Filter = dkien;
                 }
-
-                Program.conn.Close();
-                reader.Close();
-                bdsGV.Filter = dkien;
-                
             }
             // TODO: This line of code loads data into the 'dS_SERVER1.BODE' table. You can move, or remove it, as needed.
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;

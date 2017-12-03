@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nmrTHOIGIAN = new System.Windows.Forms.NumericUpDown();
             this.nmrSOCAUTHI = new System.Windows.Forms.NumericUpDown();
@@ -45,10 +44,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbbTRINHDO = new System.Windows.Forms.ComboBox();
             this.cbbMAMH = new System.Windows.Forms.ComboBox();
-            this.vDSMONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vDSMONHOCBindingSource = new System.Windows.Forms.BindingSource();
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
             this.cbbMALOP = new System.Windows.Forms.ComboBox();
-            this.vDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vDSLOPBindingSource = new System.Windows.Forms.BindingSource();
             this.v_DS_LOPTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_LOPTableAdapter();
             this.v_DS_MONHOCTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_MONHOCTableAdapter();
             this.panel1.SuspendLayout();
@@ -156,6 +155,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpNGAYTHI.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpNGAYTHI.Properties.CalendarTimeProperties.EditFormat.FormatString = "yyyy-MM-dd";
+            this.dpNGAYTHI.Properties.CalendarTimeProperties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dpNGAYTHI.Properties.CalendarTimeProperties.Mask.UseMaskAsDisplayFormat = true;
             this.dpNGAYTHI.Properties.MinValue = new System.DateTime(2017, 11, 28, 23, 38, 57, 0);
             this.dpNGAYTHI.Size = new System.Drawing.Size(256, 20);
             this.dpNGAYTHI.TabIndex = 16;

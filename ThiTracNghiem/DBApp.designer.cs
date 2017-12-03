@@ -36,7 +36,7 @@ namespace ThiTracNghiem
     #endregion
 		
 		public DBAppDataContext() : 
-				base(global::ThiTracNghiem.Properties.Settings.Default.TRACNGHIEMConnectionString3, mappingSource)
+				base(global::ThiTracNghiem.Properties.Settings.Default.TRACNGHIEMConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}

@@ -36,38 +36,40 @@ namespace ThiTracNghiem.Forms
             ShowMdiChildren(typeof(Test));
             if (Program.username != null && Program.nhom != null && Program.id != null)
             {
-                if (Program.nhom.Equals("SINHVIEN"))
+                switch (Program.nhom)
                 {
-                    btnSetup.Dispose();
-                    btnAddPacket.Dispose();
-                    rbControl.Dispose();
-                    
-                    
-                    txtFooterId.Caption = "MÃ SINH VIÊN: " + Program.id;
-                    txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen;
-                    txtFooterClass.Caption = "MÃ LỚP: " + Program.donVi;
-                    txtFooterTenLop.Caption = "TÊN LỚP: " + Program.tenDonVi;
-                } else if (Program.nhom.Equals("GIAOVIEN"))
-                {
-                    btnDept.Dispose();
-                    btnClass.Dispose();
-                    btnSubject.Dispose();
-                    btnStudent.Dispose();
-                    btnTeacher.Dispose();
-                    txtFooterTenLop.Dispose();
-                    txtFooterId.Caption = "MÃ GIÁO VIÊN: " + Program.id;
-                    txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen;
-                    txtFooterClass.Caption = "KHOA: " + Program.donVi;
-                } else if (Program.nhom.Equals("COSO"))
-                {
-                    txtFooterId.Caption = "Mã cơ sở: " + Program.donVi;
-                    txtFooterFullName.Dispose();
-                    txtFooterClass.Caption = "Tên cơ sở: " + Program.tenDonVi;
-                    txtFooterTenLop.Dispose();
-                } else
-                {
-                    rbFooter.Dispose();
+                    case "SINHVIEN":
+                        btnSetup.Dispose();
+                        btnAddPacket.Dispose();
+                        rbControl.Dispose();
+                        txtFooterId.Caption = "MÃ SINH VIÊN: " + Program.id.ToUpper();
+                        txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen.ToUpper();
+                        txtFooterClass.Caption = "MÃ LỚP: " + Program.donVi.ToUpper();
+                        txtFooterTenLop.Caption = "TÊN LỚP: " + Program.tenDonVi.ToUpper();
+                        break;
+                    case "GIAOVIEN":
+                        btnDept.Dispose();
+                        btnClass.Dispose();
+                        btnSubject.Dispose();
+                        btnStudent.Dispose();
+                        btnTeacher.Dispose();
+                        txtFooterTenLop.Dispose();
+                        txtFooterId.Caption = "MÃ GIÁO VIÊN: " + Program.id.ToUpper();
+                        txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen.ToUpper();
+                        txtFooterClass.Caption = "KHOA: " + Program.donVi.ToUpper();
+                        break;
+                    case "COSO":
+                    case "TRUONG":
+                        txtFooterId.Caption = "MÃ GIÁO VIÊN: " + Program.id.ToUpper();
+                        txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen.ToUpper();
+                        txtFooterClass.Caption = "NHÓM: " + Program.nhom.ToUpper();
+                        txtFooterTenLop.Dispose();
+                        break;
+                    default:
+                        break;
                 }
+
+                
             }
 
         }
@@ -137,6 +139,51 @@ namespace ThiTracNghiem.Forms
         private void btnReport_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMdiChildren(typeof(FrmSubjectScoreRpt));
+        }
+
+        private void btnAdd_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void txtFooterId_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barStaticItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void txtFooterFullName_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void txtFooterClass_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void txtFooterTenLop_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void rbFooter_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

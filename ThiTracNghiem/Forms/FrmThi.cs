@@ -405,10 +405,17 @@ namespace ThiTracNghiem.Forms
               
             }
             //Console.WriteLine(JsonConvert.SerializeObject(jsonObject));
-            float diemThi = tyleDiem * soCauDung;
-            String strLenh = "EXEC SP_INSERTDIEM '" + Program.username.Trim() + "','" + MAMH.Trim() + "'," + lanThi + ",'" + cmbNGAYTHI.SelectedValue.ToString() + "'," + diemThi + ",'" + JsonConvert.SerializeObject(jsonObject) + "'";
-            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
-            Console.WriteLine(JsonConvert.SerializeObject(jsonObject));
+            DBAppDataContext db = new DBAppDataContext();
+            db.Connection.ConnectionString = Program.connstr;
+            BANGDIEM bangDiem = new BANGDIEM();
+            bangDiem.MASV = Program.username.Trim();
+            bangDiem.MAMH = MAMH.Trim();
+            bangDiem.LAN = (short)lanThi;
+            bangDiem.NGAYTHI = (DateTime)((DataRowView)bdsGVDK[cmbNGAYTHI.SelectedIndex])["NGAYTHI"];
+            bangDiem.DIEM = tyleDiem * soCauDung;
+            bangDiem.BAITHI = JsonConvert.SerializeObject(jsonObject);
+            db.BANGDIEMs.InsertOnSubmit(bangDiem);
+            db.SubmitChanges();
             MessageBox.Show("" + soCauDung * tyleDiem, "ĐIỂM THI");
         }
     }

@@ -8,5 +8,11 @@
         <elementListCompartment Id="74a783f4-5a43-43b7-b5ad-0536d3b7a756" absoluteBounds="1.3900000000000001, 2.835, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="a28f910d-9f25-4454-8076-8e7ce327c8ac" absoluteBounds="5.125, 3.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBAppDataContext/BANGDIEM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a762211-d8f3-4905-a9fd-94a132341be2" absoluteBounds="5.14, 3.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

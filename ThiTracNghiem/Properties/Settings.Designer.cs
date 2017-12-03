@@ -63,5 +63,16 @@ namespace ThiTracNghiem.Properties {
                 return ((string)(this["TRACNGHIEMConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CAR7DK5\\SRV_1;Initial Catalog=TRACNGHIEM;Persist Security Inf" +
+            "o=True;User ID=TH101")]
+        public string TRACNGHIEMConnectionString5 {
+            get {
+                return ((string)(this["TRACNGHIEMConnectionString5"]));
+            }
+        }
     }
 }

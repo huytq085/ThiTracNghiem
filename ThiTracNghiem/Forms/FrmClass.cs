@@ -32,6 +32,8 @@ namespace ThiTracNghiem.Forms
             {
                 barAction.Dispose();
                 pnEditor.Dispose();
+               
+               
             }
             if (Program.connstr != null)
             {
@@ -41,6 +43,7 @@ namespace ThiTracNghiem.Forms
             this.v_DS_KHOATableAdapter.Fill(this.dsSV1.V_DS_KHOA);
             this.classTableAdapter.Fill(this.dsSV1.LOP);
             this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
+            cbbBranches.SelectedIndex = Program.mCoSo;
         }
 
         private void reload()

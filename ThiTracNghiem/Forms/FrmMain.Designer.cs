@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -56,7 +57,8 @@
             this.rbAccount = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbFooter = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnXemDiem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,10 +86,11 @@
             this.txtFooterFullName,
             this.txtFooterClass,
             this.btnReport,
-            this.txtFooterTenLop});
+            this.txtFooterTenLop,
+            this.btnXemDiem});
             this.ribbon.LargeImages = this.imageList1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 23;
+            this.ribbon.MaxItemId = 24;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Home});
@@ -297,6 +300,7 @@
             this.rbControl.ItemLinks.Add(this.btnClass, true);
             this.rbControl.ItemLinks.Add(this.btnTeacher, true);
             this.rbControl.ItemLinks.Add(this.btnDept, true);
+            this.rbControl.ItemLinks.Add(this.btnXemDiem);
             this.rbControl.Name = "rbControl";
             this.rbControl.Text = "Quản lý";
             // 
@@ -327,6 +331,15 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
+            // 
+            // btnXemDiem
+            // 
+            this.btnXemDiem.Caption = "Xem Điểm";
+            this.btnXemDiem.Id = 23;
+            this.btnXemDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("XE.ImageOptions.Image")));
+            this.btnXemDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("XE.ImageOptions.LargeImage")));
+            this.btnXemDiem.Name = "btnXemDiem";
+            this.btnXemDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XE_ItemClick);
             // 
             // FrmMain
             // 
@@ -378,5 +391,6 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem btnReport;
         private DevExpress.XtraBars.BarHeaderItem txtFooterTenLop;
+        private DevExpress.XtraBars.BarButtonItem btnXemDiem;
     }
 }

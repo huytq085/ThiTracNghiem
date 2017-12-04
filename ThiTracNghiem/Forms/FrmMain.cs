@@ -188,5 +188,10 @@ namespace ThiTracNghiem.Forms
         {
 
         }
+
+        private void XE_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmBangDiem));
+        }
     }
 }

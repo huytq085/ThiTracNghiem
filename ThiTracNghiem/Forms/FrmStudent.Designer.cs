@@ -364,6 +364,7 @@
             this.gcSV.TabIndex = 6;
             this.gcSV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gcSV.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gcSV_MouseClick);
             // 
             // gridView1
             // 

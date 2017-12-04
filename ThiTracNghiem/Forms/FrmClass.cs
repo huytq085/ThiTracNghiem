@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace ThiTracNghiem.Forms
 {
@@ -200,14 +201,23 @@ namespace ThiTracNghiem.Forms
         }
         private bool isExits()
         {
-            if (editMode && txtMaLop.Text == ((DataRowView)classBindingSource[position])["MALOP"].ToString().Trim() || txtTenLop.Text == ((DataRowView)classBindingSource[position])["TENLOP"].ToString().Trim()) {
+            if (editMode && (txtMaLop.Text == ((DataRowView)classBindingSource[position])["MALOP"].ToString().Trim() || txtTenLop.Text == ((DataRowView)classBindingSource[position])["TENLOP"].ToString().Trim()))
+            {
                 return false;
             }
 
             string cmd = "SELECT * FROM LOP WHERE MALOP = '" + txtMaLop.Text.Trim() + "' OR TENLOP = '" + txtTenLop.Text.Trim() + "'";
-            if (Program.checkExistsAllSite(cmd))
+            SqlDataReader reader = Program.ExecSqlDataReader(cmd);
+            if (reader != null && reader.HasRows)
             {
-                MessageBox.Show("Mã lớp hoặc tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                DlgOk.Show("Mã hoặc tên lớp đã tồn tại", "Đóng");
+                reader.Close();
+                return true;
+            }
+            else if (Program.checkExistsAllSite(cmd))
+            {
+                reader.Close();
+                DlgOk.Show("Mã hoặc tên lớp đã tồn tại trên chi nhánh khác", "Đóng");
                 return true;
             }
             return false;

@@ -173,6 +173,7 @@
             this.btnReset.Size = new System.Drawing.Size(38, 13);
             this.btnReset.TabIndex = 15;
             this.btnReset.Text = "Đặt lại";
+            this.btnReset.Visible = false;
             // 
             // btnSubmit
             // 

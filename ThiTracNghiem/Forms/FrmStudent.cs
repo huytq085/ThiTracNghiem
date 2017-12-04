@@ -8,11 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace ThiTracNghiem.Forms
 {
     public partial class FrmStudent : DevExpress.XtraEditors.XtraForm
     {
+        bool editMode = false;
+        int position = 0;
         int viTri = 0;
         public FrmStudent()
         {
@@ -168,23 +171,26 @@ namespace ThiTracNghiem.Forms
             }
             
             //((DataRowView)bdsSV[0])["MALOP"] = cmbMALOP.SelectedText.ToString().Trim();
-            try
+            if (!isExists())
             {
-                bdsSV.EndEdit();
-                bdsSV.ResetCurrentItem();
-                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.sINHVIENTableAdapter.Update(this.dS_SERVER1.SINHVIEN);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi ghi sinh viên.\n" + ex.Message, "", MessageBoxButtons.OK);
-                return;
-            }
-            gcSV.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
-            btnGhi.Enabled = btnUndo.Enabled = false;
+                try
+                {
+                    bdsSV.EndEdit();
+                    bdsSV.ResetCurrentItem();
+                    this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.sINHVIENTableAdapter.Update(this.dS_SERVER1.SINHVIEN);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ghi sinh viên.\n" + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
+                gcSV.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
+                btnGhi.Enabled = btnUndo.Enabled = false;
 
-            groupBox1.Enabled = false;
+                groupBox1.Enabled = false;
+            }
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -230,6 +236,37 @@ namespace ThiTracNghiem.Forms
                 }
             }
             if (bdsSV.Count == 0) btnXoa.Enabled = false;
+        }
+
+        private bool isExists()
+        {
+            if (editMode && txtMASV.Text == ((DataRowView)bdsSV[position])["MASV"].ToString().Trim())
+            {
+                return false;
+            }
+
+            string cmd = "SELECT * FROM SINHVIEN WHERE MASV = '" + txtMASV.Text.Trim() + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(cmd);
+            if (reader != null && reader.HasRows)
+            {
+                DlgOk.Show("Mã sinh viên đã tồn tại", "Đóng");
+                reader.Close();
+                return true;
+            }
+            else if (Program.checkExistsAllSite(cmd))
+            {
+                reader.Close();
+                DlgOk.Show("Mã sinh viên đã tồn tại trên cơ sở khác", "Đóng");
+                return true;
+            }
+            reader.Close();
+            return false;
+        }
+
+        private void gcSV_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.position = bdsSV.Position;
+
         }
     }
 }

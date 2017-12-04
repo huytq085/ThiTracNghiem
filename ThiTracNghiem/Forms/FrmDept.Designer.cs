@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAKHLabel;
             System.Windows.Forms.Label tENKHLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDept));
             System.Windows.Forms.Label mACSLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDept));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barAction = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -104,6 +104,15 @@
             tENKHLabel.Size = new System.Drawing.Size(81, 19);
             tENKHLabel.TabIndex = 2;
             tENKHLabel.Text = "Tên khoa:";
+            // 
+            // mACSLabel
+            // 
+            mACSLabel.AutoSize = true;
+            mACSLabel.Location = new System.Drawing.Point(303, 114);
+            mACSLabel.Name = "mACSLabel";
+            mACSLabel.Size = new System.Drawing.Size(77, 19);
+            mACSLabel.TabIndex = 4;
+            mACSLabel.Text = "Mã cơ sở:";
             // 
             // barManager1
             // 
@@ -433,15 +442,6 @@
             // branchesTableAdapter
             // 
             this.branchesTableAdapter.ClearBeforeFill = true;
-            // 
-            // mACSLabel
-            // 
-            mACSLabel.AutoSize = true;
-            mACSLabel.Location = new System.Drawing.Point(303, 114);
-            mACSLabel.Name = "mACSLabel";
-            mACSLabel.Size = new System.Drawing.Size(77, 19);
-            mACSLabel.TabIndex = 4;
-            mACSLabel.Text = "Mã cơ sở:";
             // 
             // FrmDept
             // 

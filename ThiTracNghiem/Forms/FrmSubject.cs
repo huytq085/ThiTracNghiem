@@ -8,11 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace ThiTracNghiem.Forms
 {
     public partial class FrmSubject : DevExpress.XtraEditors.XtraForm
     {
+        bool editMode = false;
         int position = 0; //This value will be changed by mONHOCGridControl_Click()
         public FrmSubject()
         {
@@ -112,11 +114,13 @@ namespace ThiTracNghiem.Forms
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            editMode = false;
             subjectBindingSource.AddNew();
             enableEditor();
         }
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            editMode = true;
             trimInput();
             enableEditor();
         }
@@ -146,13 +150,17 @@ namespace ThiTracNghiem.Forms
                 txtTenMH.Focus();
                 return;
             }
-            Form dlgConfirm = new DlgConfirm();
-            dlgConfirm.StartPosition = FormStartPosition.CenterParent;
-            dlgConfirm.ShowDialog();
-            if (dlgConfirm.DialogResult == DialogResult.OK)
+            if (!isExits())
             {
-                updateDataSource();
+                Form dlgConfirm = new DlgConfirm();
+                dlgConfirm.StartPosition = FormStartPosition.CenterParent;
+                dlgConfirm.ShowDialog();
+                if (dlgConfirm.DialogResult == DialogResult.OK)
+                {
+                    updateDataSource();
+                }
             }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -169,6 +177,30 @@ namespace ThiTracNghiem.Forms
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.reload();
+        }
+
+        private bool isExits()
+        {
+            if (editMode && (txtMaMH.Text == ((DataRowView)subjectBindingSource[position])["MAMH"].ToString().Trim() || txtTenMH.Text == ((DataRowView)subjectBindingSource[position])["TENMH"].ToString().Trim()))
+            {
+                return false;
+            }
+
+            string cmd = "SELECT * FROM MONHOC WHERE MAMH = '" + txtMaMH.Text.Trim() + "' OR TENMH = '" + txtTenMH.Text.Trim() + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(cmd);
+            if (reader != null && reader.HasRows)
+            {
+                DlgOk.Show("Mã hoặc tên môn học đã tồn tại", "Đóng");
+                reader.Close();
+                return true;
+            }
+            else if (Program.checkExistsAllSite(cmd))
+            {
+                reader.Close();
+                DlgOk.Show("Mã hoặc tên môn học đã tồn tại trên chi nhánh khác", "Đóng");
+                return true;
+            }
+            return false;
         }
 
     }

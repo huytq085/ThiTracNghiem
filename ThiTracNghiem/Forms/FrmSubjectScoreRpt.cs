@@ -50,12 +50,12 @@ namespace ThiTracNghiem.Forms
                     viewSubjectScoreRpt.ReportSource = rp;
                 } catch (Exception ex)
                 {
-                    DlgOk.getInstance(ex.ToString()).ShowDialog();
+                    DlgOk.Show(ex.ToString());
                 }
                 
             } else
             {
-                DlgOk.getInstance("Không có dữ liệu").ShowDialog();
+                DlgOk.Show("Không có dữ liệu");
             }
         }
     }

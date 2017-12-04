@@ -98,7 +98,7 @@ namespace ThiTracNghiem
             for (int i = 0; i < bds_dspm.Count; i++)
             {
                 servername = ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim();
-                if (KetNoi() != 0)
+                if (!servername.Equals(orgServername) && KetNoi() != 0)
                 {
                     myreader = Program.ExecSqlDataReader(strLenh);
                     if (myreader == null || !myreader.HasRows) ok = false;
@@ -111,7 +111,7 @@ namespace ThiTracNghiem
             connstr = orgConnectionString;
             return ok;
         }
-        public static bool checkExist(String strLenh)
+        public static bool checkExistsAllSite(String strLenh)
         {
             SqlDataReader myreader;
             bool ok = false;
@@ -120,7 +120,7 @@ namespace ThiTracNghiem
             for (int i = 0; i < bds_dspm.Count; i++)
             {
                 servername = ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim();
-                if (KetNoi() != 0)
+                if (!servername.Equals(orgServername) && KetNoi() != 0)
                 {
                     myreader = Program.ExecSqlDataReader(strLenh);
                     if (myreader != null && myreader.HasRows) ok = true;

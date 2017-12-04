@@ -188,7 +188,7 @@ namespace ThiTracNghiem.Forms
                 }
             } catch (Exception ex)
             {
-                DlgOk.getInstance(ex.ToString()).ShowDialog();
+                DlgOk.Show(ex.ToString());
             }
         }
 

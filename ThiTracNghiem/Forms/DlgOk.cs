@@ -29,23 +29,23 @@ namespace ThiTracNghiem.Forms
             this.lbText.Text = text;
             this.btnOk.Text = buttonText;
         }
-        public static DlgOk getInstance()
+        public static void Show()
         {
             ok = new DlgOk();
             ok.StartPosition = FormStartPosition.CenterParent;
-            return ok;
+            ok.ShowDialog();
         }
-        public static DlgOk getInstance(string text)
+        public static void Show(string text)
         {
             ok = new DlgOk(text);
             ok.StartPosition = FormStartPosition.CenterParent;
-            return ok;
+            ok.ShowDialog();
         }
-        public static DlgOk getInstance(string text, string buttonText)
+        public static void Show(string text, string buttonText)
         {
             ok = new DlgOk(text, buttonText);
             ok.StartPosition = FormStartPosition.CenterParent;
-            return ok;
+            ok.ShowDialog();
         }
     }
 }

@@ -8,11 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace ThiTracNghiem.Forms
 {
     public partial class FrmDept : DevExpress.XtraEditors.XtraForm
     {
+        private static bool editMode = false;
         int position = 0; //This value will be changed by kHOAGridControl_MouseClick()
         public FrmDept()
         {
@@ -29,12 +31,14 @@ namespace ThiTracNghiem.Forms
 
         private void FrmDept_Load(object sender, EventArgs e)
         {
+
             // TODO: This line of code loads data into the 'tRACNGHIEMDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
             if (!Program.nhom.Equals("TRUONG"))
             {
                 pnBranches.Dispose();
-            } else
+            }
+            else
             {
                 barAction.Dispose();
                 pnEditor.Dispose();
@@ -63,7 +67,6 @@ namespace ThiTracNghiem.Forms
 
         private void trimInput()
         {
-            txtMaCS.Text = txtMaCS.Text.Trim();
             txtMaKH.Text = txtMaKH.Text.Trim();
             txtTenKH.Text = txtTenKH.Text.Trim();
         }
@@ -125,43 +128,24 @@ namespace ThiTracNghiem.Forms
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            editMode = false;
+            string tmp = txtMaCS.Text;
             deptBindingSource.AddNew();
+            txtMaCS.Text = tmp;
             enableEditor();
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            editMode = true;
             trimInput();
             enableEditor();
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtMaCS.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã cơ sở không được thiếu!", "", MessageBoxButtons.OK);
-                txtMaCS.Focus();
-                return;
-            }
-            if (txtMaKH.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã khoa không được thiếu!", "", MessageBoxButtons.OK);
-                txtMaKH.Focus();
-                return;
-            }
-            if (txtTenKH.Text.Trim() == "")
-            {
-                MessageBox.Show("Tên khoa không được thiếu!", "", MessageBoxButtons.OK);
-                txtTenKH.Focus();
-                return;
-            }
-            Form dlgConfirm = new DlgConfirm();
-            dlgConfirm.StartPosition = FormStartPosition.CenterParent;
-            dlgConfirm.ShowDialog();
-            if (dlgConfirm.DialogResult == DialogResult.OK)
-            {
-                updateDataSource();
-            }
+            
+
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -185,6 +169,62 @@ namespace ThiTracNghiem.Forms
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.reload();
+        }
+
+        private bool isExists()
+        {
+            if (editMode && txtMaKH.Text == ((DataRowView)deptBindingSource[position])["MAKH"].ToString().Trim())
+            {
+                return false;
+            }
+
+            string cmd = "SELECT * FROM KHOA WHERE MAKH = '" + txtMaKH.Text.Trim() + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(cmd);
+            if (reader != null && reader.HasRows)
+            {
+                DlgOk.Show("Mã khoa đã tồn tại", "Đóng");
+                reader.Close();
+                return true;
+            }
+            else if (Program.checkExistsAllSite(cmd))
+            {
+                reader.Close();
+                DlgOk.Show("Mã khoa đã tồn tại trên cơ sở khác", "Đóng");
+                return true;
+            }
+            reader.Close();
+            return false;
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (txtMaKH.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã khoa không được thiếu!", "", MessageBoxButtons.OK);
+                txtMaKH.Focus();
+                return;
+            }
+            if (txtTenKH.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên khoa không được thiếu!", "", MessageBoxButtons.OK);
+                txtTenKH.Focus();
+                return;
+            }
+            if (!isExists())
+            {
+                Form dlgConfirm = new DlgConfirm();
+                dlgConfirm.StartPosition = FormStartPosition.CenterParent;
+                dlgConfirm.ShowDialog();
+                if (dlgConfirm.DialogResult == DialogResult.OK)
+                {
+                    updateDataSource();
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reload();
         }
     }
 }

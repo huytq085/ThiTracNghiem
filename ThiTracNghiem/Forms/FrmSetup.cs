@@ -53,21 +53,21 @@ namespace ThiTracNghiem.Forms
                         gvDangKy.LAN = LAN;
                         db.GIAOVIEN_DANGKies.InsertOnSubmit(gvDangKy);
                         db.SubmitChanges();
-                        DlgOk.getInstance("Đăng ký thành công", "Xác nhận").ShowDialog();
+                        DlgOk.Show("Đăng ký thành công", "Xác nhận");
                     }
                     else
                     {
-                        DlgOk.getInstance("Giáo viên chưa có bộ đề hoặc bộ đề không đủ", "Xác nhận").ShowDialog();
+                        DlgOk.Show("Giáo viên chưa có bộ đề hoặc bộ đề không đủ", "Xác nhận");
                     }
                 }
                 else
                 {
-                    DlgOk.getInstance("Lịch thi trùng").ShowDialog();
+                    DlgOk.Show("Lịch thi trùng");
                 }
             }
             catch (Exception ex)
             {
-                DlgOk.getInstance(ex.ToString()).ShowDialog();
+                DlgOk.Show(ex.ToString());
             }
 
 

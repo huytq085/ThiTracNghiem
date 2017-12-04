@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAKHLabel;
             System.Windows.Forms.Label tENKHLabel;
-            System.Windows.Forms.Label mACSLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDept));
+            System.Windows.Forms.Label mACSLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barAction = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +43,6 @@
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -64,6 +63,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnTable = new System.Windows.Forms.Panel();
             this.pnEditor = new System.Windows.Forms.Panel();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSubmit = new DevExpress.XtraEditors.SimpleButton();
             this.txtMaCS = new DevExpress.XtraEditors.TextEdit();
             this.txtTenKH = new DevExpress.XtraEditors.TextEdit();
             this.txtMaKH = new DevExpress.XtraEditors.TextEdit();
@@ -89,35 +90,25 @@
             // mAKHLabel
             // 
             mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(43, 21);
+            mAKHLabel.Location = new System.Drawing.Point(302, 41);
             mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(58, 19);
+            mAKHLabel.Size = new System.Drawing.Size(74, 19);
             mAKHLabel.TabIndex = 0;
-            mAKHLabel.Text = "MAKH:";
+            mAKHLabel.Text = "Mã khoa:";
             // 
             // tENKHLabel
             // 
             tENKHLabel.AutoSize = true;
-            tENKHLabel.Location = new System.Drawing.Point(36, 57);
+            tENKHLabel.Location = new System.Drawing.Point(295, 77);
             tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(65, 19);
+            tENKHLabel.Size = new System.Drawing.Size(81, 19);
             tENKHLabel.TabIndex = 2;
-            tENKHLabel.Text = "TENKH:";
-            // 
-            // mACSLabel
-            // 
-            mACSLabel.AutoSize = true;
-            mACSLabel.Location = new System.Drawing.Point(44, 94);
-            mACSLabel.Name = "mACSLabel";
-            mACSLabel.Size = new System.Drawing.Size(57, 19);
-            mACSLabel.TabIndex = 4;
-            mACSLabel.Text = "MACS:";
+            tENKHLabel.Text = "Tên khoa:";
             // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.barAction,
-            this.bar3});
+            this.barAction});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -133,7 +124,6 @@
             this.btnPrint,
             this.btnExit});
             this.barManager1.MaxItemId = 9;
-            this.barManager1.StatusBar = this.bar3;
             // 
             // barAction
             // 
@@ -175,6 +165,7 @@
             this.btnSave.Id = 3;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.Name = "btnSave";
+            this.btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
             // btnDelete
@@ -215,33 +206,21 @@
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Name = "btnExit";
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(811, 44);
+            this.barDockControlTop.Size = new System.Drawing.Size(1032, 44);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 556);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 612);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(811, 18);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1032, 0);
             // 
             // barDockControlLeft
             // 
@@ -249,15 +228,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 44);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 512);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 568);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(811, 44);
+            this.barDockControlRight.Location = new System.Drawing.Point(1032, 44);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 512);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 568);
             // 
             // dsSV1
             // 
@@ -295,7 +274,7 @@
             this.kHOAGridControl.MainView = this.gridView1;
             this.kHOAGridControl.MenuManager = this.barManager1;
             this.kHOAGridControl.Name = "kHOAGridControl";
-            this.kHOAGridControl.Size = new System.Drawing.Size(762, 156);
+            this.kHOAGridControl.Size = new System.Drawing.Size(981, 252);
             this.kHOAGridControl.TabIndex = 5;
             this.kHOAGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -339,7 +318,7 @@
             this.pnBranches.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBranches.Location = new System.Drawing.Point(0, 44);
             this.pnBranches.Name = "pnBranches";
-            this.pnBranches.Size = new System.Drawing.Size(811, 40);
+            this.pnBranches.Size = new System.Drawing.Size(1032, 40);
             this.pnBranches.TabIndex = 10;
             // 
             // cbbBranches
@@ -380,11 +359,13 @@
             this.pnTable.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTable.Location = new System.Drawing.Point(0, 84);
             this.pnTable.Name = "pnTable";
-            this.pnTable.Size = new System.Drawing.Size(811, 208);
+            this.pnTable.Size = new System.Drawing.Size(1032, 282);
             this.pnTable.TabIndex = 16;
             // 
             // pnEditor
             // 
+            this.pnEditor.Controls.Add(this.btnCancel);
+            this.pnEditor.Controls.Add(this.btnSubmit);
             this.pnEditor.Controls.Add(mACSLabel);
             this.pnEditor.Controls.Add(this.txtMaCS);
             this.pnEditor.Controls.Add(tENKHLabel);
@@ -393,15 +374,39 @@
             this.pnEditor.Controls.Add(this.txtMaKH);
             this.pnEditor.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnEditor.Enabled = false;
-            this.pnEditor.Location = new System.Drawing.Point(0, 292);
+            this.pnEditor.Location = new System.Drawing.Point(0, 366);
             this.pnEditor.Name = "pnEditor";
-            this.pnEditor.Size = new System.Drawing.Size(811, 158);
+            this.pnEditor.Size = new System.Drawing.Size(1032, 288);
             this.pnEditor.TabIndex = 17;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(513, 166);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 42);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSubmit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Appearance.Options.UseBackColor = true;
+            this.btnSubmit.Appearance.Options.UseForeColor = true;
+            this.btnSubmit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSubmit.Location = new System.Drawing.Point(432, 166);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 42);
+            this.btnSubmit.TabIndex = 6;
+            this.btnSubmit.Text = "Lưu";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txtMaCS
             // 
             this.txtMaCS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.deptBindingSource, "MACS", true));
-            this.txtMaCS.Location = new System.Drawing.Point(173, 91);
+            this.txtMaCS.Enabled = false;
+            this.txtMaCS.Location = new System.Drawing.Point(432, 111);
             this.txtMaCS.MenuManager = this.barManager1;
             this.txtMaCS.Name = "txtMaCS";
             this.txtMaCS.Size = new System.Drawing.Size(218, 20);
@@ -410,7 +415,7 @@
             // txtTenKH
             // 
             this.txtTenKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.deptBindingSource, "TENKH", true));
-            this.txtTenKH.Location = new System.Drawing.Point(173, 54);
+            this.txtTenKH.Location = new System.Drawing.Point(432, 74);
             this.txtTenKH.MenuManager = this.barManager1;
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(218, 20);
@@ -419,7 +424,7 @@
             // txtMaKH
             // 
             this.txtMaKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.deptBindingSource, "MAKH", true));
-            this.txtMaKH.Location = new System.Drawing.Point(173, 18);
+            this.txtMaKH.Location = new System.Drawing.Point(432, 38);
             this.txtMaKH.MenuManager = this.barManager1;
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(218, 20);
@@ -429,12 +434,21 @@
             // 
             this.branchesTableAdapter.ClearBeforeFill = true;
             // 
+            // mACSLabel
+            // 
+            mACSLabel.AutoSize = true;
+            mACSLabel.Location = new System.Drawing.Point(303, 114);
+            mACSLabel.Name = "mACSLabel";
+            mACSLabel.Size = new System.Drawing.Size(77, 19);
+            mACSLabel.TabIndex = 4;
+            mACSLabel.Text = "Mã cơ sở:";
+            // 
             // FrmDept
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 574);
+            this.ClientSize = new System.Drawing.Size(1032, 612);
             this.Controls.Add(this.pnEditor);
             this.Controls.Add(this.pnTable);
             this.Controls.Add(this.pnBranches);
@@ -473,7 +487,6 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar barAction;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -506,5 +519,7 @@
         private DevExpress.XtraBars.BarButtonItem btnReload;
         private DevExpress.XtraBars.BarButtonItem btnPrint;
         private DevExpress.XtraBars.BarButtonItem btnExit;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnSubmit;
     }
 }

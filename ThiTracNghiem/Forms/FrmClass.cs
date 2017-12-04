@@ -205,7 +205,7 @@ namespace ThiTracNghiem.Forms
             }
 
             string cmd = "SELECT * FROM LOP WHERE MALOP = '" + txtMaLop.Text.Trim() + "' OR TENLOP = '" + txtTenLop.Text.Trim() + "'";
-            if (Program.checkExist(cmd))
+            if (Program.checkExistsAllSite(cmd))
             {
                 MessageBox.Show("Mã lớp hoặc tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
                 return true;

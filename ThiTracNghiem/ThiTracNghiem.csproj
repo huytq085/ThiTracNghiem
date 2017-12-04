@@ -50,7 +50,6 @@
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -118,6 +117,12 @@
     </Compile>
     <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmResult.Designer.cs">
+      <DependentUpon>FrmResult.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmSubjectScoreRpt.cs">
       <SubType>Form</SubType>
@@ -199,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmQuestion.resx">
       <DependentUpon>FrmQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmResult.resx">
+      <DependentUpon>FrmResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSubjectScoreRpt.resx">
       <DependentUpon>FrmSubjectScoreRpt.cs</DependentUpon>

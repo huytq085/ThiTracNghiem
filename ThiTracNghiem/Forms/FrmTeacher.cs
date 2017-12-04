@@ -41,13 +41,19 @@ namespace ThiTracNghiem.Forms
                 String dkien = "";
                 String strLenh = "Select * from V_MAKH ";
                 SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
-                Boolean rd = reader.Read();
-                while (rd)
-                {                    
-                    dkien += "MAKH = '" + reader["MAKH"] + "'";
-                    rd = reader.Read();
-                    if (rd != false)
-                        dkien += " OR ";
+                if (reader != null && reader.HasRows)
+                {
+                    Boolean rd = reader.Read();
+                    while (rd)
+                    {
+                        dkien += "MAKH = '" + reader["MAKH"] + "'";
+                        rd = reader.Read();
+                        if (rd != false)
+                            dkien += " OR ";
+                    }
+                    Program.conn.Close();
+                    reader.Close();
+                    bdsGV.Filter = dkien;
                 }
 
                 Program.conn.Close();

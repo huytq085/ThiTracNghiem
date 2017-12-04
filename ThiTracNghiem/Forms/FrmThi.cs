@@ -31,6 +31,11 @@ namespace ThiTracNghiem.Forms
         String[] DA;
         int[] cauSo;
         String[] CHON;
+        String[] cauhoi;
+        String[] A;
+        String[] B;
+        String[] C;
+        String[] D;
         public FrmThi()
         {
             
@@ -83,18 +88,17 @@ namespace ThiTracNghiem.Forms
 
             
         }
-
         private void btnBATDAUTHI_Click(object sender, EventArgs e)
         {
             
             trinhDo = lbTRINHDO.Text;
             soCau = int.Parse(lbSOCAUTHI.Text);
             lanThi= int.Parse(cmbLANTHI.SelectedValue.ToString());
-            String[] cauhoi = new String[soCau];
-            String[] A = new String[soCau];
-            String[] B = new String[soCau];
-            String[] C = new String[soCau];
-            String[] D = new String[soCau];
+            cauhoi = new String[soCau];
+            A = new String[soCau];
+            B = new String[soCau];
+            C = new String[soCau];
+            D = new String[soCau];
             cauSo = new int[soCau];
             DA = new String[soCau];
             int j = 0;
@@ -103,18 +107,18 @@ namespace ThiTracNghiem.Forms
             Boolean rd = reader.Read();
             while (rd)
             {
-                
-                cauhoi[j] =reader["NOIDUNG"].ToString();
-                
+
+                cauhoi[j] = reader["NOIDUNG"].ToString();
+
                 A[j] = reader["A"].ToString();
                 B[j] = reader["B"].ToString();
                 C[j] = reader["C"].ToString();
                 D[j] = reader["D"].ToString();
                 A[j] = reader["A"].ToString();
                 cauSo[j] = int.Parse(reader["CAUHOI"].ToString());
-                DA[j] =reader["DAP_AN"].ToString();
+                DA[j] = reader["DAP_AN"].ToString();
                 j++;
-                rd=reader.Read();
+                rd = reader.Read();
             }
 
             Program.conn.Close();
@@ -135,50 +139,56 @@ namespace ThiTracNghiem.Forms
             
             Panel[] pn = new Panel[socau];
             
-            for (int i = 0; i < socau; i++)
+            try
             {
-                pn[i] = new Panel();
-                lbCAUHOI[i] = new Label();
-                rdA[i] = new RadioButton();
-                rdB[i] = new RadioButton();
-                rdC[i] = new RadioButton();
-                rdD[i] = new RadioButton();
+                for (int i = 0; i < socau; i++)
+                {
+                    pn[i] = new Panel();
+                    lbCAUHOI[i] = new Label();
+                    rdA[i] = new RadioButton();
+                    rdB[i] = new RadioButton();
+                    rdC[i] = new RadioButton();
+                    rdD[i] = new RadioButton();
 
-                
-                lbCAUHOI[i].Name = "lb" + i.ToString();
-                rdA[i].Name = "lb" + i;
-                rdB[i].Name = "lb" + i;
-                rdC[i].Name = "lb" + i;
-                rdD[i].Name = "lb" + i;
 
-                lbCAUHOI[i].Text = "Câu "+(i+1).ToString()+" : " + cauhoi[i].ToString();
-                rdA[i].Text = "A. " + A[i].ToString();
-                rdB[i].Text = "B. " + B[i].ToString();
-                rdC[i].Text = "C. " + C[i].ToString();
-                rdD[i].Text = "D. " + D[i].ToString();
+                    lbCAUHOI[i].Name = "lb" + i.ToString();
+                    rdA[i].Name = "lb" + i;
+                    rdB[i].Name = "lb" + i;
+                    rdC[i].Name = "lb" + i;
+                    rdD[i].Name = "lb" + i;
 
-                lbCAUHOI[i].AutoSize = true;
-                rdA[i].AutoSize = true;
-                rdB[i].AutoSize = true;
-                rdC[i].AutoSize = true;
-                rdD[i].AutoSize = true;
-                pn[i].AutoSize = true;
+                    lbCAUHOI[i].Text = "Câu " + (i + 1).ToString() + " : " + cauhoi[i].ToString();
+                    rdA[i].Text = "A. " + A[i].ToString();
+                    rdB[i].Text = "B. " + B[i].ToString();
+                    rdC[i].Text = "C. " + C[i].ToString();
+                    rdD[i].Text = "D. " + D[i].ToString();
 
-                lbCAUHOI[i].Location = new Point(20,30);
-                rdA[i].Location = new Point(70, 60);
-                rdB[i].Location = new Point(70, 90);
-                rdC[i].Location = new Point(70, 120);
-                rdD[i].Location = new Point(70, 150);
+                    lbCAUHOI[i].AutoSize = true;
+                    rdA[i].AutoSize = true;
+                    rdB[i].AutoSize = true;
+                    rdC[i].AutoSize = true;
+                    rdD[i].AutoSize = true;
+                    pn[i].AutoSize = true;
 
-                pn[i].Location = new Point(0, i * 180);
-                
-                pn[i].Controls.Add(lbCAUHOI[i]);
-                pn[i].Controls.Add(rdA[i]);
-                pn[i].Controls.Add(rdB[i]);
-                pn[i].Controls.Add(rdC[i]);
-                pn[i].Controls.Add(rdD[i]);
+                    lbCAUHOI[i].Location = new Point(20, 30);
+                    rdA[i].Location = new Point(70, 60);
+                    rdB[i].Location = new Point(70, 90);
+                    rdC[i].Location = new Point(70, 120);
+                    rdD[i].Location = new Point(70, 150);
 
-                panel3.Controls.Add(pn[i]);
+                    pn[i].Location = new Point(0, i * 180);
+
+                    pn[i].Controls.Add(lbCAUHOI[i]);
+                    pn[i].Controls.Add(rdA[i]);
+                    pn[i].Controls.Add(rdB[i]);
+                    pn[i].Controls.Add(rdC[i]);
+                    pn[i].Controls.Add(rdD[i]);
+
+                    panel3.Controls.Add(pn[i]);
+                }
+            } catch (Exception ex)
+            {
+                DlgOk.getInstance(ex.ToString()).ShowDialog();
             }
         }
 
@@ -381,10 +391,10 @@ namespace ThiTracNghiem.Forms
             float tyleDiem =(float) 10 / soCau;
             int soCauDung = 0;
             CHON = new String[soCau];
-            dynamic[] jsonObject = new JObject[soCau];
+            dynamic[] baiThi = new JObject[soCau];
             for (int i = 0; i < soCau; i++)
             {
-                jsonObject[i] = new JObject();
+                baiThi[i] = new JObject();
                 if (rdA[i].Checked)
                     CHON[i] = "A";
                 else if (rdB[i].Checked)
@@ -399,24 +409,63 @@ namespace ThiTracNghiem.Forms
                 if (CHON[i]==DA[i])
                     soCauDung++;
 
-                jsonObject[i].cauhoi = cauSo[i];
-                jsonObject[i].dapAn = DA[i];
-                jsonObject[i].chon = CHON[i];
+                baiThi[i].cauhoi = cauSo[i];
+                baiThi[i].dapAn = DA[i];
+                baiThi[i].chon = CHON[i];
               
             }
             //Console.WriteLine(JsonConvert.SerializeObject(jsonObject));
-            DBAppDataContext db = new DBAppDataContext();
-            db.Connection.ConnectionString = Program.connstr;
-            BANGDIEM bangDiem = new BANGDIEM();
-            bangDiem.MASV = Program.username.Trim();
-            bangDiem.MAMH = MAMH.Trim();
-            bangDiem.LAN = (short)lanThi;
-            bangDiem.NGAYTHI = (DateTime)((DataRowView)bdsGVDK[cmbNGAYTHI.SelectedIndex])["NGAYTHI"];
-            bangDiem.DIEM = tyleDiem * soCauDung;
-            bangDiem.BAITHI = JsonConvert.SerializeObject(jsonObject);
-            db.BANGDIEMs.InsertOnSubmit(bangDiem);
-            db.SubmitChanges();
-            MessageBox.Show("" + soCauDung * tyleDiem, "ĐIỂM THI");
+            if (Program.nhom.Equals("SINHVIEN"))
+            {
+                DBAppDataContext db = new DBAppDataContext();
+                db.Connection.ConnectionString = Program.connstr;
+                BANGDIEM bangDiem = new BANGDIEM();
+                bangDiem.MASV = Program.username.Trim();
+                bangDiem.MAMH = MAMH.Trim();
+                bangDiem.LAN = (short)lanThi;
+                bangDiem.NGAYTHI = (DateTime)((DataRowView)bdsGVDK[cmbNGAYTHI.SelectedIndex])["NGAYTHI"];
+                bangDiem.DIEM = tyleDiem * soCauDung;
+                bangDiem.BAITHI = JsonConvert.SerializeObject(baiThi);
+                db.BANGDIEMs.InsertOnSubmit(bangDiem);
+                db.SubmitChanges();
+            }
+            DlgConfirm dlgConfirm = new DlgConfirm("Điểm thi: " + soCauDung * tyleDiem, "Xem bài thi", "Đóng", "Thông báo");
+            dlgConfirm.StartPosition = FormStartPosition.CenterParent;
+            dlgConfirm.ShowDialog();
+            if (dlgConfirm.DialogResult == DialogResult.OK)
+            {
+                DataGridView dataGridView2 = new DataGridView();
+                dataGridView2.Columns.Add("cauSo", "Câu số");
+                dataGridView2.Columns.Add("noiDung", "Nội dung");
+                dataGridView2.Columns.Add("cacLuaChon", "Các lựa chọn");
+                dataGridView2.Columns.Add("dapAn", "Đáp án");
+                dataGridView2.Columns.Add("daChon", "Đã chọn");
+                string nl = Environment.NewLine;
+               
+                for (int i = 0; i< soCau; i++)
+                {
+                    DataGridViewRow resultRow = (DataGridViewRow)dataGridView2.Rows[0].Clone();
+                    resultRow.Cells[0].Value = i +1;
+                    resultRow.Cells[1].Value = cauhoi[i];
+                    resultRow.Cells[2].Value = "A. " + A[i] + nl + "B. " + B[i] + nl + "C. " + C[i] + nl + "D. " + D[i];
+                    resultRow.Cells[3].Value = DA[i];
+                    resultRow.Cells[4].Value = CHON[i];
+                    dataGridView2.Rows.Add(resultRow);
+                }
+                
+                IDictionary<string, string> param = new Dictionary<string, string>();
+                param.Add("class", Program.tenDonVi);
+                param.Add("name", Program.hoTen);
+                param.Add("subject", cmbTENMONHOC.SelectedValue.ToString());
+                param.Add("date", cmbNGAYTHI.SelectedValue.ToString());
+                param.Add("times", cmbLANTHI.SelectedValue.ToString());
+                FrmResult frmResult = new FrmResult(dataGridView2, param);
+                frmResult.StartPosition = FormStartPosition.CenterParent;
+                frmResult.ShowDialog();
+
+            }
+            
+
         }
     }
 }

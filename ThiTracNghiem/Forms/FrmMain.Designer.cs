@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -57,7 +56,7 @@
             this.rbAccount = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbFooter = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,6 +120,7 @@
             this.btnAdd.Id = 4;
             this.btnAdd.ImageOptions.LargeImageIndex = 0;
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnEdit
             // 
@@ -128,6 +128,7 @@
             this.btnEdit.Id = 5;
             this.btnEdit.ImageOptions.LargeImageIndex = 2;
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDelete
             // 
@@ -135,6 +136,7 @@
             this.btnDelete.Id = 6;
             this.btnDelete.ImageOptions.LargeImageIndex = 1;
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // btnSetup
             // 
@@ -157,11 +159,13 @@
             // btnAddPacket
             // 
             this.btnAddPacket.Caption = "Thêm bộ đề";
+            this.btnAddPacket.Enabled = false;
             this.btnAddPacket.Id = 9;
             this.btnAddPacket.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPacket.ImageOptions.Image")));
             this.btnAddPacket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddPacket.ImageOptions.LargeImage")));
             this.btnAddPacket.ImageOptions.LargeImageIndex = 0;
             this.btnAddPacket.Name = "btnAddPacket";
+            this.btnAddPacket.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnAddPacket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddPacket_ItemClick);
             // 
             // btnStudent
@@ -227,32 +231,36 @@
             this.txtFooterId.Caption = "Id";
             this.txtFooterId.Id = 17;
             this.txtFooterId.Name = "txtFooterId";
+            this.txtFooterId.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.txtFooterId_ItemClick);
             // 
             // barStaticItem1
             // 
             this.barStaticItem1.Caption = "barStaticItem1";
             this.barStaticItem1.Id = 18;
             this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem1_ItemClick);
             // 
             // txtFooterFullName
             // 
             this.txtFooterFullName.Caption = "Full Name";
             this.txtFooterFullName.Id = 19;
             this.txtFooterFullName.Name = "txtFooterFullName";
+            this.txtFooterFullName.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.txtFooterFullName_ItemClick);
             // 
             // txtFooterClass
             // 
             this.txtFooterClass.Caption = "Class";
             this.txtFooterClass.Id = 20;
             this.txtFooterClass.Name = "txtFooterClass";
+            this.txtFooterClass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.txtFooterClass_ItemClick);
             // 
             // btnReport
             // 
             this.btnReport.AllowAllUp = true;
-            this.btnReport.Caption = "Thông tin";
+            this.btnReport.Caption = "Báo cáo";
             this.btnReport.Id = 21;
-            this.btnReport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.Image")));
-            this.btnReport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ImageOptions.LargeImage")));
+            this.btnReport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.ImageOptions.Image")));
+            this.btnReport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReport.ImageOptions.LargeImage")));
             this.btnReport.Name = "btnReport";
             this.btnReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReport_ItemClick);
             // 
@@ -261,6 +269,7 @@
             this.txtFooterTenLop.Caption = "Tên Lớp";
             this.txtFooterTenLop.Id = 22;
             this.txtFooterTenLop.Name = "txtFooterTenLop";
+            this.txtFooterTenLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.txtFooterTenLop_ItemClick);
             // 
             // Home
             // 
@@ -308,6 +317,7 @@
             this.rbFooter.Name = "rbFooter";
             this.rbFooter.Ribbon = this.ribbon;
             this.rbFooter.Size = new System.Drawing.Size(1008, 21);
+            this.rbFooter.Click += new System.EventHandler(this.rbFooter_Click);
             // 
             // ribbonPage3
             // 

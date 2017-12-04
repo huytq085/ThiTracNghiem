@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 
 namespace ThiTracNghiem.Forms
 {
@@ -35,28 +36,68 @@ namespace ThiTracNghiem.Forms
             short LAN = (short)nmrLAN.Value;
             try
             {
-                DBAppDataContext db = new DBAppDataContext();
-                db.Connection.ConnectionString = Program.connstr;
-                GIAOVIEN_DANGKY gvDangKy = new GIAOVIEN_DANGKY();
-                gvDangKy.MAGV = Program.id.ToUpper();
-                gvDangKy.MALOP = MALOP;
-                gvDangKy.MAMH = MAMH;
-                gvDangKy.TRINHDO = TRINHDO;
-                gvDangKy.NGAYTHI = NGAYTHI;
-                gvDangKy.THOIGIAN = THOIGIAN;
-                gvDangKy.SOCAUTHI = SOCAUTHI;
-                gvDangKy.LAN = LAN;
-                db.GIAOVIEN_DANGKies.InsertOnSubmit(gvDangKy);
-                db.SubmitChanges();
-                
-                DlgOk.getInstance("Đăng ký thành công", "Xác nhận").ShowDialog();
-
-            } catch (Exception ex)
+                if (!isExist(MAMH, MALOP, LAN))
+                {
+                    if (hasQuestions(MAMH, TRINHDO, SOCAUTHI))
+                    {
+                        DBAppDataContext db = new DBAppDataContext();
+                        db.Connection.ConnectionString = Program.connstr;
+                        GIAOVIEN_DANGKY gvDangKy = new GIAOVIEN_DANGKY();
+                        gvDangKy.MAGV = Program.id.ToUpper();
+                        gvDangKy.MALOP = MALOP;
+                        gvDangKy.MAMH = MAMH;
+                        gvDangKy.TRINHDO = TRINHDO;
+                        gvDangKy.NGAYTHI = NGAYTHI.AddTicks(-(NGAYTHI.Ticks % TimeSpan.TicksPerSecond)); ;
+                        gvDangKy.THOIGIAN = THOIGIAN;
+                        gvDangKy.SOCAUTHI = SOCAUTHI;
+                        gvDangKy.LAN = LAN;
+                        db.GIAOVIEN_DANGKies.InsertOnSubmit(gvDangKy);
+                        db.SubmitChanges();
+                        DlgOk.getInstance("Đăng ký thành công", "Xác nhận").ShowDialog();
+                    }
+                    else
+                    {
+                        DlgOk.getInstance("Giáo viên chưa có bộ đề hoặc bộ đề không đủ", "Xác nhận").ShowDialog();
+                    }
+                }
+                else
+                {
+                    DlgOk.getInstance("Lịch thi trùng").ShowDialog();
+                }
+            }
+            catch (Exception ex)
             {
                 DlgOk.getInstance(ex.ToString()).ShowDialog();
             }
 
+
+        }
+        private bool hasQuestions(String maMH, Char trinhDo, short soCau)
+        {
+            String strLenh = "EXEC SP_LOCDE '" + maMH.Trim() + "','" + trinhDo + "'," + soCau;
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+            if (reader == null || !reader.HasRows)
+            {
+                reader.Close();
+                return false;
+            }
+            Program.conn.Close();
+            reader.Close();
+            return true;
         }
 
+        private bool isExist(string maMH, string lop, short lan)
+        {
+            String strLenh = "SELECT MAGV FROM GIAOVIEN_DANGKY WHERE MAMH = '" + maMH + "' AND MALOP='" + lop + "' AND LAN=" + lan;
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+            if (reader == null || !reader.HasRows)
+            {
+                reader.Close();
+                return false;
+            }
+            Program.conn.Close();
+            reader.Close();
+            return true;
+        }
     }
 }

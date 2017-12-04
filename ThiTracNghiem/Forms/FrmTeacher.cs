@@ -60,6 +60,9 @@ namespace ThiTracNghiem.Forms
                 reader.Close();
                 bdsGV.Filter = dkien;
                 gbTAOLOGIN.Enabled = false;
+
+
+               
             }
             // TODO: This line of code loads data into the 'dS_SERVER1.BODE' table. You can move, or remove it, as needed.
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
@@ -170,10 +173,22 @@ namespace ThiTracNghiem.Forms
 
             groupBox1.Enabled = false;
         }
-
+        public static String timLoginName(String magv)
+        {
+            String LGNAME="";
+            String strLenh = "EXEC SP_TIMLOGIN '" + magv + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+            reader.Read();
+            LGNAME = reader[0].ToString().Trim();
+            Program.conn.Close();
+            reader.Close();
+            return LGNAME;
+        }
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             String magv = "";
+
+
             if (bdsGVDK.Count > 0)
             {
                 MessageBox.Show("Không thể xóa giáo viên này vì có đăng kí lớp thi", "",
@@ -191,10 +206,45 @@ namespace ThiTracNghiem.Forms
             {
                 try
                 {
+                   
                     magv = ((DataRowView)bdsGV[bdsGV.Position])["MAGV"].ToString(); // giữ lại để khi xóa bij lỗi thì ta sẽ quay về lại
+
+                    
+
                     bdsGV.RemoveCurrent();
                     this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.gIAOVIENTableAdapter.Update(this.dS_SERVER1.GIAOVIEN);
+
+                    String LGNAME = "";
+                    LGNAME = timLoginName(magv);
+
+                    String strLenh = "EXEC SP_XOALOGIN '" + LGNAME + "','"+magv+"'";
+                    SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+                    if(LGNAME=="TRUONG")
+                    {
+                        Program.servername1 = Program.servername;
+                        for (int i = 0; i < Program.bds_dspm.Count; i++)
+                        {
+                            if (Program.servername1.ToString().Trim() != ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim())
+                            {
+                                Program.mlogin = Program.remotelogin;
+                                Program.password = Program.remotepassword;
+                                Program.servername = ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim();
+                                if (Program.KetNoi() != 0)
+                                {
+                                    reader = Program.ExecSqlDataReader(strLenh);
+
+                                    Program.conn.Close();
+                                    reader.Close();
+                                }
+                            }
+                        }
+                        Program.mlogin = Program.mloginDB;
+                        Program.password = Program.mpasswordDB;
+                        Program.servername = Program.servername1;
+                        this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                        //this.gIAOVIENTableAdapter.Fill(this.dS_SERVER1.GIAOVIEN);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -251,17 +301,30 @@ namespace ThiTracNghiem.Forms
                 return;
             }
         }
-
+        public static Boolean kiemTraLogin(String magv)
+        {
+            String strLenh = "EXEC SP_TIMUSER '" + magv + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+            Boolean hasLogin = reader.Read();
+            Program.conn.Close();
+            reader.Close();
+            return hasLogin;
+        }
         private void btnTAOLOGIN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             
-            lbMAGV.Text = ""+((DataRowView)bdsGV[bdsGV.Position])["MAGV"].ToString();   
-            gcGV.Enabled = false;
-            btnTAOLOGIN.Enabled = false;
-            gbTAOLOGIN.Enabled = true;
-            
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPrint.Enabled = btnGhi.Enabled = btnUndo.Enabled = false;
-            btnReload.Enabled = false;
+            lbMAGV.Text = ""+((DataRowView)bdsGV[bdsGV.Position])["MAGV"].ToString();
+            if (kiemTraLogin(lbMAGV.Text.ToString().Trim()))
+                MessageBox.Show("USER ĐÃ TỒN TẠI", "ERROR", MessageBoxButtons.OK);
+            else
+            {
+                gcGV.Enabled = false;
+                btnTAOLOGIN.Enabled = false;
+                gbTAOLOGIN.Enabled = true;
+
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPrint.Enabled = btnGhi.Enabled = btnUndo.Enabled = false;
+                btnReload.Enabled = false;
+            }
         }
 
         private void btnCANCLEL_Click(object sender, EventArgs e)
@@ -299,7 +362,7 @@ namespace ThiTracNghiem.Forms
                 Program.servername1 = Program.servername;
                 for (int i = 0; i < Program.bds_dspm.Count; i++)
                 {
-                    if(Program.servername.ToString().Trim()!= ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim())
+                    if(Program.servername1.ToString().Trim()!= ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim())
                     {
                         Program.mlogin = Program.remotelogin;
                         Program.password = Program.remotepassword;
@@ -307,6 +370,8 @@ namespace ThiTracNghiem.Forms
                         if (Program.KetNoi() != 0)
                         {
                             reader = Program.ExecSqlDataReader(strLenh);
+                            Program.conn.Close();
+                            reader.Close();
                         }
                     }
                 }
@@ -314,7 +379,7 @@ namespace ThiTracNghiem.Forms
                 Program.password = Program.mpasswordDB;
                 Program.servername = Program.servername1;
                 this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.gIAOVIENTableAdapter.Fill(this.dS_SERVER1.GIAOVIEN);
+                //this.gIAOVIENTableAdapter.Fill(this.dS_SERVER1.GIAOVIEN);
             }
             btnCANCLEL_Click(sender, e);
         }

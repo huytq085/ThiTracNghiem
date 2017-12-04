@@ -28,6 +28,8 @@ namespace ThiTracNghiem.Forms
             {
                 barAction.Dispose();
                 pnEditor.Dispose();
+               
+               
             }
             if (Program.connstr != null)
             {
@@ -36,6 +38,7 @@ namespace ThiTracNghiem.Forms
             dsSV1.EnforceConstraints = false;
             this.classTableAdapter.Fill(this.dsSV1.LOP);
             this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
+            cbbBranches.SelectedIndex = Program.mCoSo;
         }
 
         private void reload()

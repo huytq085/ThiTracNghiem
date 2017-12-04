@@ -296,23 +296,7 @@ namespace ThiTracNghiem.Forms
             SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
             if (ROLE == "TRUONG")
             {
-                Program.servername1 = Program.servername;
-                for (int i = 0; i < Program.bds_dspm.Count; i++)
-                {
-                    if(Program.servername.ToString().Trim()!= ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim())
-                    {
-                        Program.mlogin = Program.remotelogin;
-                        Program.password = Program.remotepassword;
-                        Program.servername = ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim();
-                        if (Program.KetNoi() != 0)
-                        {
-                            reader = Program.ExecSqlDataReader(strLenh);
-                        }
-                    }
-                }
-                Program.mlogin = Program.mloginDB;
-                Program.password = Program.mpasswordDB;
-                Program.servername = Program.servername1;
+                Program.ExecSqlDataReaderAllSite(strLenh);
                 this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.gIAOVIENTableAdapter.Fill(this.dS_SERVER1.GIAOVIEN);
             }

@@ -13,6 +13,7 @@ namespace ThiTracNghiem.Forms
 {
     public partial class FrmClass : DevExpress.XtraEditors.XtraForm
     {
+        private bool editMode = false;
         int position = 0; //This value will be changed by lOPGridControl_MouseClick()
         public FrmClass()
         {
@@ -21,6 +22,8 @@ namespace ThiTracNghiem.Forms
 
         private void FrmClass_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsSV1.V_DS_KHOA' table. You can move, or remove it, as needed.
+            
             if (!Program.nhom.Equals("TRUONG"))
             {
                 pnBranches.Dispose();
@@ -31,9 +34,10 @@ namespace ThiTracNghiem.Forms
             }
             if (Program.connstr != null)
             {
-                this.classTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.v_DS_KHOATableAdapter.Connection.ConnectionString = this.classTableAdapter.Connection.ConnectionString = Program.connstr;
             }
             dsSV1.EnforceConstraints = false;
+            this.v_DS_KHOATableAdapter.Fill(this.dsSV1.V_DS_KHOA);
             this.classTableAdapter.Fill(this.dsSV1.LOP);
             this.branchesTableAdapter.Fill(this.ds.V_DS_PHANMANH);
         }
@@ -50,7 +54,6 @@ namespace ThiTracNghiem.Forms
         private void trimInput()
         {
             txtMaLop.Text = txtMaLop.Text.Trim();
-            txtMaKH.Text = txtMaKH.Text.Trim();
             txtTenLop.Text = txtTenLop.Text.Trim();
         }
 
@@ -82,7 +85,11 @@ namespace ThiTracNghiem.Forms
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            txtMaLop.Focus();
+            editMode = false;
+            cbbMaKhoa.DataSource = v_DS_KHOABindingSource;
             classBindingSource.AddNew();
+            cbbMaKhoa.SelectedIndex = 0;
             enableEditor();
         }
 
@@ -120,37 +127,16 @@ namespace ThiTracNghiem.Forms
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            txtMaLop.Focus();
+            editMode = true;
+            cbbMaKhoa.DataSource = v_DS_KHOABindingSource;
             trimInput();
             enableEditor();
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtMaLop.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã lớp không được thiếu!", "", MessageBoxButtons.OK);
-                txtMaLop.Focus();
-                return;
-            }
-            if (txtMaKH.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã khoa không được thiếu!", "", MessageBoxButtons.OK);
-                txtMaKH.Focus();
-                return;
-            }
-            if (txtTenLop.Text.Trim() == "")
-            {
-                MessageBox.Show("Tên lớp không được thiếu!", "", MessageBoxButtons.OK);
-                txtTenLop.Focus();
-                return;
-            }
-            Form dlgConfirm = new DlgConfirm();
-            dlgConfirm.StartPosition = FormStartPosition.CenterParent;
-            dlgConfirm.ShowDialog();
-            if (dlgConfirm.DialogResult == DialogResult.OK)
-            {
-                updateDataSource();
-            }
+            
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -179,6 +165,57 @@ namespace ThiTracNghiem.Forms
         {
             classBindingSource.CancelEdit();
             trimInput();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtMaLop.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã lớp không được thiếu!", "", MessageBoxButtons.OK);
+                txtMaLop.Focus();
+                return;
+            }
+            
+            if (txtTenLop.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên lớp không được thiếu!", "", MessageBoxButtons.OK);
+                txtTenLop.Focus();
+                return;
+            }
+            if (!isExits())
+            {
+                Form dlgConfirm = new DlgConfirm();
+                dlgConfirm.StartPosition = FormStartPosition.CenterParent;
+                dlgConfirm.ShowDialog();
+                if (dlgConfirm.DialogResult == DialogResult.OK)
+                {
+                    updateDataSource();
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.reload();
+        }
+        private bool isExits()
+        {
+            if (editMode && txtMaLop.Text == ((DataRowView)classBindingSource[position])["MALOP"].ToString().Trim() || txtTenLop.Text == ((DataRowView)classBindingSource[position])["TENLOP"].ToString().Trim()) {
+                return false;
+            }
+
+            string cmd = "SELECT * FROM LOP WHERE MALOP = '" + txtMaLop.Text.Trim() + "' OR TENLOP = '" + txtTenLop.Text.Trim() + "'";
+            if (Program.checkExist(cmd))
+            {
+                MessageBox.Show("Mã lớp hoặc tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                return true;
+            }
+            return false;
+        }
+
+        private void tENLOPLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

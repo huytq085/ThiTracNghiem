@@ -34,14 +34,6 @@ namespace ThiTracNghiem.Forms
 
         private void FrmStudent_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS_SERVER1.V_DS_LOP' table. You can move, or remove it, as needed.
-            
-            // TODO: This line of code loads data into the 'dS_SERVER1.LOP' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'dS_SERVER1.BANGDIEM' table. You can move, or remove it, as needed.
-
-
-            // TODO: This line of code loads data into the 'dS_SERVER1.SINHVIEN' table. You can move, or remove it, as needed.
             dS_SERVER1.EnforceConstraints = false;
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.dS_SERVER1.SINHVIEN);
@@ -51,19 +43,22 @@ namespace ThiTracNghiem.Forms
             this.v_DS_LOPTableAdapter.Fill(this.dS_SERVER1.V_DS_LOP);
             gridView1.OptionsBehavior.Editable = false;
 
-            cmbCoSo.DataSource = Program.bds_dspm;
-            cmbCoSo.DisplayMember = "TENCS";
-            cmbCoSo.ValueMember = "TENSERVER";
-            cmbCoSo.SelectedIndex = Program.mCoSo;
+            
             if (Program.nhom == "TRUONG")
             {
+                cmbCoSo.DataSource = Program.bds_dspm;
+                cmbCoSo.DisplayMember = "TENCS";
+                cmbCoSo.ValueMember = "TENSERVER";
+                cmbCoSo.SelectedIndex = Program.mCoSo;
                 cmbCoSo.Enabled = true;
                 btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =  btnGhi.Enabled = btnUndo.Enabled = false;
                 btnReload.Enabled = btnPrint.Enabled = true;
             }
             else
+            {
                 cmbCoSo.Enabled = false;
-            groupBox1.Enabled = false;
+                groupBox1.Enabled = false;
+            }
         }
 
         private void cmbCoSo_SelectedIndexChanged(object sender, EventArgs e)

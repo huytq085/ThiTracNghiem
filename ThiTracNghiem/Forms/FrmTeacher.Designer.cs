@@ -277,34 +277,34 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1370, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1354, 42);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 715);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1354, 18);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 686);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 673);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1370, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1354, 42);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 686);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 673);
             // 
             // dS_SERVER1
             // 
@@ -347,12 +347,12 @@
             this.gcGV.DataSource = this.bdsGV;
             this.gcGV.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcGV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gcGV.Location = new System.Drawing.Point(0, 40);
+            this.gcGV.Location = new System.Drawing.Point(0, 42);
             this.gcGV.MainView = this.gridView1;
             this.gcGV.Margin = new System.Windows.Forms.Padding(4);
             this.gcGV.MenuManager = this.barManager1;
             this.gcGV.Name = "gcGV";
-            this.gcGV.Size = new System.Drawing.Size(1370, 289);
+            this.gcGV.Size = new System.Drawing.Size(1354, 289);
             this.gcGV.TabIndex = 5;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -416,11 +416,11 @@
             this.groupBox1.Controls.Add(mAGVLabel);
             this.groupBox1.Controls.Add(this.txtMAGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 329);
+            this.groupBox1.Location = new System.Drawing.Point(0, 331);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1370, 397);
+            this.groupBox1.Size = new System.Drawing.Size(1354, 384);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
@@ -496,9 +496,9 @@
             this.gbTAOLOGIN.Controls.Add(this.label3);
             this.gbTAOLOGIN.Controls.Add(this.label2);
             this.gbTAOLOGIN.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbTAOLOGIN.Location = new System.Drawing.Point(924, 329);
+            this.gbTAOLOGIN.Location = new System.Drawing.Point(908, 331);
             this.gbTAOLOGIN.Name = "gbTAOLOGIN";
-            this.gbTAOLOGIN.Size = new System.Drawing.Size(446, 397);
+            this.gbTAOLOGIN.Size = new System.Drawing.Size(446, 384);
             this.gbTAOLOGIN.TabIndex = 11;
             this.gbTAOLOGIN.TabStop = false;
             // 
@@ -595,7 +595,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.gbTAOLOGIN);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcGV);

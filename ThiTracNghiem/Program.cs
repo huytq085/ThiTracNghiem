@@ -89,6 +89,48 @@ namespace ThiTracNghiem
                 return null;
             }
         }
+        public static bool ExecSqlDataReaderAllSite(String strLenh)
+        {
+            SqlDataReader myreader;
+            bool ok = true;
+            String orgServername = servername;
+            String orgConnectionString = connstr;
+            for (int i = 0; i < bds_dspm.Count; i++)
+            {
+                servername = ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim();
+                if (KetNoi() != 0)
+                {
+                    myreader = Program.ExecSqlDataReader(strLenh);
+                    if (myreader == null || !myreader.HasRows) ok = false;
+                } else
+                {
+                    ok = false;
+                }
+            }
+            servername = orgServername;
+            connstr = orgConnectionString;
+            return ok;
+        }
+        public static bool checkExist(String strLenh)
+        {
+            SqlDataReader myreader;
+            bool ok = false;
+            String orgServername = servername;
+            String orgConnectionString = connstr;
+            for (int i = 0; i < bds_dspm.Count; i++)
+            {
+                servername = ((DataRowView)Program.bds_dspm[i])["TENSERVER"].ToString().Trim();
+                if (KetNoi() != 0)
+                {
+                    myreader = Program.ExecSqlDataReader(strLenh);
+                    if (myreader != null && myreader.HasRows) ok = true;
+                }
+            }
+            servername = orgServername;
+            connstr = orgConnectionString;
+            KetNoi();
+            return ok;
+        }
         public static DataTable ExecSqlDataTable(String cmd, string connstr)
         {
             DataTable dt = new DataTable();
@@ -119,6 +161,7 @@ namespace ThiTracNghiem
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
         }
+
         [STAThread]
         static void Main()
         {

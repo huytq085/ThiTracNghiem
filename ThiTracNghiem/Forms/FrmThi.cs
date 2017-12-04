@@ -375,11 +375,88 @@ namespace ThiTracNghiem.Forms
                 sec = 59;
                 minute--;
             }
-            if (minute == 0&&sec==0)
+            if (minute == 0 && sec == 0)
             {
                 timer1.Stop();
                 lbTHOIGIAN.Text = fixTime(minute, sec);
                 //btnNOPBAI.Clicked += new EventHandler(btnNOPBAI_Click);
+                timer1.Stop();
+                panel3.Enabled = false;
+                float tyleDiem = (float)10 / soCau;
+                int soCauDung = 0;
+                CHON = new String[soCau];
+                dynamic[] baiThi = new JObject[soCau];
+                for (int i = 0; i < soCau; i++)
+                {
+                    baiThi[i] = new JObject();
+                    if (rdA[i].Checked)
+                        CHON[i] = "A";
+                    else if (rdB[i].Checked)
+                        CHON[i] = "B";
+                    else if (rdC[i].Checked)
+                        CHON[i] = "C";
+                    else if (rdD[i].Checked)
+                        CHON[i] = "D";
+                    else
+                        CHON[i] = "";
+
+                    if (CHON[i] == DA[i])
+                        soCauDung++;
+
+                    baiThi[i].cauhoi = cauSo[i];
+                    baiThi[i].dapAn = DA[i];
+                    baiThi[i].chon = CHON[i];
+
+                }
+                //Console.WriteLine(JsonConvert.SerializeObject(jsonObject));
+                if (Program.nhom.Equals("SINHVIEN"))
+                {
+                    DBAppDataContext db = new DBAppDataContext();
+                    db.Connection.ConnectionString = Program.connstr;
+                    BANGDIEM bangDiem = new BANGDIEM();
+                    bangDiem.MASV = Program.username.Trim();
+                    bangDiem.MAMH = MAMH.Trim();
+                    bangDiem.LAN = (short)lanThi;
+                    bangDiem.NGAYTHI = (DateTime)((DataRowView)bdsGVDK[cmbNGAYTHI.SelectedIndex])["NGAYTHI"];
+                    bangDiem.DIEM = tyleDiem * soCauDung;
+                    bangDiem.BAITHI = JsonConvert.SerializeObject(baiThi);
+                    db.BANGDIEMs.InsertOnSubmit(bangDiem);
+                    db.SubmitChanges();
+                }
+                DlgConfirm dlgConfirm = new DlgConfirm("Điểm thi: " + soCauDung * tyleDiem, "Xem bài thi", "Đóng", "Thông báo");
+                dlgConfirm.StartPosition = FormStartPosition.CenterParent;
+                dlgConfirm.ShowDialog();
+                if (dlgConfirm.DialogResult == DialogResult.OK)
+                {
+                    DataGridView dataGridView2 = new DataGridView();
+                    dataGridView2.Columns.Add("cauSo", "Câu số");
+                    dataGridView2.Columns.Add("noiDung", "Nội dung");
+                    dataGridView2.Columns.Add("cacLuaChon", "Các lựa chọn");
+                    dataGridView2.Columns.Add("dapAn", "Đáp án");
+                    dataGridView2.Columns.Add("daChon", "Đã chọn");
+                    string nl = Environment.NewLine;
+
+                    for (int i = 0; i < soCau; i++)
+                    {
+                        DataGridViewRow resultRow = (DataGridViewRow)dataGridView2.Rows[0].Clone();
+                        resultRow.Cells[0].Value = i + 1;
+                        resultRow.Cells[1].Value = cauhoi[i];
+                        resultRow.Cells[2].Value = "A. " + A[i] + nl + "B. " + B[i] + nl + "C. " + C[i] + nl + "D. " + D[i];
+                        resultRow.Cells[3].Value = DA[i];
+                        resultRow.Cells[4].Value = CHON[i];
+                        dataGridView2.Rows.Add(resultRow);
+                    }
+
+                    IDictionary<string, string> param = new Dictionary<string, string>();
+                    param.Add("class", Program.tenDonVi);
+                    param.Add("name", Program.hoTen);
+                    param.Add("subject", cmbTENMONHOC.SelectedValue.ToString());
+                    param.Add("date", cmbNGAYTHI.SelectedValue.ToString());
+                    param.Add("times", cmbLANTHI.SelectedValue.ToString());
+                    FrmResult frmResult = new FrmResult(dataGridView2, param);
+                    frmResult.StartPosition = FormStartPosition.CenterParent;
+                    frmResult.ShowDialog();
+                }
             }
             
         }
@@ -463,8 +540,7 @@ namespace ThiTracNghiem.Forms
                 frmResult.StartPosition = FormStartPosition.CenterParent;
                 frmResult.ShowDialog();
 
-            }
-            
+            }   
 
         }
     }

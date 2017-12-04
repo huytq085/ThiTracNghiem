@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nmrTHOIGIAN = new System.Windows.Forms.NumericUpDown();
             this.nmrSOCAUTHI = new System.Windows.Forms.NumericUpDown();
@@ -45,10 +44,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbbTRINHDO = new System.Windows.Forms.ComboBox();
             this.cbbMAMH = new System.Windows.Forms.ComboBox();
-            this.vDSMONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vDSMONHOCBindingSource = new System.Windows.Forms.BindingSource();
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
             this.cbbMALOP = new System.Windows.Forms.ComboBox();
-            this.vDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vDSLOPBindingSource = new System.Windows.Forms.BindingSource();
             this.v_DS_LOPTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_LOPTableAdapter();
             this.v_DS_MONHOCTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_MONHOCTableAdapter();
             this.panel1.SuspendLayout();

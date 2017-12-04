@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mASVLabel;
             System.Windows.Forms.Label hOLabel;
             System.Windows.Forms.Label tENLabel;
@@ -36,7 +35,7 @@
             System.Windows.Forms.Label dIACHILabel;
             System.Windows.Forms.Label mALOPLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
@@ -54,7 +53,7 @@
             this.cmbCoSo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
-            this.bdsSV = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsSV = new System.Windows.Forms.BindingSource();
             this.sINHVIENTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.SINHVIENTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
             this.gcSV = new DevExpress.XtraGrid.GridControl();
@@ -72,9 +71,9 @@
             this.txtTEN = new DevExpress.XtraEditors.TextEdit();
             this.txtHO = new DevExpress.XtraEditors.TextEdit();
             this.txtMASV = new DevExpress.XtraEditors.TextEdit();
-            this.bdsBD = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsBD = new System.Windows.Forms.BindingSource();
             this.bANGDIEMTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BANGDIEMTableAdapter();
-            this.v_bdsMALOP = new System.Windows.Forms.BindingSource(this.components);
+            this.v_bdsMALOP = new System.Windows.Forms.BindingSource();
             this.v_DS_LOPTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_LOPTableAdapter();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
@@ -248,6 +247,7 @@
             this.btnPrint.Id = 6;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // bar3
             // 

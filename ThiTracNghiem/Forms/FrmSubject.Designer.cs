@@ -262,6 +262,7 @@
             this.btnPrint.Id = 6;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // btnExit
             // 
@@ -269,6 +270,7 @@
             this.btnExit.Id = 7;
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Name = "btnExit";
+            this.btnExit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // bar3
             // 

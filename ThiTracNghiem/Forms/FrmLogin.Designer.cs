@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tENCSLabel = new System.Windows.Forms.Label();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.mbarExit = new DevExpress.XtraBars.BarStaticItem();
@@ -47,7 +46,7 @@
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
-            this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.branchesBindingSource = new System.Windows.Forms.BindingSource();
             this.ds = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();

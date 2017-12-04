@@ -77,16 +77,6 @@ namespace ThiTracNghiem.Forms
                 Console.WriteLine(exc.Message);
             }
             
-            if (cmbCoSo.SelectedIndex != Program.mCoSo)
-            {
-                Program.mlogin = Program.remotelogin;
-                Program.password = Program.remotepassword;
-            }
-            else
-            {
-                Program.mlogin = Program.mloginDB;
-                Program.password = Program.mpasswordDB;
-            }
             if (Program.KetNoi() == 0)
             {
                 MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);

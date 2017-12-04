@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label cAUHOILabel;
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label tRINHDOLabel;
@@ -40,7 +39,7 @@
             System.Windows.Forms.Label dAP_ANLabel;
             System.Windows.Forms.Label mAGVLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuestion));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
@@ -54,7 +53,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
-            this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsBODE = new System.Windows.Forms.BindingSource();
             this.bODETableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BODETableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
             this.gcBODE = new DevExpress.XtraGrid.GridControl();
@@ -83,9 +82,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbCachXem = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsMONHOC = new System.Windows.Forms.BindingSource();
             this.mONHOCTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.MONHOCTableAdapter();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
             cAUHOILabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             tRINHDOLabel = new System.Windows.Forms.Label();
@@ -298,6 +297,7 @@
             this.btnPrint.Id = 6;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barDockControlTop
             // 

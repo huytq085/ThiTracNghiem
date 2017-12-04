@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAKHLabel;
             System.Windows.Forms.Label tENKHLabel;
             System.Windows.Forms.Label mACSLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDept));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barAction = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
@@ -48,7 +47,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.dsSV1 = new ThiTracNghiem.TRACNGHIEMDataSetSV1();
-            this.deptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deptBindingSource = new System.Windows.Forms.BindingSource();
             this.deptTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.KHOATableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.TRACNGHIEMDataSetSV1TableAdapters.TableAdapterManager();
             this.kHOAGridControl = new DevExpress.XtraGrid.GridControl();
@@ -58,7 +57,7 @@
             this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnBranches = new System.Windows.Forms.Panel();
             this.cbbBranches = new System.Windows.Forms.ComboBox();
-            this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.branchesBindingSource = new System.Windows.Forms.BindingSource();
             this.ds = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.pnTable = new System.Windows.Forms.Panel();
@@ -207,6 +206,7 @@
             this.btnPrint.Id = 7;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // btnExit
             // 
@@ -214,6 +214,7 @@
             this.btnExit.Id = 8;
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Name = "btnExit";
+            this.btnExit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barDockControlTop
             // 

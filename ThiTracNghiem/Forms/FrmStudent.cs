@@ -234,7 +234,6 @@ namespace ThiTracNghiem.Forms
                     return;
                 }
             }
-
             if (bdsSV.Count == 0) btnXoa.Enabled = false;
         }
     }

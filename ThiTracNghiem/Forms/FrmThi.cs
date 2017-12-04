@@ -500,7 +500,7 @@ namespace ThiTracNghiem.Forms
                 bangDiem.MASV = Program.username.Trim();
                 bangDiem.MAMH = MAMH.Trim();
                 bangDiem.LAN = (short)lanThi;
-                bangDiem.NGAYTHI = (DateTime)((DataRowView)bdsGVDK[cmbNGAYTHI.SelectedIndex])["NGAYTHI"];
+                bangDiem.NGAYTHI = Convert.ToDateTime(cmbNGAYTHI.SelectedValue.ToString());
                 bangDiem.DIEM = tyleDiem * soCauDung;
                 bangDiem.BAITHI = JsonConvert.SerializeObject(baiThi);
                 db.BANGDIEMs.InsertOnSubmit(bangDiem);

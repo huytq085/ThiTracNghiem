@@ -41,6 +41,7 @@ namespace ThiTracNghiem.Forms
                     case "SINHVIEN":
                         btnSetup.Dispose();
                         btnAddPacket.Dispose();
+                        btnReport.Dispose();
                         rbControl.Dispose();
                         txtFooterId.Caption = "MÃ SINH VIÊN: " + Program.id.ToUpper();
                         txtFooterFullName.Caption = "HỌ TÊN: " + Program.hoTen.ToUpper();
@@ -135,6 +136,7 @@ namespace ThiTracNghiem.Forms
         private void btnStart_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMdiChildren(typeof(FrmThi));
+            btnThi.Enabled = false;
         }
 
         private void btnReport_ItemClick(object sender, ItemClickEventArgs e)

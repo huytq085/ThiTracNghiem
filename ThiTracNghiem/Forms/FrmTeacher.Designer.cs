@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAGVLabel;
             System.Windows.Forms.Label hOLabel;
             System.Windows.Forms.Label tENLabel;
             System.Windows.Forms.Label dIACHILabel;
             System.Windows.Forms.Label mAKHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTeacher));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
@@ -51,7 +50,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
-            this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsGV = new System.Windows.Forms.BindingSource();
             this.gIAOVIENTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.GIAOVIENTableAdapter();
             this.tableAdapterManager = new ThiTracNghiem.DS_SERVER1TableAdapters.TableAdapterManager();
             this.bODETableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BODETableAdapter();
@@ -64,13 +63,12 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMAKH = new DevExpress.XtraEditors.TextEdit();
             this.txtDIACHI = new DevExpress.XtraEditors.TextEdit();
             this.txtTEN = new DevExpress.XtraEditors.TextEdit();
             this.txtHO = new DevExpress.XtraEditors.TextEdit();
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
-            this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsGVDK = new System.Windows.Forms.BindingSource();
+            this.bdsBODE = new System.Windows.Forms.BindingSource();
             this.gbTAOLOGIN = new System.Windows.Forms.GroupBox();
             this.lbMAGV = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,6 +80,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbMaKH = new System.Windows.Forms.ComboBox();
+            this.v_DS_KHOABindingSource = new System.Windows.Forms.BindingSource();
+            this.v_DS_KHOATableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_KHOATableAdapter();
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -93,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).BeginInit();
@@ -101,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
             this.gbTAOLOGIN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_KHOABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAGVLabel
@@ -356,6 +357,7 @@
             this.gcGV.TabIndex = 5;
             this.gcGV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gcGV.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gcGV_MouseClick);
             // 
             // gridView1
             // 
@@ -405,7 +407,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtMAKH);
+            this.groupBox1.Controls.Add(this.cmbMaKH);
             this.groupBox1.Controls.Add(mAKHLabel);
             this.groupBox1.Controls.Add(dIACHILabel);
             this.groupBox1.Controls.Add(this.txtDIACHI);
@@ -423,15 +425,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1354, 384);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            // 
-            // txtMAKH
-            // 
-            this.txtMAKH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGV, "MAKH", true));
-            this.txtMAKH.Location = new System.Drawing.Point(177, 96);
-            this.txtMAKH.MenuManager = this.barManager1;
-            this.txtMAKH.Name = "txtMAKH";
-            this.txtMAKH.Size = new System.Drawing.Size(263, 20);
-            this.txtMAKH.TabIndex = 10;
             // 
             // txtDIACHI
             // 
@@ -590,11 +583,34 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "LOGIN";
             // 
+            // cmbMaKH
+            // 
+            this.cmbMaKH.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGV, "MAKH", true));
+            this.cmbMaKH.DataSource = this.bdsGV;
+            this.cmbMaKH.DisplayMember = "MAKH";
+            this.cmbMaKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaKH.FormattingEnabled = true;
+            this.cmbMaKH.Location = new System.Drawing.Point(177, 99);
+            this.cmbMaKH.Name = "cmbMaKH";
+            this.cmbMaKH.Size = new System.Drawing.Size(263, 25);
+            this.cmbMaKH.TabIndex = 9;
+            this.cmbMaKH.ValueMember = "MAKH";
+            // 
+            // v_DS_KHOABindingSource
+            // 
+            this.v_DS_KHOABindingSource.DataMember = "V_DS_KHOA";
+            this.v_DS_KHOABindingSource.DataSource = this.dS_SERVER1;
+            // 
+            // v_DS_KHOATableAdapter
+            // 
+            this.v_DS_KHOATableAdapter.ClearBeforeFill = true;
+            // 
             // FrmTeacher
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.gbTAOLOGIN);
             this.Controls.Add(this.groupBox1);
@@ -616,7 +632,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDIACHI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).EndInit();
@@ -625,6 +640,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).EndInit();
             this.gbTAOLOGIN.ResumeLayout(false);
             this.gbTAOLOGIN.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_KHOABindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,7 +682,6 @@
         private DevExpress.XtraEditors.TextEdit txtTEN;
         private DevExpress.XtraEditors.TextEdit txtHO;
         private DevExpress.XtraEditors.TextEdit txtMAGV;
-        private DevExpress.XtraEditors.TextEdit txtMAKH;
         private DevExpress.XtraBars.BarButtonItem btnTAOLOGIN;
         private System.Windows.Forms.GroupBox gbTAOLOGIN;
         private System.Windows.Forms.Button btnDANGKY;
@@ -679,5 +694,8 @@
         private System.Windows.Forms.Button btnCANCLEL;
         private System.Windows.Forms.Label lbMAGV;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbMaKH;
+        private System.Windows.Forms.BindingSource v_DS_KHOABindingSource;
+        private DS_SERVER1TableAdapters.V_DS_KHOATableAdapter v_DS_KHOATableAdapter;
     }
 }

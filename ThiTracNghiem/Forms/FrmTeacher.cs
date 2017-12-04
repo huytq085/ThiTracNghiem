@@ -15,6 +15,8 @@ namespace ThiTracNghiem.Forms
    
     public partial class FrmTeacher : DevExpress.XtraEditors.XtraForm
     {
+        private int position = 0;
+        private bool editMode = false;
         int viTri = 0;
         List<String> srcROLE;
         public FrmTeacher()
@@ -32,6 +34,8 @@ namespace ThiTracNghiem.Forms
 
         private void FrmTeacher_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS_SERVER1.V_DS_KHOA' table. You can move, or remove it, as needed.
+            
             dS_SERVER1.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dS_SERVER1.GIAOVIEN' table. You can move, or remove it, as needed.
             this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -39,7 +43,7 @@ namespace ThiTracNghiem.Forms
             if (Program.nhom == "COSO")
             {
                 String dkien = "";
-                String strLenh = "Select * from V_MAKH ";
+                String strLenh = "Select * from V_DS_KHOA ";
                 SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
                 try
                 {
@@ -71,7 +75,8 @@ namespace ThiTracNghiem.Forms
                
             }
             // TODO: This line of code loads data into the 'dS_SERVER1.BODE' table. You can move, or remove it, as needed.
-            this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_KHOATableAdapter.Connection.ConnectionString = this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_KHOATableAdapter.Fill(this.dS_SERVER1.V_DS_KHOA);
             this.bODETableAdapter.Fill(this.dS_SERVER1.BODE);
             // TODO: This line of code loads data into the 'dS_SERVER1.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -105,10 +110,11 @@ namespace ThiTracNghiem.Forms
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             viTri = bdsGV.Position;
+            editMode = false;
             groupBox1.Enabled = true;
+            cmbMaKH.DataSource = v_DS_KHOABindingSource;
             bdsGV.AddNew();
-
-            txtMAKH.Text = "";
+            cmbMaKH.SelectedIndex = 0;
             txtMAGV.Text = "";
             txtHO.Text = "";
             txtTEN.Text = "";
@@ -120,6 +126,8 @@ namespace ThiTracNghiem.Forms
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            editMode = true;
+            cmbMaKH.DataSource = v_DS_KHOABindingSource;
             viTri = bdsGV.Position;
             groupBox1.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = false;
@@ -133,12 +141,6 @@ namespace ThiTracNghiem.Forms
             {
                 MessageBox.Show("Mã giáo viên không được phép rỗng", "", MessageBoxButtons.OK);
                 txtMAGV.Focus();
-                return;
-            }
-            if (txtMAKH.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã khoa không được phép rỗng", "", MessageBoxButtons.OK);
-                txtMAKH.Focus();
                 return;
             }
             if (txtHO.Text.Trim() == "")
@@ -161,23 +163,27 @@ namespace ThiTracNghiem.Forms
             }
             
             //((DataRowView)bdsSV[0])["MALOP"] = cmbMALOP.SelectedText.ToString().Trim();
-            try
+            if (!isExits())
             {
-                bdsGV.EndEdit();
-                bdsGV.ResetCurrentItem();
-                this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.gIAOVIENTableAdapter.Update(this.dS_SERVER1.GIAOVIEN);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi ghi giáo viên.\n" + ex.Message, "", MessageBoxButtons.OK);
-                return;
-            }
-            gcGV.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
-            btnGhi.Enabled = btnUndo.Enabled = false;
+                try
+                {
+                    bdsGV.EndEdit();
+                    bdsGV.ResetCurrentItem();
+                    this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.gIAOVIENTableAdapter.Update(this.dS_SERVER1.GIAOVIEN);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ghi giáo viên.\n" + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
+                gcGV.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPrint.Enabled = true;
+                btnGhi.Enabled = btnUndo.Enabled = false;
 
-            groupBox1.Enabled = false;
+                groupBox1.Enabled = false;
+            }
+            
         }
         public static String timLoginName(String magv)
         {
@@ -284,7 +290,7 @@ namespace ThiTracNghiem.Forms
                 if (Program.nhom == "COSO")
                 {
                     String dkien = "";
-                    String strLenh = "Select * from V_MAKH ";
+                    String strLenh = "Select * from V_DS_KHOA ";
                     SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
                     Boolean rd = reader.Read();
                     while (rd)
@@ -370,6 +376,28 @@ namespace ThiTracNghiem.Forms
                 //this.gIAOVIENTableAdapter.Fill(this.dS_SERVER1.GIAOVIEN);
             }
             btnCANCLEL_Click(sender, e);
+        }
+        private bool isExits()
+        {
+            if (editMode && txtMAGV.Text.Trim() == ((DataRowView)bdsGV[position])["MAGV"].ToString().Trim())
+            {
+                return false;
+            }
+
+            string cmd = "SELECT * FROM GIAOVIEN WHERE MAGV = '" + txtMAGV.Text.Trim() + "'";
+            SqlDataReader reader = Program.ExecSqlDataReader(cmd);
+            if (reader != null && reader.HasRows)
+            {
+                DlgOk.Show("Mã giáo viên đã tồn tại", "Đóng");
+                reader.Close();
+                return true;
+            }
+            return false;
+        }
+
+        private void gcGV_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.position = bdsGV.Position;
         }
     }
 }

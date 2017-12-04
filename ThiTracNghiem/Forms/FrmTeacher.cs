@@ -392,6 +392,7 @@ namespace ThiTracNghiem.Forms
                 reader.Close();
                 return true;
             }
+            reader.Close();
             return false;
         }
 

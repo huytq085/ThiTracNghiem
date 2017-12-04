@@ -369,7 +369,7 @@ namespace ThiTracNghiem.Forms
             {
                 timer1.Stop();
                 lbTHOIGIAN.Text = fixTime(minute, sec);
-                btnNOPBAI.Click += new EventHandler(btnNOPBAI_Click);
+                //btnNOPBAI.Clicked += new EventHandler(btnNOPBAI_Click);
             }
             
         }

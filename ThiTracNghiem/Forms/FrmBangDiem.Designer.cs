@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label mASVLabel;
-            System.Windows.Forms.Label dIEMLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBangDiem));
+            System.Windows.Forms.Label mASVLabel1;
+            System.Windows.Forms.Label dIEMLabel;
+            System.Windows.Forms.Label nGAYTHILabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -48,9 +49,7 @@
             this.cmbLANTHI = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMONHOC = new System.Windows.Forms.ComboBox();
-            this.cmbLOP = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dS_SERVER1 = new ThiTracNghiem.DS_SERVER1();
             this.bdsBANGDIEM = new System.Windows.Forms.BindingSource(this.components);
             this.bANGDIEMTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.BANGDIEMTableAdapter();
@@ -60,10 +59,17 @@
             this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIEM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDIEM = new DevExpress.XtraEditors.SpinEdit();
-            this.txtMASV = new DevExpress.XtraEditors.TextEdit();
-            mASVLabel = new System.Windows.Forms.Label();
+            this.mASVTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dIEMSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.nGAYTHIDateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.bdsDSLOP = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_LOPTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_LOPTableAdapter();
+            this.bdsDSMHOC = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_MONHOCTableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_MONHOCTableAdapter();
+            this.btnXem = new System.Windows.Forms.Button();
+            mASVLabel1 = new System.Windows.Forms.Label();
             dIEMLabel = new System.Windows.Forms.Label();
+            nGAYTHILabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SERVER1)).BeginInit();
@@ -71,27 +77,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcBD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDIEM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMASV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIEMSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDSLOP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDSMHOC)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mASVLabel
-            // 
-            mASVLabel.AutoSize = true;
-            mASVLabel.Location = new System.Drawing.Point(129, 57);
-            mASVLabel.Name = "mASVLabel";
-            mASVLabel.Size = new System.Drawing.Size(53, 17);
-            mASVLabel.TabIndex = 0;
-            mASVLabel.Text = "MASV:";
-            // 
-            // dIEMLabel
-            // 
-            dIEMLabel.AutoSize = true;
-            dIEMLabel.Location = new System.Drawing.Point(493, 57);
-            dIEMLabel.Name = "dIEMLabel";
-            dIEMLabel.Size = new System.Drawing.Size(49, 17);
-            dIEMLabel.TabIndex = 8;
-            dIEMLabel.Text = "DIEM:";
             // 
             // barManager1
             // 
@@ -184,7 +176,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 508);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 667);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1304, 0);
@@ -196,7 +188,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 468);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 627);
             // 
             // barDockControlRight
             // 
@@ -205,16 +197,15 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1304, 40);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 468);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 627);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnXem);
             this.panel1.Controls.Add(this.cmbLANTHI);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cmbMONHOC);
-            this.panel1.Controls.Add(this.cmbLOP);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -226,7 +217,7 @@
             // 
             this.cmbLANTHI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLANTHI.FormattingEnabled = true;
-            this.cmbLANTHI.Location = new System.Drawing.Point(1051, 35);
+            this.cmbLANTHI.Location = new System.Drawing.Point(512, 35);
             this.cmbLANTHI.Name = "cmbLANTHI";
             this.cmbLANTHI.Size = new System.Drawing.Size(121, 25);
             this.cmbLANTHI.TabIndex = 5;
@@ -234,7 +225,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(928, 43);
+            this.label3.Location = new System.Drawing.Point(389, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 4;
@@ -242,43 +233,26 @@
             // 
             // cmbMONHOC
             // 
+            this.cmbMONHOC.DataSource = this.bdsDSMHOC;
+            this.cmbMONHOC.DisplayMember = "TENMH";
             this.cmbMONHOC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMONHOC.FormattingEnabled = true;
-            this.cmbMONHOC.Location = new System.Drawing.Point(628, 35);
+            this.cmbMONHOC.Location = new System.Drawing.Point(129, 35);
             this.cmbMONHOC.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMONHOC.Name = "cmbMONHOC";
             this.cmbMONHOC.Size = new System.Drawing.Size(199, 25);
             this.cmbMONHOC.TabIndex = 3;
-            // 
-            // cmbLOP
-            // 
-            this.cmbLOP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLOP.FormattingEnabled = true;
-            this.cmbLOP.Location = new System.Drawing.Point(163, 35);
-            this.cmbLOP.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbLOP.Name = "cmbLOP";
-            this.cmbLOP.Size = new System.Drawing.Size(290, 25);
-            this.cmbLOP.TabIndex = 2;
+            this.cmbMONHOC.ValueMember = "MAMH";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(519, 43);
+            this.label2.Location = new System.Drawing.Point(20, 43);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "MÔN HỌC";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "LỚP";
             // 
             // dS_SERVER1
             // 
@@ -312,12 +286,12 @@
             // 
             this.gcBD.DataSource = this.bdsBANGDIEM;
             this.gcBD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcBD.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcBD.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gcBD.Location = new System.Drawing.Point(0, 128);
             this.gcBD.MainView = this.gridView1;
             this.gcBD.MenuManager = this.barManager1;
             this.gcBD.Name = "gcBD";
-            this.gcBD.Size = new System.Drawing.Size(1304, 167);
+            this.gcBD.Size = new System.Drawing.Size(1304, 326);
             this.gcBD.TabIndex = 6;
             this.gcBD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -348,48 +322,121 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(nGAYTHILabel);
+            this.groupBox1.Controls.Add(this.nGAYTHIDateEdit);
             this.groupBox1.Controls.Add(dIEMLabel);
-            this.groupBox1.Controls.Add(this.txtDIEM);
-            this.groupBox1.Controls.Add(mASVLabel);
-            this.groupBox1.Controls.Add(this.txtMASV);
+            this.groupBox1.Controls.Add(this.dIEMSpinEdit);
+            this.groupBox1.Controls.Add(mASVLabel1);
+            this.groupBox1.Controls.Add(this.mASVTextEdit);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 295);
+            this.groupBox1.Location = new System.Drawing.Point(0, 454);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1304, 213);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // txtDIEM
+            // mASVLabel1
             // 
-            this.txtDIEM.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBANGDIEM, "DIEM", true));
-            this.txtDIEM.EditValue = new decimal(new int[] {
+            mASVLabel1.AutoSize = true;
+            mASVLabel1.Location = new System.Drawing.Point(50, 51);
+            mASVLabel1.Name = "mASVLabel1";
+            mASVLabel1.Size = new System.Drawing.Size(53, 17);
+            mASVLabel1.TabIndex = 8;
+            mASVLabel1.Text = "MASV:";
+            // 
+            // mASVTextEdit
+            // 
+            this.mASVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBANGDIEM, "MASV", true));
+            this.mASVTextEdit.Location = new System.Drawing.Point(163, 48);
+            this.mASVTextEdit.MenuManager = this.barManager1;
+            this.mASVTextEdit.Name = "mASVTextEdit";
+            this.mASVTextEdit.Size = new System.Drawing.Size(144, 20);
+            this.mASVTextEdit.TabIndex = 9;
+            // 
+            // dIEMLabel
+            // 
+            dIEMLabel.AutoSize = true;
+            dIEMLabel.Location = new System.Drawing.Point(399, 51);
+            dIEMLabel.Name = "dIEMLabel";
+            dIEMLabel.Size = new System.Drawing.Size(49, 17);
+            dIEMLabel.TabIndex = 9;
+            dIEMLabel.Text = "DIEM:";
+            // 
+            // dIEMSpinEdit
+            // 
+            this.dIEMSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBANGDIEM, "DIEM", true));
+            this.dIEMSpinEdit.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.txtDIEM.Location = new System.Drawing.Point(602, 54);
-            this.txtDIEM.MenuManager = this.barManager1;
-            this.txtDIEM.Name = "txtDIEM";
-            this.txtDIEM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dIEMSpinEdit.Location = new System.Drawing.Point(488, 48);
+            this.dIEMSpinEdit.MenuManager = this.barManager1;
+            this.dIEMSpinEdit.Name = "dIEMSpinEdit";
+            this.dIEMSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtDIEM.Size = new System.Drawing.Size(160, 20);
-            this.txtDIEM.TabIndex = 9;
+            this.dIEMSpinEdit.Size = new System.Drawing.Size(100, 20);
+            this.dIEMSpinEdit.TabIndex = 10;
             // 
-            // txtMASV
+            // nGAYTHILabel
             // 
-            this.txtMASV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBANGDIEM, "MASV", true));
-            this.txtMASV.Location = new System.Drawing.Point(240, 54);
-            this.txtMASV.MenuManager = this.barManager1;
-            this.txtMASV.Name = "txtMASV";
-            this.txtMASV.Size = new System.Drawing.Size(160, 20);
-            this.txtMASV.TabIndex = 1;
+            nGAYTHILabel.AutoSize = true;
+            nGAYTHILabel.Location = new System.Drawing.Point(25, 116);
+            nGAYTHILabel.Name = "nGAYTHILabel";
+            nGAYTHILabel.Size = new System.Drawing.Size(78, 17);
+            nGAYTHILabel.TabIndex = 10;
+            nGAYTHILabel.Text = "NGAYTHI:";
+            nGAYTHILabel.Click += new System.EventHandler(this.nGAYTHILabel_Click);
+            // 
+            // nGAYTHIDateEdit
+            // 
+            this.nGAYTHIDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBANGDIEM, "NGAYTHI", true));
+            this.nGAYTHIDateEdit.EditValue = null;
+            this.nGAYTHIDateEdit.Location = new System.Drawing.Point(163, 115);
+            this.nGAYTHIDateEdit.MenuManager = this.barManager1;
+            this.nGAYTHIDateEdit.Name = "nGAYTHIDateEdit";
+            this.nGAYTHIDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nGAYTHIDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nGAYTHIDateEdit.Size = new System.Drawing.Size(144, 20);
+            this.nGAYTHIDateEdit.TabIndex = 11;
+            this.nGAYTHIDateEdit.EditValueChanged += new System.EventHandler(this.nGAYTHIDateEdit_EditValueChanged);
+            // 
+            // bdsDSLOP
+            // 
+            this.bdsDSLOP.DataMember = "V_DS_LOP";
+            this.bdsDSLOP.DataSource = this.dS_SERVER1;
+            // 
+            // v_DS_LOPTableAdapter
+            // 
+            this.v_DS_LOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // bdsDSMHOC
+            // 
+            this.bdsDSMHOC.DataMember = "V_DS_MONHOC";
+            this.bdsDSMHOC.DataSource = this.dS_SERVER1;
+            // 
+            // v_DS_MONHOCTableAdapter
+            // 
+            this.v_DS_MONHOCTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnXem
+            // 
+            this.btnXem.Location = new System.Drawing.Point(1144, 28);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(148, 36);
+            this.btnXem.TabIndex = 6;
+            this.btnXem.Text = "XEM ĐIỂM";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // FrmBangDiem
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 508);
+            this.ClientSize = new System.Drawing.Size(1304, 667);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcBD);
             this.Controls.Add(this.panel1);
@@ -411,8 +458,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDIEM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMASV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIEMSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDSLOP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDSMHOC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,9 +487,7 @@
         private DS_SERVER1 dS_SERVER1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbMONHOC;
-        private System.Windows.Forms.ComboBox cmbLOP;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private DS_SERVER1TableAdapters.BANGDIEMTableAdapter bANGDIEMTableAdapter;
         private DS_SERVER1TableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gcBD;
@@ -446,9 +495,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMASV;
         private DevExpress.XtraGrid.Columns.GridColumn colDIEM;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.SpinEdit txtDIEM;
-        private DevExpress.XtraEditors.TextEdit txtMASV;
         private System.Windows.Forms.ComboBox cmbLANTHI;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.DateEdit nGAYTHIDateEdit;
+        private DevExpress.XtraEditors.SpinEdit dIEMSpinEdit;
+        private DevExpress.XtraEditors.TextEdit mASVTextEdit;
+        private System.Windows.Forms.BindingSource bdsDSLOP;
+        private DS_SERVER1TableAdapters.V_DS_LOPTableAdapter v_DS_LOPTableAdapter;
+        private System.Windows.Forms.BindingSource bdsDSMHOC;
+        private DS_SERVER1TableAdapters.V_DS_MONHOCTableAdapter v_DS_MONHOCTableAdapter;
+        private System.Windows.Forms.Button btnXem;
     }
 }

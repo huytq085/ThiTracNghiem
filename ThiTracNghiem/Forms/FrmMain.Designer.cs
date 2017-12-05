@@ -51,6 +51,7 @@
             this.txtFooterClass = new DevExpress.XtraBars.BarHeaderItem();
             this.btnReport = new DevExpress.XtraBars.BarButtonItem();
             this.txtFooterTenLop = new DevExpress.XtraBars.BarHeaderItem();
+            this.btnXemDiem = new DevExpress.XtraBars.BarButtonItem();
             this.Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbFunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbControl = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,7 +59,6 @@
             this.rbFooter = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnXemDiem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -274,6 +274,16 @@
             this.txtFooterTenLop.Name = "txtFooterTenLop";
             this.txtFooterTenLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.txtFooterTenLop_ItemClick);
             // 
+            // btnXemDiem
+            // 
+            this.btnXemDiem.Caption = "Xem Điểm";
+            this.btnXemDiem.Id = 23;
+            this.btnXemDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemDiem.ImageOptions.Image")));
+            this.btnXemDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemDiem.ImageOptions.LargeImage")));
+            this.btnXemDiem.Name = "btnXemDiem";
+            this.btnXemDiem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnXemDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XE_ItemClick);
+            // 
             // Home
             // 
             this.Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -331,15 +341,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
-            // 
-            // btnXemDiem
-            // 
-            this.btnXemDiem.Caption = "Xem Điểm";
-            this.btnXemDiem.Id = 23;
-            this.btnXemDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("XE.ImageOptions.Image")));
-            this.btnXemDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("XE.ImageOptions.LargeImage")));
-            this.btnXemDiem.Name = "btnXemDiem";
-            this.btnXemDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.XE_ItemClick);
             // 
             // FrmMain
             // 

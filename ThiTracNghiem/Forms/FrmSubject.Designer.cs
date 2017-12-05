@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label tENMHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubject));
-            this.branchesBindingSource = new System.Windows.Forms.BindingSource();
+            this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ds = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.pnTable = new System.Windows.Forms.Panel();
             this.mONHOCGridControl = new DevExpress.XtraGrid.GridControl();
-            this.subjectBindingSource = new System.Windows.Forms.BindingSource();
+            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSV1 = new ThiTracNghiem.TRACNGHIEMDataSetSV1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barAction = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
@@ -55,7 +56,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.pnEditor = new System.Windows.Forms.Panel();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSubmit = new DevExpress.XtraEditors.SimpleButton();
@@ -121,12 +122,13 @@
             // mONHOCGridControl
             // 
             this.mONHOCGridControl.DataSource = this.subjectBindingSource;
+            this.mONHOCGridControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.mONHOCGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.mONHOCGridControl.Location = new System.Drawing.Point(12, 20);
+            this.mONHOCGridControl.Location = new System.Drawing.Point(0, 0);
             this.mONHOCGridControl.MainView = this.gridView1;
             this.mONHOCGridControl.MenuManager = this.barManager1;
             this.mONHOCGridControl.Name = "mONHOCGridControl";
-            this.mONHOCGridControl.Size = new System.Drawing.Size(1203, 220);
+            this.mONHOCGridControl.Size = new System.Drawing.Size(1238, 220);
             this.mONHOCGridControl.TabIndex = 0;
             this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

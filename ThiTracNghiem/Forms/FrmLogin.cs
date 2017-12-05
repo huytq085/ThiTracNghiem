@@ -47,7 +47,7 @@ namespace ThiTracNghiem.Forms
             {
                 sinhvien = true;
                 Program.username = Program.mlogin;
-                Program.mlogin = "001";
+                Program.mlogin = Program.mCoSo == 0 ? "001" : "VT001";
                 Program.password = Program.pwdSV;
             }
             if (Program.KetNoi() == 0) return false;

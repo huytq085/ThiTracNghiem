@@ -42,6 +42,7 @@ namespace ThiTracNghiem.Forms
             {
                 barAction.Dispose();
                 pnEditor.Dispose();
+                cbbBranches.SelectedIndex = Program.mCoSo;
             }
             if (Program.connstr != null)
             {

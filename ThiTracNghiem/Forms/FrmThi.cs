@@ -88,107 +88,123 @@ namespace ThiTracNghiem.Forms
 
             
         }
+        private bool isExists()
+        {
+            string cmd = "SELECT * FROM BANGDIEM WHERE MASV = '" + Program.id.ToUpper() + "' AND MAMH= '" + MAMH.Trim() + "' AND LAN=" + cmbLANTHI.SelectedValue.ToString();
+            SqlDataReader reader = Program.ExecSqlDataReader(cmd);
+            if (reader != null && reader.HasRows)
+            {
+                DlgOk.Show("Sinh viên đã thi môn này rồi", "Đóng");
+                reader.Close();
+                return true;
+            }
+            reader.Close();
+            return false;
+        }
         private void btnBATDAUTHI_Click(object sender, EventArgs e)
         {
-            
-            trinhDo = lbTRINHDO.Text;
-            soCau = int.Parse(lbSOCAUTHI.Text);
-            lanThi= int.Parse(cmbLANTHI.SelectedValue.ToString());
-            cauhoi = new String[soCau];
-            A = new String[soCau];
-            B = new String[soCau];
-            C = new String[soCau];
-            D = new String[soCau];
-            cauSo = new int[soCau];
-            DA = new String[soCau];
-            int j = 0;
-            String strLenh = "EXEC SP_LOCDE '" + MAMH.Trim() + "','" + trinhDo.Trim() + "'," + soCau;
-            SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
-            Boolean rd = reader.Read();
-            while (rd)
+            if (!isExists())
             {
-
-                cauhoi[j] = reader["NOIDUNG"].ToString();
-
-                A[j] = reader["A"].ToString();
-                B[j] = reader["B"].ToString();
-                C[j] = reader["C"].ToString();
-                D[j] = reader["D"].ToString();
-                A[j] = reader["A"].ToString();
-                cauSo[j] = int.Parse(reader["CAUHOI"].ToString());
-                DA[j] = reader["DAP_AN"].ToString();
-                j++;
-                rd = reader.Read();
-            }
-
-            Program.conn.Close();
-            reader.Close();
-            btnCHONLAI.Enabled = false;
-            btnBATDAUTHI.Enabled = false;
-            btnNOPBAI.Enabled = true;
-            minute = int.Parse(((DataRowView)bdsGVDK[cmbLANTHI.SelectedIndex])["THOIGIAN"].ToString());
-            sec = 0;
-            timer1.Start();
-            timer1.Interval = 1000;
-            int socau = int.Parse(((DataRowView)bdsGVDK[0])["SOCAUTHI"].ToString().Trim());
-            Label[] lbCAUHOI = new Label[socau];
-            rdA = new RadioButton[socau];
-            rdB = new RadioButton[socau];
-            rdC = new RadioButton[socau];
-            rdD = new RadioButton[socau];
-            
-            Panel[] pn = new Panel[socau];
-            
-            try
-            {
-                for (int i = 0; i < socau; i++)
+                trinhDo = lbTRINHDO.Text;
+                soCau = int.Parse(lbSOCAUTHI.Text);
+                lanThi = int.Parse(cmbLANTHI.SelectedValue.ToString());
+                cauhoi = new String[soCau];
+                A = new String[soCau];
+                B = new String[soCau];
+                C = new String[soCau];
+                D = new String[soCau];
+                cauSo = new int[soCau];
+                DA = new String[soCau];
+                int j = 0;
+                String strLenh = "EXEC SP_LOCDE '" + MAMH.Trim() + "','" + trinhDo.Trim() + "'," + soCau;
+                SqlDataReader reader = Program.ExecSqlDataReader(strLenh);
+                Boolean rd = reader.Read();
+                while (rd)
                 {
-                    pn[i] = new Panel();
-                    lbCAUHOI[i] = new Label();
-                    rdA[i] = new RadioButton();
-                    rdB[i] = new RadioButton();
-                    rdC[i] = new RadioButton();
-                    rdD[i] = new RadioButton();
 
+                    cauhoi[j] = reader["NOIDUNG"].ToString();
 
-                    lbCAUHOI[i].Name = "lb" + i.ToString();
-                    rdA[i].Name = "lb" + i;
-                    rdB[i].Name = "lb" + i;
-                    rdC[i].Name = "lb" + i;
-                    rdD[i].Name = "lb" + i;
-
-                    lbCAUHOI[i].Text = "Câu " + (i + 1).ToString() + " : " + cauhoi[i].ToString();
-                    rdA[i].Text = "A. " + A[i].ToString();
-                    rdB[i].Text = "B. " + B[i].ToString();
-                    rdC[i].Text = "C. " + C[i].ToString();
-                    rdD[i].Text = "D. " + D[i].ToString();
-
-                    lbCAUHOI[i].AutoSize = true;
-                    rdA[i].AutoSize = true;
-                    rdB[i].AutoSize = true;
-                    rdC[i].AutoSize = true;
-                    rdD[i].AutoSize = true;
-                    pn[i].AutoSize = true;
-
-                    lbCAUHOI[i].Location = new Point(20, 30);
-                    rdA[i].Location = new Point(70, 60);
-                    rdB[i].Location = new Point(70, 90);
-                    rdC[i].Location = new Point(70, 120);
-                    rdD[i].Location = new Point(70, 150);
-
-                    pn[i].Location = new Point(0, i * 180);
-
-                    pn[i].Controls.Add(lbCAUHOI[i]);
-                    pn[i].Controls.Add(rdA[i]);
-                    pn[i].Controls.Add(rdB[i]);
-                    pn[i].Controls.Add(rdC[i]);
-                    pn[i].Controls.Add(rdD[i]);
-
-                    panel3.Controls.Add(pn[i]);
+                    A[j] = reader["A"].ToString();
+                    B[j] = reader["B"].ToString();
+                    C[j] = reader["C"].ToString();
+                    D[j] = reader["D"].ToString();
+                    A[j] = reader["A"].ToString();
+                    cauSo[j] = int.Parse(reader["CAUHOI"].ToString());
+                    DA[j] = reader["DAP_AN"].ToString();
+                    j++;
+                    rd = reader.Read();
                 }
-            } catch (Exception ex)
-            {
-                DlgOk.Show(ex.ToString());
+
+                Program.conn.Close();
+                reader.Close();
+                btnCHONLAI.Enabled = false;
+                btnBATDAUTHI.Enabled = false;
+                btnNOPBAI.Enabled = true;
+                minute = int.Parse(((DataRowView)bdsGVDK[cmbLANTHI.SelectedIndex])["THOIGIAN"].ToString());
+                sec = 0;
+                timer1.Start();
+                timer1.Interval = 1000;
+                int socau = int.Parse(((DataRowView)bdsGVDK[0])["SOCAUTHI"].ToString().Trim());
+                Label[] lbCAUHOI = new Label[socau];
+                rdA = new RadioButton[socau];
+                rdB = new RadioButton[socau];
+                rdC = new RadioButton[socau];
+                rdD = new RadioButton[socau];
+
+                Panel[] pn = new Panel[socau];
+
+                try
+                {
+                    for (int i = 0; i < socau; i++)
+                    {
+                        pn[i] = new Panel();
+                        lbCAUHOI[i] = new Label();
+                        rdA[i] = new RadioButton();
+                        rdB[i] = new RadioButton();
+                        rdC[i] = new RadioButton();
+                        rdD[i] = new RadioButton();
+
+
+                        lbCAUHOI[i].Name = "lb" + i.ToString();
+                        rdA[i].Name = "lb" + i;
+                        rdB[i].Name = "lb" + i;
+                        rdC[i].Name = "lb" + i;
+                        rdD[i].Name = "lb" + i;
+
+                        lbCAUHOI[i].Text = "Câu " + (i + 1).ToString() + " : " + cauhoi[i].ToString();
+                        rdA[i].Text = "A. " + A[i].ToString();
+                        rdB[i].Text = "B. " + B[i].ToString();
+                        rdC[i].Text = "C. " + C[i].ToString();
+                        rdD[i].Text = "D. " + D[i].ToString();
+
+                        lbCAUHOI[i].AutoSize = true;
+                        rdA[i].AutoSize = true;
+                        rdB[i].AutoSize = true;
+                        rdC[i].AutoSize = true;
+                        rdD[i].AutoSize = true;
+                        pn[i].AutoSize = true;
+
+                        lbCAUHOI[i].Location = new Point(20, 30);
+                        rdA[i].Location = new Point(70, 60);
+                        rdB[i].Location = new Point(70, 90);
+                        rdC[i].Location = new Point(70, 120);
+                        rdD[i].Location = new Point(70, 150);
+
+                        pn[i].Location = new Point(0, i * 180);
+
+                        pn[i].Controls.Add(lbCAUHOI[i]);
+                        pn[i].Controls.Add(rdA[i]);
+                        pn[i].Controls.Add(rdB[i]);
+                        pn[i].Controls.Add(rdC[i]);
+                        pn[i].Controls.Add(rdD[i]);
+
+                        panel3.Controls.Add(pn[i]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DlgOk.Show(ex.ToString());
+                }
             }
         }
 
@@ -494,17 +510,23 @@ namespace ThiTracNghiem.Forms
             //Console.WriteLine(JsonConvert.SerializeObject(jsonObject));
             if (Program.nhom.Equals("SINHVIEN"))
             {
-                DBAppDataContext db = new DBAppDataContext();
-                db.Connection.ConnectionString = Program.connstr;
-                BANGDIEM bangDiem = new BANGDIEM();
-                bangDiem.MASV = Program.username.Trim();
-                bangDiem.MAMH = MAMH.Trim();
-                bangDiem.LAN = (short)lanThi;
-                bangDiem.NGAYTHI = Convert.ToDateTime(cmbNGAYTHI.SelectedValue.ToString());
-                bangDiem.DIEM = tyleDiem * soCauDung;
-                bangDiem.BAITHI = JsonConvert.SerializeObject(baiThi);
-                db.BANGDIEMs.InsertOnSubmit(bangDiem);
-                db.SubmitChanges();
+               try
+                {
+                    DBAppDataContext db = new DBAppDataContext();
+                    db.Connection.ConnectionString = Program.connstr;
+                    BANGDIEM bangDiem = new BANGDIEM();
+                    bangDiem.MASV = Program.username.Trim();
+                    bangDiem.MAMH = MAMH.Trim();
+                    bangDiem.LAN = (short)lanThi;
+                    bangDiem.NGAYTHI = Convert.ToDateTime(cmbNGAYTHI.SelectedValue.ToString());
+                    bangDiem.DIEM = tyleDiem * soCauDung;
+                    bangDiem.BAITHI = JsonConvert.SerializeObject(baiThi);
+                    db.BANGDIEMs.InsertOnSubmit(bangDiem);
+                    db.SubmitChanges();
+                } catch (Exception ex)
+                {
+                    DlgOk.Show(ex.Message.ToString());
+                }
             }
             DlgConfirm dlgConfirm = new DlgConfirm("Điểm thi: " + soCauDung * tyleDiem, "Xem bài thi", "Đóng", "Thông báo");
             dlgConfirm.StartPosition = FormStartPosition.CenterParent;

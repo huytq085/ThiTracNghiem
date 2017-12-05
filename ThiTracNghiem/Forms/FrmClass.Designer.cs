@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label mAKHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClass));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barManager2 = new DevExpress.XtraBars.BarManager();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.barAction = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
@@ -57,11 +58,11 @@
             this.pnBranches = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbBranches = new System.Windows.Forms.ComboBox();
-            this.branchesBindingSource = new System.Windows.Forms.BindingSource();
+            this.branchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ds = new ThiTracNghiem.TRACNGHIEMDataSet();
             this.pnTable = new System.Windows.Forms.Panel();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
-            this.classBindingSource = new System.Windows.Forms.BindingSource();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,7 +74,7 @@
             this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.branchesTableAdapter = new ThiTracNghiem.TRACNGHIEMDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
-            this.v_DS_KHOABindingSource = new System.Windows.Forms.BindingSource();
+            this.v_DS_KHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DS_KHOATableAdapter = new ThiTracNghiem.DS_SERVER1TableAdapters.V_DS_KHOATableAdapter();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
@@ -378,12 +379,13 @@
             // lOPGridControl
             // 
             this.lOPGridControl.DataSource = this.classBindingSource;
+            this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.lOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.lOPGridControl.Location = new System.Drawing.Point(35, 0);
+            this.lOPGridControl.Location = new System.Drawing.Point(0, 0);
             this.lOPGridControl.MainView = this.gridView1;
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(1102, 341);
+            this.lOPGridControl.Size = new System.Drawing.Size(1137, 341);
             this.lOPGridControl.TabIndex = 0;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

@@ -194,12 +194,12 @@ namespace ThiTracNghiem.Forms
                 reader.Close();
                 return true;
             }
-            else if (Program.checkExistsAllSite(cmd))
-            {
-                reader.Close();
-                DlgOk.Show("Mã hoặc tên môn học đã tồn tại trên chi nhánh khác", "Đóng");
-                return true;
-            }
+            //else if (Program.checkExistsAllSite(cmd))
+            //{
+            //    reader.Close();
+            //    DlgOk.Show("Mã hoặc tên môn học đã tồn tại trên chi nhánh khác", "Đóng");
+            //    return true;
+            //}
             return false;
         }
 
